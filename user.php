@@ -2,7 +2,7 @@
 // 変数
 $user = 'root';
 $password = 'root';
-$db = 'test';
+$db = 'vec';
 $socket = 'localhost:/Applications/MAMP/tmp/mysql/mysql.sock';
 // db接続
 function open_database_connection()
