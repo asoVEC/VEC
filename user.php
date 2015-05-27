@@ -2,7 +2,7 @@
 // 変数
 $user = 'root';
 $password = 'root';
-$db = 'vec';
+$db = 'test';
 $socket = 'localhost:/Applications/MAMP/tmp/mysql/mysql.sock';
 // db接続
 function open_database_connection()
@@ -17,7 +17,7 @@ if (!$link) {
 }
 
 $db_selected = mysql_select_db(
-   'vec',
+   'test',
    $link
 );
 if (!$db_selected){
@@ -35,12 +35,12 @@ function close_database_connection($link)
 function get_user_name()
 {
 	$link = open_database_connection();
-	$result = mysql_query('SELECT  age FROM user', $link);
+	$result = mysql_query('SELECT test FROM test', $link);
 	if (!$result) {
     die('クエリーが失敗しました。'.mysql_error());
 }
-	// $name = mysql_num_rows($result);
-	$name = mysql_fetch_row($result);
+	$name = mysql_fetch_assoc($result);
+
     close_database_connection($link);
     return $name;
 }
