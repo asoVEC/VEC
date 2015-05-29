@@ -1,3 +1,4 @@
+//Model User
 <?php
 // 変数
 $user = 'root';
