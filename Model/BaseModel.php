@@ -5,30 +5,39 @@
  *@date 	2015/05/31
  **/
 
-class BaseModel {
+class BaseModel {	
+    private  $user     = 'root';
+    private $password = 'root';
+    private $db       = 'vec';
+    private $host     = 'localhost';
+    private $port     = 8889;
 
-	private $user     = 'root';
-	private $password = 'root';
-	private $db       = 'vec';
-	private $host     = 'localhost';
-	private $port     = 8889;
+	function __construct() {
 
-	public function __construct() {
-		//データベース接続
-		try {
-			$pdo = new PDO('mysql:host=$host;port=3306;dbname=$db;charset=utf8', '$user', '$password',
-				array(PDO::ATTR_EMULATE_PREPARES => false));
-		} catch (PDOException $e) {
-			die('データベース接続失敗。'.$e->getMessage());
+		$link = mysql_connect(
+			"$host:$port",
+			$user,
+			$password
+		);
+		if (!$link) {
+			die('接続失敗です。'.mysql_error());
 		}
-
+		$db_selected = mysqfl_select_db($db, $link);
+		if (!$db_selected) {
+			die('データベース選択失敗です。'.mysql_error());
 	}
 
+	}
 	function getName() {
-		$stmt = $pdo->query("SELECT * FROM user");
-		// while($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
-		// print($row['name']);
+			
+		$result = mysql_query('SELECT * FROM user');
+		if (!$result) {
+			die('クエリーが失敗しました。'.mysql_error());
+		}
+		$row = mysql_fetch_assoc($result);
+		print($row['name']);
 
 	}
+	
 }
 ?>
