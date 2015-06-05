@@ -91,7 +91,6 @@ if (!$db_selected){
 }else{
   print "成功";
 }
-<<<<<<< HEAD
  ?>
 =======
 $result = mysql_query('SELECT * FROM user');
