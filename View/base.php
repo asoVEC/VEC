@@ -35,7 +35,7 @@
                 <!--                    リンクのリスト メニューリスト
                 -->                    <ul class="nav navbar-nav">
                     <li><a href="">長野さん、ようこそ</a></li>
-                                          <li><a href="">買い物カゴ</a></li>
+                                          <li><a href="">買い物カゴ <span class="badge">12</span></a></li>
                                           <!--<li><a href="">Link3</a></li>-->
                 </ul>
 
@@ -71,13 +71,21 @@
                         <li class="active"><a href="#">カテゴリ一覧</a></li>
                           <div class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">肉 <b class="caret"></b></a>
-  <ul class="dropdown-menu">
+  <ul class="dropdown-menu dropdown-menu-right">
       <li><div class="frame" style="background: url(../img/fdjyagaimo.jpg) center center no-repeat;"></div></li>
     <li><a href="#">松阪牛</a></li>
     <li><a href="#">なんとか牛</a></li>
     <li><a href="#">豚</a></li>
   </ul>
-   </div>
+                          </div>
+                        <div id='cssmenu'>
+                        <li class='has-sub'><a href='#'><span>肉・卵</span></a>
+            <ul>
+               <li><div class="frame" style="background: url(../img/fd_ninjin.jpg) center center no-repeat;"></div></li>
+               <li><div class="frame" style="background: url(../img/fdjyagaimo.jpg) center center no-repeat;"></div></li>
+            </ul>
+                        </div>
+         </li>
                         <li><a href="#">肉・卵</a></li>
                         <li><a href="#">魚介</a></li>
                         <li><a href="#">野菜</a></li>
@@ -101,6 +109,7 @@
                 
             </div>
         </div><!--/.main-content-->
+        
     </body>
 
 
