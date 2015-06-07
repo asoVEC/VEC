@@ -6,8 +6,17 @@ class User2 extends BaseModel{
     
     
     function getUser() {
-    $kimiya = parent::query('user','1 = 1');
-    return $kimiya;
+        $Row = parent::query('user',0);
+        return $Row;
+    }
+    function login($mailAddress,$password){
+        $where = 'mail_address = '.$mailAddress;
+        $row = parent::query('user', $where);
+        if ($row['password'] == $password){
+            return 1;
+        }  else {
+            return 0;  
+        }
     }
 
 }
