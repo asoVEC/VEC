@@ -13,8 +13,6 @@ class BaseModel {
      private $port     = 8889;
      private $where = ' where 1=1';
      private $link = null;
-
-
      //DB接続情報設定
     function __construct() {
         $this->link = mysql_connect(
