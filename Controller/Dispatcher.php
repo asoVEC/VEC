@@ -8,45 +8,38 @@
 
 class Dispatcher {
 
-    private $sysRoot = 'localhost:8888/VEC';
-    
-
     public function dispatch() {
-                
+                        
         // パラメーター取得（末尾の / は削除）
         $param = ereg_replace('/?$', '', $_SERVER['REQUEST_URI']);
-        echo 'はろー';
-        echo '<br/>'.$param;
         $params = array();
         if ('' != $param) {
             // パラメーターを / で分割
             $params = explode('/', $param);
         }
-        echo '<br/>'.$params[0];
+        
         // １番目のパラメーターをコントローラーとして取得
         $controller = "index";
-        if (0 < count($params)) {
-            $controller = $params[0];
+        if (2 < count($params)) {
+            $controller = $params[2];
         }
-        
+                
         // パラメータより取得したコントローラー名によりクラス振分け
-        $className = ucfirst(strtolower($controller)) . 'Controller';
-
+        $className = ucfirst(strtolower($controller)) . 'Controller';      
         // クラスファイル読込
-        require_once $this->sysRoot . '/Controller/' . $className . '.php';
-
+        require_once $className.'.php';
         // クラスインスタンス生成
         $controllerInstance = new $className();
-        
         // 2番目のパラメーターをコントローラーとして取得
         $action = 'index';
-        if (1 < count($params)) {
-            $action = $params[1];
-        }
-
+        if (3 < count($params)) {
+            $action = $params[3];
+        }          
         // アクションメソッドを実行
         $actionMethod = $action;
         $controllerInstance->$actionMethod();
+        
+        
     }
 
 }
