@@ -1,6 +1,11 @@
 <?php
-function login(){
-    echo 'はろー';    
+class homeController{
+
+    function login(){
+        echo 'kimiya';
+        
+        
+    }
 }
 
 ?>
