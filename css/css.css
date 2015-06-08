@@ -372,3 +372,8 @@ body{
 #cssmenu .has-sub .has-sub ul li a:hover {
   background: #09638a;
 }
+
+.jumbotron {
+    padding-bottom: 130px;
+    padding-top: 100px;
+}
