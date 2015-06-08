@@ -2,19 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>ログイン</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
-
-        <!– IE8以前でもHTML5要素とメディアクエリをサポートするために、HTML5 shimとRespond.jsを読み込む –>
-        <!–[if lt IE 9]>
         <script src="../js/html5shiv.js"></script>
         <script src="../js/respond.min.js"></script>
-        <![endif]–>
     </head>
-    
     <body>
-        
         <div class="col-sm-12">　</div>
         <div class="col-sm-12">　</div>
         <div class="col-sm-12">　</div>

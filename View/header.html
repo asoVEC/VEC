@@ -10,13 +10,20 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="../css/css.css" rel="stylesheet" media="screen">
+        <script>
+jQuery(function($){
+ $('a[rel=tooltip]').tooltip();
+});
+</script>
     </head>
     <body>
+        <a href="#" rel="tooltip" data-toggle="tooltip" data-placement="bottom" title="this is tooltip">tooltip</a>
                 <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-header">
 
                 <!--ブランド名 ロゴ名の表示-->
                 <a class="navbar-brand" href="#">VEC</a>
+                
  
                 
 

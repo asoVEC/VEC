@@ -18,10 +18,9 @@
         <div class="container main-content">
             <div class="row">
                 <?php include './side.html'; ?>
-                <?php include './Content/main.html'; ?>
+                <?php include './Content/login.php'; ?>
             </div>
         </div>
         <?php include './fotter.html'; ?>
     </body>
 </html>
-
