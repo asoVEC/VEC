@@ -19,7 +19,7 @@ class Dispatcher {
         }
         
         // １番目のパラメーターをコントローラーとして取得
-        $controller = "index";
+        $controller = "home";
         if (2 < count($params)) {
             $controller = $params[2];
         }

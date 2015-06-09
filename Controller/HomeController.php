@@ -2,9 +2,10 @@
 class homeController{
 
     function login(){
-        echo 'kimiya';
-        
-        
+        file_get_contents('../View/base.php');  
+    }
+    function index(){
+        echo 'きみや';   
     }
 }
 
