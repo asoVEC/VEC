@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-06-12 07:59:15
+<?php /* Smarty version 3.1.24, created on 2015-06-12 08:23:53
          compiled from "/Applications/MAMP/htdocs/VEC/View/base_1.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:737930038557a75333ce515_94903257%%*/
+/*%%SmartyHeaderCode:618965168557a7af98fe524_78535048%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8628b7659b38f8fbf095f0e08a5c55c66b50de62' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/base_1.tpl',
-      1 => 1434088752,
+      1 => 1434090182,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '737930038557a75333ce515_94903257',
+  'nocache_hash' => '618965168557a7af98fe524_78535048',
+  'variables' => 
+  array (
+    'abc' => 0,
+  ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_557a753344c0a4_04443072',
+  'unifunc' => 'content_557a7af998da17_13041224',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_557a753344c0a4_04443072')) {
-function content_557a753344c0a4_04443072 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_557a7af998da17_13041224')) {
+function content_557a7af998da17_13041224 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '737930038557a75333ce515_94903257';
+$_smarty_tpl->properties['nocache_hash'] = '618965168557a7af98fe524_78535048';
 echo '<?php
 ';?>/*
 * To change this license header, choose License Headers in Project Properties.
@@ -102,7 +106,7 @@ echo '<?php
                             <li class='has-sub'><a href='#'><span>肉・卵</span></a>
                                 <ul>
                                     <li><div class="frame" style="background: url(/VEC/img/fd_ninjin.jpg) center center no-repeat;"></div></li>
-                                    <li><div class="frame" style="background: url(../img/fdjyagaimo.jpg) center center no-repeat;"></div></li>
+                                    <li><div class="frame" style="background: url(/VEC/img/fdjyagaimo.jpg) center center no-repeat;"></div></li>
                                 </ul>
                         </div>
                         <li><a href="#">肉・卵</a></li>
@@ -117,7 +121,8 @@ echo '<?php
                 </div>
                 <div class="col-md-9 content-area">
                     
-                    <div class="frame" style="background: url(/VEC/img/fdjyagaimo.jpg) center center no-repeat;"></div>
+                    <div class="frame" style="background: <?php echo $_smarty_tpl->tpl_vars['abc']->value;?>
+ center center no-repeat;"></div>
                     <div class="frame2" style="background: url(/VEC/img/fdputitomato.jpg) center center no-repeat;"></div>
                     <div class="frame3" style="background: url(/VEC/img/fdpapurika.jpg) center center no-repeat;"></div>
                     <div class="frame4" style="background: url(/VEC/img/fd_kabotya.jpg) center center no-repeat;"></div>

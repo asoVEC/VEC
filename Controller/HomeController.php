@@ -11,11 +11,11 @@ class homeController {
     }
     function login(){
 //        echo 'kimiya';
-//         $this->view->assign('abc', '公也くんかっこいい');
+         $this->view->assign('abc', 'url(/VEC/img/fdjyagaimo.jpg)');
 //
 //        // テンプレート表示
       
-        $this->view->display('View/base_1.tpl');
+        $this->view->display('View/base.tpl');
 //        header('location :http://localhost:8888/VEC/View/base.php');
 //        exit;//←忘れずに！
         //

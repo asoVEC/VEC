@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-06-12 04:06:16
+<?php /* Smarty version 3.1.24, created on 2015-06-12 11:12:56
          compiled from "/Applications/MAMP/htdocs/VEC/View/base.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1788931286557a3e98a891d1_88527620%%*/
+/*%%SmartyHeaderCode:1651043957557aa29814d920_89289245%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,37 +9,39 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '42db65d542961d223c09d1da22900689ec241347' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/base.tpl',
-      1 => 1434074774,
+      1 => 1434100374,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1788931286557a3e98a891d1_88527620',
+  'nocache_hash' => '1651043957557aa29814d920_89289245',
+  'variables' => 
+  array (
+    'abc' => 0,
+  ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_557a3e98b0d6f8_25423951',
+  'unifunc' => 'content_557aa2981eee75_92228116',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_557a3e98b0d6f8_25423951')) {
-function content_557a3e98b0d6f8_25423951 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_557aa2981eee75_92228116')) {
+function content_557aa2981eee75_92228116 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1788931286557a3e98a891d1_88527620';
-?>
+$_smarty_tpl->properties['nocache_hash'] = '1651043957557aa29814d920_89289245';
+echo '<?php
+';?>/*
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
+*/
+<?php echo '?>';?>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>ホームページ</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="../css/css.css" rel="stylesheet" media="screen">
-        <?php echo '<script'; ?>
->
-            jQuery(function ($) {
-                $('a[rel=tooltip]').tooltip();
-            });
-        <?php echo '</script'; ?>
->
+        <link href="/VEC/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="/VEC/css/css.css" rel="stylesheet" media="screen">
     </head>
-
     <body>
         <a href="#" rel="tooltip" data-toggle="tooltip" data-placement="bottom" title="this is tooltip">tooltip</a>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -60,14 +62,12 @@ $_smarty_tpl->properties['nocache_hash'] = '1788931286557a3e98a891d1_88527620';
             </div>
             <div id="nav-content" class="collapse navbar-collapse">
 
-                <!--                    リンクのリスト メニューリスト
-                -->                    <ul class="nav navbar-nav">
+                <!--リンクのリスト メニューリスト-->                    
+                <ul class="nav navbar-nav">
                     <li><a href="">長野さん、ようこそ</a></li>
                     <li><a href="">買い物カゴ <span class="badge">12</span></a></li>
                     <!--<li><a href="">Link3</a></li>-->
                 </ul>
-
-
                 <!--検索フォーム-->
                 <form class="navbar-form navbar-static-top" role="search">
                     <div class="form-group">
@@ -79,12 +79,8 @@ $_smarty_tpl->properties['nocache_hash'] = '1788931286557a3e98a891d1_88527620';
         </nav>
         <header class="jumbotron col-lg-10 col-lg-offset-1"></header>
 
-        <form class="navbar-form navbar-static-top hidden-lg hidden-md hidden-sm" role="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="商品検索">
-            </div>
-            <button type="submit" class="btn btn-default">検索</button>
-        </form>
+        
+
         <div class="container main-content">
             <div class="row">
                 <div class="col-md-3 col-lg-3">
@@ -93,7 +89,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1788931286557a3e98a891d1_88527620';
                         <div class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">肉 <b class="caret"></b></a>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                <li><div class="frame" style="background: url(../img/fdjyagaimo.jpg) center center no-repeat;"></div></li>
+                                <li><div class="frame" style="background: url(/VEC/img/fdjyagaimo.jpg) center center no-repeat;"></div></li>
                                 <li><a href="#">松阪牛</a></li>
                                 <li><a href="#">なんとか牛</a></li>
                                 <li><a href="#">豚</a></li>
@@ -102,8 +98,8 @@ $_smarty_tpl->properties['nocache_hash'] = '1788931286557a3e98a891d1_88527620';
                         <div id='cssmenu'>
                             <li class='has-sub'><a href='#'><span>肉・卵</span></a>
                                 <ul>
-                                    <li><div class="frame" style="background: url(../img/fd_ninjin.jpg) center center no-repeat;"></div></li>
-                                    <li><div class="frame" style="background: url(../img/fdjyagaimo.jpg) center center no-repeat;"></div></li>
+                                    <li><div class="frame" style="background: url(/VEC/img/fd_ninjin.jpg) center center no-repeat;"></div></li>
+                                    <li><div class="frame" style="background: url(/VEC/img/fdjyagaimo.jpg) center center no-repeat;"></div></li>
                                 </ul>
                         </div>
                         <li><a href="#">肉・卵</a></li>
@@ -117,17 +113,19 @@ $_smarty_tpl->properties['nocache_hash'] = '1788931286557a3e98a891d1_88527620';
                     </ul>
                 </div>
                 <div class="col-md-9 content-area">
-                    <div class="frame" style="background: url(../img/fdjyagaimo.jpg) center center no-repeat;"></div>
-                    <div class="frame2" style="background: url(../img/fdputitomato.jpg) center center no-repeat;"></div>
-                    <div class="frame3" style="background: url(../img/fdpapurika.jpg) center center no-repeat;"></div>
-                    <div class="frame4" style="background: url(../img/fd_kabotya.jpg) center center no-repeat;"></div>
-                    <div class="frame5" style="background: url(../img/fd_ninjin.jpg) center center no-repeat;"></div>
+
+                    <div class="frame" style="background: <?php echo $_smarty_tpl->tpl_vars['abc']->value;?>
+ center center no-repeat;"></div>
+                    <div class="frame2" style="background: url(/VEC/img/fdputitomato.jpg) center center no-repeat;"></div>
+                    <div class="frame3" style="background: url(/VEC/img/fdpapurika.jpg) center center no-repeat;"></div>
+                    <div class="frame4" style="background: url(/VEC/img/fd_kabotya.jpg) center center no-repeat;"></div>
+                    <div class="frame5" style="background: url(/VEC/img/fd_ninjin.jpg) center center no-repeat;"></div>
                 </div>
             </div>
         </div>
-
-        
-        
+        <footer class="container-fluid">
+            <small><a href="/">Copyright (C) 2013-2014 9ineBB All Rights Reserved.</a></small>
+        </footer>
     </body>
 </html>
 
