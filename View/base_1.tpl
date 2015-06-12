@@ -11,7 +11,7 @@
         <title>ホームページ</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/VEC/css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="/VEC/css.css" rel="stylesheet" media="screen">
+        <link href="/VEC/css/css.css" rel="stylesheet" media="screen">
     </head>
     <body>
         <a href="#" rel="tooltip" data-toggle="tooltip" data-placement="bottom" title="this is tooltip">tooltip</a>
@@ -76,8 +76,8 @@
                         <div id='cssmenu'>
                             <li class='has-sub'><a href='#'><span>肉・卵</span></a>
                                 <ul>
-                                    <li><div class="frame" style="background: url(VEC/img/fd_ninjin.jpg) center center no-repeat;"></div></li>
-                                    <li><div class="frame" style="background: url(../img/fdjyagaimo.jpg) center center no-repeat;"></div></li>
+                                    <li><div class="frame" style="background: url(/VEC/img/fd_ninjin.jpg) center center no-repeat;"></div></li>
+                                    <li><div class="frame" style="background: url(/VEC/img/fdjyagaimo.jpg) center center no-repeat;"></div></li>
                                 </ul>
                         </div>
                         <li><a href="#">肉・卵</a></li>
@@ -91,11 +91,12 @@
                     </ul>
                 </div>
                 <div class="col-md-9 content-area">
-                    <div class="frame" style="background: url(../../img/fdjyagaimo.jpg) center center no-repeat;"></div>
+                    
+                    <div class="frame" style="background: url(/VEC/img/fdjyagaimo.jpg) center center no-repeat;"></div>
                     <div class="frame2" style="background: url(/VEC/img/fdputitomato.jpg) center center no-repeat;"></div>
-                    <div class="frame3" style="background: url(../img/fdpapurika.jpg) center center no-repeat;"></div>
-                    <div class="frame4" style="background: url(../img/fd_kabotya.jpg) center center no-repeat;"></div>
-                    <div class="frame5" style="background: url(../img/fd_ninjin.jpg) center center no-repeat;"></div>
+                    <div class="frame3" style="background: url(/VEC/img/fdpapurika.jpg) center center no-repeat;"></div>
+                    <div class="frame4" style="background: url(/VEC/img/fd_kabotya.jpg) center center no-repeat;"></div>
+                    <div class="frame5" style="background: url(/VEC/img/fd_ninjin.jpg) center center no-repeat;"></div>
                 </div>
             </div>
         </div>

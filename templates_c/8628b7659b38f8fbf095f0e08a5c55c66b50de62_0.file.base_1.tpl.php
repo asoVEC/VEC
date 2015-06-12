@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-06-12 07:06:51
+<?php /* Smarty version 3.1.24, created on 2015-06-12 07:59:15
          compiled from "/Applications/MAMP/htdocs/VEC/View/base_1.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1783962299557a68eb49bd72_37496460%%*/
+/*%%SmartyHeaderCode:737930038557a75333ce515_94903257%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8628b7659b38f8fbf095f0e08a5c55c66b50de62' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/base_1.tpl',
-      1 => 1434085604,
+      1 => 1434088752,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1783962299557a68eb49bd72_37496460',
+  'nocache_hash' => '737930038557a75333ce515_94903257',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_557a68eb50d928_99244726',
+  'unifunc' => 'content_557a753344c0a4_04443072',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_557a68eb50d928_99244726')) {
-function content_557a68eb50d928_99244726 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_557a753344c0a4_04443072')) {
+function content_557a753344c0a4_04443072 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1783962299557a68eb49bd72_37496460';
+$_smarty_tpl->properties['nocache_hash'] = '737930038557a75333ce515_94903257';
 echo '<?php
 ';?>/*
 * To change this license header, choose License Headers in Project Properties.
@@ -36,7 +36,7 @@ echo '<?php
         <title>ホームページ</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/VEC/css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="/VEC/css.css" rel="stylesheet" media="screen">
+        <link href="/VEC/css/css.css" rel="stylesheet" media="screen">
     </head>
     <body>
         <a href="#" rel="tooltip" data-toggle="tooltip" data-placement="bottom" title="this is tooltip">tooltip</a>
@@ -101,7 +101,7 @@ echo '<?php
                         <div id='cssmenu'>
                             <li class='has-sub'><a href='#'><span>肉・卵</span></a>
                                 <ul>
-                                    <li><div class="frame" style="background: url(VEC/img/fd_ninjin.jpg) center center no-repeat;"></div></li>
+                                    <li><div class="frame" style="background: url(/VEC/img/fd_ninjin.jpg) center center no-repeat;"></div></li>
                                     <li><div class="frame" style="background: url(../img/fdjyagaimo.jpg) center center no-repeat;"></div></li>
                                 </ul>
                         </div>
@@ -116,11 +116,12 @@ echo '<?php
                     </ul>
                 </div>
                 <div class="col-md-9 content-area">
-                    <div class="frame" style="background: url(../../img/fdjyagaimo.jpg) center center no-repeat;"></div>
+                    
+                    <div class="frame" style="background: url(/VEC/img/fdjyagaimo.jpg) center center no-repeat;"></div>
                     <div class="frame2" style="background: url(/VEC/img/fdputitomato.jpg) center center no-repeat;"></div>
-                    <div class="frame3" style="background: url(../img/fdpapurika.jpg) center center no-repeat;"></div>
-                    <div class="frame4" style="background: url(../img/fd_kabotya.jpg) center center no-repeat;"></div>
-                    <div class="frame5" style="background: url(../img/fd_ninjin.jpg) center center no-repeat;"></div>
+                    <div class="frame3" style="background: url(/VEC/img/fdpapurika.jpg) center center no-repeat;"></div>
+                    <div class="frame4" style="background: url(/VEC/img/fd_kabotya.jpg) center center no-repeat;"></div>
+                    <div class="frame5" style="background: url(/VEC/img/fd_ninjin.jpg) center center no-repeat;"></div>
                 </div>
             </div>
         </div>
