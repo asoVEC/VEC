@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 <?php /* Smarty version 3.1.24, created on 2015-06-12 15:18:35
          compiled from "/Applications/MAMP/htdocs/VEC/View/base_1.tpl" */ ?>
 <?php
 /*%%SmartyHeaderCode:700471489557a79bb00a908_33237814%%*/
+=======
+<?php /* Smarty version 3.1.24, created on 2015-06-12 08:23:53
+         compiled from "/Applications/MAMP/htdocs/VEC/View/base_1.tpl" */ ?>
+<?php
+/*%%SmartyHeaderCode:618965168557a7af98fe524_78535048%%*/
+>>>>>>> origin/master
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,6 +16,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8628b7659b38f8fbf095f0e08a5c55c66b50de62' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/base_1.tpl',
+<<<<<<< HEAD
       1 => 1434089834,
       2 => 'file',
     ),
@@ -23,6 +31,26 @@ if ($_valid && !is_callable('content_557a79bb0f0e31_00481935')) {
 function content_557a79bb0f0e31_00481935 ($_smarty_tpl) {
 
 $_smarty_tpl->properties['nocache_hash'] = '700471489557a79bb00a908_33237814';
+=======
+      1 => 1434090182,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '618965168557a7af98fe524_78535048',
+  'variables' => 
+  array (
+    'abc' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => '3.1.24',
+  'unifunc' => 'content_557a7af998da17_13041224',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_557a7af998da17_13041224')) {
+function content_557a7af998da17_13041224 ($_smarty_tpl) {
+
+$_smarty_tpl->properties['nocache_hash'] = '618965168557a7af98fe524_78535048';
+>>>>>>> origin/master
 echo '<?php
 ';?>/*
 * To change this license header, choose License Headers in Project Properties.
@@ -117,7 +145,8 @@ echo '<?php
                 </div>
                 <div class="col-md-9 content-area">
                     
-                    <div class="frame" style="background: url(/VEC/img/fdjyagaimo.jpg) center center no-repeat;"></div>
+                    <div class="frame" style="background: <?php echo $_smarty_tpl->tpl_vars['abc']->value;?>
+ center center no-repeat;"></div>
                     <div class="frame2" style="background: url(/VEC/img/fdputitomato.jpg) center center no-repeat;"></div>
                     <div class="frame3" style="background: url(/VEC/img/fdpapurika.jpg) center center no-repeat;"></div>
                     <div class="frame4" style="background: url(/VEC/img/fd_kabotya.jpg) center center no-repeat;"></div>
