@@ -89,9 +89,15 @@
                     </ul>
                 </div>
                 <div class="col-md-9 content-area">
-
+                    <style type="text/css">
+                        
+                        
+                    </style>
+                    <div class="label">{$name}</div>
                     <div class="frame" style="background: {$abc} center center no-repeat;"></div>
+                    <div class="label">{$name}</div>
                     <div class="frame2" style="background: url(/VEC/img/fdputitomato.jpg) center center no-repeat;"></div>
+                    
                     <div class="frame3" style="background: url(/VEC/img/fdpapurika.jpg) center center no-repeat;"></div>
                     <div class="frame4" style="background: url(/VEC/img/fd_kabotya.jpg) center center no-repeat;"></div>
                     <div class="frame5" style="background: url(/VEC/img/fd_ninjin.jpg) center center no-repeat;"></div>

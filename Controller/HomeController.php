@@ -11,7 +11,8 @@ class homeController {
     }
     function login(){
 //        echo 'kimiya';
-         $this->view->assign('abc', 'url(/VEC/img/fdjyagaimo.jpg)');
+         $this->view->assign('abc', 'url(/VEC/img/kimiya.jpg)');
+         $this->view->assign('name', '格安きみや');
 //
 //        // テンプレート表示
       
