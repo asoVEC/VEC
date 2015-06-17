@@ -5,13 +5,18 @@ class homeController {
     public function __construct()
     {
         require_once('smarty/libs/Smarty.class.php');
+        require_once 'post.php';
         // ビュー
         $this->view = new Smarty;
 //        $this->view->template_dir = '../View';
     }
     function login(){
 //        echo 'kimiya';
+         $request = new post();
+         $post = $request.get();
+         
          $this->view->assign('abc', 'url(/VEC/img/kimiya.jpg)');
+         $this->view->assign('abcd', 'url(/VEC/img/kimiya.jpg)');
          $this->view->assign('name', '格安きみや');
 //
 //        // テンプレート表示
