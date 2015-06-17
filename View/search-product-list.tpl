@@ -1,5 +1,5 @@
 <html>
-<head>
+    <head>
         <meta charset="UTF-8">
         <title>ホームページ</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,7 +50,7 @@
             <button type="submit" class="btn btn-default">検索</button>
         </form>
 
-       {* <div class="container main-content">
+        <div class="container main-content">
             <div class="row">
                 <div class="col-md-3 col-lg-3">
                     <ul class="nav nav-pills nav-stacked">
@@ -82,23 +82,24 @@
                     </ul>
                 </div>
                 <div class="col-md-9 content-area">
-                    <style type="text/css">
-                        
-                        
-                    </style>
-                    <div class="label">{$name}</div>
-                    <div class="frame" style="background: {$abc} center center no-repeat;"></div>
-                    <div class="label">{$name}</div>
-                    <div class="frame" style="background: url(/VEC/img/fdputitomato.jpg) center center no-repeat;"></div>
-                    <div class="label">{$name}</div>
-                    <div class="frame" style="background: url(/VEC/img/fdpapurika.jpg) center center no-repeat;"></div>
-                    <div class="label">{$name}</div>
-                    <div class="frame" style="background: url(/VEC/img/fd_kabotya.jpg) center center no-repeat;"></div>
-                    <div class="label">{$name}</div>
-                    <div class="frame" style="background: url(/VEC/img/fd_ninjin.jpg) center center no-repeat;"></div>
+                    <div class="container col-md-9">
+                        <table class="table table-striped" border="1">
+                            <thead>
+                                <tr><th>#</th><th>title</th><th>action</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><div class="frame" style="background: url(/VEC/img/fdjyagaimo.jpg) center center no-repeat;"></div></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td><td>sample2</td><td><button type="submit" class="btn btn-primary">Submit</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>*}
+        </div>
         <footer class="container-fluid">
             <small><a href="/">Copyright (C) 2013-2014 9ineBB All Rights Reserved.</a></small>
         </footer>
