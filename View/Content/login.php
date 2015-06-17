@@ -6,21 +6,13 @@
         <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
         <script src="../js/html5shiv.js"></script>
         <script src="../js/respond.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     </head>
     <body>
-        <div class="col-sm-12">　</div>
-        <div class="col-sm-12">　</div>
-        <div class="col-sm-12">　</div>
-        <div class="col-sm-12">　</div>
-        <div class="col-sm-12">　</div>
-        <div class="col-sm-12">　</div>
-        <div class="col-sm-12">　</div>
-        <div class="col-sm-12">　</div>
-        <div class="row">
-        <div class="panel panel-default col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 ">
+        <div class="panel panel-default col-sm-6 col-md-8 content-area">
   <div class="panel-body">
         <div class="container">
-            <div class="col-xs-12 col-sm-8 col-md-8 col-md-offset-2 col-sm-offset-3 col-xs-8 h1">ログインしてください</div>
+            <div class="col-xs-12 col-sm-8 col-md-8  col-xs-8 h1">ログインしてください</div>
             <div class="col-sm-12">　</div>
             <div class="col-sm-12">　</div>
             <div class="col-sm-12">　</div>
@@ -51,7 +43,7 @@
         </div>
     </div>
              </div>
-        </div>
+
     <script src="//code.jquery.com/jquery.js"></script>
     <script src="../js/bootstrap.min.js"></script>
 </body>
