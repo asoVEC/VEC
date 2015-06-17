@@ -12,7 +12,7 @@ class homeController {
     }
     function login(){
 //        echo 'kimiya';
-<<<<<<< HEAD
+
          $this->view->assign('food1', 'url(/VEC/img/kimiya.jpg)');
          $this->view->assign('food2', 'url(/VEC/img/fdputitomato.jpg)');
          $this->view->assign('food3', 'url(/VEC/img/fdpapurika.jpg)');
@@ -23,14 +23,10 @@ class homeController {
          $this->view->assign('name3', '割高きみや');
          $this->view->assign('name4', '円安きみや');
          $this->view->assign('name5', '円高きみや');
-=======
+         $this->view->assign('name', '格安きみや');
+         
          $request = new post();
          $post = $request.get();
-         
-         $this->view->assign('abc', 'url(/VEC/img/kimiya.jpg)');
-         $this->view->assign('abcd', 'url(/VEC/img/kimiya.jpg)');
-         $this->view->assign('name', '格安きみや');
->>>>>>> origin/master
 //
 //        // テンプレート表示
       
