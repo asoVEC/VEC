@@ -6,6 +6,7 @@
         <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
         <script src="../js/html5shiv.js"></script>
         <script src="../js/respond.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     </head>
     <body>
         <div class="panel panel-default col-sm-6 col-md-8 content-area">

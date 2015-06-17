@@ -25,10 +25,7 @@ class homeController {
 //        header('location :http://localhost:8888/VEC/View/base.php');
 //        exit;//←忘れずに！
         //
-//        http_redirect("http://localhost:8888/VEC/View/base.php");
-        
-        
-        
+//        http_redirect("http://localhost:8888/VEC/View/base.php");  
     }
     function index(){
         echo 'きみや';   
