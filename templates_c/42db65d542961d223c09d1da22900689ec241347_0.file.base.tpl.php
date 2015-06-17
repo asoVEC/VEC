@@ -1,10 +1,40 @@
+<?php /* Smarty version 3.1.24, created on 2015-06-16 07:51:29
+         compiled from "/Applications/MAMP/htdocs/VEC/View/base.tpl" */ ?>
 <?php
-/*
+/*%%SmartyHeaderCode:1100511816557fb961088fa6_03945991%%*/
+if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '42db65d542961d223c09d1da22900689ec241347' => 
+    array (
+      0 => '/Applications/MAMP/htdocs/VEC/View/base.tpl',
+      1 => 1434433887,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1100511816557fb961088fa6_03945991',
+  'variables' => 
+  array (
+    'name' => 0,
+    'abc' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => '3.1.24',
+  'unifunc' => 'content_557fb96111a538_89901937',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_557fb96111a538_89901937')) {
+function content_557fb96111a538_89901937 ($_smarty_tpl) {
+
+$_smarty_tpl->properties['nocache_hash'] = '1100511816557fb961088fa6_03945991';
+echo '<?php
+';?>/*
 * To change this license header, choose License Headers in Project Properties.
 * To change this template file, choose Tools | Templates
 * and open the template in the editor.
 */
-?>
+<?php echo '?>';?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -50,12 +80,7 @@
         </nav>
         <header class="jumbotron col-lg-10 col-lg-offset-1"></header>
 
-        {*<form class="navbar-form navbar-static-top hidden-lg hidden-md hidden-sm" role="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="商品検索">
-            </div>
-            <button type="submit" class="btn btn-default">検索</button>
-        </form>*}
+        
 
         <div class="container main-content">
             <div class="row">
@@ -93,15 +118,21 @@
                         
                         
                     </style>
-                    <div class="label">{$name}</div>
-                    <div class="frame" style="background: {$abc} center center no-repeat;"></div>
-                    <div class="label">{$name}</div>
+                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name']->value;?>
+</div>
+                    <div class="frame" style="background: <?php echo $_smarty_tpl->tpl_vars['abc']->value;?>
+ center center no-repeat;"></div>
+                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name']->value;?>
+</div>
                     <div class="frame" style="background: url(/VEC/img/fdputitomato.jpg) center center no-repeat;"></div>
-                    <div class="label">{$name}</div>
+                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name']->value;?>
+</div>
                     <div class="frame" style="background: url(/VEC/img/fdpapurika.jpg) center center no-repeat;"></div>
-                    <div class="label">{$name}</div>
+                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name']->value;?>
+</div>
                     <div class="frame" style="background: url(/VEC/img/fd_kabotya.jpg) center center no-repeat;"></div>
-                    <div class="label">{$name}</div>
+                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name']->value;?>
+</div>
                     <div class="frame" style="background: url(/VEC/img/fd_ninjin.jpg) center center no-repeat;"></div>
                 </div>
             </div>
@@ -112,3 +143,6 @@
     </body>
 </html>
 
+<?php }
+}
+?>
