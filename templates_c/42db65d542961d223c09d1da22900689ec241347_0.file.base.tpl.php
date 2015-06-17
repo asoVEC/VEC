@@ -1,7 +1,14 @@
+<<<<<<< Updated upstream
 <?php /* Smarty version 3.1.24, created on 2015-06-16 07:51:29
          compiled from "/Applications/MAMP/htdocs/VEC/View/base.tpl" */ ?>
 <?php
 /*%%SmartyHeaderCode:1100511816557fb961088fa6_03945991%%*/
+=======
+<?php /* Smarty version 3.1.24, created on 2015-06-15 17:00:50
+         compiled from "/Applications/MAMP/htdocs/VEC/View/base.tpl" */ ?>
+<?php
+/*%%SmartyHeaderCode:2046901306557e8632d862e7_66994588%%*/
+>>>>>>> Stashed changes
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +16,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '42db65d542961d223c09d1da22900689ec241347' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/base.tpl',
+<<<<<<< Updated upstream
       1 => 1434433887,
       2 => 'file',
     ),
   ),
   'nocache_hash' => '1100511816557fb961088fa6_03945991',
+=======
+      1 => 1434351971,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '2046901306557e8632d862e7_66994588',
+>>>>>>> Stashed changes
   'variables' => 
   array (
     'name' => 0,
@@ -21,6 +36,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
+<<<<<<< Updated upstream
   'unifunc' => 'content_557fb96111a538_89901937',
 ),false);
 /*/%%SmartyHeaderCode%%*/
@@ -28,6 +44,15 @@ if ($_valid && !is_callable('content_557fb96111a538_89901937')) {
 function content_557fb96111a538_89901937 ($_smarty_tpl) {
 
 $_smarty_tpl->properties['nocache_hash'] = '1100511816557fb961088fa6_03945991';
+=======
+  'unifunc' => 'content_557e8632e3da32_55064514',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_557e8632e3da32_55064514')) {
+function content_557e8632e3da32_55064514 ($_smarty_tpl) {
+
+$_smarty_tpl->properties['nocache_hash'] = '2046901306557e8632d862e7_66994588';
+>>>>>>> Stashed changes
 echo '<?php
 ';?>/*
 * To change this license header, choose License Headers in Project Properties.
