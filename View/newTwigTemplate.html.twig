@@ -1,0 +1,22 @@
+{# empty Twig template #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}テストアプリケーション{% endblock %}</title>
+    </head>
+    <body>
+        <div id="sidebar">
+            {% block sidebar %}
+                <ul>
+                      <li><a href="/">ホーム</a></li>
+                      <li><a href="/blog">ブログ</a></li>
+                </ul>
+            {% endblock %}
+        </div>
+
+        <div id="content">
+            {% block body %}{% endblock %}
+        </div>
+    </body>
+</html>

@@ -20,8 +20,8 @@ class Dispatcher {
         
         // １番目のパラメーターをコントローラーとして取得
         $controller = "home";
-        if (2 < count($params)) {
-            $controller = $params[2];
+        if (3 < count($params)) {
+            $controller = $params[3];
         }
                 
         // パラメータより取得したコントローラー名によりクラス振分け
@@ -32,8 +32,8 @@ class Dispatcher {
         $controllerInstance = new $className();
         // 2番目のパラメーターをコントローラーとして取得
         $action = 'index';
-        if (3 < count($params)) {
-            $action = $params[3];
+        if (4 < count($params)) {
+            $action = $params[4];
         }          
         // アクションメソッドを実行
         $actionMethod = $action;
