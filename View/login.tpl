@@ -17,9 +17,9 @@
             <div id="nav-content" class="collapse navbar-collapse">
                 <!--                    リンクのリスト メニューリスト-->
                 <div class="navbar-right">
-<<<<<<< Updated upstream
+
                 <ul class="nav navbar-nav">
-                    <li><a href="">長野さん、ようこそ</a></li>
+                    <li><a href="">{$user_name}さん、ようこそ</a></li>
                     <li><a href="">買い物カゴ <span class="badge">12</span></a></li>
                 </ul>
             </div>
@@ -31,27 +31,7 @@
                     <button type="submit" class="btn btn-default">検索</button>
                 </form>
             </div>
-=======
-                    <!-- リンクのリスト メニューリスト-->                    
-                    <ul class="nav navbar-nav">
 
-
-                        <--リンクのリスト メニューリスト -->                    
-                        <ul class="nav navbar-nav">
-                            <li><a href="">{$user_name}、ようこそ</a></li>
-                            <li><a href="">買い物カゴ <span class="badge">12</span></a></li>
-                            <!--<li><a href="">Link3</a></li>-->
-                        </ul>
-
-                        <!--検索フォーム-->
-                        <form class="navbar-form navbar-static-top" role="search">
-                            <div class="form-group  col-md-offset-1">
-                                <input type="text" class="form-control" placeholder="商品検索" size="70pix">
-                            </div>
-                            <button type="submit" class="btn btn-default">検索</button>
-                        </form>
-                </div>
->>>>>>> Stashed changes
         </nav>
         <header class="jumbotron col-lg-10 col-lg-offset-1"></header>
             {*        すまほばー*}
@@ -72,14 +52,9 @@
                             <div class="col-sm-12">　</div>
                             <div class="col-sm-12">　</div>
                             <div class="row">
-<<<<<<< Updated upstream
-                                <form action="/VEC/Controller/home/login" class="form-horizontal" method="post">
-=======
-
 
                                 <form action="/VEC/Controller/home/login" class="form-horizontal" method="post">
 
->>>>>>> Stashed changes
                                     <div class="form-group">
 
                                         <label for="input-mail" class="col-sm-3 control-label">メールアドレス</label>
@@ -96,10 +71,6 @@
                                     <div class="form-group">
                                         <div class="col-sm-offset-7 col-sm-10">
                                             <button type="submit" class="btn btn-default ">ログイン</button>
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
                                         </div>
                                     </div>
                                 </form>
