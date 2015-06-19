@@ -17,7 +17,10 @@
             <div id="nav-content" class="collapse navbar-collapse">
                 <!--                    リンクのリスト メニューリスト-->
                 <div class="navbar-right">
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
                 <ul class="nav navbar-nav">
                     <li><a href="">{$user_name}さん、ようこそ</a></li>
                     <li><a href="">買い物カゴ <span class="badge">12</span></a></li>
@@ -31,7 +34,10 @@
                     <button type="submit" class="btn btn-default">検索</button>
                 </form>
             </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
         </nav>
         <header class="jumbotron col-lg-10 col-lg-offset-1"></header>
             {*        すまほばー*}
@@ -52,9 +58,13 @@
                             <div class="col-sm-12">　</div>
                             <div class="col-sm-12">　</div>
                             <div class="row">
+<<<<<<< HEAD
 
                                 <form action="/VEC/Controller/home/login" class="form-horizontal" method="post">
 
+=======
+                                <form action="/VEC/Controller/home/login" class="form-horizontal" method="post">
+>>>>>>> origin/master
                                     <div class="form-group">
 
                                         <label for="input-mail" class="col-sm-3 control-label">メールアドレス</label>
