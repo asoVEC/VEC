@@ -13,16 +13,6 @@
 
                 <!--ブランド名 ロゴ名の表示-->
                 <a class="navbar-brand" href="#">VEC</a>
-
-
-
-
-                <!--                トグルボタンの設置
-                                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="nav-content">
-                                                    <span class="icon-bar">ユーザ</span>
-                                                    <span class="icon-bar">買い物カゴ</span>
-                                                    <span class="icon-bar">検索</span>
-                                                </button>-->
             </div>
             <div id="nav-content" class="collapse navbar-collapse">
 
@@ -30,7 +20,6 @@
                 <ul class="nav navbar-nav">
                     <li><a href="">{$user_name}、ようこそ</a></li>
                     <li><a href="">買い物カゴ <span class="badge">12</span></a></li>
-                    <!--<li><a href="">Link3</a></li>-->
                 </ul>
                 <!--検索フォーム-->
                 <form class="navbar-form navbar-static-top" role="search">
@@ -43,12 +32,12 @@
         </nav>
         <header class="jumbotron col-lg-10 col-lg-offset-1"></header>
 
-        {*<form class="navbar-form navbar-static-top hidden-lg hidden-md hidden-sm" role="search">
+      <form class="navbar-form navbar-static-top hidden-lg hidden-md hidden-sm" role="search">
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="商品検索">
             </div>
             <button type="submit" class="btn btn-default">検索</button>
-        </form>*}
+        </form>
 
         <div class="container main-content">
             <div class="row">
