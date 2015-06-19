@@ -17,10 +17,6 @@
             <div id="nav-content" class="collapse navbar-collapse">
                 <!--                    リンクのリスト メニューリスト-->
                 <div class="navbar-right">
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
                 <ul class="nav navbar-nav">
                     <li><a href="">{$user_name}さん、ようこそ</a></li>
                     <li><a href="">買い物カゴ <span class="badge">12</span></a></li>
