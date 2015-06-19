@@ -22,10 +22,20 @@
                     <!--                    リンクのリスト メニューリスト
                     -->                    <ul class="nav navbar-nav">
 
+<<<<<<< HEAD
                         <li><a href="">長野さん、ようこそ</a></li>
                         <li><a href="">買い物カゴ <span class="badge">12</span></a></li>
                     </ul>
                 </div>
+=======
+                <!--                    リンクのリスト メニューリスト
+                -->                    <ul class="nav navbar-nav">
+                    <li><a href="">{$user_name}、ようこそ</a></li>
+                    <li><a href="">買い物カゴ <span class="badge">12</span></a></li>
+                    <!--<li><a href="">Link3</a></li>-->
+                </ul>
+
+>>>>>>> origin/master
 
                 <!--検索フォーム-->
                 <form class="navbar-form navbar-static-top" role="search">
