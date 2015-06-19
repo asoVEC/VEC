@@ -18,7 +18,7 @@
                 <!--                    リンクのリスト メニューリスト-->
                 <div class="navbar-right">
                 <ul class="nav navbar-nav">
-                    <li><a href="">長野さん、ようこそ</a></li>
+                    <li><a href="">{$user_name}さん、ようこそ</a></li>
                     <li><a href="">買い物カゴ <span class="badge">12</span></a></li>
                 </ul>
             </div>

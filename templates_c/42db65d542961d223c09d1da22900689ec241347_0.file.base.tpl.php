@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-06-19 14:10:41
+<?php /* Smarty version 3.1.24, created on 2015-06-19 14:13:03
          compiled from "/Applications/MAMP/htdocs/VEC/View/base.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:9849639835583a451491496_70017052%%*/
+/*%%SmartyHeaderCode:15940358895583a4df85dff9_99628192%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,13 +9,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '42db65d542961d223c09d1da22900689ec241347' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/base.tpl',
-      1 => 1434680201,
+      1 => 1434690773,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '9849639835583a451491496_70017052',
+  'nocache_hash' => '15940358895583a4df85dff9_99628192',
   'variables' => 
   array (
+    'user_name' => 0,
     'name1' => 0,
     'food1' => 0,
     'name2' => 0,
@@ -29,13 +30,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5583a45155ad78_94204826',
+  'unifunc' => 'content_5583a4df8dcb96_22991744',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5583a45155ad78_94204826')) {
-function content_5583a45155ad78_94204826 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5583a4df8dcb96_22991744')) {
+function content_5583a4df8dcb96_22991744 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '9849639835583a451491496_70017052';
+$_smarty_tpl->properties['nocache_hash'] = '15940358895583a4df85dff9_99628192';
 ?>
 <html>
     <head>
@@ -57,7 +58,8 @@ $_smarty_tpl->properties['nocache_hash'] = '9849639835583a451491496_70017052';
                 <!--                    リンクのリスト メニューリスト-->
                 <div class="navbar-right">
                 <ul class="nav navbar-nav">
-                    <li><a href="">長野さん、ようこそ</a></li>
+                    <li><a href=""><?php echo $_smarty_tpl->tpl_vars['user_name']->value;?>
+さん、ようこそ</a></li>
                     <li><a href="">買い物カゴ <span class="badge">12</span></a></li>
                 </ul>
             </div>
