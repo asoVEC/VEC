@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-06-19 03:09:58
+<?php /* Smarty version 3.1.24, created on 2015-06-19 03:25:34
          compiled from "/Applications/MAMP/htdocs/VEC/View/base.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:28675188655836be6208074_13777201%%*/
+/*%%SmartyHeaderCode:80439360855836f8e629426_01811193%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '42db65d542961d223c09d1da22900689ec241347' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/base.tpl',
-      1 => 1434514387,
+      1 => 1434677109,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '28675188655836be6208074_13777201',
+  'nocache_hash' => '80439360855836f8e629426_01811193',
   'variables' => 
   array (
     'user_name' => 0,
@@ -30,20 +30,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_55836be64261f3_38812981',
+  'unifunc' => 'content_55836f8e6d7139_19872892',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_55836be64261f3_38812981')) {
-function content_55836be64261f3_38812981 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_55836f8e6d7139_19872892')) {
+function content_55836f8e6d7139_19872892 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '28675188655836be6208074_13777201';
-echo '<?php
-';?>/*
-* To change this license header, choose License Headers in Project Properties.
-* To change this template file, choose Tools | Templates
-* and open the template in the editor.
-*/
-<?php echo '?>';?>
+$_smarty_tpl->properties['nocache_hash'] = '80439360855836f8e629426_01811193';
+?>
 <html>
     <head>
         <meta charset="UTF-8">
