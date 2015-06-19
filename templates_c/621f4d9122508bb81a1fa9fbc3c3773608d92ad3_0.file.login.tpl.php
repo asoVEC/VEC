@@ -1,7 +1,14 @@
+<<<<<<< Updated upstream
 <?php /* Smarty version 3.1.24, created on 2015-06-19 03:26:56
          compiled from "/Applications/MAMP/htdocs/VEC/View/login.tpl" */ ?>
 <?php
 /*%%SmartyHeaderCode:152269064455836fe0c08fe3_74374571%%*/
+=======
+<?php /* Smarty version 3.1.24, created on 2015-06-19 10:27:08
+         compiled from "/Applications/MAMP/htdocs/VEC/View/login.tpl" */ ?>
+<?php
+/*%%SmartyHeaderCode:129863636455836fec72bb28_28792098%%*/
+>>>>>>> Stashed changes
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,6 +16,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '621f4d9122508bb81a1fa9fbc3c3773608d92ad3' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/login.tpl',
+<<<<<<< Updated upstream
       1 => 1434677109,
       2 => 'file',
     ),
@@ -23,13 +31,26 @@ if ($_valid && !is_callable('content_55836fe0c98b37_02171735')) {
 function content_55836fe0c98b37_02171735 ($_smarty_tpl) {
 
 $_smarty_tpl->properties['nocache_hash'] = '152269064455836fe0c08fe3_74374571';
+=======
+      1 => 1434677225,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '129863636455836fec72bb28_28792098',
+  'has_nocache_code' => false,
+  'version' => '3.1.24',
+  'unifunc' => 'content_55836fec7a5273_93600272',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_55836fec7a5273_93600272')) {
+function content_55836fec7a5273_93600272 ($_smarty_tpl) {
+
+$_smarty_tpl->properties['nocache_hash'] = '129863636455836fec72bb28_28792098';
+>>>>>>> Stashed changes
 echo '<?php
-';?>/*
-* To change this license header, choose License Headers in Project Properties.
-* To change this template file, choose Tools | Templates
-* and open the template in the editor.
-*/
-<?php echo '?>';?>
+
+';
+echo '?>';?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -45,16 +66,6 @@ echo '<?php
 
                 <!--ブランド名 ロゴ名の表示-->
                 <a class="navbar-brand" href="#">VEC</a>
-
-
-
-
-                <!--                トグルボタンの設置
-                                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="nav-content">
-                                                    <span class="icon-bar">ユーザ</span>
-                                                    <span class="icon-bar">買い物カゴ</span>
-                                                    <span class="icon-bar">検索</span>
-                                                </button>-->
             </div>
             <div id="nav-content" class="collapse navbar-collapse">
 
@@ -83,55 +94,9 @@ echo '<?php
             </div>
             <button type="submit" class="btn btn-default">検索</button>
         </form>
-
-        <div class="container main-content">
-            <div class="row">
                 <div class="container main-content">
-                    <div class="row">
-
-
-                        <div class="col-md-3 col-lg-3">
-                            <ul class="nav nav-pills nav-stacked">
-                                <li class="active"><a href="#">カテゴリ一覧</a></li>
-                                <div class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">肉 <b class="caret"></b></a>
-                                    <ul class="dropdown-menu dropdown-menu-right">
-                                        <li><div class="frame" style="background: url(/VEC/img/fdjyagaimo.jpg) center center no-repeat;"></div></li>
-                                        <li><a href="#">松阪牛</a></li>
-                                        <li><a href="#">なんとか牛</a></li>
-                                        <li><a href="#">豚</a></li>
-                                    </ul>
-                                </div>
-                                <div id='cssmenu'>
-                                    <li class='has-sub'><a href='#'><span>肉・卵</span></a>
-                                        <ul>
-                                            <li><div class="frame" style="background: url(/VEC/img/fd_ninjin.jpg) center center no-repeat;"></div></li>
-                                            <li><div class="frame" style="background: url(/VEC/img/fdjyagaimo.jpg) center center no-repeat;"></div></li>
-                                        </ul>
-                                </div>
-                                <li><a href="#">肉・卵</a></li>
-                                <li><a href="#">魚介</a></li>
-                                <li><a href="#">野菜</a></li>
-                                <li><a href="#">果物</a></li>
-                                <li><a href="#">穀物</a></li>
-                                <li><a href="#">調味料</a></li>
-                                <li><a href="#">加工食品</a></li>
-                                <li><a href="#">菓子</a></li>
-                            </ul>
-                        </div>
-
-
-
-                        <div class="col-sm-12">　</div>
-                        <div class="col-sm-12">　</div>
-                        <div class="col-sm-12">　</div>
-                        <div class="col-sm-12">　</div>
-                        <div class="col-sm-12">　</div>
-                        <div class="col-sm-12">　</div>
-                        <div class="col-sm-12">　</div>
-                        <div class="col-sm-12">　</div>
                         <div class="row">
-                            <div class="panel panel-default col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 ">
+                            <div class="panel panel-default col-sm-6  col-md-6">
                                 <div class="panel-body">
                                     <div class="container">
                                         <div class="col-xs-12 col-sm-8 col-md-8 col-md-offset-2 col-sm-offset-3 col-xs-8 h1">ログインしてください</div>
@@ -160,14 +125,12 @@ echo '<?php
                                                     </div>
                                                 </div>
                                             </form>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 <footer class="container-fluid">
                     <small><a href="/">Copyright (C) 2013-2014 9ineBB All Rights Reserved.</a></small>
                 </footer>

@@ -1,9 +1,5 @@
 <?php
-/*
-* To change this license header, choose License Headers in Project Properties.
-* To change this template file, choose Tools | Templates
-* and open the template in the editor.
-*/
+
 ?>
 <html>
     <head>
@@ -20,16 +16,6 @@
 
                 <!--ブランド名 ロゴ名の表示-->
                 <a class="navbar-brand" href="#">VEC</a>
-
-
-
-
-                <!--                トグルボタンの設置
-                                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="nav-content">
-                                                    <span class="icon-bar">ユーザ</span>
-                                                    <span class="icon-bar">買い物カゴ</span>
-                                                    <span class="icon-bar">検索</span>
-                                                </button>-->
             </div>
             <div id="nav-content" class="collapse navbar-collapse">
 
@@ -58,55 +44,9 @@
             </div>
             <button type="submit" class="btn btn-default">検索</button>
         </form>
-
-        <div class="container main-content">
-            <div class="row">
                 <div class="container main-content">
-                    <div class="row">
-
-
-                        <div class="col-md-3 col-lg-3">
-                            <ul class="nav nav-pills nav-stacked">
-                                <li class="active"><a href="#">カテゴリ一覧</a></li>
-                                <div class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">肉 <b class="caret"></b></a>
-                                    <ul class="dropdown-menu dropdown-menu-right">
-                                        <li><div class="frame" style="background: url(/VEC/img/fdjyagaimo.jpg) center center no-repeat;"></div></li>
-                                        <li><a href="#">松阪牛</a></li>
-                                        <li><a href="#">なんとか牛</a></li>
-                                        <li><a href="#">豚</a></li>
-                                    </ul>
-                                </div>
-                                <div id='cssmenu'>
-                                    <li class='has-sub'><a href='#'><span>肉・卵</span></a>
-                                        <ul>
-                                            <li><div class="frame" style="background: url(/VEC/img/fd_ninjin.jpg) center center no-repeat;"></div></li>
-                                            <li><div class="frame" style="background: url(/VEC/img/fdjyagaimo.jpg) center center no-repeat;"></div></li>
-                                        </ul>
-                                </div>
-                                <li><a href="#">肉・卵</a></li>
-                                <li><a href="#">魚介</a></li>
-                                <li><a href="#">野菜</a></li>
-                                <li><a href="#">果物</a></li>
-                                <li><a href="#">穀物</a></li>
-                                <li><a href="#">調味料</a></li>
-                                <li><a href="#">加工食品</a></li>
-                                <li><a href="#">菓子</a></li>
-                            </ul>
-                        </div>
-
-
-
-                        <div class="col-sm-12">　</div>
-                        <div class="col-sm-12">　</div>
-                        <div class="col-sm-12">　</div>
-                        <div class="col-sm-12">　</div>
-                        <div class="col-sm-12">　</div>
-                        <div class="col-sm-12">　</div>
-                        <div class="col-sm-12">　</div>
-                        <div class="col-sm-12">　</div>
                         <div class="row">
-                            <div class="panel panel-default col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 ">
+                            <div class="panel panel-default col-sm-6  col-md-6">
                                 <div class="panel-body">
                                     <div class="container">
                                         <div class="col-xs-12 col-sm-8 col-md-8 col-md-offset-2 col-sm-offset-3 col-xs-8 h1">ログインしてください</div>
@@ -135,14 +75,12 @@
                                                     </div>
                                                 </div>
                                             </form>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 <footer class="container-fluid">
                     <small><a href="/">Copyright (C) 2013-2014 9ineBB All Rights Reserved.</a></small>
                 </footer>
