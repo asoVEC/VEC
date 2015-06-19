@@ -5,7 +5,7 @@ class homeController {
     public function __construct()
     {
         require_once('smarty/libs/Smarty.class.php');
-        require_once 'post.php';
+//        require_once 'post.php';
         // ビュー
         $this->view = new Smarty;
 //        $this->view->template_dir = '../View';
@@ -25,8 +25,8 @@ class homeController {
          $this->view->assign('name5', '円高きみや');
          $this->view->assign('name', '格安きみや');
          
-         $request = new post();
-         $post = $request.get();
+//         $request = new post();
+//         $post = $request.get();
 //
 //        // テンプレート表示
       
@@ -38,6 +38,7 @@ class homeController {
     }
     function index(){
         echo 'きみや';   
+        $this->view->display('View/login.tpl');
     }
 }
 

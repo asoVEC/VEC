@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-06-17 12:49:07
+<?php /* Smarty version 3.1.24, created on 2015-06-19 03:09:58
          compiled from "/Applications/MAMP/htdocs/VEC/View/base.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:12192450515580ee33b6d853_64999330%%*/
+/*%%SmartyHeaderCode:28675188655836be6208074_13777201%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,25 +9,34 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '42db65d542961d223c09d1da22900689ec241347' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/base.tpl',
-      1 => 1434509753,
+      1 => 1434514387,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '12192450515580ee33b6d853_64999330',
+  'nocache_hash' => '28675188655836be6208074_13777201',
   'variables' => 
   array (
-    'name' => 0,
-    'abc' => 0,
+    'user_name' => 0,
+    'name1' => 0,
+    'food1' => 0,
+    'name2' => 0,
+    'food2' => 0,
+    'name3' => 0,
+    'food3' => 0,
+    'name4' => 0,
+    'food4' => 0,
+    'name5' => 0,
+    'food5' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5580ee33c4c888_28295866',
+  'unifunc' => 'content_55836be64261f3_38812981',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5580ee33c4c888_28295866')) {
-function content_5580ee33c4c888_28295866 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_55836be64261f3_38812981')) {
+function content_55836be64261f3_38812981 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '12192450515580ee33b6d853_64999330';
+$_smarty_tpl->properties['nocache_hash'] = '28675188655836be6208074_13777201';
 echo '<?php
 ';?>/*
 * To change this license header, choose License Headers in Project Properties.
@@ -65,7 +74,8 @@ echo '<?php
 
                 <!--リンクのリスト メニューリスト-->                    
                 <ul class="nav navbar-nav">
-                    <li><a href="">長野さん、ようこそ</a></li>
+                    <li><a href=""><?php echo $_smarty_tpl->tpl_vars['user_name']->value;?>
+、ようこそ</a></li>
                     <li><a href="">買い物カゴ <span class="badge">12</span></a></li>
                     <!--<li><a href="">Link3</a></li>-->
                 </ul>
@@ -118,22 +128,26 @@ echo '<?php
                         
                         
                     </style>
-                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name']->value;?>
+                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name1']->value;?>
 </div>
-                    <div class="frame" style="background: <?php echo $_smarty_tpl->tpl_vars['abc']->value;?>
+                    <div class="frame" style="background: <?php echo $_smarty_tpl->tpl_vars['food1']->value;?>
  center center no-repeat;"></div>
-                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name']->value;?>
+                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name2']->value;?>
 </div>
-                    <div class="frame" style="background: url(/VEC/img/fdputitomato.jpg) center center no-repeat;"></div>
-                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name']->value;?>
+                    <div class="frame" style="background: <?php echo $_smarty_tpl->tpl_vars['food2']->value;?>
+ center center no-repeat;"></div>
+                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name3']->value;?>
 </div>
-                    <div class="frame" style="background: url(/VEC/img/fdpapurika.jpg) center center no-repeat;"></div>
-                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name']->value;?>
+                    <div class="frame" style="background: <?php echo $_smarty_tpl->tpl_vars['food3']->value;?>
+ center center no-repeat;"></div>
+                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name4']->value;?>
 </div>
-                    <div class="frame" style="background: url(/VEC/img/fd_kabotya.jpg) center center no-repeat;"></div>
-                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name']->value;?>
+                    <div class="frame" style="background: <?php echo $_smarty_tpl->tpl_vars['food4']->value;?>
+ center center no-repeat;"></div>
+                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name5']->value;?>
 </div>
-                    <div class="frame" style="background: url(/VEC/img/fd_ninjin.jpg) center center no-repeat;"></div>
+                    <div class="frame" style="background: <?php echo $_smarty_tpl->tpl_vars['food5']->value;?>
+ center center no-repeat;"></div>
                 </div>
             </div>
         </div>

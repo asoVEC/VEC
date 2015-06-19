@@ -1,10 +1,35 @@
+<?php /* Smarty version 3.1.24, created on 2015-06-19 03:12:34
+         compiled from "/Applications/MAMP/htdocs/VEC/View/login.tpl" */ ?>
 <?php
-/*
+/*%%SmartyHeaderCode:35899821855836c82373464_90692237%%*/
+if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '621f4d9122508bb81a1fa9fbc3c3773608d92ad3' => 
+    array (
+      0 => '/Applications/MAMP/htdocs/VEC/View/login.tpl',
+      1 => 1434676352,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '35899821855836c82373464_90692237',
+  'has_nocache_code' => false,
+  'version' => '3.1.24',
+  'unifunc' => 'content_55836c82419af4_15036163',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_55836c82419af4_15036163')) {
+function content_55836c82419af4_15036163 ($_smarty_tpl) {
+
+$_smarty_tpl->properties['nocache_hash'] = '35899821855836c82373464_90692237';
+echo '<?php
+';?>/*
 * To change this license header, choose License Headers in Project Properties.
 * To change this template file, choose Tools | Templates
 * and open the template in the editor.
 */
-?>
+<?php echo '?>';?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -148,3 +173,6 @@
                 </footer>
                 </body>
                 </html>
+<?php }
+}
+?>
