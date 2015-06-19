@@ -31,11 +31,7 @@ class homeController {
 //
 //        // テンプレート表示
       
-        $this->view->display('View/base.tpl');
-//        header('location :http://localhost:8888/VEC/View/base.php');
-//        exit;//←忘れずに！
-        //
-//        http_redirect("http://localhost:8888/VEC/View/base.php");  
+        $this->view->display('View/base.tpl');  
     }
     function index(){
 //        echo 'きみや';   

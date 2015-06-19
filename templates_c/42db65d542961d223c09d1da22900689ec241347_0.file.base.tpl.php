@@ -1,7 +1,14 @@
+<<<<<<< Updated upstream
 <?php /* Smarty version 3.1.24, created on 2015-06-19 11:16:44
          compiled from "/Applications/MAMP/htdocs/VEC/View/base.tpl" */ ?>
 <?php
 /*%%SmartyHeaderCode:189357494155837b8c67cf82_11083952%%*/
+=======
+<?php /* Smarty version 3.1.24, created on 2015-06-19 04:00:41
+         compiled from "/Applications/MAMP/htdocs/VEC/View/base.tpl" */ ?>
+<?php
+/*%%SmartyHeaderCode:1722490960558377c9297214_09264847%%*/
+>>>>>>> Stashed changes
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +16,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '42db65d542961d223c09d1da22900689ec241347' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/base.tpl',
+<<<<<<< Updated upstream
       1 => 1434680201,
       2 => 'file',
     ),
   ),
   'nocache_hash' => '189357494155837b8c67cf82_11083952',
+=======
+      1 => 1434678859,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1722490960558377c9297214_09264847',
+>>>>>>> Stashed changes
   'variables' => 
   array (
     'name1' => 0,
@@ -29,6 +44,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
+<<<<<<< Updated upstream
   'unifunc' => 'content_55837b8c6ef7c0_17999273',
 ),false);
 /*/%%SmartyHeaderCode%%*/
@@ -36,6 +52,15 @@ if ($_valid && !is_callable('content_55837b8c6ef7c0_17999273')) {
 function content_55837b8c6ef7c0_17999273 ($_smarty_tpl) {
 
 $_smarty_tpl->properties['nocache_hash'] = '189357494155837b8c67cf82_11083952';
+=======
+  'unifunc' => 'content_558377c94e86e3_53748180',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_558377c94e86e3_53748180')) {
+function content_558377c94e86e3_53748180 ($_smarty_tpl) {
+
+$_smarty_tpl->properties['nocache_hash'] = '1722490960558377c9297214_09264847';
+>>>>>>> Stashed changes
 ?>
 <html>
     <head>
