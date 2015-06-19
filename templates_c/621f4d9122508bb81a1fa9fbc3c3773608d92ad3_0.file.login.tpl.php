@@ -1,6 +1,32 @@
+<?php /* Smarty version 3.1.24, created on 2015-06-19 10:40:17
+         compiled from "/Applications/MAMP/htdocs/VEC/View/login.tpl" */ ?>
 <?php
+/*%%SmartyHeaderCode:544641211558373010c8d91_89642151%%*/
+if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '621f4d9122508bb81a1fa9fbc3c3773608d92ad3' => 
+    array (
+      0 => '/Applications/MAMP/htdocs/VEC/View/login.tpl',
+      1 => 1434678015,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '544641211558373010c8d91_89642151',
+  'has_nocache_code' => false,
+  'version' => '3.1.24',
+  'unifunc' => 'content_5583730114d3d8_11696293',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_5583730114d3d8_11696293')) {
+function content_5583730114d3d8_11696293 ($_smarty_tpl) {
 
-?>
+$_smarty_tpl->properties['nocache_hash'] = '544641211558373010c8d91_89642151';
+echo '<?php
+
+';
+echo '?>';?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -18,13 +44,13 @@
                 <a class="navbar-brand" href="#">VEC</a>
             </div>
             <div id="nav-content" class="collapse navbar-collapse">
-                <div class="navbar-right">
-                    <!--                    リンクのリスト メニューリスト
-                    -->                    <ul class="nav navbar-nav">
-
-                        <li><a href="">長野さん、ようこそ</a></li>
-                        <li><a href="">買い物カゴ <span class="badge">12</span></a></li>
-                    </ul>
+<div class="navbar-right">
+                <!--                    リンクのリスト メニューリスト
+                -->                    <ul class="nav navbar-nav">
+                    
+                    <li><a href="">長野さん、ようこそ</a></li>
+                    <li><a href="">買い物カゴ <span class="badge">12</span></a></li>
+                </ul>
                 </div>
 
                 <!--検索フォーム-->
@@ -86,3 +112,6 @@
         </footer>
     </body>
 </html>
+<?php }
+}
+?>
