@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-06-17 13:05:12
+<?php /* Smarty version 3.1.24, created on 2015-06-19 10:13:11
          compiled from "/Applications/MAMP/htdocs/VEC/View/search-product-list.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:20468560465580f1f876e642_65250574%%*/
+/*%%SmartyHeaderCode:78728492355836ca79ab0c9_50054093%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e61b20839534434e3997d0000857c562258ffd6c' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/search-product-list.tpl',
-      1 => 1434513911,
+      1 => 1434676368,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '20468560465580f1f876e642_65250574',
+  'nocache_hash' => '78728492355836ca79ab0c9_50054093',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5580f1f87f6e54_46093601',
+  'unifunc' => 'content_55836ca7a66f69_91102261',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5580f1f87f6e54_46093601')) {
-function content_5580f1f87f6e54_46093601 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_55836ca7a66f69_91102261')) {
+function content_55836ca7a66f69_91102261 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '20468560465580f1f876e642_65250574';
+$_smarty_tpl->properties['nocache_hash'] = '78728492355836ca79ab0c9_50054093';
 ?>
 <html>
     <head>
