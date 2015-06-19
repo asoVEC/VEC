@@ -58,13 +58,8 @@
                             <div class="col-sm-12">　</div>
                             <div class="col-sm-12">　</div>
                             <div class="row">
-<<<<<<< HEAD
-
                                 <form action="/VEC/Controller/home/login" class="form-horizontal" method="post">
 
-=======
-                                <form action="/VEC/Controller/home/login" class="form-horizontal" method="post">
->>>>>>> origin/master
                                     <div class="form-group">
 
                                         <label for="input-mail" class="col-sm-3 control-label">メールアドレス</label>
