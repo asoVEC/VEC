@@ -11,10 +11,10 @@ class Dispatcher {
     public function dispatch() {
                         
         // パラメーター取得（末尾の / は削除）
-        $param = ereg_replace('/?$', '', $_SERVER['REQUEST_URI']);
+        $param = preg_replace('//?$/', '', $_SERVER['REQUEST_URI']);
         $params = array();
         if ('' != $param) {
-            // パラメーターを / で分割
+        // パラメーターを / で分割
             $params = explode('/', $param);
         }
         
