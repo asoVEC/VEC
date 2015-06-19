@@ -55,18 +55,18 @@
                                         <div class="col-sm-12">　</div>
                                         <div class="row">
 
-                                            <form action="#" class="form-horizontal">
+                                            <form action="/VEC/Controller/home/login" class="form-horizontal" method="post">
                                                 <div class="form-group">
 
                                                     <label for="input-mail" class="col-sm-3 control-label">メールアドレス</label>
                                                     <div class="col-sm-6">
-                                                        <input type="email" class="form-control" id="input-mail" placeholder="メールアドレス" required="required">
+                                                        <input type="text" class="form-control" name="value" id="input-mail" placeholder="メールアドレス" required="required">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="input-passward" class="col-sm-3 control-label">パスワード</label>
                                                     <div class="col-sm-6">
-                                                        <input type="email" class="form-control" id="input-passward" placeholder="パスワード" required="required">
+                                                        <input type="password" class="form-control" id="input-passward" placeholder="パスワード" required="required">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">

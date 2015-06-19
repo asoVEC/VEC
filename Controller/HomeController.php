@@ -23,7 +23,8 @@ class homeController {
          $this->view->assign('name3', '割高きみや');
          $this->view->assign('name4', '円安きみや');
          $this->view->assign('name5', '円高きみや');
-         $this->view->assign('name', '格安きみや');
+         $value = $_POST["value"];
+         $this->view->assign('name1', $value);
          
 //         $request = new post();
 //         $post = $request.get();
@@ -37,7 +38,7 @@ class homeController {
 //        http_redirect("http://localhost:8888/VEC/View/base.php");  
     }
     function index(){
-        echo 'きみや';   
+//        echo 'きみや';   
         $this->view->display('View/login.tpl');
     }
 }
