@@ -15,16 +15,17 @@
                 <a class="navbar-brand" href="#">VEC</a>
             </div>
             <div id="nav-content" class="collapse navbar-collapse">
-
-                <!--リンクのリスト メニューリスト-->                    
+                <!--                    リンクのリスト メニューリスト-->
+                <div class="navbar-right">
                 <ul class="nav navbar-nav">
-                    <li><a href="">{$user_name}、ようこそ</a></li>
+                    <li><a href="">長野さん、ようこそ</a></li>
                     <li><a href="">買い物カゴ <span class="badge">12</span></a></li>
                 </ul>
+            </div>
                 <!--検索フォーム-->
                 <form class="navbar-form navbar-static-top" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="商品検索">
+                    <div class="form-group col-md-offset-1">
+                        <input type="text" class="form-control" placeholder="商品検索" size="60pix">
                     </div>
                     <button type="submit" class="btn btn-default">検索</button>
                 </form>
@@ -44,22 +45,6 @@
                 <div class="col-md-3 col-lg-3">
                     <ul class="nav nav-pills nav-stacked">
                         <li class="active"><a href="#">カテゴリ一覧</a></li>
-                        <div class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">肉 <b class="caret"></b></a>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li><div class="frame" style="background: url(/VEC/img/fdjyagaimo.jpg) center center no-repeat;"></div></li>
-                                <li><a href="#">松阪牛</a></li>
-                                <li><a href="#">なんとか牛</a></li>
-                                <li><a href="#">豚</a></li>
-                            </ul>
-                        </div>
-                        <div id='cssmenu'>
-                            <li class='has-sub'><a href='#'><span>肉・卵</span></a>
-                                <ul>
-                                    <li><div class="frame" style="background: url(/VEC/img/fd_ninjin.jpg) center center no-repeat;"></div></li>
-                                    <li><div class="frame" style="background: url(/VEC/img/fdjyagaimo.jpg) center center no-repeat;"></div></li>
-                                </ul>
-                        </div>
                         <li><a href="#">肉・卵</a></li>
                         <li><a href="#">魚介</a></li>
                         <li><a href="#">野菜</a></li>
