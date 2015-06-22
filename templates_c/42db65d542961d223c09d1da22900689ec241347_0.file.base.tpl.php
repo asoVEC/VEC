@@ -1,3 +1,44 @@
+<?php /* Smarty version 3.1.24, created on 2015-06-19 07:40:39
+         compiled from "/Applications/MAMP/htdocs/VEC/View/base.tpl" */ ?>
+<?php
+/*%%SmartyHeaderCode:3049502485583ab570b4e33_06691995%%*/
+if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '42db65d542961d223c09d1da22900689ec241347' => 
+    array (
+      0 => '/Applications/MAMP/htdocs/VEC/View/base.tpl',
+      1 => 1434692437,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '3049502485583ab570b4e33_06691995',
+  'variables' => 
+  array (
+    'account_info' => 0,
+    'amount_cart' => 0,
+    'name1' => 0,
+    'food1' => 0,
+    'name2' => 0,
+    'food2' => 0,
+    'name3' => 0,
+    'food3' => 0,
+    'name4' => 0,
+    'food4' => 0,
+    'name5' => 0,
+    'food5' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => '3.1.24',
+  'unifunc' => 'content_5583ab57154185_22784307',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_5583ab57154185_22784307')) {
+function content_5583ab57154185_22784307 ($_smarty_tpl) {
+
+$_smarty_tpl->properties['nocache_hash'] = '3049502485583ab570b4e33_06691995';
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -18,8 +59,10 @@
                 <!--                    リンクのリスト メニューリスト-->
                 <div class="navbar-right">
                 <ul class="nav navbar-nav">
-                    <li><a href="/VEC/Controller/home/login">アカウントサービス{$account_info}</a></li>
-                    <li><a href="">買い物カゴ <span class="badge">{$amount_cart}</span></a></li>
+                    <li><a href="/VEC/Controller/home/login">アカウントサービス<?php echo $_smarty_tpl->tpl_vars['account_info']->value;?>
+</a></li>
+                    <li><a href="">買い物カゴ <span class="badge"><?php echo $_smarty_tpl->tpl_vars['amount_cart']->value;?>
+</span></a></li>
                 </ul>
             </div>
                 <!--検索フォーム-->
@@ -60,16 +103,26 @@
                         
                         
                     </style>
-                    <div class="label">{$name1}</div>
-                    <div class="frame" style="background: {$food1} center center no-repeat;"></div>
-                    <div class="label">{$name2}</div>
-                    <div class="frame" style="background: {$food2} center center no-repeat;"></div>
-                    <div class="label">{$name3}</div>
-                    <div class="frame" style="background: {$food3} center center no-repeat;"></div>
-                    <div class="label">{$name4}</div>
-                    <div class="frame" style="background: {$food4} center center no-repeat;"></div>
-                    <div class="label">{$name5}</div>
-                    <div class="frame" style="background: {$food5} center center no-repeat;"></div>
+                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name1']->value;?>
+</div>
+                    <div class="frame" style="background: <?php echo $_smarty_tpl->tpl_vars['food1']->value;?>
+ center center no-repeat;"></div>
+                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name2']->value;?>
+</div>
+                    <div class="frame" style="background: <?php echo $_smarty_tpl->tpl_vars['food2']->value;?>
+ center center no-repeat;"></div>
+                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name3']->value;?>
+</div>
+                    <div class="frame" style="background: <?php echo $_smarty_tpl->tpl_vars['food3']->value;?>
+ center center no-repeat;"></div>
+                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name4']->value;?>
+</div>
+                    <div class="frame" style="background: <?php echo $_smarty_tpl->tpl_vars['food4']->value;?>
+ center center no-repeat;"></div>
+                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name5']->value;?>
+</div>
+                    <div class="frame" style="background: <?php echo $_smarty_tpl->tpl_vars['food5']->value;?>
+ center center no-repeat;"></div>
                 </div>
             </div>
         </div>
@@ -79,3 +132,6 @@
     </body>
 </html>
 
+<?php }
+}
+?>
