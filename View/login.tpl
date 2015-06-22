@@ -1,6 +1,3 @@
-<?php
-
-?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -20,11 +17,28 @@
             <div id="nav-content" class="collapse navbar-collapse">
                 <!--                    リンクのリスト メニューリスト-->
                 <div class="navbar-right">
-                <ul class="nav navbar-nav">
-                    <li><a href="">長野さん、ようこそ</a></li>
-                    <li><a href="">買い物カゴ <span class="badge">12</span></a></li>
-                </ul>
-            </div>
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <!-- ここが表示されるボタン <a>タグでもOK -->
+                            <a href="" class="dropdown-toggle navbar-right navbar-collapse" id="dropdownMenu1" data-toggle="dropdown"></a>
+                            アカウントサービス
+                            <span class="caret"></span>
+                            </button>
+                            <!-- ボタンここまで -->
+
+                            <!-- ここはボタンを押すと表示されるリスト -->
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                            </ul>
+                            <!-- リストここまで -->
+                        </li>
+                        <li><a href="">買い物カゴ <span class="badge">12</span></a></li>
+                    </ul>
+                </div>
                 <!--検索フォーム-->
                 <form class="navbar-form navbar-static-top" role="search">
                     <div class="form-group col-md-offset-1">
@@ -54,6 +68,7 @@
                             <div class="col-sm-12">　</div>
                             <div class="row">
                                 <form action="/VEC/Controller/home/login" class="form-horizontal" method="post">
+
                                     <div class="form-group">
 
                                         <label for="input-mail" class="col-sm-3 control-label">メールアドレス</label>
