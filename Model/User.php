@@ -18,6 +18,10 @@ class User extends BaseModel{
             return 0;  
         }
     }
+    
+    function signUp(){
+        
+    }
 
 }
 ?>

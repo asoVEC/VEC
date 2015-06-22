@@ -14,7 +14,7 @@ class Dispatcher {
         $param = ereg_replace('/?$', '', $_SERVER['REQUEST_URI']);
         $params = array();
         if ('' != $param) {
-            // パラメーターを / で分割
+        // パラメーターを / で分割
             $params = explode('/', $param);
         }
         

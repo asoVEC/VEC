@@ -43,7 +43,10 @@ class BaseModel {
         }
         $row = mysql_fetch_assoc($result);
         return$row; 
-
+    }
+    
+    function addDeta(){
+        
     }
         
 }
