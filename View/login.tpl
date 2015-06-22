@@ -17,8 +17,7 @@
             <div id="nav-content" class="collapse navbar-collapse">
                 <!--                    リンクのリスト メニューリスト-->
                 <div class="navbar-right">
-                <ul class="nav navbar-nav">
-                    <li><a href="">{$user_name}さん、ようこそ</a></li>
+                <ul class="nav navbar-nav">                    
                     <li><a href="">買い物カゴ <span class="badge">12</span></a></li>
                 </ul>
             </div>
@@ -56,13 +55,13 @@
 
                                         <label for="input-mail" class="col-sm-3 control-label">メールアドレス</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control" name="value" id="input-mail" placeholder="メールアドレス" required="required">
+                                            <input type="text" class="form-control" name="mail" id="input-mail" placeholder="メールアドレス" required="required">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="input-passward" class="col-sm-3 control-label">パスワード</label>
                                         <div class="col-sm-6">
-                                            <input type="password" class="form-control" id="input-passward" placeholder="パスワード" required="required">
+                                            <input type="password" class="form-control" name="password" id="input-passward" placeholder="パスワード" required="required">
                                         </div>
                                     </div>
                                     <div class="form-group">
