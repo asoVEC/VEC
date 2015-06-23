@@ -1,7 +1,6 @@
 <?php
 class userController {
     
-    private $view;    
     public function __construct()
     {
         require_once('smarty/libs/Smarty.class.php');
@@ -18,5 +17,3 @@ class userController {
     
     
 }
-
-?>
