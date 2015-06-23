@@ -9,7 +9,6 @@
 </body>
 </html>
 <?php
-require_once '../Model/BaseModel.php';
 require_once '../Model/User.php';
 
 

@@ -15,6 +15,7 @@ class BaseModel {
      private $link = null;
      //DB接続情報設定
     function __construct() {
+        
         $this->link = mysql_connect(
                 "$this->host:$this->port", $this->user, $this->password);
         if (!$this->link) {
