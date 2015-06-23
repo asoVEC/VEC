@@ -1,67 +1,8 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>ホームページ</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="/VEC/css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="/VEC/css/css.css" rel="stylesheet" media="screen">
-    </head>
-    <body>
-
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-header">
-
-                <!--ブランド名 ロゴ名の表示-->
-                <a class="navbar-brand" href="#">VEC</a>
-            </div>
-            <div id="nav-content" class="collapse navbar-collapse">
-                <!--                    リンクのリスト メニューリスト-->
-                <div class="navbar-right">
-<<<<<<< HEAD
-                <ul class="nav navbar-nav">                    
-                    <li><a href="">買い物カゴ <span class="badge">12</span></a></li>
-                </ul>
-            </div>
-=======
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <!-- ここが表示されるボタン <a>タグでもOK -->
-                            <button class="dropdown-toggle navbar-inverse　nav badge" id="dropdownMenu1" data-toggle="dropdown" type="button"></a>
-                            アカウントサービス{*変数に*}
-                            <span class="caret"></span>
-                            <br />
-                            <a href="">ログインする{*変数*}</a>
-                            </button>
-                            <!-- ボタンここまで -->
-                            <!-- ここはボタンを押すと表示されるリスト -->
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">会員情報変更</a></li>{*場合分けするかも*}
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">会員登録</a></li>
-                            </ul>
-                            <!-- リストここまで -->
-                        </li>
-                        <li><a href="">買い物カゴ <span class="badge">12{*変数に*}</span></a></li>
-                    </ul>
-                </div>
->>>>>>> origin/master
-                <!--検索フォーム-->
-                <form class="navbar-form navbar-static-top" role="search">
-                    <div class="form-group col-md-offset-1">
-                        <input type="text" class="form-control" placeholder="商品検索" size="60pix">
-                    </div>
-                    <button type="submit" class="btn btn-default">検索</button>
-                </form>
-            </div>
-        </nav>
-        <header class="jumbotron col-lg-10 col-lg-offset-1"></header>
-            {*        すまほばー*}
-        <form class="navbar-form navbar-static-top hidden-lg hidden-md hidden-sm" role="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="商品検索">
-            </div>
-            <button type="submit" class="btn btn-default">検索</button>
-        </form>
-
+{extends file='View/layout.tpl'}
+{block title}
+    ログイン
+    {/block}
+{block main}
         <div class="container main-content">
             <div class="row">
                 <div class="panel panel-default col-sm-6  col-md-6">
@@ -95,12 +36,4 @@
                                 </form>
                             </div>{*row*}
                         </div>{*container*}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <footer class="container-fluid">
-            <small><a href="/">Copyright (C) 2013-2014 9ineBB All Rights Reserved.</a></small>
-        </footer>
-    </body>
-</html>
+                        {/block}

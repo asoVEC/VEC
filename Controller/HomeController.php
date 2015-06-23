@@ -52,6 +52,10 @@ class homeController {
         $this->view->display('View/login.tpl');        
     }
     
+    function test2(){
+        $this->view->display('View/test2.tpl'); 
+    }
+    
     
 }
 
