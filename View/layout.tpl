@@ -25,10 +25,13 @@
                                 アカウントサービス{*変数に*}
                                 <span class="caret"></span>
                                 <br />
-                                {if loginFlg==false}
+                                {*{if loginFlg==false}*}
+                                <!-- 安長がちょっと変更-->
+                                {if $_SESSION['userName'] == null}
                                     <a href="">ログインする{*変数*}</a>
                                 {else}
-                                    ようこそ、{$account_info}さん
+                                    {*ようこそ、{$account_info}さん*}
+                                    ようこそ、{$_SESSION['userName']}さん
                                 {/if}
                             </button>
                             <!-- ボタンここまで -->

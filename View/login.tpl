@@ -91,8 +91,8 @@
                                         <div class="col-sm-6">
                                             <input type="password" class="form-control" name="password" id="input-passward" placeholder="パスワード" required="required">
                                         </div>
-                                        {$login_message}
                                     </div>
+                                    <span style='color:red'>{$login_message}</span>
                                     <div class="form-group">
                                         <div class="col-sm-offset-7 col-sm-10">
                                             <button type="submit" class="btn btn-default ">ログイン</button>
