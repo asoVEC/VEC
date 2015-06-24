@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-06-23 09:22:17
+<?php /* Smarty version 3.1.24, created on 2015-06-24 04:58:39
          compiled from "/Applications/MAMP/htdocs/VEC/View/login.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:5767140255890929e85214_95249638%%*/
+/*%%SmartyHeaderCode:820668783558a1cdfc93465_81760111%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,29 +9,29 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '621f4d9122508bb81a1fa9fbc3c3773608d92ad3' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/login.tpl',
-      1 => 1435044133,
+      1 => 1435114608,
       2 => 'file',
     ),
     'fe23c48836857c70105e42ec7bf81752fd4db56f' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/layout.tpl',
-      1 => 1435043331,
+      1 => 1435114608,
       2 => 'file',
     ),
-    '58e74a51ec7b0ab45e8ad36fd9987df5c1ab4730' => 
+    'acd82172d4d389c99906eae038e47fc54b06e373' => 
     array (
-      0 => '58e74a51ec7b0ab45e8ad36fd9987df5c1ab4730',
+      0 => 'acd82172d4d389c99906eae038e47fc54b06e373',
       1 => 0,
       2 => 'string',
     ),
-    '221e02089221f7db80dc5ea2b4760c3c8dfc400b' => 
+    'fb96d77b3c49b249a07d2003e49457bd838f213f' => 
     array (
-      0 => '221e02089221f7db80dc5ea2b4760c3c8dfc400b',
+      0 => 'fb96d77b3c49b249a07d2003e49457bd838f213f',
       1 => 0,
       2 => 'string',
     ),
   ),
-  'nocache_hash' => '5767140255890929e85214_95249638',
+  'nocache_hash' => '820668783558a1cdfc93465_81760111',
   'variables' => 
   array (
     '_SESSION' => 0,
@@ -39,20 +39,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5589092a061fe3_95343406',
+  'unifunc' => 'content_558a1cdfe2a775_59215397',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5589092a061fe3_95343406')) {
-function content_5589092a061fe3_95343406 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_558a1cdfe2a775_59215397')) {
+function content_558a1cdfe2a775_59215397 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '5767140255890929e85214_95249638';
+$_smarty_tpl->properties['nocache_hash'] = '820668783558a1cdfc93465_81760111';
 ?>
 <html>
     <head>
         <meta charset="UTF-8">
         
             <title><?php
-$_smarty_tpl->properties['nocache_hash'] = '5767140255890929e85214_95249638';
+$_smarty_tpl->properties['nocache_hash'] = '820668783558a1cdfc93465_81760111';
 ?>
 
     ログイン
@@ -79,12 +79,9 @@ $_smarty_tpl->properties['nocache_hash'] = '5767140255890929e85214_95249638';
                                 アカウントサービス
                                 <span class="caret"></span>
                                 <br />
-                                
-                                <!-- 安長がちょっと変更-->
                                 <?php if ($_smarty_tpl->tpl_vars['_SESSION']->value['userName'] == null) {?>
                                     <a href="">ログインする</a>
                                 <?php } else { ?>
-                                    
                                     ようこそ、<?php echo $_smarty_tpl->tpl_vars['_SESSION']->value['userName'];?>
 さん
                                 <?php }?>
@@ -123,10 +120,9 @@ $_smarty_tpl->properties['nocache_hash'] = '5767140255890929e85214_95249638';
             <button type="submit" class="btn btn-default">検索</button>
         </form>
         <?php
-$_smarty_tpl->properties['nocache_hash'] = '5767140255890929e85214_95249638';
+$_smarty_tpl->properties['nocache_hash'] = '820668783558a1cdfc93465_81760111';
 ?>
 
-=======
 <html>
     <head>
         <meta charset="UTF-8">
@@ -187,8 +183,6 @@ $_smarty_tpl->properties['nocache_hash'] = '5767140255890929e85214_95249638';
             </div>
             <button type="submit" class="btn btn-default">検索</button>
         </form>
-
->>>>>>> Stashed changes
         <div class="container main-content">
             <div class="row">
                 <div class="panel panel-default col-sm-6  col-md-6">

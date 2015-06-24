@@ -1,10 +1,8 @@
-<<<<<<< Updated upstream
 {extends file='View/layout.tpl'}
 {block title}
     ログイン
     {/block}
 {block main}
-=======
 <html>
     <head>
         <meta charset="UTF-8">
@@ -65,8 +63,6 @@
             </div>
             <button type="submit" class="btn btn-default">検索</button>
         </form>
-
->>>>>>> Stashed changes
         <div class="container main-content">
             <div class="row">
                 <div class="panel panel-default col-sm-6  col-md-6">
