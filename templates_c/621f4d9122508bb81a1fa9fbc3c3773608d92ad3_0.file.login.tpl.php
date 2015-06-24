@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-06-23 09:22:17
+<?php /* Smarty version 3.1.24, created on 2015-06-24 05:08:23
          compiled from "/Applications/MAMP/htdocs/VEC/View/login.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:5767140255890929e85214_95249638%%*/
+/*%%SmartyHeaderCode:434600129558a1f27589549_86429583%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,29 +9,29 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '621f4d9122508bb81a1fa9fbc3c3773608d92ad3' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/login.tpl',
-      1 => 1435044133,
+      1 => 1435115298,
       2 => 'file',
     ),
     'fe23c48836857c70105e42ec7bf81752fd4db56f' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/layout.tpl',
-      1 => 1435043331,
+      1 => 1435115152,
       2 => 'file',
     ),
-    '58e74a51ec7b0ab45e8ad36fd9987df5c1ab4730' => 
+    'acd82172d4d389c99906eae038e47fc54b06e373' => 
     array (
-      0 => '58e74a51ec7b0ab45e8ad36fd9987df5c1ab4730',
+      0 => 'acd82172d4d389c99906eae038e47fc54b06e373',
       1 => 0,
       2 => 'string',
     ),
-    '221e02089221f7db80dc5ea2b4760c3c8dfc400b' => 
+    '84c5015b19a1feaa83ad111079f4dd2dcb650375' => 
     array (
-      0 => '221e02089221f7db80dc5ea2b4760c3c8dfc400b',
+      0 => '84c5015b19a1feaa83ad111079f4dd2dcb650375',
       1 => 0,
       2 => 'string',
     ),
   ),
-  'nocache_hash' => '5767140255890929e85214_95249638',
+  'nocache_hash' => '434600129558a1f27589549_86429583',
   'variables' => 
   array (
     '_SESSION' => 0,
@@ -39,20 +39,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5589092a061fe3_95343406',
+  'unifunc' => 'content_558a1f27736de4_39676483',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5589092a061fe3_95343406')) {
-function content_5589092a061fe3_95343406 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_558a1f27736de4_39676483')) {
+function content_558a1f27736de4_39676483 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '5767140255890929e85214_95249638';
+$_smarty_tpl->properties['nocache_hash'] = '434600129558a1f27589549_86429583';
 ?>
 <html>
     <head>
         <meta charset="UTF-8">
         
             <title><?php
-$_smarty_tpl->properties['nocache_hash'] = '5767140255890929e85214_95249638';
+$_smarty_tpl->properties['nocache_hash'] = '434600129558a1f27589549_86429583';
 ?>
 
     ログイン
@@ -79,12 +79,9 @@ $_smarty_tpl->properties['nocache_hash'] = '5767140255890929e85214_95249638';
                                 アカウントサービス
                                 <span class="caret"></span>
                                 <br />
-                                
-                                <!-- 安長がちょっと変更-->
                                 <?php if ($_smarty_tpl->tpl_vars['_SESSION']->value['userName'] == null) {?>
                                     <a href="">ログインする</a>
                                 <?php } else { ?>
-                                    
                                     ようこそ、<?php echo $_smarty_tpl->tpl_vars['_SESSION']->value['userName'];?>
 さん
                                 <?php }?>
@@ -123,72 +120,9 @@ $_smarty_tpl->properties['nocache_hash'] = '5767140255890929e85214_95249638';
             <button type="submit" class="btn btn-default">検索</button>
         </form>
         <?php
-$_smarty_tpl->properties['nocache_hash'] = '5767140255890929e85214_95249638';
+$_smarty_tpl->properties['nocache_hash'] = '434600129558a1f27589549_86429583';
 ?>
 
-=======
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>ホームページ</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="/VEC/css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="/VEC/css/css.css" rel="stylesheet" media="screen">
-    </head>
-    <body>
-
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-header">
-
-                <!--ブランド名 ロゴ名の表示-->
-                <a class="navbar-brand" href="#">VEC</a>
-            </div>
-            <div id="nav-content" class="collapse navbar-collapse">
-                <!--                    リンクのリスト メニューリスト-->
-                <div class="navbar-right">
-
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <!-- ここが表示されるボタン <a>タグでもOK -->
-                            <a href="" class="dropdown-toggle navbar-right navbar-collapse" id="dropdownMenu1" data-toggle="dropdown"></a>
-                            アカウントサービス
-                            <span class="caret"></span>
-                            </button>
-                            <!-- ボタンここまで -->
-
-                            <!-- ここはボタンを押すと表示されるリスト -->
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-                                <li role="presentation" class="divider"></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-                            </ul>
-                            <!-- リストここまで -->
-                        </li>
-                        <li><a href="">買い物カゴ <span class="badge">12</span></a></li>
-                    </ul>
-                </div>
-
-                <!--検索フォーム-->
-                <form class="navbar-form navbar-static-top" role="search">
-                    <div class="form-group col-md-offset-1">
-                        <input type="text" class="form-control" placeholder="商品検索" size="60pix">
-                    </div>
-                    <button type="submit" class="btn btn-default">検索</button>
-                </form>
-            </div>
-        </nav>
-        <header class="jumbotron col-lg-10 col-lg-offset-1"></header>
-            
-        <form class="navbar-form navbar-static-top hidden-lg hidden-md hidden-sm" role="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="商品検索">
-            </div>
-            <button type="submit" class="btn btn-default">検索</button>
-        </form>
-
->>>>>>> Stashed changes
         <div class="container main-content">
             <div class="row">
                 <div class="panel panel-default col-sm-6  col-md-6">

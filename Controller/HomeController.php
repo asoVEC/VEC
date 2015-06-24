@@ -65,8 +65,8 @@ class homeController {
             $this->home();
         } elseif ($mail == NULL || $pass == null) {//初回アクセス
             $this->view->display('View/login.tpl');
-        } else {
-            $loginFlg = $this->loginProcess();
+        } else {            
+            $loginFlg = $this->loginProcess($mail,$pass);            
             switch ($loginFlg) {
                 case 1: //ログイン成功 
                     $this->home();
@@ -81,7 +81,7 @@ class homeController {
 
     private function loginProcess($mail,$password) {
         //戻(loginFlg = 0:ログイン失敗、 = 1:成功)
-        $loginFlg = 1;
+        $loginFlg = 0;
         $user = new User();
         $loginFlg = $user->login($mail, $password);
         return $loginFlg;

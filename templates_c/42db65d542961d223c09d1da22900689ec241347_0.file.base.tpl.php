@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 <?php /* Smarty version 3.1.24, created on 2015-06-24 12:11:04
          compiled from "/Applications/MAMP/htdocs/VEC/View/base.tpl" */ ?>
 <?php
 /*%%SmartyHeaderCode:1869158310558a1fc85755b5_08093045%%*/
+=======
+<?php /* Smarty version 3.1.24, created on 2015-06-24 05:08:38
+         compiled from "/Applications/MAMP/htdocs/VEC/View/base.tpl" */ ?>
+<?php
+/*%%SmartyHeaderCode:532147668558a1f36b05cf4_65916644%%*/
+>>>>>>> origin/master
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,13 +16,21 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '42db65d542961d223c09d1da22900689ec241347' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/base.tpl',
+<<<<<<< HEAD
       1 => 1435115141,
+=======
+      1 => 1435115152,
+>>>>>>> origin/master
       2 => 'file',
     ),
     'fe23c48836857c70105e42ec7bf81752fd4db56f' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/layout.tpl',
+<<<<<<< HEAD
       1 => 1435114297,
+=======
+      1 => 1435115152,
+>>>>>>> origin/master
       2 => 'file',
     ),
     'c58562b535d9f1144c28345b4641674ab88b8645' => 
@@ -25,7 +40,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'string',
     ),
   ),
+<<<<<<< HEAD
   'nocache_hash' => '1869158310558a1fc85755b5_08093045',
+=======
+  'nocache_hash' => '532147668558a1f36b05cf4_65916644',
+>>>>>>> origin/master
   'variables' => 
   array (
     '_SESSION' => 0,
@@ -33,6 +52,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
+<<<<<<< HEAD
   'unifunc' => 'content_558a1fc86a0df5_61580468',
 ),false);
 /*/%%SmartyHeaderCode%%*/
@@ -40,6 +60,15 @@ if ($_valid && !is_callable('content_558a1fc86a0df5_61580468')) {
 function content_558a1fc86a0df5_61580468 ($_smarty_tpl) {
 
 $_smarty_tpl->properties['nocache_hash'] = '1869158310558a1fc85755b5_08093045';
+=======
+  'unifunc' => 'content_558a1f36c73bc8_55951521',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_558a1f36c73bc8_55951521')) {
+function content_558a1f36c73bc8_55951521 ($_smarty_tpl) {
+
+$_smarty_tpl->properties['nocache_hash'] = '532147668558a1f36b05cf4_65916644';
+>>>>>>> origin/master
 ?>
 <html>
     <head>
@@ -68,12 +97,9 @@ $_smarty_tpl->properties['nocache_hash'] = '1869158310558a1fc85755b5_08093045';
                                 アカウントサービス
                                 <span class="caret"></span>
                                 <br />
-                                
-                                <!-- 安長がちょっと変更-->
                                 <?php if ($_smarty_tpl->tpl_vars['_SESSION']->value['userName'] == null) {?>
                                     <a href="">ログインする</a>
                                 <?php } else { ?>
-                                    
                                     ようこそ、<?php echo $_smarty_tpl->tpl_vars['_SESSION']->value['userName'];?>
 さん
                                 <?php }?>
@@ -112,7 +138,11 @@ $_smarty_tpl->properties['nocache_hash'] = '1869158310558a1fc85755b5_08093045';
             <button type="submit" class="btn btn-default">検索</button>
         </form>
         <?php
+<<<<<<< HEAD
 $_smarty_tpl->properties['nocache_hash'] = '1869158310558a1fc85755b5_08093045';
+=======
+$_smarty_tpl->properties['nocache_hash'] = '532147668558a1f36b05cf4_65916644';
+>>>>>>> origin/master
 ?>
 
 
