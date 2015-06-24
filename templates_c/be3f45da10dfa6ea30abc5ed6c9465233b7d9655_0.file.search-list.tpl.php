@@ -1,11 +1,17 @@
-<?php /* Smarty version 3.1.24, created on 2015-06-24 12:11:04
-         compiled from "/Applications/MAMP/htdocs/VEC/View/base.tpl" */ ?>
+<?php /* Smarty version 3.1.24, created on 2015-06-24 13:52:23
+         compiled from "/Applications/MAMP/htdocs/VEC/View/search-list.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1869158310558a1fc85755b5_08093045%%*/
+/*%%SmartyHeaderCode:256205780558a3787e4a250_80399878%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
+    'be3f45da10dfa6ea30abc5ed6c9465233b7d9655' => 
+    array (
+      0 => '/Applications/MAMP/htdocs/VEC/View/search-list.tpl',
+      1 => 1435121542,
+      2 => 'file',
+    ),
     '42db65d542961d223c09d1da22900689ec241347' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/base.tpl',
@@ -15,17 +21,23 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fe23c48836857c70105e42ec7bf81752fd4db56f' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/layout.tpl',
-      1 => 1435114297,
+      1 => 1435117118,
       2 => 'file',
     ),
-    'c58562b535d9f1144c28345b4641674ab88b8645' => 
+    '23c2bc899ee6bb4f28730a13278cc5574a2b2aad' => 
     array (
-      0 => 'c58562b535d9f1144c28345b4641674ab88b8645',
+      0 => '23c2bc899ee6bb4f28730a13278cc5574a2b2aad',
+      1 => 0,
+      2 => 'string',
+    ),
+    '95ad3bdd0783ad5d323ecd46347f0fb0fb17afbb' => 
+    array (
+      0 => '95ad3bdd0783ad5d323ecd46347f0fb0fb17afbb',
       1 => 0,
       2 => 'string',
     ),
   ),
-  'nocache_hash' => '1869158310558a1fc85755b5_08093045',
+  'nocache_hash' => '256205780558a3787e4a250_80399878',
   'variables' => 
   array (
     '_SESSION' => 0,
@@ -33,19 +45,22 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_558a1fc86a0df5_61580468',
+  'unifunc' => 'content_558a378802e8c3_29615587',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_558a1fc86a0df5_61580468')) {
-function content_558a1fc86a0df5_61580468 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_558a378802e8c3_29615587')) {
+function content_558a378802e8c3_29615587 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1869158310558a1fc85755b5_08093045';
+$_smarty_tpl->properties['nocache_hash'] = '256205780558a3787e4a250_80399878';
 ?>
 <html>
     <head>
         <meta charset="UTF-8">
         
-            <title>ホームページ</title>
+            <title><?php
+$_smarty_tpl->properties['nocache_hash'] = '256205780558a3787e4a250_80399878';
+?>
+検索結果</title>
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/VEC/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -67,9 +82,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1869158310558a1fc85755b5_08093045';
                             <button class="dropdown-toggle navbar-inverse　nav badge" id="dropdownMenu1" data-toggle="dropdown" type="button"></a>
                                 アカウントサービス
                                 <span class="caret"></span>
-                                <br />
-                                
-                                <!-- 安長がちょっと変更-->
+                                <br />                                
                                 <?php if ($_smarty_tpl->tpl_vars['_SESSION']->value['userName'] == null) {?>
                                     <a href="">ログインする</a>
                                 <?php } else { ?>
@@ -112,7 +125,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1869158310558a1fc85755b5_08093045';
             <button type="submit" class="btn btn-default">検索</button>
         </form>
         <?php
-$_smarty_tpl->properties['nocache_hash'] = '1869158310558a1fc85755b5_08093045';
+$_smarty_tpl->properties['nocache_hash'] = '256205780558a3787e4a250_80399878';
 ?>
 
 
@@ -133,31 +146,67 @@ $_smarty_tpl->properties['nocache_hash'] = '1869158310558a1fc85755b5_08093045';
                 </div>
                 
                 
-                <div class="col-md-9 content-area">
-                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name1']->value;?>
-</div>
-                    <div class="frame" style="background: <?php echo $_smarty_tpl->tpl_vars['food1']->value;?>
- center center no-repeat;"></div>
-                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name2']->value;?>
-</div>
-                    <div class="frame" style="background: <?php echo $_smarty_tpl->tpl_vars['food2']->value;?>
- center center no-repeat;"></div>
-                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name3']->value;?>
-</div>
-                    <div class="frame" style="background: <?php echo $_smarty_tpl->tpl_vars['food3']->value;?>
- center center no-repeat;"></div>
-                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name4']->value;?>
-</div>
-                    <div class="frame" style="background: <?php echo $_smarty_tpl->tpl_vars['food4']->value;?>
- center center no-repeat;"></div>
-                    <div class="label"><?php echo $_smarty_tpl->tpl_vars['name5']->value;?>
-</div>
-                    <div class="frame" style="background: <?php echo $_smarty_tpl->tpl_vars['food5']->value;?>
- center center no-repeat;"></div>
-                </div>
-            </div>
-        </div>
-                    
+
+
+
+
+
+
+
+
+
+現在のページは<?php echo $_smarty_tpl->tpl_vars['array']->value['current_page'];?>
+
+<br />
+<?php echo $_smarty_tpl->tpl_vars['array']->value['start']+1;?>
+個目から<?php echo $_smarty_tpl->tpl_vars['array']->value['start']+$_smarty_tpl->tpl_vars['array']->value['display_quanity'];?>
+個目のデータを表示しています。
+<?php echo $_smarty_tpl->tpl_vars['array']->value['display_quanity'];?>
+
+
+
+
+
+
+
+
+
+
+
+<?php
+$_from = $_smarty_tpl->tpl_vars['array']->value['deta'];
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['deta'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['deta']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['deta']->value) {
+$_smarty_tpl->tpl_vars['deta']->_loop = true;
+$foreach_deta_Sav = $_smarty_tpl->tpl_vars['deta'];
+?>
+    <?php echo $_smarty_tpl->tpl_vars['deta']->value;?>
+
+    <?php
+$_smarty_tpl->tpl_vars['deta'] = $foreach_deta_Sav;
+}
+?>
+
+
+
+<nav>
+<ul class="pager">
+<?php if ($_smarty_tpl->tpl_vars['array']->value['current_page'] != 1) {?>
+    <li><a href="pageing.php?page='.($genzai_page-1).'"><< 前のページへ</a></li>
+    <?php }?>
+    <?php if ($_smarty_tpl->tpl_vars['array']->value['current_page'] != $_smarty_tpl->tpl_vars['array']->value['max_page']) {?>
+    <li><a href='?page=<?php echo $_GET['page']+1;?>
+'>次のページへ >></a></li>
+        <?php }?>
+        </ul>
+</nav>
+    
+
+
 
     </div>
 </div>
