@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-06-23 09:08:53
+<?php /* Smarty version 3.1.24, created on 2015-06-24 05:08:38
          compiled from "/Applications/MAMP/htdocs/VEC/View/base.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:17161891375589060512a8d3_02647043%%*/
+/*%%SmartyHeaderCode:532147668558a1f36b05cf4_65916644%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,23 +9,23 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '42db65d542961d223c09d1da22900689ec241347' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/base.tpl',
-      1 => 1435038794,
+      1 => 1435115152,
       2 => 'file',
     ),
     'fe23c48836857c70105e42ec7bf81752fd4db56f' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/layout.tpl',
-      1 => 1435043331,
+      1 => 1435115152,
       2 => 'file',
     ),
-    'ff92229236f11aa85afc7b8bc449ffc72bd28d9c' => 
+    'c58562b535d9f1144c28345b4641674ab88b8645' => 
     array (
-      0 => 'ff92229236f11aa85afc7b8bc449ffc72bd28d9c',
+      0 => 'c58562b535d9f1144c28345b4641674ab88b8645',
       1 => 0,
       2 => 'string',
     ),
   ),
-  'nocache_hash' => '17161891375589060512a8d3_02647043',
+  'nocache_hash' => '532147668558a1f36b05cf4_65916644',
   'variables' => 
   array (
     '_SESSION' => 0,
@@ -33,13 +33,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_55890605306204_08693380',
+  'unifunc' => 'content_558a1f36c73bc8_55951521',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_55890605306204_08693380')) {
-function content_55890605306204_08693380 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_558a1f36c73bc8_55951521')) {
+function content_558a1f36c73bc8_55951521 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '17161891375589060512a8d3_02647043';
+$_smarty_tpl->properties['nocache_hash'] = '532147668558a1f36b05cf4_65916644';
 ?>
 <html>
     <head>
@@ -68,12 +68,9 @@ $_smarty_tpl->properties['nocache_hash'] = '17161891375589060512a8d3_02647043';
                                 アカウントサービス
                                 <span class="caret"></span>
                                 <br />
-                                
-                                <!-- 安長がちょっと変更-->
                                 <?php if ($_smarty_tpl->tpl_vars['_SESSION']->value['userName'] == null) {?>
                                     <a href="">ログインする</a>
                                 <?php } else { ?>
-                                    
                                     ようこそ、<?php echo $_smarty_tpl->tpl_vars['_SESSION']->value['userName'];?>
 さん
                                 <?php }?>
@@ -112,7 +109,7 @@ $_smarty_tpl->properties['nocache_hash'] = '17161891375589060512a8d3_02647043';
             <button type="submit" class="btn btn-default">検索</button>
         </form>
         <?php
-$_smarty_tpl->properties['nocache_hash'] = '17161891375589060512a8d3_02647043';
+$_smarty_tpl->properties['nocache_hash'] = '532147668558a1f36b05cf4_65916644';
 ?>
 
 
@@ -134,10 +131,6 @@ $_smarty_tpl->properties['nocache_hash'] = '17161891375589060512a8d3_02647043';
                 
                 
                 <div class="col-md-9 content-area">
-                    <style type="text/css">
-                        
-                        
-                    </style>
                     <div class="label"><?php echo $_smarty_tpl->tpl_vars['name1']->value;?>
 </div>
                     <div class="frame" style="background: <?php echo $_smarty_tpl->tpl_vars['food1']->value;?>
