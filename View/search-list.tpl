@@ -23,7 +23,7 @@
     </li>
 </ul>*}
 
-{if isset($smarty.get.page) && $smarty.get.page != 1}
+{*{if isset($smarty.get.page) && $smarty.get.page != 1}
 <a href="?page={$smarty.get.page-1}"><<- 前</a>  
 {else}
 <<- 前  
@@ -37,7 +37,10 @@
   <a href="?page={$smarty.get.page+1}">次 ->></a>
 {else}
   次 ->>
-{/if}
+{/if}*}
+{include file="View/_paging.tpl" paging_data=$paging_data pager_type="a" add_link_to_edge="1"}
+
+
 
     {*検索条件にあてはまるものがあるかぎり繰り返す*}
 {*    {foreach}
