@@ -26,7 +26,7 @@
                                 <span class="caret"></span>
                                 <br />
                                 {if {$smarty.session.userName} == null}
-                                    <a href="">ログインする{*変数*}</a>
+                                    <a href="/VEC/Controller/home/login">ログインする{*変数*}</a>
                                 {else}
                                     ようこそ、{$smarty.session.userName}さん
                                 {/if}
@@ -35,11 +35,12 @@
                             <!-- ここはボタンを押すと表示されるリスト -->
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                                 {*                                ログインしてる場合のみ表示*}
-                                {if $name != null}
+                                {if {$smarty.session.userName} != null}
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#">会員情報変更</a></li>
-                                    {/if}
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">会員登録</a></li>
-                            </ul>
+                                {else} 
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/Controller/user/signup">会員登録</a></li>
+                                {/if}
+                                </ul>
                             <!-- リストここまで -->
                         </li>
                         <li><a href="">買い物カゴ <span class="badge">{$amount_cart}</span></a></li>

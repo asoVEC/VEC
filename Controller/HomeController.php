@@ -60,7 +60,7 @@ class homeController {
         $mail = $_POST[mail];
         $pass = $_POST[password];
         
-        if ($_SESSION['userName'] != NULL) {//ログイン済み
+        if ($_SESSION['userName'] != '') {//ログイン済み
             $this->home();
         } elseif ($mail == NULL || $pass == null) {//初回アクセス
             $this->view->display('View/login.tpl');
@@ -68,8 +68,6 @@ class homeController {
             $loginFlg = $this->loginProcess($mail,$pass);            
             switch ($loginFlg) {
                 case 1: //ログイン成功 
-//                    header('Location: /Controller/home/home');
-//                    echo $_SESSION['userName'];
                     $this->home();
                     break;
                 case 0://ログイン失敗
