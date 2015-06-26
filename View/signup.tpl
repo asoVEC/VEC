@@ -1,54 +1,54 @@
-{extends file='View/layout.tpl'}
+ï»¿{extends file='View/layout.tpl'}
 {block title}{/block}
 
 {block main}
  <center>
  <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; border-radius: 10px; width: 1200px;">
-      <font size="6" face="‚l‚r –¾’©,•½¬–¾’©">‰ïˆõ“o˜^</font> <br><br>
-@@@@<font size="4" face="‚l‚r ƒSƒVƒbƒN">ƒAƒJƒEƒ“ƒgì¬‚Ì‚½‚ß‚É•K—v‚Èî•ñ‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢</font> <br>
-@@@ 
+      <font size="6" face="ï¼­ï¼³ æ˜Žæœ,å¹³æˆæ˜Žæœ">ä¼šå“¡ç™»éŒ²</font> <br><br>
+ã€€ã€€ã€€ã€€<font size="4" face="ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯">ã‚¢ã‚«ã‚¦ãƒ³ãƒˆä½œæˆã®ãŸã‚ã«å¿…è¦ãªæƒ…å ±ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„</font> <br>
+ã€€ã€€ã€€ 
           
           
              <table width="600" border="0">
                  <form action="account.html" method="post">
                       <tr>
-                          <th>–¼‘O:</th>
+                          <th>åå‰:</th>
                           <td>
                               <input type="text" name="name" value="" size="24">
                           </td>
                       </tr>
 
                       <tr>
-                          <th>ƒtƒŠƒKƒi:</th>
+                          <th>ãƒ•ãƒªã‚¬ãƒŠ:</th>
                           <td>
                               <input type="text" name="furigana" value="" size="24">
                          </td>
                       </tr>
 
                       <tr>
-                          <th>ƒ[ƒ‹ƒAƒhƒŒƒX:</th>
+                          <th>ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹:</th>
                           <td>
                               <input type="text" name="mail1" value="" size="24">
                          </td>
                       </tr>
 
                       <tr>
-                          <th>‚à‚¤ˆê“x“ü—Í‚µ‚Ä‚­‚¾‚³‚¢:</th>
+                          <th>ã‚‚ã†ä¸€åº¦å…¥åŠ›ã—ã¦ãã ã•ã„:</th>
                           <td>
                               <input type="text" name="mail2" value="" size="24">
                          </td>
                       </tr>
 
-@@@@@@@@@@@<tr>
-                          <th>“d˜b”Ô†:</th>
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€<tr>
+                          <th>é›»è©±ç•ªå·:</th>
                           <td>
                               <input type="text" name="tell" value="" size="24"><br>
                          </td>
                       </tr> 
                  <br>
                       <tr><td>
-                         <h4>ƒpƒXƒ[ƒh:<br>
-                         <p><u>¦‚±‚±‚Å“ü—Í‚µ‚½ƒpƒXƒ[ƒh‚ª—˜—pƒpƒXƒ[ƒh‚É‚È‚è‚Ü‚·<u><p><h4>
+                         <h4>ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰:<br>
+                         <p><u>â€»ã“ã“ã§å…¥åŠ›ã—ãŸãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãŒåˆ©ç”¨ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã«ãªã‚Šã¾ã™<u><p><h4>
                               
                           </td>
 		
@@ -59,8 +59,8 @@
                       
                       <tr>
                           <th>
-                            @ƒpƒXƒ[ƒh‚ð<br>
-                             ‚à‚¤ˆê“x“ü—Í‚µ‚Ä‚­‚¾‚³‚¢:
+                            ã€€ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’<br>
+                             ã‚‚ã†ä¸€åº¦å…¥åŠ›ã—ã¦ãã ã•ã„:
                           </th>
                           <td>
                               <input type="password" name="pass2" value="" size="24">
@@ -69,7 +69,7 @@
 
                       <tr>
                           <td colspan="2">
-                              <input type="submit" value="ƒAƒJƒEƒ“ƒg‚Ìì¬">
+                              <input type="submit" value="ã‚¢ã‚«ã‚¦ãƒ³ãƒˆã®ä½œæˆ">
                           </td>
                       </tr>
                   </form>

@@ -22,9 +22,10 @@
                         <li class="dropdown">
                             <!-- ここが表示されるボタン <a>タグでもOK -->
                             <button class="dropdown-toggle navbar-inverse　nav badge" id="dropdownMenu1" data-toggle="dropdown" type="button"></a>
-                                アカウントサービス{*変数に*}
+                            アカウントサービス
                                 <span class="caret"></span>
-                                {if $_SESSION['userName'] == null}
+                                <br />
+                                {if $name == null}
                                     <a href="">ログインする{*変数*}</a>
                                 {else}
                                     ようこそ、{$name}さん
