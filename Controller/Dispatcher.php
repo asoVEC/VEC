@@ -8,8 +8,7 @@
 
 class Dispatcher {
 
-    public function dispatch() {
-                        
+    public function dispatch() {                       
         // パラメーター取得（末尾の / は削除）
         $param = ereg_replace('/?$', '', $_SERVER['REQUEST_URI']);
         $params = array();
