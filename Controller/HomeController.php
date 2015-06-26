@@ -28,8 +28,9 @@ class homeController {
         $this->view->assign('name3', '割高きみや');
         $this->view->assign('name4', '円安きみや');
         $this->view->assign('name5', '円高きみや');
-        $value = $_POST["value"];
-        $this->view->assign('name1', $value);
+        $this->view->assign('name1', 'ちょっと高いきみや');
+        $this->view->assign('name', $_SESSION['userName']);
+        
 
 //         $request = new post();
 //         $post = $request.get();
@@ -69,6 +70,8 @@ class homeController {
             $loginFlg = $this->loginProcess($mail,$pass);            
             switch ($loginFlg) {
                 case 1: //ログイン成功 
+//                    header('Location: /Controller/home/home');
+//                    echo $_SESSION['userName'];
                     $this->home();
                     break;
                 case 0://ログイン失敗
@@ -84,6 +87,7 @@ class homeController {
         $loginFlg = 0;
         $user = new User();
         $loginFlg = $user->login($mail, $password);
+        $_SESSION['userName'] = $user->getUserName();
         return $loginFlg;
     }
     function test2() {

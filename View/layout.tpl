@@ -24,11 +24,12 @@
                             <button class="dropdown-toggle navbar-inverse　nav badge" id="dropdownMenu1" data-toggle="dropdown" type="button"></a>
                                 アカウントサービス{*変数に*}
                                 <span class="caret"></span>
-                                <br />
+
+                    
                                 {if $_SESSION['userName'] == null}
                                     <a href="">ログインする{*変数*}</a>
                                 {else}
-                                    ようこそ、{$_SESSION['userName']}さん
+                                    ようこそ、{$name}さん
                                 {/if}
                             </button>
                             <!-- ボタンここまで -->
