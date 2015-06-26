@@ -25,17 +25,17 @@
                             アカウントサービス
                                 <span class="caret"></span>
                                 <br />
-                                {if $name == null}
+                                {if {$smarty.session.userName} == null}
                                     <a href="">ログインする{*変数*}</a>
                                 {else}
-                                    ようこそ、{$name}さん
+                                    ようこそ、{$smarty.session.userName}さん
                                 {/if}
                             </button>
                             <!-- ボタンここまで -->
                             <!-- ここはボタンを押すと表示されるリスト -->
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                                 {*                                ログインしてる場合のみ表示*}
-                                {if loginFlg==true}
+                                {if $name != null}
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#">会員情報変更</a></li>
                                     {/if}
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">会員登録</a></li>

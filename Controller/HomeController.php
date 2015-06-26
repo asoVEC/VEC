@@ -28,9 +28,7 @@ class homeController {
         $this->view->assign('name3', '割高きみや');
         $this->view->assign('name4', '円安きみや');
         $this->view->assign('name5', '円高きみや');
-        $this->view->assign('name1', 'ちょっと高いきみや');
-        $this->view->assign('name', $_SESSION['userName']);
-        
+        $this->view->assign('name1', 'ちょっと高いきみや');        
 
 //         $request = new post();
 //         $post = $request.get();

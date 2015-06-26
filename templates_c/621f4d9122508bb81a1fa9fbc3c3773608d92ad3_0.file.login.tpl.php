@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-06-26 02:59:29
+<?php /* Smarty version 3.1.24, created on 2015-06-26 03:39:34
          compiled from "/Applications/MAMP/htdocs/VEC/View/login.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1134925555558ca3f185a7f3_78547927%%*/
+/*%%SmartyHeaderCode:178146840558cad56200c79_48841769%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -15,7 +15,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fe23c48836857c70105e42ec7bf81752fd4db56f' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/layout.tpl',
-      1 => 1435280367,
+      1 => 1435282742,
       2 => 'file',
     ),
     'acd82172d4d389c99906eae038e47fc54b06e373' => 
@@ -31,7 +31,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'string',
     ),
   ),
-  'nocache_hash' => '1134925555558ca3f185a7f3_78547927',
+  'nocache_hash' => '178146840558cad56200c79_48841769',
   'variables' => 
   array (
     'name' => 0,
@@ -39,20 +39,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_558ca3f195bba4_17595190',
+  'unifunc' => 'content_558cad56304a74_86713875',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_558ca3f195bba4_17595190')) {
-function content_558ca3f195bba4_17595190 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_558cad56304a74_86713875')) {
+function content_558cad56304a74_86713875 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1134925555558ca3f185a7f3_78547927';
+$_smarty_tpl->properties['nocache_hash'] = '178146840558cad56200c79_48841769';
 ?>
 <html>
     <head>
         <meta charset="UTF-8">
         
             <title><?php
-$_smarty_tpl->properties['nocache_hash'] = '1134925555558ca3f185a7f3_78547927';
+$_smarty_tpl->properties['nocache_hash'] = '178146840558cad56200c79_48841769';
 ?>
 
     ログイン
@@ -76,12 +76,16 @@ $_smarty_tpl->properties['nocache_hash'] = '1134925555558ca3f185a7f3_78547927';
                         <li class="dropdown">
                             <!-- ここが表示されるボタン <a>タグでもOK -->
                             <button class="dropdown-toggle navbar-inverse　nav badge" id="dropdownMenu1" data-toggle="dropdown" type="button"></a>
-                                アカウントサービス
+                            アカウントサービス
                                 <span class="caret"></span>
-                                <?php if ($_smarty_tpl->tpl_vars['name']->value == null) {?>
+                                <br />
+                                <?php ob_start();
+echo $_SESSION['userName'];
+$_tmp1=ob_get_clean();
+if ($_tmp1 == null) {?>
                                     <a href="">ログインする</a>
                                 <?php } else { ?>
-                                    ようこそ、<?php echo $_smarty_tpl->tpl_vars['name']->value;?>
+                                    ようこそ、<?php echo $_SESSION['userName'];?>
 さん
                                 <?php }?>
                             </button>
@@ -89,7 +93,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1134925555558ca3f185a7f3_78547927';
                             <!-- ここはボタンを押すと表示されるリスト -->
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                                 
-                                <?php if ('loginFlg' == true) {?>
+                                <?php if ($_smarty_tpl->tpl_vars['name']->value != null) {?>
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#">会員情報変更</a></li>
                                     <?php }?>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">会員登録</a></li>
@@ -119,7 +123,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1134925555558ca3f185a7f3_78547927';
             <button type="submit" class="btn btn-default">検索</button>
         </form>
         <?php
-$_smarty_tpl->properties['nocache_hash'] = '1134925555558ca3f185a7f3_78547927';
+$_smarty_tpl->properties['nocache_hash'] = '178146840558cad56200c79_48841769';
 ?>
 
         <div class="container main-content">
