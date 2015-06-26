@@ -12,6 +12,8 @@ class productController {
     }
 
     function searchlist() {
+        $current = $_POST[page];
+        
         //適当にレコードを作る（テストだからなんでもよい）
         $i = 1;
         while ($i <= 200) {
@@ -30,13 +32,12 @@ class productController {
 //↑先ほど作成したユーザー関数をarray_map()関数で配列全体に処理を施す
         $cnt = count($hairetu); //レコード数をカウントしておきます
 //テスト用、適当レコード作成ここまでÏ
-        $display_quanity = 10;
+        $display_quanity = 1;
         $start = 0;
         $max_page = ceil($cnt / $display_quanity);
         $naiyou = array_slice($hairetu,$start,$display_quanity);//表示する数と内容
         
-        console.log($display_quanity);
-        
+        console.log($display_quanity);  
         $array = array('cnt' => $cnt,
             'current_page' => 1,
             'start' => $start,
@@ -45,10 +46,7 @@ class productController {
             'deta' => $naiyou
         );
         $this->view->assign('array', $array);
-
-//        $pageArray = array('row' => 1, 'max_page' => 3, 'pager' => 4);
-//
-//        $this->view->assign('SA', $pageArray);
+        $this->view->assign('aa', $current);
 
         $this->view->display('View/search-list.tpl');
     }

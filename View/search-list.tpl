@@ -77,15 +77,16 @@ if($cnt == 0){
     {$deta}
     {/foreach}
 {*//↑内容を表示する部分終り*}
+{$aa}
 
 
 <nav>
 <ul class="pager">
 {if $array.current_page != 1}
-    <li><a href="pageing.php?page='.($genzai_page-1).'"><< 前のページへ</a></li>
+    <li><a href={*pageing.php?page='.($genzai_page-1).'"><<*}'/VEC/Controller/home/login'>前のページへ</a></li>
     {/if}
     {if $array.current_page != $array.max_page}
-    <li><a href='?page={$smarty.get.page+1}'>次のページへ >></a></li>
+    <li><a href='/VEC/Controller/product/searchlist/{$smarty.post.page+1}'>次のページへ >></a></li>
         {/if}
         </ul>
 </nav>
