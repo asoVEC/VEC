@@ -14,6 +14,8 @@ class userController {
     function setting(){
         $this->view->display('View/user-settings.tpl'); 
     }
-    
+    function signup(){
+        $this->view->display('View/signup.tpl'); 
+    }
     
 }
