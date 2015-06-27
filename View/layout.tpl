@@ -25,8 +25,8 @@
                             アカウントサービス
                                 <span class="caret"></span>
                                 <br />
-                                {if {$smarty.session.userName} == null}
-                                    <a href="/VEC/Controller/home/login">ログインする{*変数*}</a>
+                                {if $smarty.session.userName == null}
+                                    <a href="/VEC/Controller/home/login">ログインする</a>
                                 {else}
                                     ようこそ、{$smarty.session.userName}さん
                                 {/if}
@@ -34,9 +34,9 @@
                             <!-- ボタンここまで -->
                             <!-- ここはボタンを押すと表示されるリスト -->
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                {if {$smarty.session.userName} != null}{*ログインしてる場合のみ表示*}
+                                {if $smarty.session.userName != null}{*ログインしてる場合のみ表示*}
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#">会員情報変更</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/Controller/user/logout">ログアウト</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/Controller/home/logout">ログアウト</a></li>
                                 {else} 
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/Controller/user/signup">会員登録</a></li>
                                 {/if}

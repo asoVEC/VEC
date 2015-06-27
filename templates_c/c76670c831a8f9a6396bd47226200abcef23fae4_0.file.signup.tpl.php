@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-06-26 03:48:15
+<?php /* Smarty version 3.1.24, created on 2015-06-26 10:33:11
          compiled from "/Applications/MAMP/htdocs/VEC/View/signup.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:261972363558caf5f3ee990_94097262%%*/
+/*%%SmartyHeaderCode:835326159558d0e4781dbe0_01054407%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,13 +9,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c76670c831a8f9a6396bd47226200abcef23fae4' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/signup.tpl',
-      1 => 1435280862,
+      1 => 1435295365,
       2 => 'file',
     ),
     'fe23c48836857c70105e42ec7bf81752fd4db56f' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/layout.tpl',
-      1 => 1435283292,
+      1 => 1435307213,
       2 => 'file',
     ),
     'bc677889cca9c6647b196d609aec7d9d9dcb3f95' => 
@@ -24,34 +24,34 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       1 => 0,
       2 => 'string',
     ),
-    '4cbaaef05eefc141aee3843aeed91eefb26da38a' => 
+    '5d9eed55720b4e9accd6c0ad0c5f1854f903140a' => 
     array (
-      0 => '4cbaaef05eefc141aee3843aeed91eefb26da38a',
+      0 => '5d9eed55720b4e9accd6c0ad0c5f1854f903140a',
       1 => 0,
       2 => 'string',
     ),
   ),
-  'nocache_hash' => '261972363558caf5f3ee990_94097262',
+  'nocache_hash' => '835326159558d0e4781dbe0_01054407',
   'variables' => 
   array (
     'amount_cart' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_558caf5f4e2030_67748397',
+  'unifunc' => 'content_558d0e4796e9e8_72344615',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_558caf5f4e2030_67748397')) {
-function content_558caf5f4e2030_67748397 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_558d0e4796e9e8_72344615')) {
+function content_558d0e4796e9e8_72344615 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '261972363558caf5f3ee990_94097262';
+$_smarty_tpl->properties['nocache_hash'] = '835326159558d0e4781dbe0_01054407';
 ?>
 <html>
     <head>
         <meta charset="UTF-8">
         
             <title><?php
-$_smarty_tpl->properties['nocache_hash'] = '261972363558caf5f3ee990_94097262';
+$_smarty_tpl->properties['nocache_hash'] = '835326159558d0e4781dbe0_01054407';
 ?>
 </title>
         
@@ -76,10 +76,7 @@ $_smarty_tpl->properties['nocache_hash'] = '261972363558caf5f3ee990_94097262';
                             アカウントサービス
                                 <span class="caret"></span>
                                 <br />
-                                <?php ob_start();
-echo $_SESSION['userName'];
-$_tmp1=ob_get_clean();
-if ($_tmp1 == null) {?>
+                                <?php if ($_SESSION['userName'] == null) {?>
                                     <a href="/VEC/Controller/home/login">ログインする</a>
                                 <?php } else { ?>
                                     ようこそ、<?php echo $_SESSION['userName'];?>
@@ -89,12 +86,12 @@ if ($_tmp1 == null) {?>
                             <!-- ボタンここまで -->
                             <!-- ここはボタンを押すと表示されるリスト -->
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                
                                 <?php ob_start();
 echo $_SESSION['userName'];
-$_tmp2=ob_get_clean();
-if ($_tmp2 != null) {?>
+$_tmp1=ob_get_clean();
+if ($_tmp1 != null) {?>
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#">会員情報変更</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/Controller/home/logout">ログアウト</a></li>
                                 <?php } else { ?> 
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/Controller/user/signup">会員登録</a></li>
                                 <?php }?>
@@ -124,13 +121,13 @@ if ($_tmp2 != null) {?>
             <button type="submit" class="btn btn-default">検索</button>
         </form>
         <?php
-$_smarty_tpl->properties['nocache_hash'] = '261972363558caf5f3ee990_94097262';
+$_smarty_tpl->properties['nocache_hash'] = '835326159558d0e4781dbe0_01054407';
 ?>
 
- <center>
+
  <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; border-radius: 10px; width: 1200px;">
-      <font size="6" face="ＭＳ 明朝,平成明朝">会員登録</font> <br><br>
-　　　　<font size="4" face="ＭＳ ゴシック">アカウント作成のために必要な情報を入力してください</font> <br>
+     <p class="text-warning"><font size="6" face="ＭＳ 明朝,平成明朝">会員登録</font> <br><br></p>
+　　　　<font size="4" face="ＭＳ ゴシック">アカウントの作成に必要な情報を入力してください</font> <br>
 　　　 
           
           
@@ -173,8 +170,7 @@ $_smarty_tpl->properties['nocache_hash'] = '261972363558caf5f3ee990_94097262';
                  <br>
                       <tr><td>
                          <h4>パスワード:<br>
-                         <p><u>※ここで入力したパスワードが利用パスワードになります<u><p><h4>
-                              
+                         <p><u>※ここで入力したパスワードが利用パスワードになります<u><p><h4>   
                           </td>
 		
                           <td>
@@ -194,14 +190,14 @@ $_smarty_tpl->properties['nocache_hash'] = '261972363558caf5f3ee990_94097262';
 
                       <tr>
                           <td colspan="2">
-                              <input type="submit" value="アカウントの作成">
+                              <button type="button" class="btn btn-warning">アカウントの作成</button>
                           </td>
                       </tr>
                   </form>
               </table>
          </div>
          <body style="background-image: url(./img/back22.gif);">
-      </center>
+      
 
     </div>
 </div>

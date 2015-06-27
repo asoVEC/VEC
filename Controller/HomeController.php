@@ -55,12 +55,21 @@ class homeController {
             }
         }
     }
+    function logout(){
+        $_SESSION = array();
+        session_destroy();
+        $this->home();
+        
+        
+    }
 
-    private function loginProcess($mail,$password) {
+
+        private function loginProcess($mail,$password) {
         //戻(loginFlg = 0:ログイン失敗、 = 1:成功)
         $loginFlg = 0;
         $user = new User();
         $loginFlg = $user->login($mail, $password);
+        $_SESSION['userNo'] = $user->getUserNo();
         $_SESSION['userName'] = $user->getUserName();
         return $loginFlg;
     }
