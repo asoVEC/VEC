@@ -1,14 +1,12 @@
 <?php
-
+require_once ('Model/User.php');
 require_once ('smarty/libs/Smarty.class.php');
-require_once 'Model/User.php';
-
-
 class homeController {
 
     private $view;
 
     public function __construct() {
+        
              // ビュー
         $this->view = new Smarty;
     }
@@ -45,8 +43,10 @@ class homeController {
             //ログイン処理
             $loginFlg = $this->loginProcess($mail,$pass);            
             switch ($loginFlg) {
-                case 1: //ログイン成功   
-                    $this->home();
+                case 1: //ログイン成功
+                    header('Location: http://localhost:8888/VEC/');
+                    exit;
+//                    $this->home();
                     break;
                 case 0://ログイン失敗
                     $this->view->assign('login_message', 'きみやさんはログインお断りです');
@@ -58,19 +58,20 @@ class homeController {
     function logout(){
         $_SESSION = array();
         session_destroy();
-        $this->home();
+        header('Location: http://localhost:8888/VEC/');
+        exit;
         
         
     }
-
-
-        private function loginProcess($mail,$password) {
+    private function loginProcess($mail,$password) {
         //戻(loginFlg = 0:ログイン失敗、 = 1:成功)
         $loginFlg = 0;
         $user = new User();
         $loginFlg = $user->login($mail, $password);
-        $_SESSION['userNo'] = $user->getUserNo();
-        $_SESSION['userName'] = $user->getUserName();
+        if($loginFlg == 1){
+            $_SESSION['userNo'] = $user->getUserNo();
+            $_SESSION['userName'] = $user->getUserName();
+        }
         return $loginFlg;
     }
     function test2() {

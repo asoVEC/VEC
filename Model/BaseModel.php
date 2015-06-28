@@ -1,10 +1,8 @@
-
 <?php
 /**
  *@author 	Akihiro
  *@date 	2015/05/31
  **/
-
 class BaseModel {
      private $user     = 'root';
      private $password = 'root';
@@ -35,7 +33,7 @@ class BaseModel {
     }
     //クエリー共通部分、 引:テーブル名、where条件(なしの場合 = 0) 戻:
     function query($table,$where) {
-        if($where != 0){
+        if($where != null){
             $this->where = ' where '.$where;
         }
         $result = mysql_query('SELECT * FROM '.$table.  $this->where);
@@ -46,8 +44,8 @@ class BaseModel {
         return$row; 
     }
     
-    function addDeta(){
-        
+    function addDeta(){        
     }
-        
+
 }
+?>

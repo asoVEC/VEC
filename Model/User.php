@@ -1,9 +1,6 @@
 <?php
-
 require_once 'BaseModel.php';
-
 class User extends BaseModel {
-
     private $userNo;
     private $userName;
     private $mail;
@@ -32,9 +29,9 @@ class User extends BaseModel {
     }
 
     function login($mailAddress, $password) {
-        $where = 'mail_address = ' . $mailAddress;
+        $where = 'mail_address = ' . '\''.$mailAddress.'\'';
         $row = parent::query('user', $where);
-        if ($row['password'] == $password) {
+        if ($row['password'] === $password) {
             $this->userNo = $row['user_no'];
             $this->userName = $row['name'];
             return 1;
@@ -43,10 +40,7 @@ class User extends BaseModel {
         }
     }
 
-    function signUp() {
-        
+    function signUp() {   
     }
-
 }
 ?>
-

@@ -30,9 +30,12 @@
                                     </div>
                                     <span style='color:red'>{$login_message}</span>
                                     <div class="form-group">
-                                        <div class="col-sm-offset-7 col-sm-10">
+                                        <div class="col-sm-offset-7">
                                             <button type="submit" class="btn btn-default ">ログイン</button>
                                         </div>
+                                    </div>
+                                     <div class="col-sm-offset-6">会員登録は
+                                        <span style='color:blue'><a href="/VEC/Controller/user/signup">こちら</a></span>
                                     </div>
                                 </form>
                             </div>{*row*}
