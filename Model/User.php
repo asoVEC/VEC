@@ -29,9 +29,9 @@ class User extends BaseModel {
     }
 
     function login($mailAddress, $password) {
-        $where = 'mail_address = ' . '\''.$mailAddress.'\'';
+        $where = 'mail_address = ' . '\''.$mailAddress.'\''; //←検索条件のとこ''忘れないようにね!
         $row = parent::query('user', $where);
-        if ($row['password'] === $password) {
+        if ($row['password'] === $password) {   //←==比較すると '0'=='000'が通るので注意!
             $this->userNo = $row['user_no'];
             $this->userName = $row['name'];
             return 1;
@@ -43,4 +43,3 @@ class User extends BaseModel {
     function signUp() {   
     }
 }
-?>

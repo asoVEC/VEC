@@ -46,6 +46,4 @@ class BaseModel {
     
     function addDeta(){        
     }
-
 }
-?>

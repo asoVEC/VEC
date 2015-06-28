@@ -1,13 +1,15 @@
 <?php
+
 require_once ('Model/User.php');
 require_once ('smarty/libs/Smarty.class.php');
+
 class homeController {
 
     private $view;
 
     public function __construct() {
-        
-             // ビュー
+
+        // ビュー
         $this->view = new Smarty;
     }
 
@@ -22,7 +24,7 @@ class homeController {
         $this->view->assign('name3', '割高きみや');
         $this->view->assign('name4', '円安きみや');
         $this->view->assign('name5', '円高きみや');
-        $this->view->assign('name1', 'ちょっと高いきみや');     
+        $this->view->assign('name1', 'ちょっと高いきみや');
         $this->view->display('View/base.tpl');
     }
 
@@ -34,19 +36,19 @@ class homeController {
 //        echo 'きみや';
         $mail = $_POST[mail];
         $pass = $_POST[password];
-        
+
         if ($_SESSION['userName'] != NULL) {//ログイン済み
-            $this->home();
+            header('Location: http://localhost:8888/VEC/');
+            exit;
         } elseif ($mail == NULL || $pass == null) {//初回アクセス
             $this->view->display('View/login.tpl');
         } else {
             //ログイン処理
-            $loginFlg = $this->loginProcess($mail,$pass);            
+            $loginFlg = $this->loginProcess($mail, $pass);
             switch ($loginFlg) {
                 case 1: //ログイン成功
                     header('Location: http://localhost:8888/VEC/');
                     exit;
-//                    $this->home();
                     break;
                 case 0://ログイン失敗
                     $this->view->assign('login_message', 'きみやさんはログインお断りです');
@@ -55,29 +57,28 @@ class homeController {
             }
         }
     }
-    function logout(){
+
+    function logout() {
         $_SESSION = array();
         session_destroy();
         header('Location: http://localhost:8888/VEC/');
         exit;
-        
-        
     }
-    private function loginProcess($mail,$password) {
+
+    private function loginProcess($mail, $password) {
         //戻(loginFlg = 0:ログイン失敗、 = 1:成功)
         $loginFlg = 0;
         $user = new User();
         $loginFlg = $user->login($mail, $password);
-        if($loginFlg == 1){
+        if ($loginFlg == 1) {
             $_SESSION['userNo'] = $user->getUserNo();
             $_SESSION['userName'] = $user->getUserName();
         }
         return $loginFlg;
     }
+
     function test2() {
         $this->view->display('View/test2.tpl');
     }
 
 }
-
-?>
