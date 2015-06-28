@@ -38,7 +38,7 @@ class homeController {
         $pass = $_POST[password];
 
         if ($_SESSION['userName'] != NULL) {//ログイン済み
-            header('Location: http://localhost:8888/VEC/');
+            header('Location: /VEC/');
             exit;
         } elseif ($mail == NULL || $pass == null) {//初回アクセス
             $this->view->display('View/login.tpl');
@@ -47,7 +47,7 @@ class homeController {
             $loginFlg = $this->loginProcess($mail, $pass);
             switch ($loginFlg) {
                 case 1: //ログイン成功
-                    header('Location: http://localhost:8888/VEC/');
+                    header('Location: /VEC/');
                     exit;
                     break;
                 case 0://ログイン失敗
