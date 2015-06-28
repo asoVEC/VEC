@@ -32,7 +32,12 @@ class homeController {
         $this->home();
     }
 
-    function login() {
+    
+        function login($page = 0) {
+        if ($page == 1){
+             header('Location: http://google.com');
+            exit;
+        }       
 //        echo 'きみや';
         $mail = $_POST[mail];
         $pass = $_POST[password];
@@ -61,7 +66,7 @@ class homeController {
     function logout() {
         $_SESSION = array();
         session_destroy();
-        header('Location: http://localhost:8888/VEC/');
+        header('Location: /VEC/');
         exit;
     }
 

@@ -29,13 +29,20 @@ class Dispatcher {
         require_once $className.'.php';        
         // クラスインスタンス生成
         $controllerInstance = new $className();
+        
         // 2番目のパラメーターをコントローラーとして取得
         $action = 'index';
         if (4 < count($params)) {
             $action = $params[4];
-        }          
-        // アクションメソッドを実行
+        }  
         $actionMethod = $action;
+            //3番目のパラメータが存在する場合取得,メソッドの引数として渡す
+            if(5 < count($params)){
+                $page = $params[5];
+                // アクションメソッドを実行
+                $controllerInstance->$action($page);
+            }
+        // アクションメソッドを実行
         $controllerInstance->$actionMethod();
         
         
