@@ -1,6 +1,9 @@
 <?php
+<<<<<<< HEAD
 
 require_once ('Model/User.php');
+=======
+>>>>>>> origin/master
 require_once ('smarty/libs/Smarty.class.php');
 
 class homeController {
@@ -31,6 +34,7 @@ class homeController {
     function index() {
         $this->home();
     }
+<<<<<<< HEAD
 
     
         function login($page = 0) {
@@ -39,6 +43,9 @@ class homeController {
             exit;
         }       
 //        echo 'きみや';
+=======
+        function login($page = 0) { //←引数なしで呼ぶとデフォルト値:0が$pageに入るよ       
+>>>>>>> origin/master
         $mail = $_POST[mail];
         $pass = $_POST[password];
 
@@ -85,5 +92,9 @@ class homeController {
     function test2() {
         $this->view->display('View/test2.tpl');
     }
+<<<<<<< HEAD
 
 }
+=======
+}
+>>>>>>> origin/master
