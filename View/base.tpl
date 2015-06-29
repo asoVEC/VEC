@@ -6,7 +6,7 @@
                 <div class="col-md-3 col-lg-3">
                     <ul class="nav nav-pills nav-stacked">
                         <li class="active"><a href="#">カテゴリ一覧</a></li>
-                        <li><a href="#">肉・卵</a></li>
+                        <li><a href="/VEC/Controller/product/searchlist/">肉・卵</a></li>
                         <li><a href="#">魚介</a></li>
                         <li><a href="#">野菜</a></li>
                         <li><a href="#">果物</a></li>
