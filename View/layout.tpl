@@ -67,11 +67,7 @@
     </div>
 </div>
 </div>
-<<<<<<< HEAD
-<footer class="container-fluid">
-=======
 <footer class="container-fluid ">
->>>>>>> origin/master
     <small><a href="/">Copyright (C) 2015-2015 vec.aso All Rights Reserved.</a></small>
 </footer>
 </body>
