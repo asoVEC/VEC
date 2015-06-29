@@ -21,7 +21,7 @@
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
                             <!-- ここが表示されるボタン <a>タグでもOK -->
-                            <button class="dropdown-toggle navbar-inverse　nav badge" id="dropdownMenu1" data-toggle="dropdown" type="button"></a>
+                            <button class="dropdown-toggle nav badge" id="dropdownMenu1" type="button"></a>
                             アカウントサービス
                                 <span class="caret"></span>
                                 <br />
@@ -68,12 +68,7 @@
     </div>
 </div>
 </div>
-<<<<<<< HEAD
 <footer class="container-fluid ">
-=======
-</div>
-<footer class="container-fluid">
->>>>>>> origin/master
     <small><a href="/">Copyright (C) 2015-2015 vec.aso All Rights Reserved.</a></small>
 </footer>
 </body>
