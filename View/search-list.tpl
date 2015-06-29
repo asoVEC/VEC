@@ -50,7 +50,7 @@ if($_GET['page'] <> ""){
 	$start = ($genzai_page-1)*$hyouji_kazu;//表示スタート数（何個目から表示するか？）
 }*}
 
-現在のページは{$array.current_page}
+現在のページは{$smarty.post.page}
 <br />
 {$array.start + 1}個目から{$array.start + $array.display_quanity}個目のデータを表示しています。
 {$array.display_quanity}
@@ -77,7 +77,7 @@ if($cnt == 0){
     {$deta}
     {/foreach}
 {*//↑内容を表示する部分終り*}
-{$aa}
+{*{$smarty.post.page}*}
 
 
 <nav>
@@ -86,7 +86,7 @@ if($cnt == 0){
     <li><a href={*pageing.php?page='.($genzai_page-1).'"><<*}'/VEC/Controller/home/login'>前のページへ</a></li>
     {/if}
     {if $array.current_page != $array.max_page}
-    <li><a href='/VEC/Controller/product/searchlist/{$smarty.post.page+1}'>次のページへ >></a></li>
+    <li><a href='/VEC/Controller/product/searchlist'>次のページへ >></a></li>
         {/if}
         </ul>
 </nav>
