@@ -17,8 +17,6 @@
             </div>
             <div id="nav-content" class="collapse navbar-collapse">
                 <!--                    リンクのリスト メニューリスト-->
-<<<<<<< HEAD
-
                 <ul class="navbar-right nav navbar-nav">
                     <li class="dropdown">
                         <!-- ここが表示されるボタン <a>タグでもOK -->
@@ -41,31 +39,6 @@
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/Controller/user/signup">会員登録</a></li>
                             {/if}
                         </ul>
-=======
-                <div class="navbar-right">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <!-- ここが表示されるボタン <a>タグでもOK -->
-                            <button class="dropdown-toggle nav badge" id="dropdownMenu1" type="button"></a>
-                            アカウントサービス
-                                <span class="caret"></span>
-                                <br />
-                                {if {$smarty.session.userName} == null}
-                                    <a href="">ログインする{*変数*}</a>
-                                {else}
-                                    ようこそ、{$smarty.session.userName}さん
-                                {/if}
-                            </button>
-                            <!-- ボタンここまで -->
-                            <!-- ここはボタンを押すと表示されるリスト -->
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                {*                                ログインしてる場合のみ表示*}
-                                {if $name != null}
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">会員情報変更</a></li>
-                                    {/if}
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">会員登録</a></li>
-                            </ul>
->>>>>>> origin/master
                             <!-- リストここまで -->
                     </li>
                         <li class="divider"><a href="">買い物カゴ <span class="badge">{$amount_cart}</span></a></li>
