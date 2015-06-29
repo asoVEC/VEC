@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-06-29 15:51:59
+<?php /* Smarty version 3.1.24, created on 2015-06-29 16:46:03
          compiled from "/Applications/MAMP/htdocs/VEC/View/base.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1995885765590eb0f60c254_12865484%%*/
+/*%%SmartyHeaderCode:15155451005590f7bbc15974_21516233%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,36 +9,36 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '42db65d542961d223c09d1da22900689ec241347' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/base.tpl',
-      1 => 1435115141,
+      1 => 1435563925,
       2 => 'file',
     ),
     'fe23c48836857c70105e42ec7bf81752fd4db56f' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/layout.tpl',
-      1 => 1435560677,
+      1 => 1435563960,
       2 => 'file',
     ),
-    'c58562b535d9f1144c28345b4641674ab88b8645' => 
+    'd62ee8693f6eddc07941abcf8d65c50cb5eb0bf3' => 
     array (
-      0 => 'c58562b535d9f1144c28345b4641674ab88b8645',
+      0 => 'd62ee8693f6eddc07941abcf8d65c50cb5eb0bf3',
       1 => 0,
       2 => 'string',
     ),
   ),
-  'nocache_hash' => '1995885765590eb0f60c254_12865484',
+  'nocache_hash' => '15155451005590f7bbc15974_21516233',
   'variables' => 
   array (
     'amount_cart' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5590eb0f79f513_39501527',
+  'unifunc' => 'content_5590f7bbd24c19_80174781',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5590eb0f79f513_39501527')) {
-function content_5590eb0f79f513_39501527 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5590f7bbd24c19_80174781')) {
+function content_5590f7bbd24c19_80174781 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1995885765590eb0f60c254_12865484';
+$_smarty_tpl->properties['nocache_hash'] = '15155451005590f7bbc15974_21516233';
 ?>
 <html>
     <head>
@@ -55,11 +55,10 @@ $_smarty_tpl->properties['nocache_hash'] = '1995885765590eb0f60c254_12865484';
             <div class="navbar-header">
 
                 <!--ブランド名 ロゴ名の表示-->
-                <a class="navbar-brand" href="#">VEC</a>
+                <a class="navbar-brand" href="/VEC/">VEC</a>
             </div>
             <div id="nav-content" class="collapse navbar-collapse">
                 <!--                    リンクのリスト メニューリスト-->
-
                 <ul class="navbar-right nav navbar-nav">
                     <li class="dropdown">
                         <!-- ここが表示されるボタン <a>タグでもOK -->
@@ -107,7 +106,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1995885765590eb0f60c254_12865484';
                 <button type="submit" class="btn btn-default">検索</button>
             </form>
             <?php
-$_smarty_tpl->properties['nocache_hash'] = '1995885765590eb0f60c254_12865484';
+$_smarty_tpl->properties['nocache_hash'] = '15155451005590f7bbc15974_21516233';
 ?>
 
 
@@ -116,7 +115,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1995885765590eb0f60c254_12865484';
                 <div class="col-md-3 col-lg-3">
                     <ul class="nav nav-pills nav-stacked">
                         <li class="active"><a href="#">カテゴリ一覧</a></li>
-                        <li><a href="#">肉・卵</a></li>
+                        <li><a href="/VEC/Controller/product/searchlist/">肉・卵</a></li>
                         <li><a href="#">魚介</a></li>
                         <li><a href="#">野菜</a></li>
                         <li><a href="#">果物</a></li>
@@ -158,7 +157,11 @@ $_smarty_tpl->properties['nocache_hash'] = '1995885765590eb0f60c254_12865484';
     </div>
 </div>
 </div>
+<<<<<<< HEAD
 <footer class="container-fluid">
+=======
+<footer class="container-fluid ">
+>>>>>>> origin/master
     <small><a href="/">Copyright (C) 2015-2015 vec.aso All Rights Reserved.</a></small>
 </footer>
 </body>

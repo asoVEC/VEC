@@ -13,7 +13,7 @@
             <div class="navbar-header">
 
                 <!--ブランド名 ロゴ名の表示-->
-                <a class="navbar-brand" href="#">VEC</a>
+                <a class="navbar-brand" href="/VEC/">VEC</a>
             </div>
             <div id="nav-content" class="collapse navbar-collapse">
                 <!--                    リンクのリスト メニューリスト-->
