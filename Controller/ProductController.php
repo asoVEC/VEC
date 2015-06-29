@@ -12,8 +12,12 @@ class productController {
     }
 
     function searchlist() {
+        if($smarty.post.page == NULL){
+            $_POST["page"]=1;
+        }else{
+            $_POST["page"]+=1;
+        }
         $current = $_POST[page];
-        
         //適当にレコードを作る（テストだからなんでもよい）
         $i = 1;
         while ($i <= 200) {
@@ -39,7 +43,7 @@ class productController {
         
         console.log($display_quanity);  
         $array = array('cnt' => $cnt,
-            'current_page' => 1,
+            'current_page' => $current,
             'start' => $start,
             'display_quanity' => $display_quanity,
             'max_page' => $max_page,//ceilは切り上げ（$max_pageは表示最大ページ数）

@@ -8,8 +8,8 @@
 
 class Dispatcher {
 
-    public function dispatch() { 
-        
+    public function dispatch() {
+                        
         // パラメーター取得（末尾の / は削除）
         $param = ereg_replace('/?$', '', $_SERVER['REQUEST_URI']);
         $params = array();
@@ -23,13 +23,13 @@ class Dispatcher {
         if (3 < count($params)) {
             $controller = $params[3];
         }
+                
         // パラメータより取得したコントローラー名によりクラス振分け
         $className = ucfirst(strtolower($controller)) . 'Controller';      
         // クラスファイル読込
-        require_once $className.'.php';        
+        require_once $className.'.php';
         // クラスインスタンス生成
         $controllerInstance = new $className();
-        
         // 2番目のパラメーターをコントローラーとして取得
         $action = 'index';
         if (4 < count($params)) {
@@ -41,8 +41,7 @@ class Dispatcher {
             $page = $params[5];
             // アクションメソッドを実行
         }
-        $controllerInstance->$action($page);
-        
+        $controllerInstance->$action($page);        
     }
 
 }

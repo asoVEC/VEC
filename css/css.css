@@ -40,6 +40,110 @@ and open the template in the editor.
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
+.frame2 {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+.frame2:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    height: auto;
+    background: red;
+    content: "とめいと"; /* 表示するテキスト */
+    text-align: center;
+    color: #fff;
+    font-family: 'Arial';
+    font-weight: bold;
+    padding: 5px 10px;
+    left: -30px;
+    top: 3px;
+    transform: rotate(-30deg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.frame3 {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+}
+.frame3:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    height: auto;
+    background: red;
+    content: "ぱぺりか"; /* 表示するテキスト */
+    text-align: center;
+    color: #fff;
+    font-family: 'Arial';
+    font-weight: bold;
+    padding: 5px 10px;
+    left: -30px;
+    top: 3px;
+    transform: rotate(-30deg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.frame4 {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+}
+.frame4:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    height: auto;
+    background: red;
+    content: "かぼかぼ"; /* 表示するテキスト */
+    text-align: center;
+    color: #fff;
+    font-family: 'Arial';
+    font-weight: bold;
+    padding: 5px 10px;
+    left: -30px;
+    top: 3px;
+    transform: rotate(-30deg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.frame5 {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+}
+.frame5:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    height: auto;
+    background: red;
+    content: "にんじーん"; /* 表示するテキスト */
+    text-align: center;
+    color: #fff;
+    font-family: 'Arial';
+    font-weight: bold;
+    padding: 5px 10px;
+    left: -30px;
+    top: 3px;
+    transform: rotate(-30deg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
 footer {
     text-align: center;
     padding: 10px;
@@ -72,7 +176,7 @@ header .midashi-btn:hover {
     border-color: #0089ff;
 }
 
-.qbar-form {
+.navbar-form {
     padding-right: 30px;
 }
 body{

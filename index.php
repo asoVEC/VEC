@@ -1,12 +1,10 @@
-<?php
 
-session_start();
+<?php
 
 require_once 'Controller/Dispatcher.php';
 
 $dispatcher = new Dispatcher();
-  
-$dispatcher->dispatch();
 
+$dispatcher->dispatch();
 
 ?>
