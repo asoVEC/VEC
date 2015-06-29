@@ -11,13 +11,15 @@ class productController {
 //        $this->view->template_dir = '../View';
     }
 
-    function searchlist() {
-        if($smarty.post.page == NULL){
-            $_POST["page"]=1;
+    function searchlist($page = 1) {
+        
+        if($page ==1){
+            $current = $page;
+            $_POST[page] = 1;
         }else{
-            $_POST["page"]+=1;
-        }
-        $current = $_POST[page];
+            $current = $page;
+            $_POST[page] = $page;
+        }        
         //適当にレコードを作る（テストだからなんでもよい）
         $i = 1;
         while ($i <= 200) {
@@ -36,8 +38,8 @@ class productController {
 //↑先ほど作成したユーザー関数をarray_map()関数で配列全体に処理を施す
         $cnt = count($hairetu); //レコード数をカウントしておきます
 //テスト用、適当レコード作成ここまでÏ
-        $display_quanity = 1;
-        $start = 0;
+        $display_quanity = 10;
+        $start = 0 + $current*10 -10;
         $max_page = ceil($cnt / $display_quanity);
         $naiyou = array_slice($hairetu,$start,$display_quanity);//表示する数と内容
         
@@ -50,7 +52,6 @@ class productController {
             'deta' => $naiyou
         );
         $this->view->assign('array', $array);
-        $this->view->assign('aa', $current);
 
         $this->view->display('View/search-list.tpl');
     }

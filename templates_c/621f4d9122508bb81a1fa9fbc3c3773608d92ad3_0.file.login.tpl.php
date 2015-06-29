@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-<?php /* Smarty version 3.1.24, created on 2015-06-26 14:16:09
+<?php /* Smarty version 3.1.24, created on 2015-06-29 16:24:14
          compiled from "/Applications/MAMP/htdocs/VEC/View/login.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1196054947558ce0199589e0_17324804%%*/
-=======
-<?php /* Smarty version 3.1.24, created on 2015-06-28 23:07:34
-         compiled from "/Applications/MAMP/htdocs/VEC/View/login.tpl" */ ?>
-<?php
-/*%%SmartyHeaderCode:1075476425559062161dd351_32479048%%*/
->>>>>>> origin/master
+/*%%SmartyHeaderCode:8018937525590f29ea26d87_19223069%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -16,21 +9,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '621f4d9122508bb81a1fa9fbc3c3773608d92ad3' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/login.tpl',
-<<<<<<< HEAD
-      1 => 1435117107,
-=======
-      1 => 1435521860,
->>>>>>> origin/master
+      1 => 1435560677,
       2 => 'file',
     ),
     'fe23c48836857c70105e42ec7bf81752fd4db56f' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/layout.tpl',
-<<<<<<< HEAD
-      1 => 1435286254,
-=======
-      1 => 1435525557,
->>>>>>> origin/master
+      1 => 1435560677,
       2 => 'file',
     ),
     'acd82172d4d389c99906eae038e47fc54b06e373' => 
@@ -46,47 +31,27 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'string',
     ),
   ),
-<<<<<<< HEAD
-  'nocache_hash' => '1196054947558ce0199589e0_17324804',
-=======
-  'nocache_hash' => '1075476425559062161dd351_32479048',
->>>>>>> origin/master
+  'nocache_hash' => '8018937525590f29ea26d87_19223069',
   'variables' => 
   array (
     'amount_cart' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-<<<<<<< HEAD
-  'unifunc' => 'content_558ce019a2d764_03204991',
+  'unifunc' => 'content_5590f29eb00718_16294965',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_558ce019a2d764_03204991')) {
-function content_558ce019a2d764_03204991 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5590f29eb00718_16294965')) {
+function content_5590f29eb00718_16294965 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1196054947558ce0199589e0_17324804';
-=======
-  'unifunc' => 'content_5590621637b995_78616563',
-),false);
-/*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5590621637b995_78616563')) {
-function content_5590621637b995_78616563 ($_smarty_tpl) {
-
-$_smarty_tpl->properties['nocache_hash'] = '1075476425559062161dd351_32479048';
->>>>>>> origin/master
+$_smarty_tpl->properties['nocache_hash'] = '8018937525590f29ea26d87_19223069';
 ?>
 <html>
     <head>
         <meta charset="UTF-8">
-<<<<<<< HEAD
-        
-            <title><?php
-$_smarty_tpl->properties['nocache_hash'] = '1196054947558ce0199589e0_17324804';
-=======
 
         <title><?php
-$_smarty_tpl->properties['nocache_hash'] = '1075476425559062161dd351_32479048';
->>>>>>> origin/master
+$_smarty_tpl->properties['nocache_hash'] = '8018937525590f29ea26d87_19223069';
 ?>
 
     ログイン
@@ -146,27 +111,6 @@ $_smarty_tpl->properties['nocache_hash'] = '1075476425559062161dd351_32479048';
             </nav>
             <header class="jumbotron col-lg-10 col-lg-offset-1"></header>
                 
-<<<<<<< HEAD
-                <!--検索フォーム-->
-                <form class="navbar-form navbar-static-top" role="search">
-                    <div class="form-group col-md-offset-1">
-                        <input type="text" class="form-control" placeholder="商品検索" size="60pix">
-                    </div>
-                    <button type="submit" class="btn btn-default">検索</button>
-                </form>
-            </div>
-        </nav>
-        <header class="jumbotron col-lg-10 col-lg-offset-1"></header>
-            
-        <form class="navbar-form navbar-static-top hidden-lg hidden-md hidden-sm" role="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="商品検索">
-            </div>
-            <button type="submit" class="btn btn-default">検索</button>
-        </form>
-        <?php
-$_smarty_tpl->properties['nocache_hash'] = '1196054947558ce0199589e0_17324804';
-=======
             <form class="navbar-form navbar-static-top hidden-lg hidden-md hidden-sm" role="search">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="商品検索">
@@ -174,8 +118,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1196054947558ce0199589e0_17324804';
                 <button type="submit" class="btn btn-default">検索</button>
             </form>
             <?php
-$_smarty_tpl->properties['nocache_hash'] = '1075476425559062161dd351_32479048';
->>>>>>> origin/master
+$_smarty_tpl->properties['nocache_hash'] = '8018937525590f29ea26d87_19223069';
 ?>
 
         <div class="container main-content">
