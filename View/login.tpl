@@ -8,7 +8,7 @@
             <div class="panel panel-default col-sm-6 col-sm-offset-3 col-md-6">
                 <div class="panel-body">
                     <div class="container">
-                        <div class="col-xs-12 col-sm-8 col-md-8 col-md-offset-2 col-sm-offset-3 col-xs-8 h1">ログインしてください</div>
+                        <div class="col-xs-12 col-sm-10 col-md-10 col-md-offset-2 col-sm-offset-2 col-xs-8 h1">ログインしてください</div>
                         <div class="row">
                             <form action="/VEC/Controller/home/login" class="form-horizontal" method="post">
 

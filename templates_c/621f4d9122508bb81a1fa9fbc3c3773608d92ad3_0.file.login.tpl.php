@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-06-29 16:24:14
+<?php /* Smarty version 3.1.24, created on 2015-06-29 09:47:50
          compiled from "/Applications/MAMP/htdocs/VEC/View/login.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:8018937525590f29ea26d87_19223069%%*/
+/*%%SmartyHeaderCode:12443373615590f826423dd8_92298529%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,53 +9,53 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '621f4d9122508bb81a1fa9fbc3c3773608d92ad3' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/login.tpl',
-      1 => 1435560677,
+      1 => 1435564066,
       2 => 'file',
     ),
     'fe23c48836857c70105e42ec7bf81752fd4db56f' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/layout.tpl',
-      1 => 1435560677,
+      1 => 1435563866,
       2 => 'file',
     ),
-    'acd82172d4d389c99906eae038e47fc54b06e373' => 
+    '69b5c9f33e7196259bf3314cd4a9e698d12e18df' => 
     array (
-      0 => 'acd82172d4d389c99906eae038e47fc54b06e373',
+      0 => '69b5c9f33e7196259bf3314cd4a9e698d12e18df',
       1 => 0,
       2 => 'string',
     ),
-    '7d7acb8e5907778c7fd7b49dc0f0b75215687306' => 
+    '39d40abba88b0a75de0237e464b058cc4061a914' => 
     array (
-      0 => '7d7acb8e5907778c7fd7b49dc0f0b75215687306',
+      0 => '39d40abba88b0a75de0237e464b058cc4061a914',
       1 => 0,
       2 => 'string',
     ),
   ),
-  'nocache_hash' => '8018937525590f29ea26d87_19223069',
+  'nocache_hash' => '12443373615590f826423dd8_92298529',
   'variables' => 
   array (
     'amount_cart' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5590f29eb00718_16294965',
+  'unifunc' => 'content_5590f8265698d3_15658016',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5590f29eb00718_16294965')) {
-function content_5590f29eb00718_16294965 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5590f8265698d3_15658016')) {
+function content_5590f8265698d3_15658016 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '8018937525590f29ea26d87_19223069';
+$_smarty_tpl->properties['nocache_hash'] = '12443373615590f826423dd8_92298529';
 ?>
 <html>
     <head>
         <meta charset="UTF-8">
 
         <title><?php
-$_smarty_tpl->properties['nocache_hash'] = '8018937525590f29ea26d87_19223069';
+$_smarty_tpl->properties['nocache_hash'] = '12443373615590f826423dd8_92298529';
 ?>
 
     ログイン
-    </title>
+</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/VEC/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -70,7 +70,6 @@ $_smarty_tpl->properties['nocache_hash'] = '8018937525590f29ea26d87_19223069';
             </div>
             <div id="nav-content" class="collapse navbar-collapse">
                 <!--                    リンクのリスト メニューリスト-->
-
                 <ul class="navbar-right nav navbar-nav">
                     <li class="dropdown">
                         <!-- ここが表示されるボタン <a>タグでもOK -->
@@ -118,51 +117,50 @@ $_smarty_tpl->properties['nocache_hash'] = '8018937525590f29ea26d87_19223069';
                 <button type="submit" class="btn btn-default">検索</button>
             </form>
             <?php
-$_smarty_tpl->properties['nocache_hash'] = '8018937525590f29ea26d87_19223069';
+$_smarty_tpl->properties['nocache_hash'] = '12443373615590f826423dd8_92298529';
 ?>
 
-        <div class="container main-content">
-            <div class="row">
-                <div class="panel panel-default col-sm-6 col-sm-offset-3 col-md-6">
-                    <div class="panel-body">
-                        <div class="container">
-                            <div class="col-xs-12 col-sm-8 col-md-8 col-md-offset-2 col-sm-offset-3 col-xs-8 h1">ログインしてください</div>
+    <div class="container main-content">
+        <div class="row">
+            <div class="panel panel-default col-sm-6 col-sm-offset-3 col-md-6">
+                <div class="panel-body">
+                    <div class="container">
+                        <div class="col-xs-12 col-sm-10 col-md-10 col-md-offset-2 col-sm-offset-2 col-xs-8 h1">ログインしてください</div>
+                        <div class="row">
+                            <form action="/VEC/Controller/home/login" class="form-horizontal" method="post">
 
-                            <div class="row">
-                                <form action="/VEC/Controller/home/login" class="form-horizontal" method="post">
+                                <div class="form-group">
 
-                                    <div class="form-group">
-
-                                        <label for="input-mail" class="col-sm-3 control-label">メールアドレス</label>
-                                        <div class="col-sm-6">
-                                            <input type="text" class="form-control" name="mail" id="input-mail" placeholder="メールアドレス" required="required">
-                                        </div>
+                                    <label for="input-mail" class="col-sm-3 control-label">メールアドレス</label>
+                                    <div class="col-sm-6">
+                                        <input type="email" class="form-control" name="mail" id="input-mail" placeholder="メールアドレス" required="required">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="input-passward" class="col-sm-3 control-label">パスワード</label>
-                                        <div class="col-sm-6">
-                                            <input type="password" class="form-control" name="password" id="input-passward" placeholder="パスワード" required="required">
-                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="input-passward" class="col-sm-3 control-label">パスワード</label>
+                                    <div class="col-sm-6">
+                                        <input type="password" class="form-control" name="password" id="input-passward" placeholder="パスワード" required="required">
                                     </div>
-                                    <span style='color:red'><?php echo $_smarty_tpl->tpl_vars['login_message']->value;?>
+                                </div>
+                                <span style='color:red'><?php echo $_smarty_tpl->tpl_vars['login_message']->value;?>
 </span>
-                                    <div class="form-group">
-                                        <div class="col-sm-offset-7">
-                                            <button type="submit" class="btn btn-default ">ログイン</button>
-                                        </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-6 col-sm-9">
+                                        <button type="submit" class="btn btn-default ">ログイン</button>
                                     </div>
-                                     <div class="col-sm-offset-6">会員登録は
-                                        <span style='color:blue'><a href="/VEC/Controller/user/signup">こちら</a></span>
-                                    </div>
-                                </form>
-                            </div>
+                                </div>
+                                <div class="col-sm-offset-6">会員登録は
+                                    <span style='color:blue'><a href="/VEC/Controller/user/signup">こちら</a></span>
+                                </div>
+                            </form>
                         </div>
-                    
+                    </div>
+                
         </div>
     </div>
 </div>
 </div>
-<footer class="container-fluid">
+<footer class="container-fluid ">
     <small><a href="/">Copyright (C) 2015-2015 vec.aso All Rights Reserved.</a></small>
 </footer>
 </body>
