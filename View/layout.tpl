@@ -68,7 +68,7 @@
     </div>
 </div>
 </div>
-<footer class="container-fluid">
+<footer class="container-fluid ">
     <small><a href="/">Copyright (C) 2015-2015 vec.aso All Rights Reserved.</a></small>
 </footer>
 </body>

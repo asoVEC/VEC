@@ -34,20 +34,15 @@ class Dispatcher {
         $action = 'index';
         if (4 < count($params)) {
             $action = $params[4];
-        }  
-        $actionMethod = $action;
-            //3番目のパラメータが存在する場合取得,メソッドの引数として渡す
-            if(5 < count($params)){
-                $page = $params[5];
-                // アクションメソッドを実行
-                $controllerInstance->$action($page);
-            }
-        // アクションメソッドを実行
-        $controllerInstance->$actionMethod();
-        
+        }
+        //3番目のパラメータが存在する場合取得,メソッドの引数として渡す
+        $page = 0;
+        if(5 < count($params)){
+            $page = $params[5];
+            // アクションメソッドを実行
+        }
+        $controllerInstance->$action($page);
         
     }
 
 }
-
-?>

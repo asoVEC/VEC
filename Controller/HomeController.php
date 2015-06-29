@@ -33,11 +33,19 @@ class homeController {
     }
 
     
-        function login($page = 0) {
+        function login($page = 0) { //←引数なしで呼ぶとデフォルト値:0が$pageに入るよ
         if ($page == 1){
+            echo '1ページ目です';
+            exit;
+        } 
+         if ($page == 2){
+             echo '2ページ目です';
+             exit;
+        } 
+         if ($page == 3){
              header('Location: http://google.com');
             exit;
-        }       
+        } 
 //        echo 'きみや';
         $mail = $_POST[mail];
         $pass = $_POST[password];

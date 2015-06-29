@@ -40,8 +40,12 @@ class BaseModel {
         if (!$result) {
                 die('クエリーが失敗しました。'.mysql_error());
         }
-        $row = mysql_fetch_assoc($result);
-        return$row; 
+//        $row = mysql_fetch_assoc($result);
+//        return$row; 
+        
+        while ($row = mysql_fetch_assoc($result)){
+            
+        }
     }
     
     function addDeta(){        
