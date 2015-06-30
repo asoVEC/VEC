@@ -16,7 +16,7 @@
 
                                     <label for="input-mail" class="col-sm-3 control-label">メールアドレス</label>
                                     <div class="col-sm-6">
-                                        <input type="email" class="form-control" name="mail" id="input-mail" placeholder="メールアドレス" required="required">
+                                        <input type="text" class="form-control" name="mail" id="input-mail" placeholder="メールアドレス" required="required">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -27,7 +27,7 @@
                                 </div>
                                 <span style='color:red'>{$login_message}</span>
                                 <div class="form-group">
-                                    <div class="col-sm-offset-6 col-sm-9">
+                                    <div class="col-sm-offset-6 col-sm-3">
                                         <button type="submit" class="btn btn-default ">ログイン</button>
                                     </div>
                                 </div>

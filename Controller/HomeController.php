@@ -40,6 +40,7 @@ class homeController {
 //        echo 'きみや';   
         $mail = $_POST[mail];
         $pass = $_POST[password];
+        
 
         if ($_SESSION['userName'] != NULL) {//ログイン済み
             header('Location: /VEC/');

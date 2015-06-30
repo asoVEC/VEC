@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-06-29 09:47:50
+<?php /* Smarty version 3.1.24, created on 2015-06-29 10:02:18
          compiled from "/Applications/MAMP/htdocs/VEC/View/login.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:12443373615590f826423dd8_92298529%%*/
+/*%%SmartyHeaderCode:9909989175590fb8a7fd9b6_37163596%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,13 +9,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '621f4d9122508bb81a1fa9fbc3c3773608d92ad3' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/login.tpl',
-      1 => 1435564066,
+      1 => 1435564890,
       2 => 'file',
     ),
     'fe23c48836857c70105e42ec7bf81752fd4db56f' => 
     array (
       0 => '/Applications/MAMP/htdocs/VEC/View/layout.tpl',
-      1 => 1435563866,
+      1 => 1435564112,
       2 => 'file',
     ),
     '69b5c9f33e7196259bf3314cd4a9e698d12e18df' => 
@@ -24,34 +24,34 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       1 => 0,
       2 => 'string',
     ),
-    '39d40abba88b0a75de0237e464b058cc4061a914' => 
+    '6194d1db1429aead8ff71bdbb60aef81587c0873' => 
     array (
-      0 => '39d40abba88b0a75de0237e464b058cc4061a914',
+      0 => '6194d1db1429aead8ff71bdbb60aef81587c0873',
       1 => 0,
       2 => 'string',
     ),
   ),
-  'nocache_hash' => '12443373615590f826423dd8_92298529',
+  'nocache_hash' => '9909989175590fb8a7fd9b6_37163596',
   'variables' => 
   array (
     'amount_cart' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5590f8265698d3_15658016',
+  'unifunc' => 'content_5590fb8a94a725_23390089',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5590f8265698d3_15658016')) {
-function content_5590f8265698d3_15658016 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5590fb8a94a725_23390089')) {
+function content_5590fb8a94a725_23390089 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '12443373615590f826423dd8_92298529';
+$_smarty_tpl->properties['nocache_hash'] = '9909989175590fb8a7fd9b6_37163596';
 ?>
 <html>
     <head>
         <meta charset="UTF-8">
 
         <title><?php
-$_smarty_tpl->properties['nocache_hash'] = '12443373615590f826423dd8_92298529';
+$_smarty_tpl->properties['nocache_hash'] = '9909989175590fb8a7fd9b6_37163596';
 ?>
 
     ログイン
@@ -66,7 +66,7 @@ $_smarty_tpl->properties['nocache_hash'] = '12443373615590f826423dd8_92298529';
             <div class="navbar-header">
 
                 <!--ブランド名 ロゴ名の表示-->
-                <a class="navbar-brand" href="#">VEC</a>
+                <a class="navbar-brand" href="/VEC/">VEC</a>
             </div>
             <div id="nav-content" class="collapse navbar-collapse">
                 <!--                    リンクのリスト メニューリスト-->
@@ -117,7 +117,7 @@ $_smarty_tpl->properties['nocache_hash'] = '12443373615590f826423dd8_92298529';
                 <button type="submit" class="btn btn-default">検索</button>
             </form>
             <?php
-$_smarty_tpl->properties['nocache_hash'] = '12443373615590f826423dd8_92298529';
+$_smarty_tpl->properties['nocache_hash'] = '9909989175590fb8a7fd9b6_37163596';
 ?>
 
     <div class="container main-content">
@@ -133,7 +133,7 @@ $_smarty_tpl->properties['nocache_hash'] = '12443373615590f826423dd8_92298529';
 
                                     <label for="input-mail" class="col-sm-3 control-label">メールアドレス</label>
                                     <div class="col-sm-6">
-                                        <input type="email" class="form-control" name="mail" id="input-mail" placeholder="メールアドレス" required="required">
+                                        <input type="text" class="form-control" name="mail" id="input-mail" placeholder="メールアドレス" required="required">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -145,7 +145,7 @@ $_smarty_tpl->properties['nocache_hash'] = '12443373615590f826423dd8_92298529';
                                 <span style='color:red'><?php echo $_smarty_tpl->tpl_vars['login_message']->value;?>
 </span>
                                 <div class="form-group">
-                                    <div class="col-sm-offset-6 col-sm-9">
+                                    <div class="col-sm-offset-6 col-sm-3">
                                         <button type="submit" class="btn btn-default ">ログイン</button>
                                     </div>
                                 </div>
