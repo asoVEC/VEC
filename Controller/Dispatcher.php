@@ -6,7 +6,6 @@
  *   auther  :Akihiro
  *   summary :リクエストの振り分けクラス (参考:http://goo.gl/gxBoz)
  */
-
 class Dispatcher {
 
     public function dispatch() {
