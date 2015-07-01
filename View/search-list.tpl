@@ -53,7 +53,6 @@ if($_GET['page'] <> ""){
 現在のページは{$smarty.post.page}
 <br />
 {$array.start + 1}個目から{$array.start + $array.display_quanity}個目のデータを表示しています。
-{$array.display_quanity}
 
 {*//↓現在のページと何個のデータを表示しているのか表示する部分
 $pageing_mes = '<p>現在のページは「'.$genzai_page.'」です。</p>'.
@@ -78,15 +77,15 @@ if($cnt == 0){
     {/foreach}
 {*//↑内容を表示する部分終り*}
 {*{$smarty.post.page}*}
-
+{$array.test}
 {*{assign  }*}
 <nav>
 <ul class="pager">
 {if $array.current_page != 1}
-    <li><a href='/VEC/Controller/product/searchlist/{$smarty.post.page - 1}'>前のページへ</a></li>
+    <li><a href='/VEC/Controller/product/{$array.name}/{$smarty.post.page - 1}'>前のページへ</a></li>
     {/if}
     {if $array.current_page != $array.max_page}
-    <li><a href='/VEC/Controller/product/searchlist/{$smarty.post.page + 1}'>次のページへ >></a></li>
+    <li><a href='/VEC/Controller/product/{$array.name}/{$smarty.post.page + 1}'>次のページへ >></a></li>
         {/if}
         </ul>
 </nav>

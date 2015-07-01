@@ -1,8 +1,9 @@
 <?php
 require_once 'BaseModel.php';
-class User extends BaseModel {
+class Product extends BaseModel {
     private $productNo;
     private $productName;
+    private $listSize;
 //    private $mail;
 //    private $age;
 //    private $gender;
@@ -18,6 +19,10 @@ class User extends BaseModel {
     function getProductName() {
         return $this->productName;
     }
+    
+    function setProductName($prodcutName){
+        $this->productName = $prodcutName;
+    }
 
 //    function getUserNo() {
 //        return $this->userNo;
@@ -29,25 +34,23 @@ class User extends BaseModel {
 //    }
     
     //商品検索
+    function searchProduct($searchName){
+        $where = 'product_name =' .'\''.$searchName .'\'';
+        
+    }
     
     //カテゴリ別一覧
     function byCategory($category){
         $where = 'category_no='.'\''.$category.'\'';
-    }
-    
-    
-    function login($mailAddress, $password) {
-        $where = 'mail_address = ' . '\''.$mailAddress.'\''; //←検索条件のとこ''忘れないようにね!
-        $row = parent::query('user', $where);
-        if ($row['password'] === $password) {   //←==比較すると '0'=='000'が通るので注意!
-            $this->userNo = $row['user_no'];
-            $this->userName = $row['name'];
-            return 1;
-        } else {
-            return 0;
+        $row = parent::query('product', $where);
+//        $a = $row['product_name'];
+//        return $a;
+        if ($row!= NULL){
+            $this->setProductName($row['product_name']);
+//            $this->listSize =
+            return $this->getProductName();
+        }else{
+            die("指定されたカテゴリには商品は存在しません。");
         }
-    }
-
-    function signUp() {   
     }
 }

@@ -27,7 +27,7 @@ class User extends BaseModel {
         $Row = parent::query('user', 0);
         return $Row;
     }
-
+    
     function login($mailAddress, $password) {
         $where = 'mail_address = ' . '\''.$mailAddress.'\''; //←検索条件のとこ''忘れないようにね!
         $row = parent::query('user', $where);

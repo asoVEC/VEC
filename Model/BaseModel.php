@@ -20,6 +20,7 @@ class BaseModel {
                 die('接続失敗です。'.mysql_error());
         }
         $db_selected = mysql_select_db($this->db, $this->link);
+        mysql_query('SET NAMES utf8', $this->link ); 
         if (!$db_selected) {
                 die('データベース選択失敗です。'.mysql_error());
         }

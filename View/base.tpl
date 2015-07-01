@@ -6,14 +6,14 @@
                 <div class="col-md-3 col-lg-3">
                     <ul class="nav nav-pills nav-stacked">
                         <li class="active"><a href="#">カテゴリ一覧</a></li>
-                        <li><a href="/VEC/Controller/product/searchlist/1">肉・卵</a></li>
-                        <li><a href="#">魚介</a></li>
-                        <li><a href="#">野菜</a></li>
-                        <li><a href="#">果物</a></li>
-                        <li><a href="#">穀物</a></li>
-                        <li><a href="#">調味料</a></li>
-                        <li><a href="#">加工食品</a></li>
-                        <li><a href="#">菓子</a></li>
+                        <li><a href="/VEC/Controller/product/meetlist/1">肉・卵</a></li>
+                        <li><a href="/VEC/Controller/product/fishlist/1">魚介</a></li>
+                        <li><a href="/VEC/Controller/product/vegelist/1">野菜</a></li>
+                        <li><a href="/VEC/Controller/product/fruitslist/1">果物</a></li>
+                        <li><a href="/VEC/Controller/product/cereallist/1">穀物</a></li>
+                        <li><a href="/VEC/Controller/product/spiceslist/1">調味料</a></li>
+                        <li><a href="/VEC/Controller/product/processinglist/1">加工食品</a></li>
+                        <li><a href="/VEC/Controller/product/pastrylist/1">菓子</a></li>
                     </ul>
                 </div>
                 {/block}
