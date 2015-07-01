@@ -1,15 +1,15 @@
-<?php /* Smarty version 3.1.24, created on 2015-06-26 08:16:44
-         compiled from "F:/xampp/htdocs/VEC/View/signup.tpl" */ ?>
+<?php /* Smarty version 3.1.24, created on 2015-07-01 05:18:05
+         compiled from "F:/xampp/htdocs/VEC/View/login.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:27789558cee4cb4c224_13161370%%*/
+/*%%SmartyHeaderCode:2599855935bed8e7de7_35760067%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'e3bba26892fc651adc4990d4f7d1ea7530eaccce' => 
+    'f896484a36b7fc8e8cf173dae00c1586ff9cd6de' => 
     array (
-      0 => 'F:/xampp/htdocs/VEC/View/signup.tpl',
-      1 => 1435283876,
+      0 => 'F:/xampp/htdocs/VEC/View/login.tpl',
+      1 => 1435280348,
       2 => 'file',
     ),
     '2f0a818a8d5ff2b61e4579b8f616049636ef869c' => 
@@ -18,20 +18,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       1 => 1435283868,
       2 => 'file',
     ),
-    '9a723f6400d45418bfabd2e3484886df344b75e9' => 
+    '932f758f5aadefbd6981bfd1be3c480f64d6e350' => 
     array (
-      0 => '9a723f6400d45418bfabd2e3484886df344b75e9',
+      0 => '932f758f5aadefbd6981bfd1be3c480f64d6e350',
       1 => 0,
       2 => 'string',
     ),
-    '821be02cbc1f5d93ce8d718b76f6a0982f1a7555' => 
+    '075381026550a40342acf505377b38daf4a9085d' => 
     array (
-      0 => '821be02cbc1f5d93ce8d718b76f6a0982f1a7555',
+      0 => '075381026550a40342acf505377b38daf4a9085d',
       1 => 0,
       2 => 'string',
     ),
   ),
-  'nocache_hash' => '27789558cee4cb4c224_13161370',
+  'nocache_hash' => '2599855935bed8e7de7_35760067',
   'variables' => 
   array (
     'name' => 0,
@@ -39,22 +39,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_558cee4ccd2c24_88737490',
+  'unifunc' => 'content_55935bed997a63_80518407',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_558cee4ccd2c24_88737490')) {
-function content_558cee4ccd2c24_88737490 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_55935bed997a63_80518407')) {
+function content_55935bed997a63_80518407 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '27789558cee4cb4c224_13161370';
+$_smarty_tpl->properties['nocache_hash'] = '2599855935bed8e7de7_35760067';
 ?>
 <html>
     <head>
         <meta charset="UTF-8">
         
             <title><?php
-$_smarty_tpl->properties['nocache_hash'] = '27789558cee4cb4c224_13161370';
+$_smarty_tpl->properties['nocache_hash'] = '2599855935bed8e7de7_35760067';
 ?>
-</title>
+
+    ログイン
+    </title>
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/VEC/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -121,84 +123,45 @@ if ($_tmp1 == null) {?>
             <button type="submit" class="btn btn-default">検索</button>
         </form>
         <?php
-$_smarty_tpl->properties['nocache_hash'] = '27789558cee4cb4c224_13161370';
+$_smarty_tpl->properties['nocache_hash'] = '2599855935bed8e7de7_35760067';
 ?>
 
+        <div class="container main-content">
+            <div class="row">
+                <div class="panel panel-default col-sm-6  col-md-6">
+                    <div class="panel-body">
+                        <div class="container">
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-md-offset-2 col-sm-offset-3 col-xs-8 h1">ログインしてください</div>
+                            <div class="col-sm-12">　</div>
+                            <div class="col-sm-12">　</div>
+                            <div class="col-sm-12">　</div>
+                            <div class="row">
+                                <form action="/VEC/Controller/home/login" class="form-horizontal" method="post">
 
- <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; border-radius: 10px; width: 1200px;">
-     <p class="text-warning"><font size="6" face="ＭＳ 明朝,平成明朝">会員登録</font> <br><br></p>
-　　　　<font size="4" face="ＭＳ ゴシック">アカウントの作成に必要な情報を入力してください</font> <br>
-　　　 
-          
-          
-             <table width="600" border="0">
-                 <form action="account.html" method="post">
-                      <tr>
-                          <th>名前:</th>
-                          <td>
-                              <input type="text" name="name" value="" size="24">
-                          </td>
-                      </tr>
+                                    <div class="form-group">
 
-                      <tr>
-                          <th>フリガナ:</th>
-                          <td>
-                              <input type="text" name="furigana" value="" size="24">
-                         </td>
-                      </tr>
-
-                      <tr>
-                          <th>メールアドレス:</th>
-                          <td>
-                              <input type="text" name="mail1" value="" size="24">
-                         </td>
-                      </tr>
-
-                      <tr>
-                          <th>もう一度入力してください:</th>
-                          <td>
-                              <input type="text" name="mail2" value="" size="24">
-                         </td>
-                      </tr>
-
-　　　　　　　　　　　<tr>
-                          <th>電話番号:</th>
-                          <td>
-                              <input type="text" name="tell" value="" size="24"><br>
-                         </td>
-                      </tr> 
-                 <br>
-                      <tr><td>
-                         <h4>パスワード:<br>
-                         <p><u>※ここで入力したパスワードが利用パスワードになります<u><p><h4>   
-                          </td>
-		
-                          <td>
-                              <input type="password" name="pass" value="" size="24">
-                         </td>
-                       </tr>
-                      
-                      <tr>
-                          <th>
-                            　パスワードを<br>
-                             もう一度入力してください:
-                          </th>
-                          <td>
-                              <input type="password" name="pass2" value="" size="24">
-                         </td>
-                      </tr>
-
-                      <tr>
-                          <td colspan="2">
-                              <button type="button" class="btn btn-warning">アカウントの作成</button>
-                          </td>
-                      </tr>
-                  </form>
-              </table>
-         </div>
-         <body style="background-image: url(./img/back22.gif);">
-      
-
+                                        <label for="input-mail" class="col-sm-3 control-label">メールアドレス</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" name="mail" id="input-mail" placeholder="メールアドレス" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="input-passward" class="col-sm-3 control-label">パスワード</label>
+                                        <div class="col-sm-6">
+                                            <input type="password" class="form-control" name="password" id="input-passward" placeholder="パスワード" required="required">
+                                        </div>
+                                    </div>
+                                    <span style='color:red'><?php echo $_smarty_tpl->tpl_vars['login_message']->value;?>
+</span>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-7 col-sm-10">
+                                            <button type="submit" class="btn btn-default ">ログイン</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        
     </div>
 </div>
 </div>
