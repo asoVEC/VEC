@@ -24,8 +24,8 @@ class User extends BaseModel {
     }
 
     public static function getUser() {
-        $Row = parent::query('user', 0);
-        echo $Row['name'];
+        $baseModel = new BaseModel();
+        $Row = $baseModel->query2('user', 0);
     }
     
     function login($mailAddress, $password) {

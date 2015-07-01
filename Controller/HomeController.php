@@ -28,7 +28,7 @@ class homeController {
     }
 
     function index() {
-        parent::getUser();
+        $this->home();
     }
 
     
@@ -84,5 +84,8 @@ class homeController {
 
     function test2() {
         $this->view->display('View/test2.tpl');
+    }
+    function test(){
+        User::getUser();
     }
 }
