@@ -2,78 +2,61 @@
 {block title}{/block}
 
 {block main}
+    
+     <div class="container main-content">
+        <div class="row">
+            <div class="panel panel-default col-sm-6 col-sm-offset-3 col-md-6">
+                <div class="panel-body">
+                    <div class="container">
+                        <div class="col-xs-12 col-sm-10 col-md-10 col-md-offset-4 col-sm-offset-2 col-xs-8 h1">会員登録</div>
+                        <div class="col-xs-12 col-sm-10 col-md-10 col-md-offset-3 col-sm-offset-2 col-xs-8 h1"><br /></div>
+                        <div class="col-xs-12 col-sm-10 col-md-10 col-md-offset-1 col-xs-8 h4">必要情報を記入してください。</div>
+                        <div class="col-xs-12 col-sm-10 col-md-10 col-md-offset-3 col-sm-offset-2 col-xs-8 h1"><br /></div>
+                        <div class="row">
+                            <form action="#" class="form-horizontal" method="post">
+                                <div class="form-group">
+                                    <label for="input-mail" class="col-sm-3 control-label">氏名</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" name="name" id="input-mail" placeholder="氏名" required="required">
+                                    </div>
+                                </div>
+                                <div class="form-group">
 
- <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; border-radius: 10px; width: 1200px;">
-     <p class="text-warning"><font size="6" face="ＭＳ 明朝,平成明朝">会員登録</font> <br><br></p>
-　　　　<font size="4" face="ＭＳ ゴシック">アカウントの作成に必要な情報を入力してください</font> <br>
-　　　 
-          
-          
-             <table width="600" border="0">
-                 <form action="account.html" method="post">
-                      <tr>
-                          <th>名前:</th>
-                          <td>
-                              <input type="text" name="name" value="" size="24">
-                          </td>
-                      </tr>
+                                    <label for="input-mail" class="col-sm-3 control-label">メールアドレス</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" name="mail" id="input-mail" placeholder="メールアドレス" required="required">
+                                    </div>
+                                </div>
+                                <div class="form-group">
 
-                      <tr>
-                          <th>フリガナ:</th>
-                          <td>
-                              <input type="text" name="furigana" value="" size="24">
-                         </td>
-                      </tr>
-
-                      <tr>
-                          <th>メールアドレス:</th>
-                          <td>
-                              <input type="text" name="mail1" value="" size="24">
-                         </td>
-                      </tr>
-
-                      <tr>
-                          <th>もう一度入力してください:</th>
-                          <td>
-                              <input type="text" name="mail2" value="" size="24">
-                         </td>
-                      </tr>
-
-　　　　　　　　　　　<tr>
-                          <th>電話番号:</th>
-                          <td>
-                              <input type="text" name="tell" value="" size="24"><br>
-                         </td>
-                      </tr> 
-                 <br>
-                      <tr><td>
-                         <h4>パスワード:<br>
-                         <p><u>※ここで入力したパスワードが利用パスワードになります<u><p><h4>   
-                          </td>
-		
-                          <td>
-                              <input type="password" name="pass" value="" size="24">
-                         </td>
-                       </tr>
-                      
-                      <tr>
-                          <th>
-                            　パスワードを<br>
-                             もう一度入力してください:
-                          </th>
-                          <td>
-                              <input type="password" name="pass2" value="" size="24">
-                         </td>
-                      </tr>
-
-                      <tr>
-                          <td colspan="2">
-                              <button type="button" class="btn btn-warning">アカウントの作成</button>
-                          </td>
-                      </tr>
-                  </form>
-              </table>
-         </div>
-         <body style="background-image: url(./img/back22.gif);">
-      
+                                    <label for="input-mail" class="col-sm-3 control-label">電話番号</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" name="phone" id="input-mail" placeholder="電話番号" required="required">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="input-passward" class="col-sm-3 control-label">パスワード</label>
+                                    <div class="col-sm-6">
+                                        <input type="password" class="form-control" name="password" id="input-passward" placeholder="パスワード" required="required">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="input-passward" class="col-sm-3 control-label">パスワード確認</label>
+                                    <div class="col-sm-6">
+                                        <input type="password" class="form-control" name="password" id="input-passward" placeholder="パスワード確認" required="required">
+                                    </div>
+                                </div>
+                                <span style='color:red'>{$login_message}</span>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-6 col-sm-3">
+                                        <button type="submit" class="btn btn-default ">アカウントの作成</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>{*row*}
+                    </div>{*container*}
+                </div>
+            </div>
+        </div>
+    </div>
 {/block}

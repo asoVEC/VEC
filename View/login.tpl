@@ -37,4 +37,8 @@
                             </form>
                         </div>{*row*}
                     </div>{*container*}
+                </div>
+            </div>
+        </div>
+    </div>
                 {/block}
