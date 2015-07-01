@@ -28,7 +28,7 @@ class homeController {
     }
 
     function index() {
-        $this->home();
+        parent::getUser();
     }
 
     
