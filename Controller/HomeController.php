@@ -85,4 +85,9 @@ class homeController {
     function test2() {
         $this->view->display('View/test2.tpl');
     }
+    function akihiro(){
+        $values = array('kimiya','masuyama');
+        $user = new User;
+        $user->signUp($values);
+    }
 }

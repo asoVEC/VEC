@@ -40,6 +40,8 @@ class User extends BaseModel {
         }
     }
 
-    function signUp() {   
+    function signUp() {
+        $values = 'NULL, 0, \'ヨシカワ\', 0, 21, 1, \'いさはや\', 0, NULL, 0';
+        parent::insert('user',$values);
     }
 }
