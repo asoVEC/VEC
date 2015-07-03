@@ -47,7 +47,7 @@
                     <!--検索フォーム-->
                     <form class="navbar-form navbar-static-top" role="search" method="post" action="/VEC/Controller/product/searchlist/1">
                         <div class="form-group col-md-offset-1">
-                            <input type="text" class="form-control" placeholder="商品検索" size="60pix">
+                            <input type="text" class="form-control" placeholder="商品検索" size="60pix" name="search">
                         </div>
                         <button type="submit" class="btn btn-default">検索</button>
                     </form>
