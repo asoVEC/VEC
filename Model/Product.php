@@ -19,6 +19,7 @@ class Product extends BaseModel {
     function __destruct() {
         parent::__destruct();
     }
+    
 
     function getProductName() {
         return $this->productName;
@@ -31,11 +32,10 @@ class Product extends BaseModel {
     //商品検索
     function searchProduct($searchName){
         $where = 'product_name LIKE' .'\'%'.$searchName .'%\'';
-        $row = parent::query(product, $where);
-        if ($row!= NULL){
-            $this->setProductName($row['product_name']);
+        $rows = parent::query(product, $where);
+        if ($rows!= NULL){
 //            $this->listSize =
-            return $this->getProductName();
+            return $rows;
         }else{
             die("指定された商品は存在しません。");
         }
@@ -45,11 +45,9 @@ class Product extends BaseModel {
     //カテゴリ別一覧
     function byCategory($category){
         $where = 'category_no='.'\''.$category.'\'';
-        $row = parent::query('product', $where);
-        if ($row!= NULL){
-            $this->setProductName($row['product_name']);
-//            $this->listSize =
-            return $this->getProductName();
+        $rows = parent::query('product', $where);
+        if ($rows!= NULL){
+            return $rows;
         }else{
             die("指定されたカテゴリには商品は存在しません。");
         }
