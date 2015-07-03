@@ -73,11 +73,11 @@ if($cnt == 0){
 
 {*//↓データ内容を表示する部分*}
 {foreach $array.deta as $deta}
-    {$deta}
+    {$deta['product_name']}は{$deta['price']}円
+    
     {/foreach}
 {*//↑内容を表示する部分終り*}
 {*{$smarty.post.page}*}
-{$array.test}
 {*{assign  }*}
 <nav>
 <ul class="pager">
