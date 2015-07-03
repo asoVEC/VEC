@@ -53,8 +53,9 @@ class BaseModel {
     }
     function insert($table,$values) {
        $sql = 'INSERT INTO ' .$table. ' VALUES ('.$values.')';
-       mysql_query($sql);
        echo $sql;
+       mysql_query($sql);
+       
         
     }
 

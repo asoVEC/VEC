@@ -46,7 +46,6 @@
                                         <input type="password" class="form-control" name="password" id="input-passward" placeholder="パスワード確認" required="required">
                                     </div>
                                 </div>
-                                <span style='color:red'>{$login_message}</span>
                                 <div class="form-group">
                                     <div class="col-sm-offset-6 col-sm-3">
                                         <button type="submit" class="btn btn-default ">アカウントの作成</button>

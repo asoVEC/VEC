@@ -1,8 +1,12 @@
 <?php
+
 require_once 'BaseModel.php';
+
 class User extends BaseModel {
+
     private $userNo;
     private $userName;
+    private $password;
     private $mail;
     private $age;
     private $gender;
@@ -13,6 +17,32 @@ class User extends BaseModel {
 
     function __construct() {
         parent::__construct();
+    }
+
+    function setUserName($param) {
+        $this->userName = $param;
+    }
+
+    function setMail($param) {
+        $this->mail = $param;
+    }
+    function setPassword($param) {
+        $this->password = $param;
+    }
+
+    function setAge($param) {
+        $this->age = $param;
+    }
+
+    function setGender($param) {
+        $this->gender = $param;
+    }
+    function setAddress($param) {
+        $this->address = $param;
+    }
+
+    function setCredit($param) {
+        $this->credit = $param;
     }
 
     function getUserName() {
@@ -27,11 +57,11 @@ class User extends BaseModel {
         $baseModel = new BaseModel();
         $rows = $baseModel->query('user', 0);
     }
-    
-    function login($mailAddress, $password) {
-        $where = 'mail_address = ' . '\''.$mailAddress.'\''; //←検索条件のとこ''忘れないようにね!
+
+    function login() {
+        $where = 'mail_address = ' . '\'' . $this->mail . '\''; //←検索条件のとこ''忘れないようにね!
         $row = parent::query('user', $where)[0];
-        if ($row['password'] === $password) {   //←==比較すると '0'=='000'が通るので注意!
+        if ($row['password'] === $this->password) {   //←==比較すると '0'=='000'が通るので注意!
             $this->userNo = $row['user_no'];
             $this->userName = $row['name'];
             return 1;
@@ -41,7 +71,13 @@ class User extends BaseModel {
     }
 
     function signUp() {
-        $values = 'NULL, 0, \'ヨシカワ\', 0, 21, 1, \'いさはや\', 0, NULL, 0';
+        if($this->mail == '' || $this->userName == '' || $this->address == '' || $this->password == '' 
+                ||$this->gender == '' ||$this->age == '' || $this->credit == ''){
+            return 0;
+        }
+            
+        $values = 'NULL, \'' . $this->mail . '\', \'' . $this->userName . '\', \'' . $this->password . '\',' . $this->age . ', ' . $this->gender . ', \'' . $this->address . '\', 0, ' . $this->credit . ', 0';
         parent::insert('user',$values);
     }
+
 }
