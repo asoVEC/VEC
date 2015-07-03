@@ -52,6 +52,7 @@ class userController {
         }
         return $loginFlg;
     }
+<<<<<<< HEAD
 
     function signup() {
         if ($_SESSION['userName'] != NULL) {//ログイン済み
@@ -76,4 +77,11 @@ class userController {
         return 0;
     }
 
+=======
+    
+    function settings(){
+           $this->view->display('View/settings.tpl'); 
+    }
+    
+>>>>>>> origin/master
 }

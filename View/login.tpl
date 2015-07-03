@@ -3,8 +3,6 @@
     ログイン
 {/block}
 {block main}
-    <div class="container main-content">
-        <div class="row">
             <div class="panel panel-default col-sm-6 col-sm-offset-3 col-md-6">
                 <div class="panel-body">
                     <div class="container">
@@ -39,6 +37,4 @@
                     </div>{*container*}
                 </div>
             </div>
-        </div>
-    </div>
                 {/block}
