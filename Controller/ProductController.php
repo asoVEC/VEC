@@ -81,7 +81,6 @@ class productController {
     }
 
     function searchlist($page = 1) {
-        
         if ($page == 1) {
             $current = $page;
             $_POST[page] = 1;
@@ -112,9 +111,12 @@ class productController {
 
         $this->view->display('View/search-list.tpl');
     }
-    function displayProduct() {
+    function productDetails($id =null) {
         $product = new Product();
-        
+        $item = $product->getDetails($id);
+        $this->view->assign('item',$item);
+        $this->view->display('View/details.tpl');
+        echo var_dump($item);
     }
 
 }

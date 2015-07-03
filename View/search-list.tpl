@@ -24,17 +24,16 @@
 
 
 
-                {*//↓データ内容を表示する部分*}
-                {foreach $array.deta as $deta}
-                    <div class="panel panel-default">
-    <div class="panel-heading">{$deta['product_name']}</div>
-    <div class="panel-body">
-        {$deta['price']}円
-    </div>
-</div>
-                            
-                {/foreach}
- 
+    {*//↓データ内容を表示する部分*}
+    {foreach $array.deta as $deta}
+        <div class="panel panel-default">
+            <div class="panel-heading"><a href="/VEC/Controller/product/productdetails/{$deta['product_no']}">{$deta['product_name']}</a></div>
+            <div class="panel-body">
+                写真
+            </div>
+        </div>
+    {/foreach}
+
 
     {*    ページング*}
     <nav>
