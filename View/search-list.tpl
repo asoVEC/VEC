@@ -26,7 +26,7 @@
 
     {*//↓データ内容を表示する部分*}
     {foreach $array.deta as $deta}
-        <div class="panel panel-default">
+        <div class="panel panel-info">
             <div class="panel-heading"><a href="/VEC/Controller/product/productdetails/{$deta['product_no']}">{$deta['product_name']}</a></div>
             <div class="panel-body">
                 写真

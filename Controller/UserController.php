@@ -18,4 +18,8 @@ class userController {
         $this->view->display('View/signup.tpl'); 
     }
     
+    function settings(){
+           $this->view->display('View/settings.tpl'); 
+    }
+    
 }

@@ -3,10 +3,11 @@
         <meta charset="UTF-8">
 
         <title>{block title}ホームページ{/block}</title>
-
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/VEC/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="/VEC/css/css.css" rel="stylesheet" media="screen">
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="/VEC/js/bootstrap.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -33,14 +34,14 @@
                         <!-- ここはボタンを押すと表示されるリスト -->
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                             {if $smarty.session.userName != null}{*ログインしてる場合のみ表示*}
-                                <li  role="presenetation"><a role="menuitem" tabindex="-1" href="#">会員情報変更</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/Controller/home/logout">ログアウト</a></li>
-                            {else} 
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/Controller/user/signup">会員登録</a></li>
-                            {/if}
-                        </ul>
+                                    <li  role="presenetation"><a role="menuitem" tabindex="-1" href="/VEC/Controller/user/settings">会員情報変更</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/Controller/home/logout">ログアウト</a></li>
+                                    {else} 
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/Controller/user/signup">会員登録</a></li>
+                                    {/if}
+                            </ul>
                             <!-- リストここまで -->
-                    </li>
+                        </li>
                         <li class="divider"><a href="">買い物カゴ <span class="badge">{$amount_cart}</span></a></li>
                     </ul>
                     {*                    {include file='/VEC/base.tpl'}*}
@@ -60,13 +61,16 @@
                     <input type="text" class="form-control" placeholder="商品検索">
                 </div>
                 <button type="submit" class="btn btn-default">検索</button>
-            </form>
+            </form>       <div class="container main-content">
+            <div class="row">
             {block main}
             {/block}
-        </div>
+            </div>
+            </div>            
+{*        </div>
     </div>
-</div>
-</div>
+</div>*}
+{*</div>*}
 <footer class="container-fluid ">
     <small><a href="/">Copyright (C) 2015-2015 vec.aso All Rights Reserved.</a></small>
 </footer>

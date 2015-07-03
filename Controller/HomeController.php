@@ -92,4 +92,8 @@ class homeController {
 
 	function nagano() {
 		$this->view->display('View/details.tpl');}
+                
+        function test(){
+            $this->view->display('View/test.tpl');}
+        
 }
