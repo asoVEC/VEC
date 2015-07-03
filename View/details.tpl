@@ -14,7 +14,9 @@
 　　　　
              <table>
                       <tr>
-                          <td rowspan="3"><img src="./img/51UJ5Do3hzL.jpg"　width="290" height="230"></td>
+                          <td rowspan="3">
+                          <img src="./img/51UJ5Do3hzL.jpg"class="img-circle" />
+                          </td>
                           <td>商品名:</td>
                       </tr>
 
@@ -39,11 +41,11 @@
 
 　　　　　　</table>
                         
-                        
-  ・価格    <br>
-  ・内容量  <br>
-　・商品の特長  <br>
-　・商品詳細情報    <br>
+  <ul class="list-unstyled">
+            <li>価格</li>
+            <li>商品の特長</li>
+            <li>商品詳細情報</li>
+        </ul>
     
          </div>
          <body style="background-image: url(./img/back22.gif);">
