@@ -23,14 +23,14 @@ class User extends BaseModel {
         return $this->userNo;
     }
 
-    public static function getUser() {
+    public static function getAllUser() {
         $baseModel = new BaseModel();
-        $Row = $baseModel->query2('user', 0);
+        $rows = $baseModel->query('user', 0);
     }
     
     function login($mailAddress, $password) {
         $where = 'mail_address = ' . '\''.$mailAddress.'\''; //←検索条件のとこ''忘れないようにね!
-        $row = parent::query('user', $where);
+        $row = parent::query('user', $where)[0];
         if ($row['password'] === $password) {   //←==比較すると '0'=='000'が通るので注意!
             $this->userNo = $row['user_no'];
             $this->userName = $row['name'];

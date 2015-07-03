@@ -45,25 +45,10 @@ class BaseModel {
         if (!$result) {
             die('クエリーが失敗しました。' . mysql_error());
         }
-        $row = mysql_fetch_assoc($result);
-        return$row;
-    }
-
-    function query2($table, $where) {
-        if ($where != null) {
-            $this->where = ' where ' . $where;
-        }
-        $result = mysql_query('SELECT * FROM ' . $table . $this->where);
-        if (!$result) {
-            die('クエリーが失敗しました。' . mysql_error());            
-        }
-        $rows = array();
+         $rows = array();
         while ($row = mysql_fetch_assoc($result)) {
             $rows[] = $row;           
         }
-        echo $rows['name'];
-        echo $rows[1]['password'];
-        
         return $rows;
     }
     function addDeta() {

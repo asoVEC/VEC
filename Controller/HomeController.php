@@ -85,7 +85,4 @@ class homeController {
     function test2() {
         $this->view->display('View/test2.tpl');
     }
-    function test(){
-        User::getUser();
-    }
 }
