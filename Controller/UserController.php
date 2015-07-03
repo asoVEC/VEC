@@ -14,8 +14,8 @@ class userController {
     function setting() {
         $this->view->display('View/user-settings.tpl');
     }
-    
-      function login($page = 0) {
+
+    function login($page = 0) {
         $mail = $_POST[mail];
         $pass = $_POST[password];
 
@@ -37,9 +37,10 @@ class userController {
                     $this->view->display('View/login.tpl');
                     break;
             }
-        }   
+        }
     }
-     private function loginProcess($mail, $password) {
+
+    private function loginProcess($mail, $password) {
         //戻(loginFlg = 0:ログイン失敗、 = 1:成功)
         $loginFlg = 0;
         $user = new User();
@@ -52,19 +53,7 @@ class userController {
         }
         return $loginFlg;
     }
-<<<<<<< HEAD
 
-    function signup() {
-        if ($_SESSION['userName'] != NULL) {//ログイン済み
-            header('Location: /VEC/');
-            exit();
-        } elseif ($this->signupProcess() == 0) {
-          $this->view->display('View/signup.tpl');
-        }elseif ($this->signupProcess() == 1) {
-            header('Location: /VEC/');
-            exit();
-        }
-    }
     function logout() {
         $_SESSION = array();
         session_destroy();
@@ -72,16 +61,25 @@ class userController {
         exit;
     }
 
+    function signup() {
+        if ($_SESSION['userName'] != NULL) {//ログイン済み
+            header('Location: /VEC/');
+            exit();
+        } elseif ($this->signupProcess() == 0) {
+            $this->view->display('View/signup.tpl');
+        } elseif ($this->signupProcess() == 1) {
+            header('Location: /VEC/');
+            exit();
+        }
+    }
+
     private function signupProcess() {
-        
+
         return 0;
     }
 
-=======
-    
-    function settings(){
-           $this->view->display('View/settings.tpl'); 
+    function settings() {
+        $this->view->display('View/settings.tpl');
     }
-    
->>>>>>> origin/master
+
 }

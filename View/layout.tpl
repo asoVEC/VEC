@@ -34,21 +34,12 @@
                         <!-- ここはボタンを押すと表示されるリスト -->
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                             {if $smarty.session.userName != null}{*ログインしてる場合のみ表示*}
-<<<<<<< HEAD
                                 <li  role="presenetation"><a role="menuitem" tabindex="-1" href="#">会員情報変更</a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/Controller/user/logout">ログアウト</a></li>
                             {else} 
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/Controller/user/signup">会員登録</a></li>
                             {/if}
                         </ul>
-=======
-                                    <li  role="presenetation"><a role="menuitem" tabindex="-1" href="/VEC/Controller/user/settings">会員情報変更</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/Controller/home/logout">ログアウト</a></li>
-                                    {else} 
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/Controller/user/signup">会員登録</a></li>
-                                    {/if}
-                            </ul>
->>>>>>> origin/master
                             <!-- リストここまで -->
                         </li>
                         <li class="divider"><a href="">買い物カゴ <span class="badge">{$amount_cart}</span></a></li>
