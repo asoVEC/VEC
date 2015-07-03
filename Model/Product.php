@@ -52,4 +52,15 @@ class Product extends BaseModel {
             die("指定されたカテゴリには商品は存在しません。");
         }
     }
+    
+    //商品詳細取得
+    function getDetails($id){
+        $where = 'product_no='.'\''.$id.'\'';
+        $rows = parent::query('product', $where);
+        if ($rows!= NULL){
+            return $rows[0];
+        }else{
+            die("指定されたカテゴリには商品は存在しません。");
+        }
+    }
 }

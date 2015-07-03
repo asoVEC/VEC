@@ -51,7 +51,10 @@ class BaseModel {
         }
         return $rows;
     }
-    function addDeta() {
+    function insert($table,$values) {
+       $sql = 'INSERT INTO ' .$table. ' VALUES ('.$values.')';
+       mysql_query($sql);
+       echo $sql;
         
     }
 

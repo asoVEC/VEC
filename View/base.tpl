@@ -17,8 +17,9 @@
                     </ul>
                 </div>
                 {/block}
-                {block content}
                 <div class="col-md-9 content-area">
+                {block content}
+                
                     <div class="label">{$name1}</div>
                     <div class="frame" style="background: {$food1} center center no-repeat;"></div>
                     <div class="label">{$name2}</div>
@@ -29,9 +30,12 @@
                     <div class="frame" style="background: {$food4} center center no-repeat;"></div>
                     <div class="label">{$name5}</div>
                     <div class="frame" style="background: {$food5} center center no-repeat;"></div>
-                </div>
-            </div>
-        </div>
+                
+
                     {/block}
+                    </div>
+                    
+                                </div>
+        </div>
 {/block}
 
