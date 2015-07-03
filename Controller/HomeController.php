@@ -54,8 +54,10 @@ class homeController {
         $user->setCredit('1234567234');
         echo $user->signUp($values);
     }
-
-    function nagano() {
+    function akihiro2(){
+        echo User::getUser('name = \'かっこいいきみや\'')[1]->getAddress();
+    }
+                function nagano() {
         $this->view->display('View/details.tpl');
     }
 

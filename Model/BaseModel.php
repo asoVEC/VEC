@@ -36,11 +36,12 @@ class BaseModel {
         }
     }
 
-    //クエリー共通部分、 引:テーブル名、where条件(なしの場合 = 0) 戻:
-    function query($table, $where) {
-        if ($where != null) {
+    //クエリー共通部分、 引:テーブル名、where条件(第2引数は無くてもいい) 戻:
+    function query($table, $where = NULL) {
+        if ($where != NULL) {
             $this->where = ' where ' . $where;
         }
+        echo 'SELECT * FROM ' . $table . $this->where ;
         $result = mysql_query('SELECT * FROM ' . $table . $this->where);
         if (!$result) {
             die('クエリーが失敗しました。' . mysql_error());
@@ -53,8 +54,7 @@ class BaseModel {
     }
     function insert($table,$values) {
        $sql = 'INSERT INTO ' .$table. ' VALUES ('.$values.')';
-       echo $sql;
-       mysql_query($sql);
+       return mysql_query($sql);
        
         
     }
