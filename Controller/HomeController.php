@@ -8,12 +8,10 @@ class homeController {
     private $view;
 
     public function __construct() {
-
-        // ビュー
         $this->view = new Smarty;
     }
 
-    function home() {
+    function index() {
         $this->view->assign('food1', 'url(/VEC/img/kimiya.jpg)');
         $this->view->assign('food2', 'url(/VEC/img/fdputitomato.jpg)');
         $this->view->assign('food3', 'url(/VEC/img/fdpapurika.jpg)');
@@ -26,10 +24,6 @@ class homeController {
         $this->view->assign('name5', '円高きみや');
         $this->view->assign('name1', 'ちょっと高いきみや');
         $this->view->display('View/base.tpl');
-    }
-
-    function index() {
-        $this->home();
     }
 
     function logout() {
@@ -54,10 +48,14 @@ class homeController {
         $user->setCredit('1234567234');
         echo $user->signUp($values);
     }
-    function akihiro2(){
-        echo User::getUser('name = \'かっこいいきみや\'')[1]->getAddress();
+
+    function akihiro2() {
+        $user = new User(0);
+        $_SESSION['currentUser'] = $user->getUserName();
+        $this->view->display('View/temp.tpl');
     }
-                function nagano() {
+
+    function nagano() {
         $this->view->display('View/details.tpl');
     }
 

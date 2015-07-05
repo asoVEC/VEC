@@ -25,7 +25,7 @@
                             アカウントサービス<span class="caret"></span>
                             <br />
                             {if $smarty.session.userName == null}
-                                <a href="/VEC/Controller/user/login">ログインする</a>
+                                <a href="/VEC/user/login">ログインする</a>
                             {else}
                                 ようこそ、{$smarty.session.userName}さん
                             {/if}
@@ -35,9 +35,9 @@
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                             {if $smarty.session.userName != null}{*ログインしてる場合のみ表示*}
                                 <li  role="presenetation"><a role="menuitem" tabindex="-1" href="#">会員情報変更</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/Controller/user/logout">ログアウト</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/user/logout">ログアウト</a></li>
                             {else} 
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/Controller/user/signup">会員登録</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/user/signup">会員登録</a></li>
                             {/if}
                         </ul>
                             <!-- リストここまで -->
@@ -46,7 +46,7 @@
                     </ul>
                     {*                    {include file='/VEC/base.tpl'}*}
                     <!--検索フォーム-->
-                    <form class="navbar-form navbar-static-top" role="search" method="post" action="/VEC/Controller/product/searchlist/1">
+                    <form class="navbar-form navbar-static-top" role="search" method="post" action="/VEC/product/searchlist/1">
                         <div class="form-group col-md-offset-1">
                             <input type="text" class="form-control" placeholder="商品検索" size="60pix" name="search">
                         </div>

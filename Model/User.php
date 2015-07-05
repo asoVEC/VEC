@@ -14,9 +14,23 @@ class User extends BaseModel {
     private $point;
     private $credit;
     private $money;
-
-    function __construct() {
+    
+    //引:userNo インスタンス化時にユーザーNo指定でユーザー情報をDBから取得、フィールドにセット
+    function __construct($id = 0) {
         parent::__construct();
+        if ($id != 0) {
+            $value = $this->query('user', 'user_no = '.$id)[0];
+            $this->userNo = ($value['user_no']);
+            $this->userName = $value['name'];
+            $this->userNo = $value['user_no'];
+            $this->mail = $value['mail_address'];
+            $this->address = $value['address'];
+            $this->age = $value['age'];
+            $this->gender = $value['gender'];
+            $this->credit = $value['credit_no'];
+            $this->money = $value['money'];
+            $this->point = $value['point'];
+        }
     }
 
     function setUserName($param) {
@@ -50,41 +64,46 @@ class User extends BaseModel {
     function getUserName() {
         return $this->userName;
     }
-    
 
     function getUserNo() {
         return $this->userNo;
     }
-     function getMail() {
+
+    function getMail() {
         return $this->mail;
     }
-     function getAddress() {
+
+    function getAddress() {
         return $this->address;
     }
-     function getGender() {
+
+    function getGender() {
         return $this->gender;
     }
-     function getAge() {
+
+    function getAge() {
         return $this->age;
     }
-     function getCredit() {
+
+    function getCredit() {
         return $this->credit;
     }
-     function getMoney() {
+
+    function getMoney() {
         return $this->money;
     }
-    
-     function getPoint() {
+
+    function getPoint() {
         return $this->point;
     }
-    
+
     //DBからユーザーを取得 引:検索条件(引数無しで全ユーザー取得) 戻:User配列
-    //使い方例:getAllUser()[0]->getUserName,getUser('name = \'きみや\'')[1]->getAddress(); 
-    public static function getUser($where = NULL) {//DBからユーザーを取得 戻:User配列
-        $baseModel = new BaseModel();
+    //使い方例:getUser()[0]->getUserName,getUser('name = \'きみや\'')[1]->getAddress(); 
+    public static function getUsers($where = NULL) {
+        $baseModel = new BaseModel();               //staticメソッドのためBaseModelをインスタンス化して使う
         $rows = $baseModel->query('user', $where);
-        $users;//ユーザーのインスタンスの入れ物
-        foreach ($rows as $value){
+        $users; //ユーザーのインスタンスの入れ物
+        foreach ($rows as $value) {
             $user = new User;
             $user->userNo = ($value['user_no']);
             $user->userName = $value['name'];
@@ -99,10 +118,13 @@ class User extends BaseModel {
             $users[] = $user;
         }
         return $users;
-        
     }
 
+    //ログイン処理 戻:成功=1, 失敗=0
     function login() {
+        if ($this->mail == '' || $this->password == '') {
+            return 0;
+        }
         $where = 'mail_address = ' . '\'' . $this->mail . '\''; //←検索条件のとこ''忘れないようにね!
         $row = parent::query('user', $where)[0];
         if ($row['password'] === $this->password) {   //←==比較すると '0'=='000'が通るので注意!
@@ -114,11 +136,10 @@ class User extends BaseModel {
         }
     }
 
-    function signUp() {
+    function signUp() {//ログイン処理 戻:成功=1, 失敗=0
         if ($this->mail == '' || $this->userName == '' || $this->address == '' || $this->password == '' || $this->gender == '' || $this->age == '' || $this->credit == '') {
             return 0;
         }
-
         $values = 'NULL, \'' . $this->mail . '\', \'' . $this->userName . '\', \'' . $this->password . '\',' . $this->age . ', ' . $this->gender . ', \'' . $this->address . '\', 0, ' . $this->credit . ', 0';
         $result = parent::insert('user', $values);
         if ($result) {
@@ -127,6 +148,5 @@ class User extends BaseModel {
             return 0;
         }
     }
-    
 
 }

@@ -20,8 +20,8 @@ class Dispatcher {
 
         // １番目のパラメーターをコントローラーとして取得
         $controller = "home";
-        if (3 < count($params)) {
-            $controller = $params[3];
+        if (2 < count($params)) {
+            $controller = $params[2];
         }
         // パラメータより取得したコントローラー名によりクラス振分け
         $className = ucfirst(strtolower($controller)) . 'Controller';
@@ -30,15 +30,15 @@ class Dispatcher {
         // クラスインスタンス生成
         $controllerInstance = new $className();
 
-        // 2番目のパラメーターをコントローラーとして取得
+        // 2番目のパラメーターをメソッド名として取得
         $action = 'index';
-        if (4 < count($params)) {
-            $action = $params[4];
+        if (3 < count($params)) {
+            $action = $params[3];
         }
         //3番目のパラメータが存在する場合取得,メソッドの引数として渡す
         $page = 0;
-        if (5 < count($params)) {
-            $page = $params[5];
+        if (4 < count($params)) {
+            $page = $params[4];
             // アクションメソッドを実行
         }
         $controllerInstance->$action($page);

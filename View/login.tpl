@@ -8,7 +8,7 @@
                     <div class="container">
                         <div class="col-xs-12 col-sm-10 col-md-10 col-md-offset-2 col-sm-offset-2 col-xs-8 h1">ログインしてください</div>
                         <div class="row">
-                            <form action="/VEC/Controller/user/login" class="form-horizontal" method="post">
+                            <form action="/VEC/user/login" class="form-horizontal" method="post">
 
                                 <div class="form-group">
 
@@ -30,7 +30,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-offset-6">会員登録は
-                                    <span style='color:blue'><a href="/VEC/Controller/user/signup">こちら</a></span>
+                                    <span style='color:blue'><a href="/VEC/user/signup">こちら</a></span>
                                 </div>
                             </form>
                         </div>{*row*}

@@ -27,7 +27,7 @@
     {*//↓データ内容を表示する部分*}
     {foreach $array.deta as $deta}
         <div class="panel panel-info">
-            <div class="panel-heading"><a href="/VEC/Controller/product/productdetails/{$deta['product_no']}">{$deta['product_name']}</a></div>
+            <div class="panel-heading"><a href="/VEC/product/productdetails/{$deta['product_no']}">{$deta['product_name']}</a></div>
             <div class="panel-body">
                 写真
             </div>
@@ -39,10 +39,10 @@
     <nav>
         <ul class="pager">
             {if $array.current_page != 1}
-                <li><a href='/VEC/Controller/product/{$array.name}/{$smarty.post.page - 1}'>前のページへ</a></li>
+                <li><a href='/VEC/product/{$array.name}/{$smarty.post.page - 1}'>前のページへ</a></li>
                 {/if}
                 {if $array.current_page != $array.max_page}
-                <li><a href='/VEC/Controller/product/{$array.name}/{$smarty.post.page + 1}'>次のページへ >></a></li>
+                <li><a href='/VEC/product/{$array.name}/{$smarty.post.page + 1}'>次のページへ >></a></li>
                 {/if}
         </ul>
     </nav>

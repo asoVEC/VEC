@@ -15,7 +15,7 @@ class userController {
         $this->view->display('View/user-settings.tpl');
     }
 
-    function login($page = 0) {
+    function login() {
         $mail = $_POST[mail];
         $pass = $_POST[password];
 
@@ -26,7 +26,7 @@ class userController {
             $this->view->display('View/login.tpl');
         } else {
             //ログイン処理
-            $loginFlg = $this->loginProcess($mail, $pass);
+            $loginFlg = $this->loginProcess();
             switch ($loginFlg) {
                 case 1://ログイン成功
                     header('Location: /VEC/');
@@ -39,13 +39,14 @@ class userController {
             }
         }
     }
-
-    private function loginProcess($mail, $password) {
-        //戻(loginFlg = 0:ログイン失敗、 = 1:成功)
+    // 戻:成功=1, 失敗=0
+    private function loginProcess() {
+        $mail = $_POST[mail];
+        $pass = $_POST[password];
         $loginFlg = 0;
         $user = new User();
         $user->setMail($mail);
-        $user->setPassword($password);
+        $user->setPassword($pass);
         $loginFlg = $user->login();
         if ($loginFlg == 1) {
             $_SESSION['userNo'] = $user->getUserNo();
@@ -62,18 +63,22 @@ class userController {
     }
 
     function signup() {
+        $name = $_POST['name'];
         if ($_SESSION['userName'] != NULL) {//ログイン済み
             header('Location: /VEC/');
             exit();
-        } elseif ($this->signupProcess() == 0) {
+        } elseif ($name == null) {//初回アクセス
             $this->view->display('View/signup.tpl');
-        } elseif ($this->signupProcess() == 1) {
+        } elseif ($this->signupProcess() == 0) {//会員登録失敗
+            $this->view->display('View/signup.tpl');
+        } elseif ($this->signupProcess() == 1) {//会員登録成功
             header('Location: /VEC/');
             exit();
         }
     }
 
     private function signupProcess() {
+        
 
         return 0;
     }
