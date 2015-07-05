@@ -36,12 +36,12 @@ class BaseModel {
         }
     }
 
-    //クエリー共通部分、 引:テーブル名、where条件(第2引数は無くてもいい) 戻:
+    //クエリー共通部分、 引:テーブル名、where条件(第2引数は無くてもいい) 戻:検索結果の行配列
+    //使用例: query('user')[0]['name'],query('user','name = \'ますやま\'')[0]['name']
     function query($table, $where = NULL) {
         if ($where != NULL) {
             $this->where = ' where ' . $where;
         }
-        echo 'SELECT * FROM ' . $table . $this->where ;
         $result = mysql_query('SELECT * FROM ' . $table . $this->where);
         if (!$result) {
             die('クエリーが失敗しました。' . mysql_error());

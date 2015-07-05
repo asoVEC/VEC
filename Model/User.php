@@ -101,8 +101,11 @@ class User extends BaseModel {
         return $users;
         
     }
-
+    //ログイン処理 戻:成功=1, 失敗=0
     function login() {
+        if($this->mail == '' || $this->password == ''){
+            return 0;
+        }
         $where = 'mail_address = ' . '\'' . $this->mail . '\''; //←検索条件のとこ''忘れないようにね!
         $row = parent::query('user', $where)[0];
         if ($row['password'] === $this->password) {   //←==比較すると '0'=='000'が通るので注意!
@@ -114,11 +117,10 @@ class User extends BaseModel {
         }
     }
 
-    function signUp() {
+    function signUp() {//ログイン処理 戻:成功=1, 失敗=0
         if ($this->mail == '' || $this->userName == '' || $this->address == '' || $this->password == '' || $this->gender == '' || $this->age == '' || $this->credit == '') {
             return 0;
         }
-
         $values = 'NULL, \'' . $this->mail . '\', \'' . $this->userName . '\', \'' . $this->password . '\',' . $this->age . ', ' . $this->gender . ', \'' . $this->address . '\', 0, ' . $this->credit . ', 0';
         $result = parent::insert('user', $values);
         if ($result) {
