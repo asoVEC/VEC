@@ -34,12 +34,12 @@
                         <!-- ここはボタンを押すと表示されるリスト -->
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                             {if $smarty.session.userName != null}{*ログインしてる場合のみ表示*}
-                                <li  role="presenetation"><a role="menuitem" tabindex="-1" href="#">会員情報変更</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/user/logout">ログアウト</a></li>
-                            {else} 
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/user/signup">会員登録</a></li>
-                            {/if}
-                        </ul>
+                                    <li  role="presenetation"><a role="menuitem" tabindex="-1" href="#">会員情報変更</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/user/logout">ログアウト</a></li>
+                                    {else} 
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/user/signup">会員登録</a></li>
+                                    {/if}
+                            </ul>
                             <!-- リストここまで -->
                         </li>
                         <li class="divider"><a href="">買い物カゴ <span class="badge">{$amount_cart}</span></a></li>
@@ -62,17 +62,24 @@
                 </div>
                 <button type="submit" class="btn btn-default">検索</button>
             </form>       <div class="container main-content">
-            <div class="row">
-            {block main}
-            {/block}
-            </div>
+                <div class="row">
+                    {block main}
+                    {/block}
+                </div>
             </div>            
-{*        </div>
-    </div>
-</div>*}
-{*</div>*}
-<footer class="container-fluid ">
-    <small><a href="/">Copyright (C) 2015-2015 vec.aso All Rights Reserved.</a></small>
-</footer>
-</body>
-</html>
+            <script>
+                $(':input').typeahead(null, {
+                    name: 'stations',
+                    source: engine.ttAdapter()
+                })
+                var engine = new Bloodhound({
+  datumTokenizer: function(d){ return d.value },
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  local: [{ value: '東京' }, { value: '新宿' }, { value: '池袋' }, { value: '渋谷' }]
+});
+            </script>
+            <footer class="container-fluid ">
+                <small><a href="/">Copyright (C) 2015-2015 vec.aso All Rights Reserved.</a></small>
+            </footer>
+        </body>
+    </html>
