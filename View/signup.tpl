@@ -10,10 +10,10 @@
                     <div class="container">
                         <div class="col-xs-12 col-sm-10 col-md-10 col-md-offset-4 col-sm-offset-2 col-xs-8 h1">会員登録</div>
                         <div class="col-xs-12 col-sm-10 col-md-10 col-md-offset-3 col-sm-offset-2 col-xs-8 h1"><br /></div>
-                        <div class="col-xs-12 col-sm-10 col-md-10 col-md-offset-1 col-xs-8 h4">必要情報を記入してください。</div>
+                        <div class="col-xs-12 col-sm-10 col-md-10 col-md-offset-1 col-xs-8 h4">{$message}</div>
                         <div class="col-xs-12 col-sm-10 col-md-10 col-md-offset-3 col-sm-offset-2 col-xs-8 h1"><br /></div>
                         <div class="row">
-                            <form action="#" class="form-horizontal" method="post">
+                            <form action="/VEC/user/signup" class="form-horizontal" method="post">
                                 <div class="form-group">
                                     <label for="input-mail" class="col-sm-3 control-label">氏名</label>
                                     <div class="col-sm-6">
@@ -43,7 +43,7 @@
                                 <div class="form-group">
                                     <label for="input-passward" class="col-sm-3 control-label">パスワード確認</label>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control" name="password" id="input-passward" placeholder="パスワード確認" required="required">
+                                        <input type="password" class="form-control" name="con_password" id="input-passward" placeholder="パスワード確認" required="required">
                                     </div>
                                 </div>
                                 <div class="form-group">

@@ -50,9 +50,7 @@ class homeController {
     }
 
     function akihiro2() {
-        $user = new User(0);
-        $_SESSION['currentUser'] = $user->getUserName();
-        $this->view->display('View/temp.tpl');
+        $this->view->display('View/test.tpl');
     }
 
     function nagano() {
