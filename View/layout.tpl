@@ -6,8 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/VEC/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="/VEC/css/css.css" rel="stylesheet" media="screen">
+        <link href="/VEC/css/typeahead.css" rel="stylesheet" media="screen">
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="/VEC/js/bootstrap.js"></script>
+        <script type="text/javascript" src="/VEC/js/typeahead.bundle.js"></script>
+
+
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -34,7 +38,7 @@
                         <!-- ここはボタンを押すと表示されるリスト -->
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                             {if $smarty.session.userName != null}{*ログインしてる場合のみ表示*}
-                                    <li  role="presenetation"><a role="menuitem" tabindex="-1" href="#">会員情報変更</a></li>
+                                    <li  role="presenetation"><a role="menuitem" tabindex="-1" href="/VEC/user/settings">会員情報変更</a></li>
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/user/logout">ログアウト</a></li>
                                     {else} 
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/user/signup">会員登録</a></li>
@@ -44,21 +48,21 @@
                         </li>
                         <li class="divider"><a href="">買い物カゴ <span class="badge">{$amount_cart}</span></a></li>
                     </ul>
-                    {*                    {include file='/VEC/base.tpl'}*}
+
                     <!--検索フォーム-->
                     <form class="navbar-form navbar-static-top" role="search" method="post" action="/VEC/product/searchlist/1">
                         <div class="form-group col-md-offset-1">
-                            <input type="text" class="form-control" placeholder="商品検索" size="60pix" name="search">
+                            <input type="text" class="form-control typeahead" id ="search" placeholder="商品検索" size="60pix" name="search">
                         </div>
                         <button type="submit" class="btn btn-default">検索</button>
                     </form>
                 </div>
             </nav>
             <header class="jumbotron col-lg-10 col-lg-offset-1"></header>
-                {*        すまほばー*}
+                {*すまほばー*}
             <form class="navbar-form navbar-static-top hidden-lg hidden-md hidden-sm" role="search">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="商品検索">
+                    <input type="text" class="form-control typeahead" placeholder="商品検索">
                 </div>
                 <button type="submit" class="btn btn-default">検索</button>
             </form>       <div class="container main-content">
@@ -66,20 +70,57 @@
                     {block main}
                     {/block}
                 </div>
-            </div>            
-            <script>
-                $(':input').typeahead(null, {
-                    name: 'stations',
-                    source: engine.ttAdapter()
-                })
-                var engine = new Bloodhound({
-  datumTokenizer: function(d){ return d.value },
-  queryTokenizer: Bloodhound.tokenizers.whitespace,
-  local: [{ value: '東京' }, { value: '新宿' }, { value: '池袋' }, { value: '渋谷' }]
-});
-            </script>
+
+            </div>
             <footer class="container-fluid ">
-                <small><a href="/">Copyright (C) 2015-2015 vec.aso All Rights Reserved.</a></small>
+                {*                <small><a href="/">Copyright (C) 2015-2015 vec.aso All Rights Reserved.</a></small>*}
+                {foreach from=$item item=rec}
+                    '{$rec}'
+                {/foreach}
             </footer>
+
         </body>
+
+        <script>
+            {*            function comp($deta){*}
+            var substringMatcher = function (strs) {
+                return function findMatches(q, cb) {
+                    var matches, substringRegex;
+
+                    // an array that will be populated with substring matches
+                    matches = [];
+
+                    // regex used to determine if a string contains the substring `q`
+                    substrRegex = new RegExp(q, 'i');
+
+                    // iterate through the pool of strings and for any string that
+                    // contains the substring `q`, add it to the `matches` array
+                    $.each(strs, function (i, str) {
+                        if (substrRegex.test(str)) {
+                            matches.push(str);
+                        }
+                    });
+
+                    cb(matches);
+                };
+            };
+
+            var states = [
+            {foreach from=$item item=rec}
+                '{$rec}',
+            {/foreach}
+
+            ];
+
+
+            $('.typeahead').typeahead({
+                hint: true,
+                highlight: true,
+                minLength: 1
+            },
+            {
+                name: 'states',
+                source: substringMatcher(states)
+            });
+        </script>
     </html>

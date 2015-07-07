@@ -63,4 +63,17 @@ class Product extends BaseModel {
             die("指定されたカテゴリには商品は存在しません。");
         }
     }
+    
+    function getAll(){
+        $rows = parent::query('product');
+        //かきかえる
+        //配列用意
+        $items=[];
+        foreach ($rows as $value) {
+//                $items =$value['product_name'];
+            array_push($items, $value['product_name']);
+		}
+                
+        return $items;
+    }
 }

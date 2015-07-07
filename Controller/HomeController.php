@@ -1,6 +1,7 @@
 <?php
 
 require_once ('Model/User.php');
+require_once ('Model/Product.php');
 require_once ('smarty/libs/Smarty.class.php');
 
 class homeController {
@@ -23,6 +24,9 @@ class homeController {
         $this->view->assign('name4', '円安きみや');
         $this->view->assign('name5', '円高きみや');
         $this->view->assign('name1', 'ちょっと高いきみや');
+        $product = new Product();
+        $item = $product->getAll();
+        $this->view->assign('item',$item);
         $this->view->display('View/base.tpl');
     }
 
