@@ -75,6 +75,8 @@ class productController {
             'name'=>$name
         );
         $this->view->assign('array', $array);
+        $item = $product->getAll();
+        $this->view->assign('item',$item);
 
         $this->view->display('View/search-list.tpl');
         echo var_dump($productName);   
@@ -92,7 +94,7 @@ class productController {
         $productName = $product->searchProduct($_POST[search]);
         
         $cnt = count($productName); //レコード数をカウントしておきます
-//テスト用、適当レコード作成ここまでÏ
+        
         $display_quanity = 10;
         $start = 0 + $current * 10 - 10;
         $max_page = ceil($cnt / $display_quanity);
