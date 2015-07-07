@@ -81,9 +81,17 @@ class userController {
     }
 
     private function signupProcess() {
+        $flg = 0;
+		$user = new User;
+        $user->setUserName(filter_input(INPUT_POST, 'name'));
+        $user->setMail(filter_input(INPUT_POST, 'mail'));
+        $user->set = filter_input(INPUT_POST, 'phone');
+		$password = filter_input(INPUT_POST, 'password');
+		$con_password = filter_input(INPUT_POST, 'con_password');
+		
+        
 
-
-        return 0;
+        return $flg;
     }
 
     function settings() {
