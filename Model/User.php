@@ -4,17 +4,17 @@ require_once 'BaseModel.php';
 
 class User extends BaseModel {
 
-  private $userNo;
-  private $userName;
-  private $password;
-  private $mail;
-  private $age;
-  private $gender;
-  private $address;
-  private $phone;
-  private $point;
-  private $credit;
-  private $money;
+  private $userNo = null;
+  private $userName = null;
+  private $password = null;
+  private $mail = null;
+  private $age = null;
+  private $gender = 0;
+  private $address = null;
+  private $phone = null;
+  private $point = 0;
+  private $credit = null;
+  private $money = null;
 
   //引:userNo インスタンス化時にユーザーNo指定でユーザー情報をDBから取得、フィールドにセット
   function __construct($id = 0) {
@@ -133,7 +133,7 @@ class User extends BaseModel {
 
   //ログイン処理 戻:成功=1, 失敗=0
   function login() {
-	if ($this->mail == '' || $this->password == '') {
+	if ($this->mail == NULL || $this->password == NULL) {
 
 	  return 0;
 	}
@@ -149,10 +149,10 @@ class User extends BaseModel {
   }
 
   function signUp() {//ログイン処理 戻:成功=1, 失敗=0
-	if ($this->mail == '' || $this->userName == '' || $this->address == '' || $this->password == '' || $this->gender == '' || $this->age == '' || $this->credit == '') {
+	if ($this->mail == NULL || $this->userName == NULL || $this->password == NULL || $this->phone ==NULL) {
 	  return 0;
 	}
-	$values = 'NULL, \'' . $this->mail . '\', \'' . $this->userName . '\', \'' . $this->password . '\',' . $this->age . ', ' . $this->gender . ', \'' . $this->address . '\', 0, ' . $this->credit . ', 0';
+	$values = 'NULL, \'' . $this->mail . '\', \'' . $this->userName . '\', \'' . $this->password . '\', \'' . $this->age . '\', \'' . $this->gender . '\', \'' . $this->address . '\', 0, \'' . $this->credit . '\', 0, \''.$this->phone. '\'';
 	$result = parent::insert('user', $values);
 	if ($result) {
 	  return 1;
