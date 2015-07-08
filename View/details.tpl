@@ -11,11 +11,10 @@
                     <div class="container">
                         <div class="col-xs-12 col-sm-10 col-md-10 col-md-offset-4 col-sm-offset-2 col-xs-8 h1">商品詳細<div>
                         <div class="col-xs-12 col-sm-10 col-md-10 col-md-offset-3 col-sm-offset-2 col-xs-8 h1"><br /></div>
-　　　　
              <table>
                       <tr>
                           <td rowspan="3">
-                          <img src="./img/51UJ5Do3hzL.jpg"class="img-circle" />
+                          <div class="frame" style="background: url(/VEC/img/{$item['image']}) center center no-repeat;" ></div>
                           </td>
                           <td>{$item['product_name']}</td>
                       </tr>

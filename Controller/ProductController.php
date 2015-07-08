@@ -13,31 +13,31 @@ class productController {
     }
     
     function meetList($page = 1){
-        $this->productList(1,$page,'meetlist');
+        $this->productList(2,$page,'meetlist');
     }
     
     function fishList($page = 1){
-        $this->productList(2,$page,'fishlist');
+        $this->productList(3,$page,'fishlist');
     }
     
     function vegeList($page = 1){
-        $this->productList(3,$page,'vegelist');
+        $this->productList(4,$page,'vegelist');
     }
     
     function fruitsList($page = 1){
-        $this->productList(4,$page,'fruitslist');
+        $this->productList(5,$page,'fruitslist');
     }
     
     function cerealList($page = 1){
-        $this->productList(5,$page,'cereallist');
+        $this->productList(6,$page,'cereallist');
     }
     
     function spicesList($page = 1){
-        $this->productList(6,$page,'spiceslist');
+        $this->productList(7,$page,'spiceslist');
     }
     
     function processingList($page = 1){
-        $this->productList(7,$page,'processinglist');
+        $this->productList(8,$page,'processinglist');
     }
     
     function pastryList($page = 1){
@@ -61,8 +61,8 @@ class productController {
 //        $cnt = count($hairetu); //レコード数をカウントしておきます
         $cnt = count($productName);
 //テスト用、適当レコード作成ここまでÏ
-        $display_quanity = 10;
-        $start = 0 + $current * 10 - 10;
+        $display_quanity = 9;
+        $start = 0 + $current * 9 - 9;
         $max_page = ceil($cnt / $display_quanity);
         $naiyou = array_slice($productName, $start, $display_quanity); //表示する数と内容
         
@@ -79,7 +79,6 @@ class productController {
         $this->view->assign('item',$item);
 
         $this->view->display('View/search-list.tpl');
-        echo var_dump($productName);   
     }
 
     function searchlist($page = 1) {
@@ -118,7 +117,6 @@ class productController {
         $item = $product->getDetails($id);
         $this->view->assign('item',$item);
         $this->view->display('View/details.tpl');
-        echo var_dump($item);
     }
 
 }

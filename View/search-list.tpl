@@ -1,9 +1,9 @@
 {extends file='View/base.tpl'}
 {block title}検索結果{/block}
 {block content}
-    現在のページは{$smarty.post.page}
+    {$smarty.post.page}ページ目
     <br />
-    {$array.start + 1}個目から{$array.start + $array.display_quanity}個目のデータを表示しています。
+{*    {$array.start + 1}個目から{$array.start + $array.display_quanity}個目のデータを表示しています。*}
 
     {*//↓現在のページと何個のデータを表示しているのか表示する部分
     $pageing_mes = '<p>現在のページは「'.$genzai_page.'」です。</p>'.
@@ -26,12 +26,16 @@
 
     {*//↓データ内容を表示する部分*}
     {foreach $array.deta as $deta}
-        <div class="panel panel-info">
+        {*<div class="panel panel-info">
             <div class="panel-heading"><a href="/VEC/product/productdetails/{$deta['product_no']}">{$deta['product_name']}</a></div>
             <div class="panel-body">
-                写真
+                <image src="/VEC/img/{$deta['image']}"
             </div>
-        </div>
+        </div>*}
+        <div class="label">{$deta['product_name']}</div>
+        <a href="/VEC/product/productdetails/{$deta['product_no']}">
+                    <div class="frame" style="background: url(/VEC/img/{$deta['image']}) center center no-repeat;" ></div>
+                    </a>
     {/foreach}
 
 

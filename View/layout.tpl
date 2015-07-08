@@ -73,10 +73,7 @@
 
             </div>
             <footer class="container-fluid ">
-                {*                <small><a href="/">Copyright (C) 2015-2015 vec.aso All Rights Reserved.</a></small>*}
-                {foreach from=$item item=rec}
-                    '{$rec}'
-                {/foreach}
+                                <small><a href="/">Copyright (C) 2015-2015 vec.aso All Rights Reserved.</a></small>
             </footer>
 
         </body>
