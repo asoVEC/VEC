@@ -20,12 +20,12 @@
                 <!--ブランド名 ロゴ名の表示-->
                 <a class="navbar-brand" href="/VEC/">VEC</a>
             </div>
-            <div id="nav-content" class="collapse navbar-collapse">
+            <div id="nav-content" class="collapse navbar-collapse navbar-inverse">
                 <!--                    リンクのリスト メニューリスト-->
                 <ul class="navbar-right nav navbar-nav">
                     <li class="dropdown">
                         <!-- ここが表示されるボタン <a>タグでもOK -->
-                        <div class="dropdown-toggle" ></a>
+					<div class="dropdown-toggle inverse" >
                             アカウントサービス<span class="caret"></span>
                             <br />
                             {if $smarty.session.userName == null}
