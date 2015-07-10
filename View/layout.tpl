@@ -46,7 +46,10 @@
                             </ul>
                             <!-- リストここまで -->
                         </li>
-                        <li class="divider"><a href="">買い物カゴ <span class="badge">{$amount_cart}</span></a></li>
+                        <li class="divider"><a id="tooltip" href="" data-placement="bottom" data-html="true"  
+                                               data-toggle="tooltip" title="{$item2['product_name']}<br /><img src='/VEC/img/{$item2['image']}' width='80px' height='80px'>">
+                                買い物カゴ <span class="badge">{$amount_cart}</span></a></li>
+
                     </ul>
 
                     <!--検索フォーム-->
@@ -73,13 +76,13 @@
 
             </div>
             <footer class="container-fluid ">
-                                <small><a href="/">Copyright (C) 2015-2015 vec.aso All Rights Reserved.</a></small>
+                <small><a href="/">Copyright (C) 2015-2015 vec.aso All Rights Reserved.</a></small>
             </footer>
-
         </body>
 
         <script>
-            {*            function comp($deta){*}
+ 
+            
             var substringMatcher = function (strs) {
                 return function findMatches(q, cb) {
                     var matches, substringRegex;
@@ -118,6 +121,10 @@
             {
                 name: 'states',
                 source: substringMatcher(states)
+            });
+
+            $(function () {
+                $('#tooltip').tooltip();
             });
         </script>
     </html>

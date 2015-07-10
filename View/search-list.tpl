@@ -3,35 +3,8 @@
 {block content}
     {$smarty.post.page}ページ目
     <br />
-{*    {$array.start + 1}個目から{$array.start + $array.display_quanity}個目のデータを表示しています。*}
-
-    {*//↓現在のページと何個のデータを表示しているのか表示する部分
-    $pageing_mes = '<p>現在のページは「'.$genzai_page.'」です。</p>'.
-    '<p>'.($start+1).'個目から'.(($start)+$hyouji_kazu).'個目のデータを表示しています</p>';*}
-
-    {*//↓これをつけないと 場合によっては １ページ目とか最後のページで表示件数がおかしくなる
-    if($genzai_page == $max_page){
-    $pageing_mes = '<p>現在のページは「'.$genzai_page.'」です。</p>'.
-    '<p>'.($start+1).'個目から'.$cnt.'個目のデータを表示しています</p>';
-    }*}
-    {*//↓データがない場合の処理（本番では必要です）
-    if($cnt == 0){
-    $pageing_mes = '現在登録されているデータはありません';
-    }*}
-
-    {*echo $pageing_mes;*}
-
-
-
-
     {*//↓データ内容を表示する部分*}
     {foreach $array.deta as $deta}
-        {*<div class="panel panel-info">
-            <div class="panel-heading"><a href="/VEC/product/productdetails/{$deta['product_no']}">{$deta['product_name']}</a></div>
-            <div class="panel-body">
-                <image src="/VEC/img/{$deta['image']}"
-            </div>
-        </div>*}
         <div class="label">{$deta['product_name']}</div>
         <a href="/VEC/product/productdetails/{$deta['product_no']}">
                     <div class="frame" style="background: url(/VEC/img/{$deta['image']}) center center no-repeat;" ></div>

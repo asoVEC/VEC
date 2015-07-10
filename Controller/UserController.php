@@ -11,9 +11,6 @@ class userController {
 //        $this->view->template_dir = '../View';
     }
 
-    function setting() {
-        $this->view->display('View/user-settings.tpl');
-    }
 
     function login() {
         $mail = $_POST[mail];
@@ -95,6 +92,9 @@ class userController {
     }
 
     function settings() {
+        $test = $_POST[name];
+        $this->view->assign('test',$test);
+        
         $this->view->display('View/settings.tpl');
     }
 

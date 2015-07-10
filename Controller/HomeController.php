@@ -27,6 +27,8 @@ class homeController {
 		$product = new Product();
 		$item    = $product->getAll();
 		$this->view->assign('item', $item);
+        $item2 = $product->getDetails(19);
+        $this->view->assign('item2',$item2);
 		$this->view->display('View/base.tpl');
 	}
 
