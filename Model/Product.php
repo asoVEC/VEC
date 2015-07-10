@@ -4,13 +4,6 @@ class Product extends BaseModel {
     private $productNo;
     private $productName;
     private $listSize;
-//    private $mail;
-//    private $age;
-//    private $gender;
-//    private $address;
-//    private $point;
-//    private $credit;
-//    private $money;
 
     function __construct() {
         parent::__construct();

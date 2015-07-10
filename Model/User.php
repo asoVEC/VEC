@@ -153,7 +153,7 @@ class User extends BaseModel {
 	  return 0;
 	}
 	$values = 'NULL, \'' . $this->mail . '\', \'' . $this->userName . '\', \'' . $this->password . '\', \'' . $this->age . '\', \'' . $this->gender . '\', \'' . $this->address . '\', 0, \'' . $this->credit . '\', 0, \''.$this->phone. '\'';
-	$result = parent::insert('user', $values);
+	$result = $this->insert('user', $values);
 	if ($result) {
 	  return 1;
 	} else {
