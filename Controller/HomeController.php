@@ -55,7 +55,8 @@ class homeController {
 	}
 
 	function akihiro2() {
-
+		$products = new Product(1);
+		echo $products->getProductName();
 	}
 
 	function nagano() {

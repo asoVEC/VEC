@@ -1,6 +1,9 @@
 ﻿
 {extends file='View/base.tpl'}
 {block content}
-    {$smarty.session.currentUser}
-	{$message}
+    {php}
+	echo "hello";
+	
+	
+	{/php}
 {/block}

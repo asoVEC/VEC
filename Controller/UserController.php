@@ -1,4 +1,5 @@
 <?php
+require_once ('Model/Cart.php');
 
 class userController {
 
@@ -26,8 +27,6 @@ class userController {
 			$this->view->display('View/login.tpl');
 		} else {
 			//ログイン処理
-			$mail = filter_input(INPUT_POST, 'mail'); //怒られるからフィルター関数使ってみたよ
-			$pass = $_POST[password];
 			$loginFlg = $this->loginProcess($mail,$pass);
 			switch ($loginFlg) {
 				case 1://ログイン成功
@@ -103,5 +102,8 @@ class userController {
 	function settings() {
 		$this->view->display('View/settings.tpl');
 	}
-
+	function akihiro(){
+		$user = new User(1);
+		Cart::akihiro($user);
+	}
 }
