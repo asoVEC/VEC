@@ -46,17 +46,19 @@ class homeController {
 	function akihiro() {
 		$user = new User;
 		$user->setUserName('かっこいいきみや');
-		$user->setPassword(kimikimikimiya);
+		$user->setPassword('kimikimi');
 		$user->setMail('111@gmail.com');
 		$user->setAge(20);
 		$user->setAddress('ながさき');
 		$user->setGender(1);
-		$user->setCredit('1234567234');
-		echo $user->signUp($values);
+		$user->setCredit(1234567234);
+		$user->setPhone('08058888577');
+		echo $user->signUp();
 	}
 
 	function akihiro2() {
-
+		$products = new Product(1);
+		echo $products->getProductName();
 	}
 
 	function nagano() {

@@ -22,6 +22,12 @@ and open the template in the editor.
     width: 180px;
     height: 180px;
 }
+.inverse {
+  color: #999;
+}
+.inverse:hover {
+  color: #fff;
+}
 .label {
     
     position: relative;

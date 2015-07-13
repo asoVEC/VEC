@@ -23,18 +23,18 @@
 
 　　　　　　　　　　　　　<td><div style="padding: 10px; margin-bottom: 10px;
                                border: 1px solid #333333; border-radius: 10px;">商品購入<br>
-                              <SELECT name="suuryo">
+                            <SELECT name="suuryo">
 　　　　　　　　　　　　　　  <OPTION value="su1">1</OPTION>
  　　　　　　　　　　　　　　 <OPTION value="su2">2</OPTION>
  　　　　　　　　　　　　　　 <OPTION value="su3">3</OPTION>
-                              <OPTION value="su4">4</OPTION>
-                              <OPTION value="su5">5</OPTION>
+                            <OPTION value="su4">4</OPTION>
+                            <OPTION value="su5">5</OPTION>
  　　　　　　　　　　　　　　 <OPTION value="su6">6</OPTION>
  　　　　　　　　　　　　　　 <OPTION value="su7">7</OPTION>
-                              <OPTION value="su8">8</OPTION>
-                              <OPTION value="su9">9</O1PTION>
+                            <OPTION value="su8">8</OPTION>
+                            <OPTION value="su9">9</O1PTION>
  　　　　　　　　　　　　　　 <OPTION value="su10">10</OPTION>
-                              </SELECT><br><br>
+                            </SELECT><br><br>
                               <BUTTON type="submit">カートに入れる</BUTTON></div> </td>
                       </tr>
 
@@ -42,7 +42,8 @@
                         
 
   <ul class="list-unstyled">
-            <li>{$item['price']}</li>
+            <li>商品価格</li>
+            
             <li>商品の特長</li>
             <li>商品詳細情報</li>
         </ul>
