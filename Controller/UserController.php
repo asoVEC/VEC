@@ -1,11 +1,11 @@
 <?php
 require_once ('Model/Cart.php');
-
+require_once ('Model/Product.php');
+require_once ('Model/User.php');
 class userController {
 
 	public function __construct() {
 		require_once('smarty/libs/Smarty.class.php');
-		require_once ('Model/User.php');
 //        require_once 'post.php';
 		// ビュー
 		$this->view = new Smarty;
