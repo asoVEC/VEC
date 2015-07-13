@@ -11,7 +11,6 @@ class userController {
 //        $this->view->template_dir = '../View';
     }
 
-
     function login() {
         $mail = $_POST[mail];
         $pass = $_POST[password];
@@ -79,23 +78,30 @@ class userController {
 
     private function signupProcess() {
         $flg = 0;
-		$user = new User;
+        $user = new User;
         $user->setUserName(filter_input(INPUT_POST, 'name'));
         $user->setMail(filter_input(INPUT_POST, 'mail'));
         $user->set = filter_input(INPUT_POST, 'phone');
-		$password = filter_input(INPUT_POST, 'password');
-		$con_password = filter_input(INPUT_POST, 'con_password');
-		
-        
+        $password = filter_input(INPUT_POST, 'password');
+        $con_password = filter_input(INPUT_POST, 'con_password');
+
+
 
         return $flg;
     }
 
     function settings() {
         $test = $_POST[name];
-        $this->view->assign('test',$test);
-        
+        $this->view->assign('test', $test);
+
         $this->view->display('View/settings.tpl');
+    }
+
+    function settingsPost() {
+        if ($_REQUEST["address"]) {
+            $address = $_REQUEST['address'];
+            echo $address;
+        }
     }
 
 }

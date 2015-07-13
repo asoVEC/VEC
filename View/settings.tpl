@@ -14,11 +14,9 @@
     氏名変更
     クレジット登録
     生年月日登録*}
-    {if isset($smarty.post.address)}
-        <div class="alert alert-success">
-            <strong>登録完了しました</strong>
+        <div class="alert alert-success" id = "alert2">
+            <strong id="alert">登録完了しました</strong>の登録完了
         </div>
-    {/if}
 
     {assign var="address" value="博多"}
     {assign var="cre" value="1301177"}
@@ -37,7 +35,7 @@
                             <input type="text" class="form-control" name="newaddress" id="input-newaddress" placeholder="住所" required="required">
                         </div>
                         <div class="col-sm-offset-6 col-sm-3">
-                            <button type="submit" class="btn btn-default ">住所の登録</button>
+                            <input type="button" class="btn btn-default" id ="button-address">住所の登録</button>
                         </div>
                     </div>
                 </div>
@@ -56,12 +54,12 @@
                     <label for="input-address" class="col-sm-9  control-label">{$address}</label>
                     <div class="form-group">
                         <label for="input-address" class="col-sm-3 control-label">変更住所</label>
-                        <form method="post">
+                        <form method="post"　id="form-address">
                             <div class="col-sm-6">
                                 <input type="text" class="form-control" name="address" id="input-address" placeholder="住所" required="required">
                             </div>
                             <div class="col-sm-offset-6 col-sm-3">
-                                <button type="submit" class="btn btn-default" id="loading-button" data-loading-text="変更中">住所変更</button>
+                                <input type="button" class="btn btn-default" id="loading-address" data-loading-text="変更中" value="住所変更">
                             </div>
                         </form>
                     </div>
@@ -194,20 +192,7 @@
         </div>
     </div>
   <script type="text/javascript" language="javascript">
-         $(document).ready(function() {
-			
-            $("#driver").click(function(event){
-				
-               $.post( 
-                  "/VEC/user/settings",
-                  { name: "Zara" },
-                  function(data) {
-                     $('#stage').html(data);
-                  }
-               );
-					
-            });
-         });
+    
       </script>
 		
    </head>
@@ -220,58 +205,35 @@
          STAGE
       </div>
 		
-      <input type="button" id="driver" value="Load Data" />
-		
    </body>
-   
-    {*    {assign var="name" value="aaaaa"}*}
-{$test}aa
-    {*<?php
-    echo json_encode(array("name"=>"John","time"=>"2pm"));
-    ?>*}
     <script>
-        $("#loading-button").button();
-        $("#loading-button").click(function () {
+        var elem1 = document.getElementById("alert2");
+        elem1.style.display = "none";
+             $(document).ready(function() {
+			
+            $("#loading-address").click(function(event){
+				
+               $.post( 
+                  "/VEC/user/settingspost",
+                  { address: document.getElementById("input-address").value },
+                  function(data) {
+                     $('#alert').html(data);
+                     console.log(document.getElementById("input-address").value);
+                  }
+               );
+       
+       elem1.style.display = "";elem1.style.display = "";
+            });
+         });
+        
+        //ローディングボタン
+        $("#loading-address").button();
+        $("#loading-address").click(function () {
             var btn = $(this);
             btn.button('loading');
             setTimeout(function () {
                 btn.button('reset');
             }, 2000)
         });
-
-        {*  $.post("/VEC/user/settings",
-        {"func": "getNameAndTime"},
-        function (data) {
-        console.log(data.name); // John
-        console.log(data.time); //  2pm
-        },
-        "json"
-        );*}
-
-        {*$.post("/VEC/user/settings",
-                {name: "John", time: "2pm"},
-        function (data) {
-            //リクエストが成功した際に実行する関数
-            alert("Data Loaded: " + data);
-        });*}
-{*            
-$.post( 
-                  "/VEC/user/settings",
-                  { name: "Zara" },
-                  function(data) {
-                       $('#stage').html(data);
-                  }
-               );*}
-
-        {*$(function () {
-        $.post("/VEC/user/settings",
-        {name:'a'},
-        function (data, textStatus) {
-        if (textStatus == 'success') {
-        console.log("成功");
-        }
-        }
-        , 'json');
-        });*}
     </script>
 {/block}
