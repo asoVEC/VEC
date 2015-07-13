@@ -1,30 +1,22 @@
 <?php
+
 require_once ('Model/Cart.php');
 require_once ('Model/Product.php');
 require_once ('Model/User.php');
+
 class userController {
 
 	public function __construct() {
 		require_once('smarty/libs/Smarty.class.php');
 //        require_once 'post.php';
-		// ビュー
+// ビュー
 		$this->view = new Smarty;
 //        $this->view->template_dir = '../View';
-	}
-
-<<<<<<< HEAD
-    function login() {
-        $mail = $_POST[mail];
-        $pass = $_POST[password];
-=======
-	function setting() {
-		$this->view->display('View/user-settings.tpl');
 	}
 
 	function login() {
 		$mail = $_POST[mail];
 		$pass = $_POST[password];
->>>>>>> origin/master
 
 		if ($_SESSION['userName'] != NULL) {//ログイン済み
 			header('Location: /VEC/');
@@ -32,8 +24,8 @@ class userController {
 		} elseif ($mail === NULL || $pass === NULL) {//初回アクセス
 			$this->view->display('View/login.tpl');
 		} else {
-			//ログイン処理
-			$loginFlg = $this->loginProcess($mail,$pass);
+//ログイン処理
+			$loginFlg = $this->loginProcess($mail, $pass);
 			switch ($loginFlg) {
 				case 1://ログイン成功
 					header('Location: /VEC/');
@@ -47,8 +39,8 @@ class userController {
 		}
 	}
 
-	// 戻:成功=1, 失敗=0
-	private function loginProcess($mail,$pass) {
+// 戻:成功=1, 失敗=0
+	private function loginProcess($mail, $pass) {
 		$loginFlg = 0;
 		$user = new User();
 		$user->setMail($mail);
@@ -85,36 +77,13 @@ class userController {
 		}
 	}
 
-<<<<<<< HEAD
-    private function signupProcess() {
-        $flg = 0;
-        $user = new User;
-        $user->setUserName(filter_input(INPUT_POST, 'name'));
-        $user->setMail(filter_input(INPUT_POST, 'mail'));
-        $user->set = filter_input(INPUT_POST, 'phone');
-        $password = filter_input(INPUT_POST, 'password');
-        $con_password = filter_input(INPUT_POST, 'con_password');
+	function settingsPost() {
+		if ($_REQUEST["address"]) {
+			$address = $_REQUEST['address'];
+			echo $address;
+		}
+	}
 
-
-
-        return $flg;
-    }
-
-    function settings() {
-        $test = $_POST[name];
-        $this->view->assign('test', $test);
-
-        $this->view->display('View/settings.tpl');
-    }
-
-    function settingsPost() {
-        if ($_REQUEST["address"]) {
-            $address = $_REQUEST['address'];
-            echo $address;
-        }
-    }
-
-=======
 	private function signupProcess() {
 		$flg = 0;
 		$pass = filter_input(INPUT_POST, 'password');
@@ -128,7 +97,7 @@ class userController {
 		if ($pass === $con_pass) {
 			$user->setPassword($pass);
 			$flg = $user->signUp();
-			if($flg === 1){
+			if ($flg === 1) {
 				$this->loginProcess($mail, $pass);
 			}
 		}
@@ -138,9 +107,10 @@ class userController {
 	function settings() {
 		$this->view->display('View/settings.tpl');
 	}
-	function akihiro(){
+
+	function akihiro() {
 		$user = new User(1);
 		Cart::akihiro($user);
 	}
->>>>>>> origin/master
+
 }
