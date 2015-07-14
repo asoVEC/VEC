@@ -1,7 +1,8 @@
 <?php
 
 require_once 'Product.php';
-class Cart extends BaseModel{
+
+class Cart extends BaseModel {
 
 	private $product;
 	private $userNo;
@@ -11,7 +12,7 @@ class Cart extends BaseModel{
 	function __construct($userNo) {
 		parent::__construct();
 	}
-	
+
 	function add() {
 		
 	}
@@ -28,11 +29,11 @@ class Cart extends BaseModel{
 		
 	}
 
-	function updateOnLogin() {
+	public static function updateOnLogin() {
 		
 	}
 
-	function updateOnPurchase() {
+	public static function updateOnPurchase() {
 		
 	}
 
