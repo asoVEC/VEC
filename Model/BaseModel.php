@@ -23,7 +23,7 @@ class BaseModel {
             die('接続失敗です。' . mysql_error());
         }
         $db_selected = mysql_select_db($this->db, $this->link);
-        mysql_query('SET NAMES utf8', $this->link ); 
+        mysql_query('SET NAMES utf8', $this->link);
         if (!$db_selected) {
             die('データベース選択失敗です。' . mysql_error());
         }
@@ -47,17 +47,21 @@ class BaseModel {
         if (!$result) {
             die('クエリーが失敗しました。' . mysql_error());
         }
-         $rows = array();
+        $rows = array();
         while ($row = mysql_fetch_assoc($result)) {
-            $rows[] = $row;           
+            $rows[] = $row;
         }
         return $rows;
     }
-    function insert($table,$values) {
-       $sql = 'INSERT INTO ' .$table. ' VALUES ('.$values.')';
-       return mysql_query($sql);
-       
-        
+
+    function insert($table, $values) {
+        $sql = 'INSERT INTO ' . $table . ' VALUES (' . $values . ')';
+        return mysql_query($sql);
+    }
+
+    function update($type,$value) {
+        $sql = 'UPDATE user SET '.$type.' = "' . $value . '" WHERE user_no = 1';
+        return mysql_query($sql);
     }
 
 }

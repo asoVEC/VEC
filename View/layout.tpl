@@ -57,7 +57,7 @@
                         <div class="form-group col-md-offset-1">
                             <input type="text" class="form-control typeahead" id ="search" placeholder="商品検索" size="60pix" name="search">
                         </div>
-                        <button type="submit" class="btn btn-default">検索</button>
+                        <button type="submit" id="search-bt" class="btn btn-default" required="required">検索</button>
                     </form>
                 </div>
             </nav>
@@ -81,6 +81,17 @@
         </body>
 
         <script>
+            var value = document.getElementById("search").value;
+            
+            $(document).ready( function() {
+        $("#search-bt").click(function(){
+         {*   if(value.length==0){
+                alert("だめです");
+            }else{
+                alert("okです");
+            }*}
+        });
+    });
  
             
             var substringMatcher = function (strs) {

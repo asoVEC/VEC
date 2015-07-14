@@ -154,5 +154,5 @@ class User extends BaseModel {
 		$this->money = $value['money'];
 		$this->point = $value['point'];
 	}
-
+        
 }

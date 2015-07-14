@@ -9,9 +9,7 @@
                         <div class="col-xs-12 col-sm-10 col-md-10 col-md-offset-2 col-sm-offset-2 col-xs-8 h1">ログインしてください</div>
                         <div class="row">
                             <form action="/VEC/user/login" class="form-horizontal" method="post">
-
                                 <div class="form-group">
-
                                     <label for="input-mail" class="col-sm-3 control-label">メールアドレス</label>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control" name="mail" id="input-mail" placeholder="メールアドレス" required="required">
