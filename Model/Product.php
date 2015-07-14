@@ -21,6 +21,10 @@ class Product extends BaseModel {
 		parent::__destruct();
 	}
 
+	function getProductNo() {
+		return $this->productNo;
+	}
+
 	function getProductName() {
 		return $this->productName;
 	}
@@ -95,8 +99,6 @@ class Product extends BaseModel {
 		}
 		return $products;
 	}
-	
-	
 
 	private function rowsToInstance($value) {
 		$this->productNo = $value['product_no'];

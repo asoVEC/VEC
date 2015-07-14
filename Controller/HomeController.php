@@ -1,6 +1,7 @@
 <?php
 
 require_once ('Model/User.php');
+require_once ('Model/Cart.php');
 require_once ('Model/Product.php');
 require_once ('smarty/libs/Smarty.class.php');
 
@@ -44,22 +45,14 @@ class homeController {
 	}
 
 	function akihiro() {
-		$user = new User;
-		$user->setUserName('かっこいいきみや');
-		$user->setPassword('kimikimi');
-		$user->setMail('111@gmail.com');
-		$user->setAge(20);
-		$user->setAddress('ながさき');
-		$user->setGender(1);
-		$user->setCredit(1234567234);
-		$user->setPhone('08058888577');
-		echo $user->signUp();
+		$cart = new Cart(5);
+		$product = new Product(10);
+		$cart->setProduct($product);
+		$cart->setNumber(3);
+		$cart->add();
+		var_dump($_SESSION['cart']) ;
 	}
 
-	function akihiro2() {
-		$products = new Product(1);
-		echo $products->getProductName();
-	}
 
 	function nagano() {
 		$this->view->display('View/details.tpl');
