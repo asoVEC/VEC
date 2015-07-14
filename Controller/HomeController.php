@@ -26,10 +26,10 @@ class homeController {
 		$this->view->assign('name5', '円高きみや');
 		$this->view->assign('name1', 'ちょっと高いきみや');
 		$product = new Product();
-		$item    = $product->getAll();
+		$item = $product->getAll();
 		$this->view->assign('item', $item);
-        $item2 = $product->getDetails(19);
-        $this->view->assign('item2',$item2);
+		$item2 = $product->getDetails(19);
+		$this->view->assign('item2', $item2);
 		$this->view->display('View/base.tpl');
 	}
 
@@ -45,14 +45,7 @@ class homeController {
 	}
 
 	function akihiro() {
-		$cart = new Cart(5);
-		$product = new Product(10);
-		$cart->setProduct($product);
-		$cart->setNumber(3);
-		$cart->add();
-		var_dump($_SESSION['cart']) ;
 	}
-
 
 	function nagano() {
 		$this->view->display('View/details.tpl');

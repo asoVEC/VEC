@@ -63,6 +63,7 @@ class BaseModel {
 
 	function update($table, $key, $value, $where) {
 		$sql = sprintf('update %s set %s = \'%s\' where %s ', $table, $key, $value, $where);
+		echo $sql;
 		return mysql_query($sql);
 	}
 
