@@ -31,6 +31,7 @@ class homeController {
 		$item2 = $product->getDetails(19);
 		$this->view->assign('item2', $item2);
 		$this->view->display('View/base.tpl');
+               echo "buta";
 	}
 
 	function logout() {
