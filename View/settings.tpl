@@ -83,7 +83,7 @@
                     <input type="text" class="form-control" name="password" id="input-pass2" placeholder="もう一度入力してください" required="required">
                 </div>
                 <div class="col-sm-offset-6 col-sm-3">
-                    <input type="button" class="btn btn-default" id="loading-pas" data-loading-text="変更中" value="パスワード変更">
+                    <input onclick="window.location.href='#div-modal'" type="button" data-toggle="modal" data-target="#div-modal" type="button" class="btn btn-default" id="loading-pas" value="パスワード変更">
                 </div>
             </div>
         </div>
@@ -97,13 +97,16 @@
         </h4>
     </div>
     <div id="mail" class="panel-collapse collapse">
-        <div class="panel-body"><div class="form-group">
-                <label for="input-mail" class="col-sm-3 control-label">メールアドレス</label>
+        <div class="panel-body">
+            <label for="input-address" class="col-sm-3 control-label" >メールアドレス</label>
+            <label for="input-address" class="col-sm-9  control-label" id="nowaddress">{$address}</label>
+            <div class="form-group">
+                <label for="input-mail" class="col-sm-3 control-label">変更メールアドレス</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="mailaddress" id="input-mail" placeholder="メールアドレス" required="required">
                 </div>
                 <div class="col-sm-offset-6 col-sm-3">
-                    <button type="submit" class="btn btn-default ">メールアドレス変更</button>
+                    <input type="button" class="btn btn-default" id="loading-mail" data-loading-text="変更中" value="メールアドレス変更">
                 </div>
             </div>
         </div>
@@ -117,13 +120,16 @@
         </h4>
     </div>
     <div id="name" class="panel-collapse collapse">
-        <div class="panel-body"><div class="form-group">
-                <label for="input-name" class="col-sm-3 control-label">氏名</label>
+        <div class="panel-body">
+            <label for="input-address" class="col-sm-3 control-label" >氏名</label>
+            <label for="input-address" class="col-sm-9  control-label" id="nowname">{$address}</label>
+            <div class="form-group">
+                <label for="input-name" class="col-sm-3 control-label">変更氏名</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="name" id="input-name" placeholder="氏名" required="required">
                 </div>
                 <div class="col-sm-offset-6 col-sm-3">
-                    <button type="submit" class="btn btn-default ">氏名</button>
+                    <input type="button" class="btn btn-default" id="loading-name" data-loading-text="変更中" value="氏名変更">
                 </div>
             </div>
         </div>
@@ -143,7 +149,7 @@
                         <input type="text" class="form-control" name="newcre" id="input-newcre" placeholder="クレジット" required="required">
                     </div>
                     <div class="col-sm-offset-6 col-sm-3">
-                        <button type="submit" class="btn btn-default ">クレジット登録</button>
+                        <input type="button" class="btn btn-default" id="loading-newcredit" data-loading-text="変更中" value="クレジット登録">
                     </div>
                 </div>
             </div>
@@ -159,13 +165,13 @@
         <div id="cre" class="panel-collapse collapse">
             <div class="panel-body"><div class="form-group">
                     <label for="input-address" class="col-sm-3 control-label">前クレジット</label>
-                    <label for="input-address" class="col-sm-9  control-label">{$cre}</label>
+                    <label for="input-address" class="col-sm-9  control-label" id="nowcredit">{$cre}</label>
                     <label for="input-cre" class="col-sm-3 control-label">クレジット</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="cre" id="input-cre" placeholder="クレジット" required="required">
+                        <input type="text" class="form-control" name="cre" id="input-credit" placeholder="クレジット" required="required">
                     </div>
                     <div class="col-sm-offset-6 col-sm-3">
-                        <button type="submit" class="btn btn-default ">クレジット変更</button>
+                        <input type="button" class="btn btn-default" id="loading-credit" data-loading-text="変更中" value="クレジット変更">
                     </div>
                 </div>
             </div>
@@ -186,16 +192,41 @@
                     <input type="text" class="form-control" name="age" id="input-age" placeholder="生年月日" required="required">
                 </div>
                 <div class="col-sm-offset-6 col-sm-3">
-                    <button type="submit" class="btn btn-default ">生年月日変更</button>
+                    <input type="button" class="btn btn-default" id="loading-age" data-loading-text="変更中" value="生年月日変更">
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<button class="btn" onclick="window.location.href='#div-modal'" type="button" data-toggle="modal" data-target="#div-modal">モーダルボタン</button>
+<!-- モーダルウィンドウの本体 -->
+
+<div id="div-modal" class="modal fade"> 
+
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">タイトル</h4>
+      </div>
+      <div class="modal-body">
+        <p>One fine body&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+        <button type="button" class="btn btn-primary">保存</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
 <script>
+    //ツールチップ表示　おためし
     $('#panel-address').tooltip();
+
+    //フラッシュメッセージ
     var elem1 = document.getElementById("alert2");
     elem1.style.display = "none";
+
 
     $(document).ready(function () {
         //住所追加
@@ -233,31 +264,126 @@
 
         //パスワード変更
         $("#loading-pas").click(function (event) {
-{*            if(document.getElementById("input-pass").value==document.getElementById("input-pass2").value){*}
+    {*            if(document.getElementById("input-pass").value==document.getElementById("input-pass2").value){*}
             $.post(
                     "/VEC/user/settingspost",
                     {
                         type: "password",
                         value: document.getElementById("input-pass").value,
                     },
-            function (data) {
-                $('#alert').html("パスワードを変更しました");
-            }
+                    function (data) {
+                        $('#alert').html("パスワードを変更しました");
+                    }
             );
             $('#input-pass').val();
             elem1.style.display = "";
-{*        }*}
+    {*        }*}
         });
-    });
+        //メールアドレス変更
+        $("#loading-mail").click(function (event) {
+    {*            if(document.getElementById("input-pass").value==document.getElementById("input-pass2").value){*}
+            $.post(
+                    "/VEC/user/settingspost",
+                    {
+                        type: "mail_address",
+                        value: document.getElementById("input-mail").value,
+                    },
+                    function (data) {
+                        $('#alert').html("メールアドレスを" + data + "に変更しました");
 
-    //ローディングボタン
-    $("input:button").button();
-    $("input:button").click(function () {
-        var btn = $(this);
-        btn.button('loading');
-        setTimeout(function () {
-            btn.button('reset');
-        }, 400)
+                    }
+            );
+            $('#input-mail').val();
+            elem1.style.display = "";
+    {*        }*}
+        });
+
+        //氏名変更
+        $("#loading-name").click(function (event) {
+    {*            if(document.getElementById("input-pass").value==document.getElementById("input-pass2").value){*}
+            $.post(
+                    "/VEC/user/settingspost",
+                    {
+                        type: "name",
+                        value: document.getElementById("input-name").value,
+                    },
+                    function (data) {
+                        $('#alert').html("氏名を" + data + "に変更しました");
+                        $('#nowname').html(data);
+                    }
+            );
+            $('#input-name').val();
+            elem1.style.display = "";
+    {*        }*}
+        });
+
+        //新規クレジット
+        $("#loading-newcredit").click(function (event) {
+    {*            if(document.getElementById("input-pass").value==document.getElementById("input-pass2").value){*}
+            $.post(
+                    "/VEC/user/settingspost",
+                    {
+                        type: "credit_no",
+                        value: document.getElementById("input-newcredit").value,
+                    },
+                    function (data) {
+                        $('#alert').html("クレジットを" + data + "で登録しました");
+                    }
+            );
+            $('#input-newcredit').val();
+            elem1.style.display = "";
+    {*        }*}
+        });
+
+        //クレジット変更
+        $("#loading-credit").click(function (event) {
+    {*            if(document.getElementById("input-pass").value==document.getElementById("input-pass2").value){*}
+            $.post(
+                    "/VEC/user/settingspost",
+                    {
+                        type: "credit_no",
+                        value: document.getElementById("input-credit").value,
+                    },
+                    function (data) {
+                        $('#alert').html("クレジットを" + data + "変更しました");
+                        $('#nowcredit').html(data);
+                    }
+            );
+            $('#input-credit').val();
+            elem1.style.display = "";
+    {*        }*}
+        });
+
+        //生年月日変更 ここdbは年齢でしてるからのちのち変更
+
+        $("#loading-age").click(function (event) {
+    {*            if(document.getElementById("input-pass").value==document.getElementById("input-pass2").value){*}
+            $.post(
+                    "/VEC/user/settingspost",
+                    {
+                        type: "age",
+                        value: document.getElementById("age").value,
+                    },
+                    function (data) {
+                        $('#alert').html("生年月日を" + data + "に変更しました");
+                    }
+            );
+            $('#input-age').val();
+            elem1.style.display = "";
+    {*        }*}
+        });
+
+        //ローディングボタン
+        $("input:button").click(function () {
+            var btn = $(this);
+            btn.button('loading');
+            setTimeout(function () {
+                btn.button('reset');
+            }, 400)
+            
+            
+        });
+
     });
 </script>
 {/block}

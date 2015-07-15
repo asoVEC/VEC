@@ -6,63 +6,14 @@ require_once ('Model/User.php');
 
 class userController {
 
-<<<<<<< HEAD
-    public function __construct() {
-        require_once('smarty/libs/Smarty.class.php');
-        require_once ('Model/User.php');
-//        require_once 'post.php';
-        // ビュー
-        $this->view = new Smarty;
-=======
 	public function __construct() {
 		require_once('smarty/libs/Smarty.class.php');
 //        require_once 'post.php';
 // ビュー
 		$this->view = new Smarty;
->>>>>>> origin/master
 //        $this->view->template_dir = '../View';
     }
 
-<<<<<<< HEAD
-    function login() {
-        $mail = $_POST[mail];
-        $pass = $_POST[password];
-
-        if ($_SESSION['userName'] != NULL) {//ログイン済み
-            header('Location: /VEC/');
-            exit;
-        } elseif ($mail === NULL || $pass === NULL) {//初回アクセス
-            $this->view->display('View/login.tpl');
-        } else {
-            //ログイン処理
-            $loginFlg = $this->loginProcess($mail, $pass);
-            switch ($loginFlg) {
-                case 1://ログイン成功
-                    header('Location: /VEC/');
-                    exit;
-                    break;
-                case 0://ログイン失敗
-                    $this->view->assign('login_message', 'きみやさんはログインお断りです');
-                    $this->view->display('View/login.tpl');
-                    break;
-            }
-        }
-    }
-
-    // 戻:成功=1, 失敗=0
-    private function loginProcess($mail, $pass) {
-        $loginFlg = 0;
-        $user = new User();
-        $user->setMail($mail);
-        $user->setPassword($pass);
-        $loginFlg = $user->login();
-        if ($loginFlg == 1) {
-            $_SESSION['userNo'] = $user->getUserNo();
-            $_SESSION['userName'] = $user->getUserName();
-        }
-        return $loginFlg;
-    }
-=======
 	function login() {
 		$mail = $_POST[mail];
 		$pass = $_POST[password];
@@ -101,7 +52,6 @@ class userController {
 		}
 		return $loginFlg;
 	}
->>>>>>> origin/master
 
     function logout() {
         $_SESSION = array();
@@ -126,55 +76,6 @@ class userController {
             $this->view->display('View/signup.tpl');
         }
     }
-
-<<<<<<< HEAD
-    private function signupProcess() {
-        $flg = 0;
-        $pass = filter_input(INPUT_POST, 'password');
-        $con_pass = filter_input(INPUT_POST, 'con_password');
-        $mail = filter_input(INPUT_POST, 'mail');
-        $user = new User;
-        $user->setUserName(filter_input(INPUT_POST, 'name'));
-        $user->setMail($mail);
-        $user->setPhone(filter_input(INPUT_POST, 'phone'));
-        //入力された2つのパスワードが一致したらパスワードをセットしサインアップ
-        if ($pass === $con_pass) {
-            $user->setPassword($pass);
-            $flg = $user->signUp();
-            if ($flg === 1) {
-                $this->loginProcess($mail, $pass);
-            }
-        }
-        return $flg;
-    }
-
-    function settings() {
-        $this->view->display('View/settings.tpl');
-    }
-
-    function akihiro() {
-        $user = new User(1);
-        Cart::akihiro($user);
-    }
-
-    //非同期通信用
-    function settingspost() {
-        if ($_REQUEST["value"]) {
-            $type = $_REQUEST['type'];
-            $value = $_REQUEST['value'];
-            $user = new User();
-            $user->update($type, $value);
-            echo $value;
-        }
-    }
-
-=======
-	function settingsPost() {
-		if ($_REQUEST["address"]) {
-			$address = $_REQUEST['address'];
-			echo $address;
-		}
-	}
 
 	private function signupProcess() {
 		$flg = 0;
@@ -204,6 +105,15 @@ class userController {
 		$user = new User(1);
 		Cart::akihiro($user);
 	}
-
->>>>>>> origin/master
+        
+        //非同期通信用
+    function settingspost() {
+        if ($_REQUEST["value"]) {
+            $type = $_REQUEST['type'];
+            $value = $_REQUEST['value'];
+            $user = new User();
+            $user->update($type, $value);
+            echo $value;
+        }
+    }
 }
