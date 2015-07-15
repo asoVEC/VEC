@@ -5,6 +5,10 @@
  * @date 	2015/05/31
  * */
 class BaseModel {
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 	private $user = 'root';
 	private $password = 'root';
 	private $db = 'vec';
@@ -59,15 +63,19 @@ class BaseModel {
 		echo $sql;
 		return mysql_query($sql);
 	}
-
+	//DBのでーた更新引:テーブル名、属性名、セットする新しい値、where条件
 	function update($table, $key, $value, $where) {
 		$sql = sprintf('update %s set %s = \'%s\' where %s ', $table, $key, $value, $where);
 		echo $sql;
 		return mysql_query($sql);
 	}
+<<<<<<< HEAD
         
             function update2($type,$value) {
         $sql = 'UPDATE user SET '.$type.' = "' . $value . '" WHERE user_no = 1';
         return mysql_query($sql);
             }
+=======
+
+>>>>>>> origin/master
 }
