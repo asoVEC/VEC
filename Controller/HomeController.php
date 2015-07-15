@@ -1,6 +1,7 @@
 <?php
 
 require_once ('Model/User.php');
+require_once ('Model/Cart.php');
 require_once ('Model/Product.php');
 require_once ('smarty/libs/Smarty.class.php');
 
@@ -25,10 +26,10 @@ class homeController {
 		$this->view->assign('name5', '円高きみや');
 		$this->view->assign('name1', 'ちょっと高いきみや');
 		$product = new Product();
-		$item    = $product->getAll();
+		$item = $product->getAll();
 		$this->view->assign('item', $item);
-        $item2 = $product->getDetails(19);
-        $this->view->assign('item2',$item2);
+		$item2 = $product->getDetails(19);
+		$this->view->assign('item2', $item2);
 		$this->view->display('View/base.tpl');
 	}
 
@@ -44,21 +45,14 @@ class homeController {
 	}
 
 	function akihiro() {
-		$user = new User;
-		$user->setUserName('かっこいいきみや');
-		$user->setPassword('kimikimi');
-		$user->setMail('111@gmail.com');
-		$user->setAge(20);
-		$user->setAddress('ながさき');
-		$user->setGender(1);
-		$user->setCredit(1234567234);
-		$user->setPhone('08058888577');
-		echo $user->signUp();
-	}
-
-	function akihiro2() {
-		$products = new Product(1);
-		echo $products->getProductName();
+		$cart = new Cart($_SESSION['userNo']);
+		$cart->setProduct(new Product(5));
+		$cart->setNumber(5);
+		$cart->add();
+		var_dump($_SESSION['cart']);
+//		echo Cart::getCarts($_SESSION['userNo'])[0]->getProduct()->getProductName();
+		echo Cart::getCarts($_SESSION['userNo'])[0]->getNumber();
+//		var_dump(Cart::getCarts($_SESSION['userNo']));
 	}
 
 	function nagano() {
