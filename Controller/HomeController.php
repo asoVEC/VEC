@@ -45,6 +45,14 @@ class homeController {
 	}
 
 	function akihiro() {
+		$cart = new Cart($_SESSION['userNo']);
+		$cart->setProduct(new Product(5));
+		$cart->setNumber(5);
+		$cart->add();
+		var_dump($_SESSION['cart']);
+//		echo Cart::getCarts($_SESSION['userNo'])[0]->getProduct()->getProductName();
+		echo Cart::getCarts($_SESSION['userNo'])[0]->getNumber();
+//		var_dump(Cart::getCarts($_SESSION['userNo']));
 	}
 
 	function nagano() {
