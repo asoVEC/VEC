@@ -98,7 +98,18 @@ class userController {
 	}
 
 	function settings() {
+            $user = new User();
+            $query =$user->query(user,$_SESSION['userNo']);
+            $userinfo = array('mail' => $query[0]['mail_address'],
+		  'name' => $query[0]['name'],
+		  'address' => $query[0]['address'],
+		  'credit_no' => $query[0]['credit_no'],
+                'password' => $query[0]['password']
+		);
+            $this->view->assign('userinfo', $userinfo);
 		$this->view->display('View/settings.tpl');
+//                var_dump($query);
+                echo $query[0]['name'];
 	}
 
 	function akihiro() {
@@ -112,7 +123,7 @@ class userController {
             $type = $_REQUEST['type'];
             $value = $_REQUEST['value'];
             $user = new User();
-            $user->update($type, $value);
+            $user->update2($type, $value);
             echo $value;
         }
     }

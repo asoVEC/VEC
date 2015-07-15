@@ -17,10 +17,11 @@
     <div class="alert alert-success" id = "alert2">
         <span id="alert"></span>
     </div>
-
-    {assign var="address" value="博多"}
-    {assign var="cre" value="1301177"}
-    {if $address==null}
+    <div class="alert alert-danger" id = "alert3">
+        <span id="alert4"></span>
+    </div>
+    {if $userinfo.address==null}
+        {$userinfo.address['address']}
         {*        新規住所*}
         <div class="panel panel-info">
             <div class="panel-heading">
@@ -52,7 +53,7 @@
         <div id="add" class="panel-collapse collapse">
             <div class="panel-body">
                 <label for="input-address" class="col-sm-3 control-label" >住所</label>
-                <label for="input-address" class="col-sm-9  control-label" id="nowaddress">{$address}</label>
+                <label for="input-address" class="col-sm-9  control-label" id="nowaddress">{$userinfo.address}</label>
                 <div class="form-group">
                     <label for="input-address" class="col-sm-3 control-label">変更住所</label>
                     <form method="post"　id="form-address">
@@ -77,13 +78,12 @@
     </div>
     <div id="pass" class="panel-collapse collapse">
         <div class="panel-body"><div class="form-group">
-                <label for="input-pass" class="col-sm-3 control-label">パスワード</label>
+                <label for="input-pass" class="col-sm-3 control-label">現在のパスワードを入力してください</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="password" id="input-pass" placeholder="パスワード" required="required">
-                    <input type="text" class="form-control" name="password" id="input-pass2" placeholder="もう一度入力してください" required="required">
+                    <input type="password" class="form-control" name="password" id="input-pass" placeholder="パスワード" required="required">
                 </div>
                 <div class="col-sm-offset-6 col-sm-3">
-                    <input onclick="window.location.href='#div-modal'" type="button" data-toggle="modal" data-target="#div-modal" type="button" class="btn btn-default" id="loading-pas" value="パスワード変更">
+                    <input onclick="window.location.href = '#div-modal'" type="button" data-toggle="modal" data-target="#div-modal" type="button" class="btn btn-default" id="loading-pas" value="パスワード変更">
                 </div>
             </div>
         </div>
@@ -99,7 +99,7 @@
     <div id="mail" class="panel-collapse collapse">
         <div class="panel-body">
             <label for="input-address" class="col-sm-3 control-label" >メールアドレス</label>
-            <label for="input-address" class="col-sm-9  control-label" id="nowaddress">{$address}</label>
+            <label for="input-address" class="col-sm-9  control-label" id="nowmail">{$userinfo.mail}</label>
             <div class="form-group">
                 <label for="input-mail" class="col-sm-3 control-label">変更メールアドレス</label>
                 <div class="col-sm-6">
@@ -122,7 +122,7 @@
     <div id="name" class="panel-collapse collapse">
         <div class="panel-body">
             <label for="input-address" class="col-sm-3 control-label" >氏名</label>
-            <label for="input-address" class="col-sm-9  control-label" id="nowname">{$address}</label>
+            <label for="input-address" class="col-sm-9  control-label" id="nowname">{$userinfo.name}</label>
             <div class="form-group">
                 <label for="input-name" class="col-sm-3 control-label">変更氏名</label>
                 <div class="col-sm-6">
@@ -165,7 +165,7 @@
         <div id="cre" class="panel-collapse collapse">
             <div class="panel-body"><div class="form-group">
                     <label for="input-address" class="col-sm-3 control-label">前クレジット</label>
-                    <label for="input-address" class="col-sm-9  control-label" id="nowcredit">{$cre}</label>
+                    <label for="input-address" class="col-sm-9  control-label" id="nowcredit">{$userinfo.credit_no}</label>
                     <label for="input-cre" class="col-sm-3 control-label">クレジット</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="cre" id="input-credit" placeholder="クレジット" required="required">
@@ -179,211 +179,255 @@
     </div>
 {/if}
 
-<div class="panel panel-info">
-    <div class="panel-heading">
-        <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#age">生年月日変更</a>
-        </h4>
-    </div>
-    <div id="age" class="panel-collapse collapse">
-        <div class="panel-body"><div class="form-group">
-                <label for="input-age" class="col-sm-3 control-label">生年月日</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="age" id="input-age" placeholder="生年月日" required="required">
-                </div>
-                <div class="col-sm-offset-6 col-sm-3">
-                    <input type="button" class="btn btn-default" id="loading-age" data-loading-text="変更中" value="生年月日変更">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<button class="btn" onclick="window.location.href='#div-modal'" type="button" data-toggle="modal" data-target="#div-modal">モーダルボタン</button>
 <!-- モーダルウィンドウの本体 -->
 
 <div id="div-modal" class="modal fade"> 
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">パスワード設定</h4>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger" id = "alert5">
+                    <span id="alert6"></span>
+                </div>
+                確認しました。新たなパスワードを入力してください。
+                <input type="password" class="form-control" name="pass" id="input-newpass" placeholder="パスワード" required="required">
+                <input type="password" class="form-control" name="pass" id="input-newpassconf" placeholder="確認用" required="required">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+                <button type="button" class="btn btn-primary" id="modal-pass" data-dismiss="modal">変更</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+    <script>
+        //ツールチップ表示　おためし
+        $('#panel-address').tooltip();
 
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">タイトル</h4>
-      </div>
-      <div class="modal-body">
-        <p>One fine body&hellip;</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
-        <button type="button" class="btn btn-primary">保存</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-<script>
-    //ツールチップ表示　おためし
-    $('#panel-address').tooltip();
+        var password = "{$userinfo.password}";
+        //フラッシュメッセージ
+        var elem1 = document.getElementById("alert2");
+        var elem2 = document.getElementById("alert3");
+        var elem3 = document.getElementById("alert5");
+        elem1.style.display = "none";
+        elem2.style.display = "none";
+        elem3.style.display = "none";
 
-    //フラッシュメッセージ
-    var elem1 = document.getElementById("alert2");
-    elem1.style.display = "none";
+        $(document).ready(function () {
 
+            //住所追加
+            $("#loading-newaddress").click(function (event) {
+                if ($("#input-newaddress").val() != "") {
 
-    $(document).ready(function () {
-        //住所追加
-        $("#loading-newaddress").click(function (event) {
-            $.post(
-                    "/VEC/user/settingspost",
-                    {
-                        type: "address",
-                        value: document.getElementById("input-newaddress").value
-                    },
-            function (data) {
-                $('#alert').html("住所を<strong>" + data + "</strong>で登録");
-            }
-            );
-            $('#input-newaddress').val();
-            elem1.style.display = "";
-        });
-
-        //住所変更
-        $("#loading-address").click(function (event) {
-            $.post(
-                    "/VEC/user/settingspost",
-                    {
-                        type: "address",
-                        value: document.getElementById("input-address").value
-                    },
-            function (data) {
-                $('#alert').html("住所を<strong>" + data + "</strong>に変更");
-                $('#nowaddress').html(data);
-            }
-            );
-            $('#input-address').val();
-            elem1.style.display = "";
-        });
-
-        //パスワード変更
-        $("#loading-pas").click(function (event) {
-    {*            if(document.getElementById("input-pass").value==document.getElementById("input-pass2").value){*}
-            $.post(
-                    "/VEC/user/settingspost",
-                    {
-                        type: "password",
-                        value: document.getElementById("input-pass").value,
-                    },
+                    $.post(
+                            "/VEC/user/settingspost",
+                            {
+                                type: "address",
+                                value: document.getElementById("input-newaddress").value
+                            },
                     function (data) {
-                        $('#alert').html("パスワードを変更しました");
+                        $('#alert').html("住所を<strong>" + data + "</strong>で登録");
                     }
-            );
-            $('#input-pass').val();
-            elem1.style.display = "";
-    {*        }*}
-        });
-        //メールアドレス変更
-        $("#loading-mail").click(function (event) {
-    {*            if(document.getElementById("input-pass").value==document.getElementById("input-pass2").value){*}
-            $.post(
-                    "/VEC/user/settingspost",
-                    {
-                        type: "mail_address",
-                        value: document.getElementById("input-mail").value,
-                    },
+                    );
+                    $('#input-newaddress').val();
+                    elem1.style.display = "";
+                } else {
+                    elem1.style.display = "none";
+                    $('#alert4').html("入力されていません");
+                    elem2.style.display = "";
+                }
+
+            });
+            //住所変更
+            $("#loading-address").click(function (event) {
+                if ($("#input-address").val() != "") {
+                    $.post(
+                            "/VEC/user/settingspost",
+                            {
+                                type: "address",
+                                value: document.getElementById("input-address").value
+                            },
                     function (data) {
-                        $('#alert').html("メールアドレスを" + data + "に変更しました");
-
+                        $('#alert').html("住所を<strong>" + data + "</strong>に変更");
+                        $('#nowaddress').html(data);
                     }
-            );
-            $('#input-mail').val();
-            elem1.style.display = "";
-    {*        }*}
-        });
+                    );
+                    $('#input-address').val();
+                    elem1.style.display = "";
+                    elem2.style.display = "none";
+                } else {
+                    elem1.style.display = "none";
+                    $('#alert4').html("入力されていません");
+                    elem2.style.display = "";
+                }
+            });
 
-        //氏名変更
-        $("#loading-name").click(function (event) {
-    {*            if(document.getElementById("input-pass").value==document.getElementById("input-pass2").value){*}
-            $.post(
-                    "/VEC/user/settingspost",
-                    {
-                        type: "name",
-                        value: document.getElementById("input-name").value,
-                    },
-                    function (data) {
-                        $('#alert').html("氏名を" + data + "に変更しました");
-                        $('#nowname').html(data);
+            //メールアドレス変更
+            $("#loading-mail").click(function (event) {
+                if ($("#input-mail").val() != "") {
+                    $.post(
+                            "/VEC/user/settingspost",
+                            {
+                                type: "mail_address",
+                                value: document.getElementById("input-mail").value,
+                            },
+                            function (data) {
+                                $('#alert').html("メールアドレスを" + data + "に変更しました");
+                                $('#nowmail').html(data);
+                            }
+                    );
+                    $('#input-mail').val();
+                    elem1.style.display = "";
+                    elem2.style.display = "none";
+                } else {
+                    elem1.style.display = "none";
+                    $('#alert4').html("入力されていません");
+                    elem2.style.display = "";
+                }
+            });
+            //氏名変更
+            $("#loading-name").click(function (event) {
+                if ($("#input-name").val() != "") {
+                    $.post(
+                            "/VEC/user/settingspost",
+                            {
+                                type: "name",
+                                value: document.getElementById("input-name").value,
+                            },
+                            function (data) {
+                                $('#alert').html("氏名を" + data + "に変更しました");
+                                $('#nowname').html(data);
+                            }
+                    );
+                    $('#input-name').val();
+                    elem1.style.display = "";
+                    elem2.style.display = "none";
+                } else {
+                    elem1.style.display = "none";
+                    $('#alert4').html("入力されていません");
+                    elem2.style.display = "";
+                }
+            });
+            //新規クレジット
+            $("#loading-newcredit").click(function (event) {
+                if ($("#input-newcredit").val() != "") {
+                    $.post(
+                            "/VEC/user/settingspost",
+                            {
+                                type: "credit_no",
+                                value: document.getElementById("input-newcredit").value,
+                            },
+                            function (data) {
+                                $('#alert').html("クレジットを" + data + "で登録しました");
+                            }
+                    );
+                    $('#input-newcredit').val();
+                    elem1.style.display = "";
+                    elem2.style.display = "none";
+                } else {
+                    elem1.style.display = "none";
+                    $('#alert4').html("入力されていません");
+                    elem2.style.display = "";
+                }
+            });
+            //クレジット変更
+            $("#loading-credit").click(function (event) {
+                if ($("#input-credit").val() != "") {
+                    $.post(
+                            "/VEC/user/settingspost",
+                            {
+                                type: "credit_no",
+                                value: document.getElementById("input-credit").value,
+                            },
+                            function (data) {
+                                $('#alert').html("クレジットを" + data + "変更しました");
+                                $('#nowcredit').html(data);
+                            }
+                    );
+                    $('#input-credit').val();
+                    elem1.style.display = "";
+                    elem2.style.display = "none";
+                } else {
+                    elem1.style.display = "none";
+                    $('#alert4').html("入力されていません");
+                    elem2.style.display = "";
+                }
+            });
+            //ローディングボタン
+            $("input:button").click(function () {
+                var btn = $(this);
+                btn.button('loading');
+                setTimeout(function () {
+                    btn.button('reset');
+                }, 400)
+
+
+            });
+            //パスワード
+            var passtext = $("#input-pass").val();
+            $('#div-modal').on('show.bs.modal', function (event) {
+                if ($("#input-pass").val() != "") {
+                    if ($('#input-pass').val() != password) {
+                        elem1.style.display = "none";
+                        $('#alert4').html("パスワードが違います。認証に失敗しました。");
+                        elem2.style.display = "";
+                        $("#input-pass").val("");
+                        return false;
+                    } else {
+                        elem2.style.display = "none";
+                        $("#input-pass").val("");
+                        elem3.style.display = "none";
                     }
-            );
-            $('#input-name').val();
-            elem1.style.display = "";
-    {*        }*}
-        });
+                }
+                else {
+                    elem1.style.display = "none";
+                    $('#alert4').html("入力されていません");
+                    elem2.style.display = "";
+                    return false;
+                }
 
-        //新規クレジット
-        $("#loading-newcredit").click(function (event) {
-    {*            if(document.getElementById("input-pass").value==document.getElementById("input-pass2").value){*}
-            $.post(
-                    "/VEC/user/settingspost",
-                    {
-                        type: "credit_no",
-                        value: document.getElementById("input-newcredit").value,
-                    },
-                    function (data) {
-                        $('#alert').html("クレジットを" + data + "で登録しました");
+            });
+
+            //パスワードモーダル
+            $("#modal-pass").click(function (event) {
+                if ($("#input-newpass").val() != "" && $("#input-newpassconf").val() != "") {
+                    if ($("#input-newpass").val() == $("#input-newpassconf").val()) {
+                        $.post(
+                                "/VEC/user/settingspost",
+                                {
+                                    type: "password",
+                                    value: document.getElementById("input-newpass").value,
+                                },
+                                function (data) {
+                                    $('#alert').html("パスワードを変更しました。");
+
+                                }
+                        );
+                        $('#input-name').val();
+                        elem1.style.display = "";
+                        elem2.style.display = "none";
+                        password = document.getElementById("input-newpass").value;
+                        $("#input-newpass").val("");
+                        $("#input-newpassconf").val("");
+                    } else {
+                        elem1.style.display = "none";
+                        $('#alert6').html("一致していませんでした。");
+                        elem3.style.display = "";
+                        $("#input-newpass").val("");
+                        $("#input-newpassconf").val("");
+                        return false;
                     }
-            );
-            $('#input-newcredit').val();
-            elem1.style.display = "";
-    {*        }*}
+                } else {
+                    elem1.style.display = "none";
+                    $('#alert6').html("入力されていません");
+                    elem3.style.display = "";
+                    return false;
+                }
+            });
+
         });
-
-        //クレジット変更
-        $("#loading-credit").click(function (event) {
-    {*            if(document.getElementById("input-pass").value==document.getElementById("input-pass2").value){*}
-            $.post(
-                    "/VEC/user/settingspost",
-                    {
-                        type: "credit_no",
-                        value: document.getElementById("input-credit").value,
-                    },
-                    function (data) {
-                        $('#alert').html("クレジットを" + data + "変更しました");
-                        $('#nowcredit').html(data);
-                    }
-            );
-            $('#input-credit').val();
-            elem1.style.display = "";
-    {*        }*}
-        });
-
-        //生年月日変更 ここdbは年齢でしてるからのちのち変更
-
-        $("#loading-age").click(function (event) {
-    {*            if(document.getElementById("input-pass").value==document.getElementById("input-pass2").value){*}
-            $.post(
-                    "/VEC/user/settingspost",
-                    {
-                        type: "age",
-                        value: document.getElementById("age").value,
-                    },
-                    function (data) {
-                        $('#alert').html("生年月日を" + data + "に変更しました");
-                    }
-            );
-            $('#input-age').val();
-            elem1.style.display = "";
-    {*        }*}
-        });
-
-        //ローディングボタン
-        $("input:button").click(function () {
-            var btn = $(this);
-            btn.button('loading');
-            setTimeout(function () {
-                btn.button('reset');
-            }, 400)
-            
-            
-        });
-
-    });
-</script>
+    </script>
 {/block}
+{*閉じたい　*}
