@@ -54,7 +54,7 @@ class homeController {
 		//--------------------------------------------------------
 //		echo Cart::getCarts($_SESSION['userNo'])[0]->getProduct()->getProductName();
 //		echo Cart::getCarts($_SESSION['userNo'])[0]->getNumber();
-//		var_dump(Cart::getCarts($_SESSION['userNo']));
+		var_dump(Cart::getCarts($_SESSION['userNo']));
 		
 		
 	}

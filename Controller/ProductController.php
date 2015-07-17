@@ -113,7 +113,7 @@ class productController {
 	function productDetails($id = null) {
 		$product = new Product();
 		$item = $product->getDetails($id);
-		$this->view->assign('item', $item);
+		$this->view->assign('item', $item);//$item['product_name']
 		$this->view->display('View/details.tpl');
 	}
 
