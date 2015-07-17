@@ -45,6 +45,9 @@ class Cart extends BaseModel {
 				$this->product->getProductNo() => $this->number
 			  )
 			);
+//			$_SESSION['cart'] += array(
+//			  $this->product->getProductNo() => $this->number
+//			);
 		}
 		return flg;
 	}

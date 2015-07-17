@@ -5,10 +5,12 @@ require_once ('Model/Product.php');
 require_once ('Model/User.php');
 
 class userController {
+	private $userNo;
 
 	public function __construct() {
 		require_once('smarty/libs/Smarty.class.php');
-//        require_once 'post.php';
+		$this->userNo = filter_input(INPUT_POST, 'userNo');
+		
 // ビュー
 		$this->view = new Smarty;
 //        $this->view->template_dir = '../View';
@@ -61,11 +63,10 @@ class userController {
     }
 
     function signup() {
-        $name = $_POST['name'];
-        if ($_SESSION['userName'] != NULL) {//ログイン済み
+        if ($this->userNo != NULL) {//ログイン済み
             header('Location: /VEC/');
             exit();
-        } elseif ($name == null) {//初回アクセス
+        } elseif ($this->userNo == null) {//初回アクセス
             $this->view->assign('message', 'アカウント作成に必要な情報を入力して下さい。');
             $this->view->display('View/signup.tpl');
         } elseif ($this->signupProcess() == 1) {//会員登録成功
@@ -98,7 +99,17 @@ class userController {
 	}
 
 	function settings() {
+            $user = new User();
+            $query =$user->query(user,$_SESSION['userNo']);
+            $userinfo = array('mail' => $query[0]['mail_address'],
+		  'name' => $query[0]['name'],
+		  'address' => $query[0]['address'],
+		  'credit_no' => $query[0]['credit_no'],
+                'password' => $query[0]['password']
+		);
+            $this->view->assign('userinfo', $userinfo);
 		$this->view->display('View/settings.tpl');
+//                var_dump($query);
 	}
 
 	function akihiro() {
@@ -106,14 +117,35 @@ class userController {
 		Cart::akihiro($user);
 	}
         
-        //非同期通信用
+        //非同期通信用 $table, $key, $value, $where
     function settingspost() {
         if ($_REQUEST["value"]) {
             $type = $_REQUEST['type'];
             $value = $_REQUEST['value'];
+            $name = $_SESSION['userNo'];
             $user = new User();
-            $user->update($type, $value);
+            $user->update('user',$type, $value,'user_no='.$name);
             echo $value;
         }
     }
+    
+    function cart(){
+        $this->view->display('View/cart.tpl');
+    }
+	//カートに商品追加 
+	//POST['productNo']とPOST['number']が必須。呼び出し元でセットして下さい
+	function addCart(){
+		$productNo = filter_input(INPUT_POST, 'productNo');
+		$number = filter_input(INPUT_POST, 'number');		
+		if($productNo !== null || $number !== null){
+			$this->addCartProcess($productNo, $number);
+		}
+	
+	}
+	private function addCartProcess($productNo,$number){
+		$cart = new Cart($this->userNo);
+		$cart->setProduct(new Product($productNo));
+		$cart->setNumber($number);
+		$cart->add();
+	}
 }

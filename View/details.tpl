@@ -10,6 +10,7 @@
             {*                <div class="panel panel-default col-sm-6 col-sm-offset-3 col-md-6">*}
 
 
+<<<<<<< HEAD
             {*    <div class="panel-body">
             <div class="container">*}
             {*                        <div class="col-xs-12 col-sm-10 col-md-10 col-md-offset-4 col-sm-offset-2 col-xs-8 "><h2>商品詳細</h2><div>*}
@@ -72,6 +73,7 @@
 
         </div>
                 <body style="background-image: url(./img/back22.gif);"></body>
+
 
 {*    </div>
 </div>
