@@ -231,7 +231,7 @@
                         $('#alert').html("住所を<strong>" + data + "</strong>で登録");
                     }
                     );
-                    $('#input-newaddress').val();
+                    $('#input-newaddress').val("");
                     elem1.style.display = "";
                 } else {
                     elem1.style.display = "none";
@@ -254,7 +254,7 @@
                         $('#nowaddress').html(data);
                     }
                     );
-                    $('#input-address').val();
+                    $('#input-address').val("");
                     elem1.style.display = "";
                     elem2.style.display = "none";
                 } else {
@@ -278,7 +278,7 @@
                                 $('#nowmail').html(data);
                             }
                     );
-                    $('#input-mail').val();
+                    $('#input-mail').val("");
                     elem1.style.display = "";
                     elem2.style.display = "none";
                 } else {
@@ -301,7 +301,7 @@
                                 $('#nowname').html(data);
                             }
                     );
-                    $('#input-name').val();
+                    $('#input-name').val("");
                     elem1.style.display = "";
                     elem2.style.display = "none";
                 } else {
@@ -323,7 +323,7 @@
                                 $('#alert').html("クレジットを" + data + "で登録しました");
                             }
                     );
-                    $('#input-newcredit').val();
+                    $('#input-newcredit').val("");
                     elem1.style.display = "";
                     elem2.style.display = "none";
                 } else {
@@ -346,7 +346,7 @@
                                 $('#nowcredit').html(data);
                             }
                     );
-                    $('#input-credit').val();
+                    $('#input-credit').val("");
                     elem1.style.display = "";
                     elem2.style.display = "none";
                 } else {

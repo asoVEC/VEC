@@ -110,7 +110,6 @@ class userController {
             $this->view->assign('userinfo', $userinfo);
 		$this->view->display('View/settings.tpl');
 //                var_dump($query);
-                echo $query[0]['name'];
 	}
 
 	function akihiro() {
@@ -118,22 +117,21 @@ class userController {
 		Cart::akihiro($user);
 	}
         
-        //非同期通信用
+        //非同期通信用 $table, $key, $value, $where
     function settingspost() {
         if ($_REQUEST["value"]) {
             $type = $_REQUEST['type'];
             $value = $_REQUEST['value'];
+            $name = $_SESSION['userNo'];
             $user = new User();
-            $user->update2($type, $value);
+            $user->update('user',$type, $value,'user_no='.$name);
             echo $value;
         }
     }
-<<<<<<< HEAD
     
     function cart(){
         $this->view->display('View/cart.tpl');
     }
-=======
 	//カートに商品追加 
 	//POST['productNo']とPOST['number']が必須。呼び出し元でセットして下さい
 	function addCart(){
@@ -150,5 +148,4 @@ class userController {
 		$cart->setNumber($number);
 		$cart->add();
 	}
->>>>>>> origin/master
 }
