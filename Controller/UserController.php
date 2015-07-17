@@ -127,4 +127,8 @@ class userController {
             echo $value;
         }
     }
+    
+    function cart(){
+        $this->view->display('View/cart.tpl');
+    }
 }

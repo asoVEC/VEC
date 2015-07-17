@@ -46,7 +46,7 @@
                             </ul>
                             <!-- リストここまで -->
                         </li>
-                        <li class="divider"><a id="tooltip" href="" data-placement="bottom" data-html="true"  
+                        <li class="divider"><a id="tooltip" href="/VEC/user/cart" data-placement="bottom" data-html="true"  
                                                data-toggle="tooltip" title="{$item2['product_name']}<br /><img src='/VEC/img/{$item2['image']}' width='80px' height='80px'>">
                                 買い物カゴ <span class="badge">{$amount_cart}</span></a></li>
 
