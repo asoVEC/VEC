@@ -10,8 +10,7 @@
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="/VEC/js/bootstrap.js"></script>
         <script type="text/javascript" src="/VEC/js/typeahead.bundle.js"></script>
-
-
+		<script type="text/javascript" src="/VEC/js/js.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -25,7 +24,7 @@
                 <ul class="navbar-right nav navbar-nav">
                     <li class="dropdown">
                         <!-- ここが表示されるボタン <a>タグでもOK -->
-					<div class="dropdown-toggle inverse" >
+						<div class="dropdown-toggle inverse" >
                             アカウントサービス<span class="caret"></span>
                             <br />
                             {if $smarty.session.userName == null}
@@ -55,7 +54,7 @@
                     <!--検索フォーム-->
                     <form class="navbar-form navbar-static-top" role="search" method="post" action="/VEC/product/searchlist/1">
                         <div class="form-group col-md-offset-1">
-                            <input type="text" class="form-control typeahead" id ="search" placeholder="商品検索" size="60pix" name="search">
+                            <input type="text" class="form-control typeahead focus" id ="search" placeholder="商品検索" size="60pix" name="search">
                         </div>
                         <button type="submit" id="search-bt" class="btn btn-default" required="required">検索</button>
                     </form>
@@ -81,61 +80,61 @@
         </body>
 
         <script>
-            var value = document.getElementById("search").value;
-            
-            $(document).ready( function() {
-        $("#search-bt").click(function(){
-         {*   if(value.length==0){
-                alert("だめです");
+			var value = document.getElementById("search").value;
+
+			$(document).ready(function () {
+				$("#search-bt").click(function () {
+			{*   if(value.length==0){
+			alert("だめです");
             }else{
-                alert("okです");
+			alert("okです");
             }*}
-        });
-    });
- 
-            
-            var substringMatcher = function (strs) {
-                return function findMatches(q, cb) {
-                    var matches, substringRegex;
+				});
+			});
 
-                    // an array that will be populated with substring matches
-                    matches = [];
 
-                    // regex used to determine if a string contains the substring `q`
-                    substrRegex = new RegExp(q, 'i');
+			var substringMatcher = function (strs) {
+				return function findMatches(q, cb) {
+					var matches, substringRegex;
 
-                    // iterate through the pool of strings and for any string that
-                    // contains the substring `q`, add it to the `matches` array
-                    $.each(strs, function (i, str) {
-                        if (substrRegex.test(str)) {
-                            matches.push(str);
-                        }
-                    });
+					// an array that will be populated with substring matches
+					matches = [];
 
-                    cb(matches);
-                };
-            };
+					// regex used to determine if a string contains the substring `q`
+					substrRegex = new RegExp(q, 'i');
 
-            var states = [
-            {foreach from=$item item=rec}
-                '{$rec}',
+					// iterate through the pool of strings and for any string that
+					// contains the substring `q`, add it to the `matches` array
+					$.each(strs, function (i, str) {
+						if (substrRegex.test(str)) {
+							matches.push(str);
+						}
+					});
+
+					cb(matches);
+				};
+			};
+
+			var states = [
+			{foreach from=$item item=rec}
+				'{$rec}',
             {/foreach}
 
-            ];
+			];
 
 
-            $('.typeahead').typeahead({
-                hint: true,
-                highlight: true,
-                minLength: 1
-            },
-            {
-                name: 'states',
-                source: substringMatcher(states)
-            });
+			$('.typeahead').typeahead({
+				hint: true,
+				highlight: true,
+				minLength: 1
+			},
+			{
+				name: 'states',
+				source: substringMatcher(states)
+			});
 
-            $(function () {
-                $('#tooltip').tooltip();
-            });
+			$(function () {
+				$('#tooltip').tooltip();
+			});
         </script>
     </html>

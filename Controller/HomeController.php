@@ -46,14 +46,17 @@ class homeController {
 	}
 
 	function akihiro() {
+		//----------ログインにしていないユーザーがカートに商品を追加するテスト
 		$cart = new Cart($_SESSION['userNo']);
-		$cart->setProduct(new Product(5));
-		$cart->setNumber(5);
+		$cart->setProduct(new Product(99));
+		$cart->setNumber(51);
 		$cart->add();
-		var_dump($_SESSION['cart']);
+		//--------------------------------------------------------
 //		echo Cart::getCarts($_SESSION['userNo'])[0]->getProduct()->getProductName();
-		echo Cart::getCarts($_SESSION['userNo'])[0]->getNumber();
+//		echo Cart::getCarts($_SESSION['userNo'])[0]->getNumber();
 //		var_dump(Cart::getCarts($_SESSION['userNo']));
+		
+		
 	}
 
 	function nagano() {
