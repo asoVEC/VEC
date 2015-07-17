@@ -40,10 +40,13 @@ class Cart extends BaseModel {
 			$flg = $this->insert('cart', $values);
 		} else {//ログインしてない
 			//SESSIONに追加
-			$_SESSION = array(
-			  "cart" => array(
-				$this->product->getProductNo() => $this->number
-			  )
+//			$_SESSION = array(
+//			  "cart" => array(
+//				$this->product->getProductNo() => $this->number
+//			  )
+//			);
+			$_SESSION['cart'] += array(
+			  $this->product->getProductNo() => $this->number
 			);
 		}
 		return flg;
