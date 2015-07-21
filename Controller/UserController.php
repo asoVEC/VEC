@@ -139,12 +139,13 @@ class userController {
 		$total;
 		foreach ($cart as $key => $value) {
 			$item[] = array(
-				  'imgPath' => 'url(/VEC/img/fdputitomato.jpg)',
-				  'productName' => $value->getProduct()->getProductName(),
-				  'price' => $value->getProduct()->getPrice(),
-				  'number' => $value->getNumber()
+			  'imgPath' => 'url(/VEC/img/fdputitomato.jpg)',
+//			  'imgPath' => 'url(' . $value->getProduct()->getImagePath . ')',
+			  'productName' => $value->getProduct()->getProductName(),
+			  'price' => $value->getProduct()->getPrice(),
+			  'number' => $value->getNumber()
 			);
-			$total += $value->getProduct()->getPrice()*$value->getNumber();
+			$total += $value->getProduct()->getPrice() * $value->getNumber();
 		}
 		$this->view->assign('total', $total);
 		$this->view->assign('item', $item);

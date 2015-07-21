@@ -7,6 +7,7 @@ class Product extends BaseModel {
 	private $productNo;
 	private $productName;
 	private $price;
+	private $imagePath;
 	private $explanation; //説明
 
 	function __construct($id = 0) {
@@ -35,6 +36,9 @@ class Product extends BaseModel {
 
 	function getExplanation() {
 		return $this->explanation;
+	}
+	function getImagePath() {
+		return $this->imagePath;
 	}
 
 	function setProductName($prodcutName) {
@@ -105,6 +109,7 @@ class Product extends BaseModel {
 		$this->productName = $value['product_name'];
 		$this->explanation = $value['product_detail'];
 		$this->price = $value['price'];
+		$this->imagePath = $value['image'];
 	}
 
 }
