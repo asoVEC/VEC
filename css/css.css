@@ -47,11 +47,11 @@ body { padding-top: 50px; }
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-footer {
+/*footer { やすながが作ったよ 一部おかしくなるよ
     text-align: center;
     padding: 10px;
     background: #101010;
-}
+}*/
 
 .main-content .content-area {
     padding: 20px 15px;
