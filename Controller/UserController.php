@@ -136,16 +136,20 @@ class userController {
 
 	function cart() {
 		$cart = Cart::getCarts($this->userNo);
-		$item = array(
-		  array(
-			'imgPath' => 'url(/VEC/img/fdputitomato.jpg)',
-			'productName' =>$cart[0]->getProduct()->getProductName(),
-			'price' => $cart[0]->getProduct()->getPrice(),
-			'number'=> $cart[0]->getNumber()
-		  )
-		);
+		$total;
+		foreach ($cart as $key => $value) {
+			$item[] = array(
+				  'imgPath' => 'url(/VEC/img/fdputitomato.jpg)',
+				  'productName' => $value->getProduct()->getProductName(),
+				  'price' => $value->getProduct()->getPrice(),
+				  'number' => $value->getNumber()
+			);
+			$total += $value->getProduct()->getPrice()*$value->getNumber();
+		}
+		$this->view->assign('total', $total);
 		$this->view->assign('item', $item);
 		$this->view->display('View/cart.tpl');
+		var_dump($item);
 	}
 
 	//カートに商品追加 
