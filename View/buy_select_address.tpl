@@ -1,0 +1,1 @@
+{extends file='View/layout.tpl'}

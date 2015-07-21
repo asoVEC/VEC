@@ -76,6 +76,9 @@ class User extends BaseModel {
 	function getPhone() {
 		return $this->phone;
 	}
+	function getPassword() {
+		return $this->password;
+	}
 
 	function getGender() {
 		return $this->gender;
@@ -144,7 +147,7 @@ class User extends BaseModel {
 	private function rowsToInstance($value) {
 		$this->userNo = ($value['user_no']);
 		$this->userName = $value['name'];
-		$this->userNo = $value['user_no'];
+		$this->password = $value['password'];
 		$this->mail = $value['mail_address'];
 		$this->address = $value['address'];
 		$this->phone = $value['phone'];

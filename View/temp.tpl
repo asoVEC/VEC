@@ -1,9 +1,6 @@
 ﻿
 {extends file='View/base.tpl'}
 {block content}
-    {php}
-	echo "hello";
-	
-	
-	{/php}
+	{$name}
+    {$obi->getUserName()}
 {/block}

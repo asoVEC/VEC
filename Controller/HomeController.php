@@ -31,7 +31,6 @@ class homeController {
 		$item2 = $product->getDetails(19);
 		$this->view->assign('item2', $item2);
 		$this->view->display('View/base.tpl');
-               echo "buta";
 	}
 
 	function logout() {
@@ -55,11 +54,14 @@ class homeController {
 //		echo Cart::getCarts($_SESSION['userNo'])[0]->getProduct()->getProductName();
 //		echo Cart::getCarts($_SESSION['userNo'])[0]->getNumber();
 		var_dump(Cart::getCarts($_SESSION['userNo']));
-		
-		
 	}
-
-	function nagano() {
+	function akihiro2(){
+		$user = new User(1);
+		$this->view->assign('name', 'きみや');
+		$this->view->assign_by_ref('obj', $user);
+		$this->view->display('View/temp.tpl');
+	}
+			function nagano() {
 		$this->view->display('View/details.tpl');
 	}
 

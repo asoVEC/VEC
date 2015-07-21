@@ -30,11 +30,11 @@ class Product extends BaseModel {
 	}
 
 	function getPrice() {
-		return $this->Price;
+		return $this->price;
 	}
 
 	function getExplanation() {
-		return $this->Explanation;
+		return $this->explanation;
 	}
 
 	function setProductName($prodcutName) {
