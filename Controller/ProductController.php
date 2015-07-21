@@ -113,8 +113,6 @@ class productController {
 	function productDetails($id = null) {
 		$product = new Product();
 		$item = $product->getDetails($id);
-
-                $item['image']='fd_buta.jpg';
 		$this->view->assign('item', $item);
 		$this->view->display('View/details.tpl');
 	}
