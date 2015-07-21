@@ -86,11 +86,6 @@
 
 		$(document).ready(function () {
 			$("#search-bt").click(function () {
-		{*   if(value.length==0){
-		alert("だめです");
-		}else{
-		alert("okです");
-		}*}
 			});
 		});
 
