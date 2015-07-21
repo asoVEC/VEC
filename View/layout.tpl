@@ -76,9 +76,9 @@
 			</div>
 
 		</div>
-		<footer class="container-fluid footer">
+		<nav class="container-fluid navbar-fixed-bottom">
 			<small><a href="/vec">Copyright (C) 2015-2015 vec.aso All Rights Reserved.</a></small>
-		</footer>
+		</nav>
 	</body>
 
 	<script>
