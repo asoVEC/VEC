@@ -104,12 +104,10 @@ class userController {
 		$user = new User($_SESSION['userNo']);
 		$userinfo = array('mail' => $user->getMail(),
 		  'name' => $user->getUserName(),
-		  'address' => $user->getAddress(),
+		  'address' => '〒'.$user->getAddress1().'  '.$user->getAddress2().$user->getAddress3(),
 		  'credit_no' => $user->getCredit(),
 		  'password' => $user->getPassword()
 		);
-
-
 		$user->getMail();
 
 		$this->view->assign('userinfo', $userinfo);
@@ -127,9 +125,8 @@ class userController {
 		if ($_REQUEST["value"]) {
 			$type = $_REQUEST['type'];
 			$value = $_REQUEST['value'];
-			$name = $_SESSION['userNo'];
-			$user = new User();
-			$user->update('user', $type, $value, 'user_no=' . $name);
+			$userNo = $_SESSION['userNo'];
+			User::update('user', $type, $value, 'user_no=' . $userNo);
 			echo $value;
 		}
 	}
@@ -168,6 +165,10 @@ class userController {
 		$cart->setProduct(new Product($productNo));
 		$cart->setNumber($number);
 		$cart->add();
+	}
+	
+	function history(){
+		
 	}
 
 }
