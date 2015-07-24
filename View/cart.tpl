@@ -30,11 +30,12 @@
 			<div class="row">
 				<div class="col-lg-10"><hr /></div>
 				<div class="col-lg-2 col-lg-offset-1" >
-					<div class="frame" style="height:100px; background: {$data['imgPath']} center center no-repeat;"></div>
+					<a href="/VEC/product/productdetails/{$deta['product_no']}">
+					<div class="frame" style="height:100px; background: url(/VEC/img/{$data['image']}) center center no-repeat;"></div>
+					</a>
 				</div>
 				<div class="col-lg-4" style="position:relative;top:50px;">
-					{$data['productName']}<br />
-					{$data['explanation']}
+					<a href="/VEC/product/productdetails/{$deta['product_no']}">{$data['productName']}</a>
 				</div>
 				<div class="col-lg-1" style="position:relative;top:50px;">
 					¥{$data['price']}
@@ -49,7 +50,7 @@
 		{/foreach}
 	</div>
 	{if $item != null}
-		<div class="row col-lg-2" style="border: 1px solid #aaa;  left:10px">
+		<div id="total" class="row col-lg-2" style="border: 1px solid #aaa;  left:10px">
 			<p style="padding:10px">合計:</p>
 			¥<span style="color:blue; font-size: 30px">{$total}</span>
 			<br />

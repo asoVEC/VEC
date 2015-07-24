@@ -47,7 +47,7 @@ class homeController {
 		//----------ログインにしていないユーザーがカートに商品を追加するテスト
 		$cart = new Cart($_SESSION['userNo']);
 		$cart->setProduct(new Product(99));
-		$cart->setNumber(51);
+		$cart->setQuantity(51);
 		$cart->add();
 		//--------------------------------------------------------
 		//		echo Cart::getCarts($_SESSION['userNo'])[0]->getProduct()->getProductName();
@@ -59,7 +59,7 @@ class homeController {
 		$order = new Order();
 		$order->setUserNo(5);
 		$order->setAddress('いさはや');
-		$order->setUse_point(0);
+		$order->setUsePoint(0);
 		$order->setAquiredPoint(0);
 		$order->setOrderDate('2015-07-23');
 		$details[] = array(
@@ -77,7 +77,7 @@ class homeController {
 	}
 
 	function akihiro3() {
-		Order::getHistory(1);
+		echo 'kimiya';
 	}
 
 	function nagano() {

@@ -65,14 +65,22 @@ class Order extends BaseModel {
 
 	function add() {
 //order表に追加
+			echo order表に追加するよ;
 		$values = sprintf('null,%s,\'%s\',%s,%s,\'%s\'', $this->userNo, $this->orderDate, $this->usePoint, $this->aquiredPoint, $this->address);
 		$this->insert('`vec`.`order`', $values);
 		$this->orderNo = mysql_insert_id(); //order表にオートインクリメントで作成したidを取得
 //order_detail表に作成
 		foreach ($this->details as $value) {
+			echo order_detail表に追加するよ;
+			$this->aquiredPoint += $value['price']/100;
 			$values2 = sprintf('%s,%s,%s,%s', $this->orderNo, $value['productNo'], $value['price'], $value['number']);
 			$this->insert('`order_detail`', $values2);
 		}
+//user表のポイント更新
+		$user = new User($this->userNo);
+		$point = $user->getPoint() - $this->usePoint + $this->aquiredPoint;
+		$this->update('user', 'point', $point,sprintf('user_no = \'%s\'', $this->userNo) );
+		
 	}
 
 	static function getHistory($userNo) {
