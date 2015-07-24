@@ -4,7 +4,7 @@ require_once ('Model/Cart.php');
 require_once ('Model/Product.php');
 require_once ('Model/User.php');
 
-class buyController {
+class buyController{
 	//購入処理
 	function buy(){
 		$user = new User($_SESSION['userNo']);

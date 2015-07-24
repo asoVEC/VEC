@@ -4,6 +4,7 @@
         <li class="active"><a href="#">ユーザ設定</a></li>
         <li><a href="/VEC/user/settings">ユーザ情報登録・変更</a></li>
         <li><a href="/VEC/user/point">ポイント管理</a></li>
+        <li><a href="/VEC/user/history">購入履歴</a></li>
     </ul>
 {/block}
 {block content}

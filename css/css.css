@@ -282,7 +282,7 @@ body{
     padding-top: 100px;
 }
 .footer {  /*<footer class="footer">*/
-  position: absolute;
+  /*position: absolute;*/
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */

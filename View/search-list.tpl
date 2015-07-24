@@ -1,19 +1,19 @@
 {extends file='View/base.tpl'}
 {block title}検索結果{/block}
 {block content}
+    {if $nul==NULL}
     {$smarty.post.page}ページ目
     <br />
+    
     {*//↓データ内容を表示する部分*}
-    <div class="row">
     {foreach $array.deta as $deta}
-        <div class="col-lg-3">
+
         <div class="label">{$deta['product_name']}</div>
         <a href="/VEC/product/productdetails/{$deta['product_no']}">
                     <div class="frame" style="background: url(/VEC/img/{$deta['image']}) center center no-repeat;" ></div>
                     </a>
-                    </div>
     {/foreach}
-    </div>
+   
 
 
     {*    ページング*}
@@ -27,6 +27,9 @@
                 {/if}
         </ul>
     </nav>
+         {else}
+        {$nul}
+    {/if}
     {*検索条件にあてはまるものがあるかぎり繰り返す*}
     {*    {foreach}
     {/foreach}*}
