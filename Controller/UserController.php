@@ -48,143 +48,138 @@ class userController {
     }
 
 // 戻:成功=1, 失敗=0
-    private function loginProcess($mail, $pass) {
-        $loginFlg = 0;
-        $user = new User();
-        $user->setMail($mail);
-        $user->setPassword($pass);
-        $loginFlg = $user->login();
-        if ($loginFlg == 1) {
-            $_SESSION['userNo'] = $user->getUserNo();
-            $_SESSION['userName'] = $user->getUserName();
-        }
-        return $loginFlg;
-    }
+	private function loginProcess($mail, $pass) {
+		$loginFlg = 0;
+		$user = new User();
+		$user->setMail($mail);
+		$user->setPassword($pass);
+		$loginFlg = $user->login();
+		if ($loginFlg == 1) {
+			$_SESSION['userNo'] = $user->getUserNo();
+			$_SESSION['userName'] = $user->getUserName();
+		}
+		return $loginFlg;
+	}
 
-    function logout() {
-        $_SESSION = array();
-        session_destroy();
-        header('Location: /VEC/');
-        exit;
-    }
+	function logout() {
+		$_SESSION = array();
+		session_destroy();
+		header('Location: /VEC/');
+		exit;
+	}
 
-    function signup() {
-        if ($this->userNo != NULL) {//ログイン済み
-            header('Location: /VEC/');
-            exit();
-        } elseif ($this->userNo == null) {//初回アクセス
-            $this->view->assign('message', 'アカウント作成に必要な情報を入力して下さい。');
-            $this->view->display('View/signup.tpl');
-        } elseif ($this->signupProcess() == 1) {//会員登録成功
-            header('Location: /VEC/');
-            exit();
-        } else {//会員登録失敗
-            $this->view->assign('message', '情報を正しく入力して下さい');
-            $this->view->display('View/signup.tpl');
-        }
-    }
+	function signup() {
+		if ($this->userNo != NULL) {//ログイン済み
+			header('Location: /VEC/');
+			exit();
+		} elseif ($this->userNo == null) {//初回アクセス
+			$this->view->assign('message', 'アカウント作成に必要な情報を入力して下さい。');
+			$this->view->display('View/signup.tpl');
+		} elseif ($this->signupProcess() == 1) {//会員登録成功
+			header('Location: /VEC/');
+			exit();
+		} else {//会員登録失敗
+			$this->view->assign('message', '情報を正しく入力して下さい');
+			$this->view->display('View/signup.tpl');
+		}
+	}
 
-    private function signupProcess() {
-        $flg = 0;
-        $pass = filter_input(INPUT_POST, 'password');
-        $con_pass = filter_input(INPUT_POST, 'con_password');
-        $mail = filter_input(INPUT_POST, 'mail');
-        $user = new User;
-        $user->setUserName(filter_input(INPUT_POST, 'name'));
-        $user->setMail($mail);
-        $user->setPhone(filter_input(INPUT_POST, 'phone'));
-        //入力された2つのパスワードが一致したらパスワードをセットしサインアップ
-        if ($pass === $con_pass) {
-            $user->setPassword($pass);
-            $flg = $user->signUp();
-            if ($flg === 1) {
-                $this->loginProcess($mail, $pass);
-            }
-        }
-        return $flg;
-    }
+	private function signupProcess() {
+		$flg = 0;
+		$pass = filter_input(INPUT_POST, 'password');
+		$con_pass = filter_input(INPUT_POST, 'con_password');
+		$mail = filter_input(INPUT_POST, 'mail');
+		$user = new User;
+		$user->setUserName(filter_input(INPUT_POST, 'name'));
+		$user->setMail($mail);
+		$user->setPhone(filter_input(INPUT_POST, 'phone'));
+		//入力された2つのパスワードが一致したらパスワードをセットしサインアップ
+		if ($pass === $con_pass) {
+			$user->setPassword($pass);
+			$flg = $user->signUp();
+			if ($flg === 1) {
+				$this->loginProcess($mail, $pass);
+			}
+		}
+		return $flg;
+	}
 
-    function settings() {
-        $user = new User($_SESSION['userNo']);
-        $userinfo = array('mail' => $user->getMail(),
-            'name' => $user->getUserName(),
-            'address' => $user->getAddress(),
-            'credit_no' => $user->getCredit(),
-            'password' => $user->getPassword()
-        );
-        $user->getMail();
-        $this->view->assign('userinfo', $userinfo);
-        $this->view->display('View/settings.tpl');
-    }
+	function settings() {
+		$user = new User($_SESSION['userNo']);
+		$userinfo = array('mail' => $user->getMail(),
+		  'name' => $user->getUserName(),
+		  'address' => '〒'.$user->getAddress1().'  '.$user->getAddress2().$user->getAddress3(),
+		  'credit_no' => $user->getCredit(),
+		  'password' => $user->getPassword()
+		);
+		$user->getMail();
 
-    function akihiro() {
-        $user = new User(1);
-        Cart::akihiro($user);
-    }
+		$this->view->assign('userinfo', $userinfo);
+		$this->view->display('View/settings.tpl');
+//                var_dump($query);
+	}
 
-    //非同期通信用 $table, $key, $value, $where
-    function settingspost() {
-        if ($_REQUEST["value"]) {
-            $type = $_REQUEST['type'];
-            $value = $_REQUEST['value'];
-            $name = $_SESSION['userNo'];
-            $user = new User();
-            $user->update('user', $type, $value, 'user_no=' . $name);
-            echo $value;
-        }
-    }
+	function akihiro() {
+		$user = new User(1);
+		Cart::akihiro($user);
+	}
 
-    function cart() {
-        $cart = Cart::getCarts($this->userNo);
-        $total;
-        foreach ($cart as $key => $value) {
-            $item[] = array(
-                'imgPath' => 'url(/VEC/img/fdputitomato.jpg)',
+	//非同期通信用 $table, $key, $value, $where
+	function settingspost() {
+		if ($_REQUEST["value"]) {
+			$type = $_REQUEST['type'];
+			$value = $_REQUEST['value'];
+			$userNo = $_SESSION['userNo'];
+			User::update('user', $type, $value, 'user_no=' . $userNo);
+			echo $value;
+		}
+	}
+
+	function cart() {
+		$cart = Cart::getCarts($this->userNo);
+		$total;
+		foreach ($cart as $key => $value) {
+			$item[] = array(
+			  'imgPath' => 'url(/VEC/img/fdputitomato.jpg)',
 //			  'imgPath' => 'url(' . $value->getProduct()->getImagePath . ')',
-                'productName' => $value->getProduct()->getProductName(),
-                'price' => $value->getProduct()->getPrice(),
-                'number' => $value->getNumber()
-            );
-            $total += $value->getProduct()->getPrice() * $value->getNumber();
-        }
-        $this->view->assign('total', $total);
-        $this->view->assign('item', $item);
-        $this->view->display('View/cart.tpl');
-        var_dump($item);
-    }
+			  'productName' => $value->getProduct()->getProductName(),
+			  'price' => $value->getProduct()->getPrice(),
+			  'number' => $value->getNumber()
+			);
+			$total += $value->getProduct()->getPrice() * $value->getNumber();
+		}
+		$this->view->assign('total', $total);
+		$this->view->assign('item', $item);
+		$this->view->display('View/cart.tpl');
+		var_dump($item);
+	}
 
-    //カートに商品追加 
-    //POST['productNo']とPOST['number']が必須。呼び出し元でセットして下さい
-    function addCart() {
-        $productNo = filter_input(INPUT_POST, 'productNo');
-        $number = filter_input(INPUT_POST, 'number');
-        if ($productNo !== null || $number !== null) {
-            $this->addCartProcess($productNo, $number);
-        }
-    }
+	//カートに商品追加 
+	//POST['productNo']とPOST['number']が必須。呼び出し元でセットして下さい
+	function addCart() {
+		$productNo = filter_input(INPUT_POST, 'productNo');
+		$number = filter_input(INPUT_POST, 'number');
+		if ($productNo !== null || $number !== null) {
+			$this->addCartProcess($productNo, $number);
+		}
+	}
 
-    private function addCartProcess($productNo, $number) {
-        $cart = new Cart($this->userNo);
-        $cart->setProduct(new Product($productNo));
-        $cart->setNumber($number);
-        $cart->add();
-    }
-
-    function point() {
-        $user = new User($_SESSION['userNo']);
-        $this->view->assign('point', $user->getPoint());
-        $this->view->display('View/point.tpl');
-    }
-
-    function history() {
-        $this->view->display('View/history.tpl');
-    }
-
-    function required(){
+	private function addCartProcess($productNo, $number) {
+		$cart = new Cart($this->userNo);
+		$cart->setProduct(new Product($productNo));
+		$cart->setNumber($number);
+		$cart->add();
+	}
+	
+	function history(){
+		$this->view->display('View/history.tpl');
+	}
+        function required(){
          $product = new Product();
         $item = $product->getAll();
         $this->view->assign('item', $item);
         $item2 = $product->getDetails(19);
         $this->view->assign('item2', $item2);
     }
+
 }
