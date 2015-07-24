@@ -3,6 +3,8 @@
 require_once ('Model/User.php');
 require_once ('Model/Cart.php');
 require_once ('Model/Product.php');
+require_once ('Model/Order.php');
+require_once ('Model/BaseModel.php');
 require_once ('smarty/libs/Smarty.class.php');
 
 class homeController {
@@ -50,8 +52,38 @@ class homeController {
         //--------------------------------------------------------
 //		echo Cart::getCarts($_SESSION['userNo'])[0]->getProduct()->getProductName();
 //		echo Cart::getCarts($_SESSION['userNo'])[0]->getNumber();
+<<<<<<< HEAD
         var_dump(Cart::getCarts($_SESSION['userNo']));
     }
+=======
+		var_dump(Cart::getCarts($_SESSION['userNo']));
+	}
+	function akihiro2(){
+		$order = new Order();
+		$order->setUserNo(5);
+		$order->setAddress('いさはや');
+		$order->setUse_point(0);
+		$order->setAquiredPoint(0);
+		$order->setOrderDate('2015-07-23');
+		$details[] = array(
+		  'productNo'=>1,
+		  'price' => 300,
+		  'number'=> 3
+		);
+		$details[] = array(
+		  'productNo'=>5,
+		  'price' => 400,
+		  'number'=> 67
+		);
+		
+		$order->setDetails($details);
+		$order->add();
+		
+	}
+			function nagano() {
+		$this->view->display('View/details.tpl');
+	}
+>>>>>>> origin/master
 
     function akihiro2() {
         $user = new User(1);

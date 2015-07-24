@@ -48,15 +48,16 @@
 			</div>
 		{/foreach}
 	</div>
-
-	<div class="row col-lg-2" style="border: 1px solid #aaa;  left:10px">
-		<p style="padding:10px">合計:</p>
-		¥<span style="color:blue; font-size: 30px">{$total}</span>
-		<br />
-		<br />
-		<div class="col-lg-offset-5">
-			<input type="button" class="btn btn-warning" style="color : #222" value="レジに進む" class="btn">
+	{if $item != null}
+		<div class="row col-lg-2" style="border: 1px solid #aaa;  left:10px">
+			<p style="padding:10px">合計:</p>
+			¥<span style="color:blue; font-size: 30px">{$total}</span>
+			<br />
+			<br />
+			<div class="col-lg-offset-5">
+				<input type="button" class="btn btn-warning" style="color : #222" value="レジに進む" class="btn">
+			</div>
 		</div>
-	</div>
+	{/if}
 
 {/block}

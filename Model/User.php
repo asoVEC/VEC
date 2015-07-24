@@ -10,7 +10,9 @@ class User extends BaseModel {
 	private $mail = null;
 	private $age = null;
 	private $gender = 0;
-	private $address = null;
+	private $address1 = null;
+	private $address2 = null;
+	private $address3 = null;
 	private $phone = null;
 	private $point = 0;
 	private $credit = null;
@@ -49,10 +51,26 @@ class User extends BaseModel {
 		$this->gender = $param;
 	}
 
-	function setAddress($param) {
-		$this->address = $param;
+	function setAddress1($param) {
+		$this->address1 = $param;
+	}
+	function getAddress2() {
+		return $this->address2;
 	}
 
+	function getAddress3() {
+		return $this->address3;
+	}
+
+	function setAddress2($address2) {
+		$this->address2 = $address2;
+	}
+
+	function setAddress3($address3) {
+		$this->address3 = $address3;
+	}
+
+	
 	function setCredit($param) {
 		$this->credit = $param;
 	}
@@ -69,8 +87,8 @@ class User extends BaseModel {
 		return $this->mail;
 	}
 
-	function getAddress() {
-		return $this->address;
+	function getAddress1() {
+		return $this->address1;
 	}
 
 	function getPhone() {
@@ -135,7 +153,7 @@ class User extends BaseModel {
 		if ($this->mail == NULL || $this->userName == NULL || $this->password == NULL || $this->phone == NULL) {
 			return 0;
 		}
-		$values = 'NULL, \'' . $this->mail . '\', \'' . $this->userName . '\', \'' . $this->password . '\', \'' . $this->age . '\', \'' . $this->gender . '\', \'' . $this->address . '\', 0, \'' . $this->credit . '\', 0, \'' . $this->phone . '\'';
+		$values = 'NULL, \'' . $this->mail . '\', \'' . $this->userName . '\', \'' . $this->password . '\', \'' . $this->age . '\', \'' . $this->gender . '\', \'' . $this->address1 . '\', 0, \'' . $this->credit . '\', 0, \'' . $this->phone . '\'';
 		$result = $this->insert('user', $values);
 		if ($result) {
 			return 1;
@@ -149,7 +167,9 @@ class User extends BaseModel {
 		$this->userName = $value['name'];
 		$this->password = $value['password'];
 		$this->mail = $value['mail_address'];
-		$this->address = $value['address'];
+		$this->address1 = $value['address1'];
+		$this->address2 = $value['address2'];
+		$this->address3 = $value['address3'];
 		$this->phone = $value['phone'];
 		$this->age = $value['age'];
 		$this->gender = $value['gender'];

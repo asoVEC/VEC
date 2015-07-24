@@ -5,6 +5,7 @@
  * @date 	2015/05/31
  * */
 class BaseModel {
+
 	private $user = 'root';
 	private $password = 'root';
 	private $db = 'vec';
@@ -56,20 +57,15 @@ class BaseModel {
 	//DBにデータ挿入 引:テーブル名、挿入するデータ 戻:true = 成功、false = 失敗
 	function insert($table, $values) {
 		$sql = 'INSERT INTO ' . $table . ' VALUES (' . $values . ')';
-		echo $sql;
 		return mysql_query($sql);
 	}
 
 	//DBのでーた更新引:テーブル名、属性名、セットする新しい値、where条件
-	function update($table, $key, $value, $where) {
+	static function update($table, $key, $value, $where) {
 		$sql = sprintf('update %s set %s = \'%s\' where %s ', $table, $key, $value, $where);
 		return mysql_query($sql);
 	}
 
-	function update2($type, $value) {
-		$sql = 'UPDATE user SET ' . $type . ' = "' . $value . '" WHERE user_no = 1';
-		return mysql_query($sql);
-	}
 
 
 }
