@@ -1,6 +1,7 @@
 <?php
 
 require_once ('Model/Product.php');
+require_once ('Controller/HomeController.php');
 require_once('smarty/libs/Smarty.class.php');
 
 class productController {
@@ -10,6 +11,7 @@ class productController {
 	public function __construct() {
 		// ビュー
 		$this->view = new Smarty;
+                $this->required();
 //        $this->view->template_dir = '../View';
 	}
 
@@ -42,7 +44,7 @@ class productController {
 	}
 
 	function pastryList($page = 1) {
-		$this->productList(8, $page, 'pastrylist');
+		$this->productList(9, $page, 'pastrylist');
 	}
 
 	function productList($category, $page, $name) {
@@ -87,6 +89,8 @@ class productController {
 			$_POST[page] = $page;
 		}
 		$product = new Product();
+                $decision = $product->decisionProduct($_POST[search]);
+                if($decision==TRUE){
 		$productName = $product->searchProduct($_POST[search]);
 
 		$cnt = count($productName); //レコード数をカウントしておきます
@@ -106,8 +110,12 @@ class productController {
 		  'name' => 'searchlist'
 		);
 		$this->view->assign('array', $array);
+                }  else {
+                    $this->view->assign('nul', "指定された商品は存在しません。");
+                }
 
 		$this->view->display('View/search-list.tpl');
+                var_dump($nul);
 	}
 
 	function productDetails($id = null) {
@@ -117,4 +125,11 @@ class productController {
 		$this->view->display('View/details.tpl');
 	}
 
+        function required(){
+         $product = new Product();
+        $item = $product->getAll();
+        $this->view->assign('item', $item);
+        $item2 = $product->getDetails(19);
+        $this->view->assign('item2', $item2);
+    }
 }

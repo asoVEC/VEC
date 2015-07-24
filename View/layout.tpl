@@ -38,6 +38,8 @@
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                             {if $smarty.session.userName != null}{*ログインしてる場合のみ表示*}
                                     <li  role="presenetation"><a role="menuitem" tabindex="-1" href="/VEC/user/settings">会員情報変更</a></li>
+                                    <li  role="presenetation"><a role="menuitem" tabindex="-1" href="/VEC/user/point">ポイント確認</a></li>
+                                    <li  role="presenetation"><a role="menuitem" tabindex="-1" href="/VEC/user/history">購入履歴</a></li>
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/user/logout">ログアウト</a></li>
                                     {else} 
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/user/signup">会員登録</a></li>

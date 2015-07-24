@@ -3,24 +3,27 @@
 require_once ('Model/Cart.php');
 require_once ('Model/Product.php');
 require_once ('Model/User.php');
+require_once ('Controller/HomeController.php');
+require_once ('smarty/libs/Smarty.class.php');
 
 class userController {
 
 	private $userNo;
 
 	public function __construct() {
-		require_once('smarty/libs/Smarty.class.php');
+
 		$this->userNo = $_SESSION['userNo'];
 
-// ビュー
+		// ビュー
 		$this->view = new Smarty;
-//        $this->view->template_dir = '../View';
+		$this->required();
+		//        $this->view->template_dir = '../View';
 	}
 
 	function login() {
 		$this->userNo = filter_input(INPUT_POST, 'userNo');
-		$mail = $_POST[mail];
-		$pass = $_POST[password];
+		$mail         = $_POST[mail];
+		$pass         = $_POST[password];
 
 		if ($_SESSION['userName'] != NULL) {//ログイン済み
 			header('Location: /VEC/');
@@ -28,7 +31,7 @@ class userController {
 		} elseif ($mail === NULL || $pass === NULL) {//初回アクセス
 			$this->view->display('View/login.tpl');
 		} else {
-//ログイン処理
+			//ログイン処理
 			$loginFlg = $this->loginProcess($mail, $pass);
 			switch ($loginFlg) {
 				case 1://ログイン成功
@@ -43,15 +46,15 @@ class userController {
 		}
 	}
 
-// 戻:成功=1, 失敗=0
+	// 戻:成功=1, 失敗=0
 	private function loginProcess($mail, $pass) {
 		$loginFlg = 0;
-		$user = new User();
+		$user     = new User();
 		$user->setMail($mail);
 		$user->setPassword($pass);
 		$loginFlg = $user->login();
 		if ($loginFlg == 1) {
-			$_SESSION['userNo'] = $user->getUserNo();
+			$_SESSION['userNo']   = $user->getUserNo();
 			$_SESSION['userName'] = $user->getUserName();
 		}
 		return $loginFlg;
@@ -81,11 +84,11 @@ class userController {
 	}
 
 	private function signupProcess() {
-		$flg = 0;
-		$pass = filter_input(INPUT_POST, 'password');
+		$flg      = 0;
+		$pass     = filter_input(INPUT_POST, 'password');
 		$con_pass = filter_input(INPUT_POST, 'con_password');
-		$mail = filter_input(INPUT_POST, 'mail');
-		$user = new User;
+		$mail     = filter_input(INPUT_POST, 'mail');
+		$user     = new User;
 		$user->setUserName(filter_input(INPUT_POST, 'name'));
 		$user->setMail($mail);
 		$user->setPhone(filter_input(INPUT_POST, 'phone'));
@@ -101,27 +104,27 @@ class userController {
 	}
 
 	function settings() {
-		$user = new User($_SESSION['userNo']);
+		$user     = new User($_SESSION['userNo']);
 		$userinfo = array('mail' => $user->getMail(),
-		  'name' => $user->getUserName(),
-		  'address' => '〒' . $user->getAddress1() . '  ' . $user->getAddress2() . $user->getAddress3(),
-		  'credit_no' => $user->getCredit(),
-		  'password' => $user->getPassword()
+			'name'                  => $user->getUserName(),
+			'address'               => '〒'.$user->getAddress1().'  '.$user->getAddress2().$user->getAddress3(),
+			'credit_no'             => $user->getCredit(),
+			'password'              => $user->getPassword()
 		);
 		$user->getMail();
 
 		$this->view->assign('userinfo', $userinfo);
 		$this->view->display('View/settings.tpl');
-//                var_dump($query);
+		//                var_dump($query);
 	}
 
 	//非同期通信用 $table, $key, $value, $where
 	function settingspost() {
 		if ($_REQUEST["value"]) {
-			$type = $_REQUEST['type'];
-			$value = $_REQUEST['value'];
+			$type   = $_REQUEST['type'];
+			$value  = $_REQUEST['value'];
 			$userNo = $_SESSION['userNo'];
-			User::update('user', $type, $value, 'user_no=' . $userNo);
+			User::update('user', $type, $value, 'user_no='.$userNo);
 			echo $value;
 		}
 	}
@@ -131,13 +134,13 @@ class userController {
 		$total;
 		foreach ($cart as $key => $value) {
 			$item[] = array(
-			  'imgPath' => 'url(/VEC/img/fdputitomato.jpg)',
-//			  'imgPath' => 'url(' . $value->getProduct()->getImagePath . ')',
-			  'productName' => $value->getProduct()->getProductName(),
-			  'price' => $value->getProduct()->getPrice(),
-			  'number' => $value->getNumber()
+				'imgPath' => 'url(/VEC/img/fdputitomato.jpg)',
+				//			  'imgPath' => 'url(' . $value->getProduct()->getImagePath . ')',
+				'productName' => $value->getProduct()->getProductName(),
+				'price'       => $value->getProduct()->getPrice(),
+				'number'      => $value->getNumber()
 			);
-			$total += $value->getProduct()->getPrice() * $value->getNumber();
+			$total += $value->getProduct()->getPrice()*$value->getNumber();
 		}
 		$this->view->assign('total', $total);
 		$this->view->assign('item', $item);
@@ -145,11 +148,11 @@ class userController {
 		var_dump($item);
 	}
 
-	//カートに商品追加 
+	//カートに商品追加
 	//POST['productNo']とPOST['number']が必須。呼び出し元でセットして下さい
 	function addCart() {
 		$productNo = filter_input(INPUT_POST, 'productNo');
-		$number = filter_input(INPUT_POST, 'number');
+		$number    = filter_input(INPUT_POST, 'number');
 		if ($productNo !== null || $number !== null) {
 			$this->addCartProcess($productNo, $number);
 		}
@@ -163,7 +166,14 @@ class userController {
 	}
 
 	function history() {
-		
+		$this->view->display('View/history.tpl');
+	}
+	function required() {
+		$product = new Product();
+		$item    = $product->getAll();
+		$this->view->assign('item', $item);
+		$item2 = $product->getDetails(19);
+		$this->view->assign('item2', $item2);
 	}
 
 }

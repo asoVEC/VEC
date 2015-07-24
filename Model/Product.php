@@ -52,9 +52,20 @@ class Product extends BaseModel {
 		if ($rows != NULL) {
 			return $rows;
 		} else {
-			die("指定された商品は存在しません。");
+                    die("失敗");
 		}
 	}
+        
+        function decisionProduct($searchName){
+            $where = 'product_name LIKE' . '\'%' . $searchName . '%\'';
+		$rows = parent::query(product, $where);
+		if ($rows != NULL) {
+			return TRUE;
+		} else {
+                        return FALSE;
+		}
+            
+        }
 
 	//カテゴリ別一覧
 	function byCategory($categoryNo) {

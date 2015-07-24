@@ -13,6 +13,8 @@ class homeController {
 
 	public function __construct() {
 		$this->view = new Smarty();
+		$this->required();
+
 	}
 
 	function index() {
@@ -27,11 +29,6 @@ class homeController {
 		$this->view->assign('name4', '円安きみや');
 		$this->view->assign('name5', '円高きみや');
 		$this->view->assign('name1', 'ちょっと高いきみや');
-		$product = new Product();
-		$item = $product->getAll();
-		$this->view->assign('item', $item);
-		$item2 = $product->getDetails(19);
-		$this->view->assign('item2', $item2);
 		$this->view->display('View/base.tpl');
 	}
 
@@ -53,6 +50,8 @@ class homeController {
 		$cart->setNumber(51);
 		$cart->add();
 		//--------------------------------------------------------
+		//		echo Cart::getCarts($_SESSION['userNo'])[0]->getProduct()->getProductName();
+		//		echo Cart::getCarts($_SESSION['userNo'])[0]->getNumber();
 		var_dump(Cart::getCarts($_SESSION['userNo']));
 	}
 
@@ -64,14 +63,14 @@ class homeController {
 		$order->setAquiredPoint(0);
 		$order->setOrderDate('2015-07-23');
 		$details[] = array(
-		  'productNo' => 1,
-		  'price' => 300,
-		  'number' => 3
+			'productNo' => 1,
+			'price'     => 300,
+			'number'    => 3,
 		);
 		$details[] = array(
-		  'productNo' => 5,
-		  'price' => 400,
-		  'number' => 67
+			'productNo' => 5,
+			'price'     => 400,
+			'number'    => 67,
 		);
 		$order->setDetails($details);
 		$order->add();
@@ -87,6 +86,14 @@ class homeController {
 
 	function test() {
 		$this->view->display('View/test.tpl');
+	}
+
+	function required() {
+		$product = new Product();
+		$item    = $product->getAll();
+		$this->view->assign('item', $item);
+		$item2 = $product->getDetails(19);
+		$this->view->assign('item2', $item2);
 	}
 
 }

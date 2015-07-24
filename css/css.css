@@ -281,8 +281,13 @@ body{
     padding-bottom: 130px;
     padding-top: 100px;
 }
+<<<<<<< HEAD
+.footer {  /*<footer class="footer">*/
+  /*position: absolute;*/
+=======
 /*.footer {  <footer class="footer">
   position: absolute;
+>>>>>>> origin/master
   bottom: 0;
   width: 100%;
    Set the fixed height of the footer here 

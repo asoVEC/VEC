@@ -4,6 +4,7 @@ require_once ('Model/Cart.php');
 require_once ('Model/Product.php');
 require_once ('Model/User.php');
 
+
 class buyController {
 	private $view;
 
