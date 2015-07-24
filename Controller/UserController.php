@@ -104,7 +104,7 @@ class userController {
 		$user = new User($_SESSION['userNo']);
 		$userinfo = array('mail' => $user->getMail(),
 		  'name' => $user->getUserName(),
-		  'address' => '〒'.$user->getAddress1().'  '.$user->getAddress2().$user->getAddress3(),
+		  'address' => '〒' . $user->getAddress1() . '  ' . $user->getAddress2() . $user->getAddress3(),
 		  'credit_no' => $user->getCredit(),
 		  'password' => $user->getPassword()
 		);
@@ -113,11 +113,6 @@ class userController {
 		$this->view->assign('userinfo', $userinfo);
 		$this->view->display('View/settings.tpl');
 //                var_dump($query);
-	}
-
-	function akihiro() {
-		$user = new User(1);
-		Cart::akihiro($user);
 	}
 
 	//非同期通信用 $table, $key, $value, $where
@@ -166,8 +161,8 @@ class userController {
 		$cart->setNumber($number);
 		$cart->add();
 	}
-	
-	function history(){
+
+	function history() {
 		
 	}
 

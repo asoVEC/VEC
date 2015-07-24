@@ -53,11 +53,10 @@ class homeController {
 		$cart->setNumber(51);
 		$cart->add();
 		//--------------------------------------------------------
-//		echo Cart::getCarts($_SESSION['userNo'])[0]->getProduct()->getProductName();
-//		echo Cart::getCarts($_SESSION['userNo'])[0]->getNumber();
 		var_dump(Cart::getCarts($_SESSION['userNo']));
 	}
-	function akihiro2(){
+
+	function akihiro2() {
 		$order = new Order();
 		$order->setUserNo(5);
 		$order->setAddress('いさはや');
@@ -65,21 +64,24 @@ class homeController {
 		$order->setAquiredPoint(0);
 		$order->setOrderDate('2015-07-23');
 		$details[] = array(
-		  'productNo'=>1,
+		  'productNo' => 1,
 		  'price' => 300,
-		  'number'=> 3
+		  'number' => 3
 		);
 		$details[] = array(
-		  'productNo'=>5,
+		  'productNo' => 5,
 		  'price' => 400,
-		  'number'=> 67
+		  'number' => 67
 		);
-		
 		$order->setDetails($details);
 		$order->add();
-		
 	}
-			function nagano() {
+
+	function akihiro3() {
+		Order::getHistory(1);
+	}
+
+	function nagano() {
 		$this->view->display('View/details.tpl');
 	}
 
