@@ -52,10 +52,6 @@ class homeController {
         //--------------------------------------------------------
 //		echo Cart::getCarts($_SESSION['userNo'])[0]->getProduct()->getProductName();
 //		echo Cart::getCarts($_SESSION['userNo'])[0]->getNumber();
-<<<<<<< HEAD
-        var_dump(Cart::getCarts($_SESSION['userNo']));
-    }
-=======
 		var_dump(Cart::getCarts($_SESSION['userNo']));
 	}
 	function akihiro2(){
@@ -83,18 +79,7 @@ class homeController {
 			function nagano() {
 		$this->view->display('View/details.tpl');
 	}
->>>>>>> origin/master
 
-    function akihiro2() {
-        $user = new User(1);
-        $this->view->assign('name', 'きみや');
-        $this->view->assign_by_ref('obj', $user);
-        $this->view->display('View/temp.tpl');
-    }
-
-    function nagano() {
-        $this->view->display('View/details.tpl');
-    }
 
     function test() {
         $this->view->display('View/test.tpl');

@@ -4,9 +4,7 @@ require_once ('Model/Cart.php');
 require_once ('Model/Product.php');
 require_once ('Model/User.php');
 
-<<<<<<< HEAD
-class buyController{
-=======
+
 class buyController {
 	private $view;
 
@@ -14,7 +12,6 @@ class buyController {
 		$this->view = new Smarty();
 	}
 	
->>>>>>> origin/master
 	//購入処理
 	function buy(){
 	//購入処理を3ステップに分ける 
