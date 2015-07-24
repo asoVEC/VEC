@@ -11,8 +11,7 @@ class productController {
 	public function __construct() {
 		// ビュー
 		$this->view = new Smarty;
-                $req= new homeController();
-                $req->required();
+                $this->required();
 //        $this->view->template_dir = '../View';
 	}
 
@@ -126,4 +125,11 @@ class productController {
 		$this->view->display('View/details.tpl');
 	}
 
+        function required(){
+         $product = new Product();
+        $item = $product->getAll();
+        $this->view->assign('item', $item);
+        $item2 = $product->getDetails(19);
+        $this->view->assign('item2', $item2);
+    }
 }

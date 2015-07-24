@@ -17,8 +17,7 @@ class userController {
 
 // ビュー
         $this->view = new Smarty;
-        $req = new homeController();
-        $req->required();
+        $this->required();
 //        $this->view->template_dir = '../View';
     }
 
@@ -181,4 +180,11 @@ class userController {
         $this->view->display('View/history.tpl');
     }
 
+    function required(){
+         $product = new Product();
+        $item = $product->getAll();
+        $this->view->assign('item', $item);
+        $item2 = $product->getDetails(19);
+        $this->view->assign('item2', $item2);
+    }
 }
