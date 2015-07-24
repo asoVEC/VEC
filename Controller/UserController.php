@@ -168,12 +168,18 @@ class userController {
 	function history() {
 		$this->view->display('View/history.tpl');
 	}
+
 	function required() {
 		$product = new Product();
 		$item    = $product->getAll();
 		$this->view->assign('item', $item);
 		$item2 = $product->getDetails(19);
 		$this->view->assign('item2', $item2);
+	}
+	function point() {
+		$user = new User($_SESSION['userNo']);
+		$this->view->assign('point', $user->getPoint());
+		$this->view->display('View/point.tpl');
 	}
 
 }
