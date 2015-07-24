@@ -37,6 +37,9 @@ class buyController {
 	function confirmPurchas(){
 		
 	}
+	function info() {
+		$this->view->display('View/buy-infomation.tpl');
+	}
 	
 	
 	
