@@ -132,19 +132,21 @@ class userController {
 	function cart() {
 		$cart = Cart::getCarts($this->userNo);
 		$total;
-		foreach ($cart as $key => $value) {
+		foreach ($cart as $value) {
 			$item[] = array(
+			  'product_no' =>$value->getProduct()->getProductNo(),
 			  'image' => $value->getProduct()->getImage(),
 			  'productName' => $value->getProduct()->getProductName(),
 			  'price' => $value->getProduct()->getPrice(),
-			  'number' => $value->getNumber()
+			  'number' => $value->getQuantity()
 			);
-			$total += $value->getProduct()->getPrice() * $value->getNumber();
+			$total += $value->getProduct()->getPrice() * $value->getQuantity();
 		}
+		
 		$this->view->assign('total', $total);
 		$this->view->assign('item', $item);
 		$this->view->display('View/cart.tpl');
-		var_dump($item);
+//		var_dump($item);
 	}
 
 	//カートに商品追加
@@ -160,8 +162,13 @@ class userController {
 			header('Location: /VEC/user/cart');
 			exit;
 		}
-		else{
-			
+		else{//カートに同商品がある場合、他の原因についてはとりあえず考えない
+			$cart = new Cart($this->userNo);
+			$cart->setProduct(new Product($productNo));
+			$totalQuantity = $cart->getQuantity() + $quantity;
+			$cart->modify($totalQuantity);
+			header('Location: /VEC/user/cart');
+			exit;
 		}
 			
 	}

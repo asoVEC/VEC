@@ -1,21 +1,18 @@
 {extends file='View/layout.tpl'}
 {block header}
 {/block}	
-{block main}
-    <div class="panel">
-		<div class="col-lg-10"><h2>ショッピングカート</h2></div>
-	</div>
+{block main} 
 	<div class="row col-lg-10">
 
 
 		<div class="row">
-			<div class="col-lg-4 col-lg-offset-3">
+			<div class="col-lg-3 col-lg-offset-3">
 				商品名
 			</div>
-			<div class="col-lg-1">
+			<div class="col-lg-2">
 				単価
 			</div>
-			<div class="col-lg-1">
+			<div class="col-lg-2">
 				個数
 			</div>
 			<div class="col-lg-2">
@@ -30,17 +27,17 @@
 			<div class="row">
 				<div class="col-lg-10"><hr /></div>
 				<div class="col-lg-2 col-lg-offset-1" >
-					<a href="/VEC/product/productdetails/{$deta['product_no']}">
-					<div class="frame" style="height:100px; background: url(/VEC/img/{$data['image']}) center center no-repeat;"></div>
+					<a href="/VEC/product/productdetails/{$data['product_no']}">
+						<div class="frame" style="height:100px; background: url(/VEC/img/{$data['image']}) center center no-repeat;"></div>
 					</a>
 				</div>
-				<div class="col-lg-4" style="position:relative;top:50px;">
-					<a href="/VEC/product/productdetails/{$deta['product_no']}">{$data['productName']}</a>
+				<div class="col-lg-3" style="position:relative;top:50px;">
+					<a href="/VEC/product/productdetails/{$data['product_no']}">{$data['productName']}</a>
 				</div>
-				<div class="col-lg-1" style="position:relative;top:50px;">
+				<div class="col-lg-2" style="position:relative;top:50px;">
 					¥{$data['price']}
 				</div>
-				<div class="col-lg-1" style="position:relative;top:50px;">
+				<div class="col-lg-2" style="position:relative;top:50px;">
 					{$data['number']}個
 				</div>
 				<div class="col-lg-2" style="position:relative;top:50px;">
@@ -50,7 +47,7 @@
 		{/foreach}
 	</div>
 	{if $item != null}
-		<div id="total" class="row col-lg-2" style="border: 1px solid #aaa;  left:10px">
+		<div id="fixed_cart" class="col-lg-offset-10 col-lg-2" style="border: 1px solid #aaa;">{*class=row,colの使い方違うけどゆるして*}
 			<p style="padding:10px">合計:</p>
 			¥<span style="color:blue; font-size: 30px">{$total}</span>
 			<br />

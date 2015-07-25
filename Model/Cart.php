@@ -27,7 +27,11 @@ class Cart extends BaseModel {
 		return $this->product;
 	}
 
-	function getNumber() {
+	function getQuantity() {
+		if ($this->quantity == null) {
+			$value = $this->query('cart', sprintf('user_no = %s and product_no = %s ', $this->userNo, $this->product->getProductNo()));
+			$this->quantity = $value[0]['number'];
+		}
 		return $this->quantity;
 	}
 
@@ -83,7 +87,6 @@ class Cart extends BaseModel {
 	public static function getCarts($userNo) {
 		$carts; //ユーザーのインスタンスの入れ物
 		if ($userNo !== NULL) {//ログイン済み
-			
 			$baseModel = new BaseModel(); //staticメソッドのためBaseModelをインスタンス化して使う
 			$rows = $baseModel->query('cart', sprintf('user_no = %s', $userNo));
 			foreach ($rows as $value) {
@@ -94,7 +97,8 @@ class Cart extends BaseModel {
 		} else {//ログインしてない
 			foreach ($_SESSION as $key => $value) {
 				if ($key === 'cart') {
-					foreach ($value as $key2 => $value2) {;
+					foreach ($value as $key2 => $value2) {
+						;
 						$cart = new Cart();
 						$cart->setProduct(new Product($value2));
 						$cart->setNumber($value2);

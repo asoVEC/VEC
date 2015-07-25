@@ -1,12 +1,7 @@
 ﻿{extends file='View/layout.tpl'}
-{block title}{/block}
-
 {block main}
     <body>
-
-
         <div class="container main-content">
-            {* <div class="row">*}
             <div class="row">
                 <div class="col-lg-offset-4 col-lg-8" style="padding-bottom:30px;"><h2>{$item['product_name']}</h2></div>
             </div>
@@ -14,7 +9,7 @@
 
 			<div class="row">
 				<div class="col-lg-offset-2 col-lg-2 frame" style="background: url(/VEC/img/{$item['image']}) center center no-repeat;" ></div>
-				<div class="col-lg-4" style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; border-radius: 10px;">
+				<div class="col-lg-4" style="margin-bottom: 10px; border: 1px solid #333333; border-radius: 10px;">
 
 					<form method="post" action="/vec/user/addCart">
 						<input type="hidden" name="productNo" value="{$item['product_no']}">

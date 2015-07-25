@@ -66,6 +66,4 @@ class BaseModel {
 		return mysql_query($sql);
 	}
 
-
-
 }

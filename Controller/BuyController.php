@@ -19,9 +19,9 @@ class buyController {
 		//ユーザー情報取得
 		$user = new User($_SESSION['userNo']);
 		$this->view->assign('name', $user->getUserName());
-		$this->view->assign('address1', $user->getUserName());
-		$this->view->assign('address2', $user->getUserName());
-		$this->view->assign('address3', $user->getUserName());
+		$this->view->assign('address1', $user->getAddress1());
+		$this->view->assign('address2', $user->getAddress2());
+		$this->view->assign('address3', $user->getAddress3());
 		//カート取得
 		
 		//カート更新

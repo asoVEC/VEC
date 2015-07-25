@@ -14,7 +14,6 @@ class homeController {
 	public function __construct() {
 		$this->view = new Smarty();
 		$this->required();
-
 	}
 
 	function index() {
@@ -56,6 +55,7 @@ class homeController {
 	}
 
 	function akihiro2() {
+//		--------------購入処理テスト
 		$order = new Order();
 		$order->setUserNo(5);
 		$order->setAddress('いさはや');
@@ -63,21 +63,23 @@ class homeController {
 		$order->setAquiredPoint(0);
 		$order->setOrderDate('2015-07-23');
 		$details[] = array(
-			'productNo' => 1,
-			'price'     => 300,
-			'number'    => 3,
+		  'productNo' => 1,
+		  'price' => 300,
+		  'number' => 3,
 		);
 		$details[] = array(
-			'productNo' => 5,
-			'price'     => 400,
-			'number'    => 67,
+		  'productNo' => 5,
+		  'price' => 400,
+		  'number' => 67,
 		);
 		$order->setDetails($details);
 		$order->add();
 	}
 
 	function akihiro3() {
-		echo 'kimiya';
+		$product = new Product(1);
+		$this->view->assign('product', $product);
+		$this->view->display('View/temp.tpl');
 	}
 
 	function nagano() {
@@ -90,7 +92,7 @@ class homeController {
 
 	function required() {
 		$product = new Product();
-		$item    = $product->getAll();
+		$item = $product->getAll();
 		$this->view->assign('item', $item);
 		$item2 = $product->getDetails(19);
 		$this->view->assign('item2', $item2);
