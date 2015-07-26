@@ -17,17 +17,25 @@ class homeController {
 	}
 
 	function index() {
-		$this->view->assign('food1', 'url(/VEC/img/kimiya.jpg)');
-		$this->view->assign('food2', 'url(/VEC/img/fdputitomato.jpg)');
-		$this->view->assign('food3', 'url(/VEC/img/fdpapurika.jpg)');
-		$this->view->assign('food4', 'url(/VEC/img/fd_kabotya.jpg)');
-		$this->view->assign('food5', 'url(/VEC/img/fd_ninjin.jpg)');
-		$this->view->assign('name1', '格安きみや');
-		$this->view->assign('name2', '激安きみや');
-		$this->view->assign('name3', '割高きみや');
-		$this->view->assign('name4', '円安きみや');
-		$this->view->assign('name5', '円高きみや');
-		$this->view->assign('name1', 'ちょっと高いきみや');
+		$products;
+		$baseModel = new BaseModel();
+		for ($i = 0; $i < 5; $i++) {
+			$max = $baseModel->count('product') - 1; //プロダクト表の行数取得,productNoは0から始めるため補正
+			$product = new Product(mt_rand(0, $max));
+			$products[] = $product;
+		}
+		$this->view->assign('products', $products);
+//		$this->view->assign('food1', 'url(/VEC/img/kimiya.jpg)');
+//		$this->view->assign('food2', 'url(/VEC/img/fdputitomato.jpg)');
+//		$this->view->assign('food3', 'url(/VEC/img/fdpapurika.jpg)');
+//		$this->view->assign('food4', 'url(/VEC/img/fd_kabotya.jpg)');
+//		$this->view->assign('food5', 'url(/VEC/img/fd_ninjin.jpg)');
+//		$this->view->assign('name1', '格安きみや');
+//		$this->view->assign('name2', '激安きみや');
+//		$this->view->assign('name3', '割高きみや');
+//		$this->view->assign('name4', '円安きみや');
+//		$this->view->assign('name5', '円高きみや');
+//		$this->view->assign('name1', 'ちょっと高いきみや');
 		$this->view->display('View/base.tpl');
 	}
 

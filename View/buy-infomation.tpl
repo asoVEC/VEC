@@ -81,7 +81,7 @@
                 </div>
 
 
-                <div class="col-lg-6">
+                <div id="demo" class="col-lg-6">
 
                     <h2>お支払い情報</h2>
 
@@ -110,3 +110,7 @@
     </html>
 
 {/block}
+	
+	
+</script>
+

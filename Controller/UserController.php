@@ -182,7 +182,7 @@ class userController {
 		return $flg;
 	}
 
-	function history() {
+	function history() {//購入履歴表示
 		$this->view->display('View/history.tpl');
 	}
 
