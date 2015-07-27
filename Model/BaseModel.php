@@ -43,7 +43,7 @@ class BaseModel {
 			$this->where = ' where ' . $where;
 		}
 		$result = mysql_query('SELECT * FROM ' . $table . $this->where);
-//        echo '検索条件は'.'SELECT * FROM ' . $table . $this->where;
+        echo '検索条件は'.'SELECT * FROM ' . $table . $this->where;
 		if (!$result) {
 			die('クエリーが失敗しました。' . mysql_error());
 		}
