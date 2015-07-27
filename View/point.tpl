@@ -22,9 +22,14 @@
                         </div></div>
                     <div id="collapseTwo" class="accordion-body collapse in">
                         <div class="accordion-inner"><div class="panel-body">
-                                ・利用日　　使用ポイント数<br>
-                                ・何月何日　〜ポイント使用しました。<br>
-                                ・何月何日　〜ポイント使用しました。
+								{foreach $orders as $item}
+									{if $item->getUsePoint() != 0}
+										・{$item->getOrderDate()}　{$item->getUsePoint()}ポイント使用しました。<br>
+									{/if}
+									{if $item->getAcquiredPoint() != 0}
+									・{$item->getOrderDate()}　{$item->getAcquiredPoint()}ポイント獲得しました。<br>
+									{/if}
+								{/foreach}
                             </div></div>
                     </div>
                 </div>
@@ -35,8 +40,8 @@
         </div>
     </div>
     <script>
-        $(function () {
-            $(".collapse").collapse
-        });
+		$(function () {
+			$(".collapse").collapse
+		});
     </script>
 {/block}

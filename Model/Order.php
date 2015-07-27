@@ -8,7 +8,7 @@ class Order extends BaseModel {
 	private $userNo;
 	private $orderDate;
 	private $usePoint;
-	private $aquiredPoint;
+	private $acquiredPoint;
 	private $address;
 	private $details;
 
@@ -36,8 +36,8 @@ class Order extends BaseModel {
 		return $this->usePoint;
 	}
 
-	function getAquiredPoint() {
-		return $this->aquiredPoint;
+	function getAcquiredPoint() {
+		return $this->acquiredPoint;
 	}
 
 	function getAddress() {
@@ -126,7 +126,7 @@ class Order extends BaseModel {
 		$this->orderNo = $row['order_no'];
 		$this->userNo = $row['user_no'];
 		$this->usePoint = $row['use_point'];
-		$this->aquiredPoint = $row['aquired_point'];
+		$this->acquiredPoint = $row['acquired_point'];
 		$this->orderDate = $row['order_date'];
 		$this->address = $row['shipping_addres'];
 		return $order;

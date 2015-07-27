@@ -110,8 +110,6 @@ class userController {
 		  'password' => $user->getPassword()
 		);
 		$user->getMail();
-                
-
 		$this->view->assign('userinfo', $userinfo);
 		$this->view->display('View/settings.tpl');
 		//                var_dump($query);
@@ -207,8 +205,10 @@ class userController {
 	}
 
 	function point() {
-		$user = new User($_SESSION['userNo']);
+		$user = new User($this->userNo);
 		$this->view->assign('point', $user->getPoint());
+		$orders = Order::getHistory($this->userNo);
+		$this->view->assign('orders', $orders);
 		$this->view->display('View/point.tpl');
 	}
 
