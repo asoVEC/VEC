@@ -211,11 +211,7 @@ class userController {
 		$this->view->assign('point', $user->getPoint());
 		$this->view->display('View/point.tpl');
 	}
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> origin/master
 	function info() {
 		$this->view->display('View/buy-infomation.tpl');
 	}
