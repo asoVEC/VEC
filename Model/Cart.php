@@ -6,7 +6,7 @@ class Cart extends BaseModel {
 
 	private $product;
 	private $userNo;
-	private $number;
+	private $quantity;
 
 //	private $addDate;
 
@@ -19,16 +19,20 @@ class Cart extends BaseModel {
 		$this->product = $product;
 	}
 
-	function setNumber($number) {
-		$this->number = $number;
+	function setQuantity($quantity) {
+		$this->quantity = $quantity;
 	}
 
 	function getProduct() {
 		return $this->product;
 	}
 
-	function getNumber() {
-		return $this->number;
+	function getQuantity() {
+		if ($this->quantity == null) {
+			$value = $this->query('cart', sprintf('user_no = %s and product_no = %s ', $this->userNo, $this->product->getProductNo()));
+			$this->quantity = $value[0]['number'];
+		}
+		return $this->quantity;
 	}
 
 	//カートに商品追加 戻:1 = 成功
@@ -36,31 +40,29 @@ class Cart extends BaseModel {
 		$flg = 0;
 		if ($this->userNo !== NULL) {//ログイン済み
 			//DBに追加
-			$values = sprintf('%s,%s,%s,null', $this->userNo, $this->product->getProductNo(), $this->number);
+			$values = sprintf('%s,%s,%s,null', $this->userNo, $this->product->getProductNo(), $this->quantity);
 			$flg = $this->insert('cart', $values);
 		} else {//ログインしてない
 			//SESSIONに追加
 			$_SESSION = array(
 			  "cart" => array(
-				$this->product->getProductNo() => $this->number
+				$this->product->getProductNo() => $this->quantity
 			  )
 			);
-//			$_SESSION['cart'] += array(
-//			  $this->product->getProductNo() => $this->number
-//			);
+			$flg = 1;
 		}
-		return flg;
+		return $flg;
 	}
 
-	function modify($number) {
-		$this->number = $number;
+	function modify($quantity) {
+		$this->quantity = $quantity;
 		if ($this->userNo !== NULL) {//ログイン済み
-			$this->update('cart', 'number', $this->number, sprintf('user_no = %s and product_no = %s', $this->userNo, $this->product->getProductNo()));
+			$this->update('cart', 'number', $this->quantity, sprintf('user_no = %s and product_no = %s', $this->userNo, $this->product->getProductNo()));
 		} else {//ログインしてない
-			echo sprintf('ログインしていないのでsessionを%sに更新します', $number);
+			echo sprintf('ログインしていないのでsessionを%sに更新します', $quantity);
 			$_SESSION = array(
 			  "cart" => array(
-				$this->product->getProductNo() => $this->number
+				$this->product->getProductNo() => $this->quantity
 			  )
 			);
 		}
@@ -85,7 +87,6 @@ class Cart extends BaseModel {
 	public static function getCarts($userNo) {
 		$carts; //ユーザーのインスタンスの入れ物
 		if ($userNo !== NULL) {//ログイン済み
-			
 			$baseModel = new BaseModel(); //staticメソッドのためBaseModelをインスタンス化して使う
 			$rows = $baseModel->query('cart', sprintf('user_no = %s', $userNo));
 			foreach ($rows as $value) {
@@ -96,7 +97,8 @@ class Cart extends BaseModel {
 		} else {//ログインしてない
 			foreach ($_SESSION as $key => $value) {
 				if ($key === 'cart') {
-					foreach ($value as $key2 => $value2) {;
+					foreach ($value as $key2 => $value2) {
+						;
 						$cart = new Cart();
 						$cart->setProduct(new Product($value2));
 						$cart->setNumber($value2);
@@ -110,7 +112,7 @@ class Cart extends BaseModel {
 
 	private function rowsToInstance($value) {
 		$this->product = new Product($value['product_no']);
-		$this->number = $value['number'];
+		$this->quantity = $value['number'];
 	}
 
 	function test() {

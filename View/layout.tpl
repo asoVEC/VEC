@@ -63,7 +63,7 @@
 			</div>
 		</nav>
 		{block header}
-		<header class="jumbotron col-lg-10 col-lg-offset-1"></header>
+		<header class="jumbotron col-lg-10 col-lg-offset-1" ></header>
 		{/block}
                 {*すまほばー*}
 		<form class="navbar-form navbar-static-top hidden-lg hidden-md hidden-sm" role="search">
@@ -71,7 +71,8 @@
 				<input type="text" class="form-control typeahead" placeholder="商品検索">
 			</div>
 			<button type="submit" class="btn btn-default">検索</button>
-		</form>       <div class="container main-content">
+		</form>       
+		<div class="container main-content">
 			<div class="row">
 				{block main}
 				{/block}

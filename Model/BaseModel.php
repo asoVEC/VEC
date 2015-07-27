@@ -43,6 +43,7 @@ class BaseModel {
 			$this->where = ' where ' . $where;
 		}
 		$result = mysql_query('SELECT * FROM ' . $table . $this->where);
+//        echo '検索条件は'.'SELECT * FROM ' . $table . $this->where;
 		if (!$result) {
 			die('クエリーが失敗しました。' . mysql_error());
 		}
@@ -60,12 +61,15 @@ class BaseModel {
 	}
 
 	//DBのでーた更新引:テーブル名、属性名、セットする新しい値、where条件
-	static function update($table, $key, $value, $where) {
+	function update($table, $key, $value, $where) {
 		$sql = sprintf('update %s set %s = \'%s\' where %s ', $table, $key, $value, $where);
                 echo $sql;
 		return mysql_query($sql);
 	}
-
-
+	function count($table){
+		$result = mysql_query('SELECT count(*) FROM ' . $table );
+		return ( mysql_fetch_assoc($result)['count(*)']);
+		
+	}	
 
 }

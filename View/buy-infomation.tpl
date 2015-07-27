@@ -134,6 +134,7 @@
             </div><!-- /.modal-dialog -->
         </div>
 
+                <div id="demo" class="col-lg-6">
 
         <div class="col-lg-6">
 
@@ -176,9 +177,7 @@
                 $(document).ready(function () {
                     
         $("#modal-add").click(function (event) {
-        if ($("#name1").val() != "" && $("#name2").val() != ""&& $("#zipcode").val() != ""
-                && $("#to").val() != ""&& $("#bu").val() != ""&& $("#te").val() != ""
-                && $("#em").val() != ""){
+
         $('#sei').html(document.getElementById("name1").value);
                 $('#mei').html(document.getElementById("name2").value);
                 $('#zip').html(document.getElementById("zipcode").value);
@@ -186,14 +185,13 @@
                 $('#bu').html(document.getElementById("building").value);
                 $('#te').html(document.getElementById("tel1").value);
                 $('#em').html(document.getElementById("email").value);
-        }else{
-            $('#alert2').html("入力されていません。");
-            document.getElementById("alert").style.display="";
-            return false;
-        }
         });
         });
     </script>
 </html>
 
 {/block}
+	
+	
+</script>
+
