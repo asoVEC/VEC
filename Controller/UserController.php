@@ -134,7 +134,7 @@ class userController {
 		$total;
 		foreach ($cart as $value) {
 			$item[] = array(
-			  'product_no' =>$value->getProduct()->getProductNo(),
+			  'product_no' => $value->getProduct()->getProductNo(),
 			  'image' => $value->getProduct()->getImage(),
 			  'productName' => $value->getProduct()->getProductName(),
 			  'price' => $value->getProduct()->getPrice(),
@@ -142,7 +142,7 @@ class userController {
 			);
 			$total += $value->getProduct()->getPrice() * $value->getQuantity();
 		}
-		
+
 		$this->view->assign('total', $total);
 		$this->view->assign('item', $item);
 		$this->view->display('View/cart.tpl');
@@ -161,8 +161,7 @@ class userController {
 		if ($flg == 1) {
 			header('Location: /VEC/user/cart');
 			exit;
-		}
-		else{//カートに同商品がある場合、他の原因についてはとりあえず考えない
+		} else {//カートに同商品がある場合、他の原因についてはとりあえず考えない
 			$cart = new Cart($this->userNo);
 			$cart->setProduct(new Product($productNo));
 			$totalQuantity = $cart->getQuantity() + $quantity;
@@ -170,7 +169,6 @@ class userController {
 			header('Location: /VEC/user/cart');
 			exit;
 		}
-			
 	}
 
 	private function addCartProcess($productNo, $quantity) {
@@ -183,7 +181,17 @@ class userController {
 	}
 
 	function history() {//購入履歴表示
+		if ($this->userNo == NULL) {
+			$message = '購入履歴を表示するにはログインして下さい';
+			$this->view->assign('message', $message);
+			$this->view->display('View/history.tpl');
+			exit();
+		}
+		$orders = Order::getHistory($this->userNo);
+		var_dump($orders);
+		$this->view->assign('orders', $orders);
 		$this->view->display('View/history.tpl');
+		
 	}
 
 	function required() {
@@ -199,6 +207,7 @@ class userController {
 		$this->view->assign('point', $user->getPoint());
 		$this->view->display('View/point.tpl');
 	}
+
 	function info() {
 		$this->view->display('View/buy-infomation.tpl');
 	}

@@ -44,11 +44,14 @@ class Cart extends BaseModel {
 			$flg = $this->insert('cart', $values);
 		} else {//ログインしてない
 			//SESSIONに追加
-			$_SESSION = array(
-			  "cart" => array(
+//			$_SESSION = array( //一つの商品しか登録できない(上書きされる)みたいだからつかわない
+//			  "cart" => array(
+//				$this->product->getProductNo() => $this->quantity
+//			  )
+//			);
+			$_SESSION['cart'] += array(
 				$this->product->getProductNo() => $this->quantity
-			  )
-			);
+			  );
 			$flg = 1;
 		}
 		return $flg;
@@ -98,10 +101,9 @@ class Cart extends BaseModel {
 			foreach ($_SESSION as $key => $value) {
 				if ($key === 'cart') {
 					foreach ($value as $key2 => $value2) {
-						;
 						$cart = new Cart();
-						$cart->setProduct(new Product($value2));
-						$cart->setNumber($value2);
+						$cart->setProduct(new Product($key2));
+						$cart->setQuantity($value2);
 						$carts[] = $cart;
 					}
 				}

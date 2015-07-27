@@ -1,4 +1,5 @@
 <?php
+
 require_once 'BaseModel.php';
 
 class Order extends BaseModel {
@@ -13,6 +14,14 @@ class Order extends BaseModel {
 
 	function __construct() {
 		parent::__construct();
+	}
+
+	function getOrderNo() {
+		return $this->orderNo;
+	}
+
+	function setOrderNo($orderNo) {
+		$this->orderNo = $orderNo;
 	}
 
 	function getUserNo() {
@@ -65,41 +74,57 @@ class Order extends BaseModel {
 
 	function add() {
 //order表に追加
-			echo order表に追加するよ;
+		echo order表に追加するよ;
 		$values = sprintf('null,%s,\'%s\',%s,%s,\'%s\'', $this->userNo, $this->orderDate, $this->usePoint, $this->aquiredPoint, $this->address);
 		$this->insert('`vec`.`order`', $values);
 		$this->orderNo = mysql_insert_id(); //order表にオートインクリメントで作成したidを取得
 //order_detail表に作成
 		foreach ($this->details as $value) {
 			echo order_detail表に追加するよ;
-			$this->aquiredPoint += $value['price']/100;
+			$this->aquiredPoint += $value['price'] / 100;
 			$values2 = sprintf('%s,%s,%s,%s', $this->orderNo, $value['productNo'], $value['price'], $value['number']);
 			$this->insert('`order_detail`', $values2);
 		}
 //user表のポイント更新
 		$user = new User($this->userNo);
 		$point = $user->getPoint() - $this->usePoint + $this->aquiredPoint;
-		$this->update('user', 'point', $point,sprintf('user_no = \'%s\'', $this->userNo) );
-		
+		$this->update('user', 'point', $point, sprintf('user_no = \'%s\'', $this->userNo));
 	}
 
 	static function getHistory($userNo) {
-		$rows = BaseModel::query('`vec`.`order`', sprintf('user_no = \'%s\'', $userNo));
-		$orders = $this->rowsToInstances($rows);
-		echo $orders[0]->getUserNo();
-	}
-
-	private function rowsToInstances($rows) {
 		$orders;
+		if ($userNo === null) {
+			return;
+		}
+		$baseModel = new BaseModel();
+		$rows = $baseModel->query('`order`', sprintf('user_no = %s', $userNo));
 		foreach ($rows as $value) {
 			$order = new Order();
-			$this->orderNo = $value['order_no'];
-			$this->usePoint = $value['use_point'];
-			$this->aquiredPoint = $value['aquired_point'];
-			$this->address = $value['shipping_addres'];
+			$order->rowsToInstances($value);
+			$baseModel = NULL;
+			$baseModel = new BaseModel();
+			$rows2 = $baseModel->query('`vec`.`order_detail`', sprintf('order_no = %s', $order->getOrderNo()));
+			foreach ($rows2 as $value2) {
+				$details[] = array(
+				  'productNo' => $value2['product_no'],
+				  'price' => $value2['price'],
+				  'number' => $value2['number'],
+				);
+			}
+			$order->setDetails($details);
 			$orders[] = $order;
 		}
 		return $orders;
+	}
+
+	private function rowsToInstances($row) {
+		$order = new Order();
+		$this->orderNo = $row['order_no'];
+		$this->userNo = $row['user_no'];
+		$this->usePoint = $row['use_point'];
+		$this->aquiredPoint = $row['aquired_point'];
+		$this->address = $row['shipping_addres'];
+		return $order;
 	}
 
 }
