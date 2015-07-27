@@ -104,9 +104,13 @@ class Order extends BaseModel {
 			$baseModel = NULL;
 			$baseModel = new BaseModel();
 			$rows2 = $baseModel->query('`vec`.`order_detail`', sprintf('order_no = %s', $order->getOrderNo()));
+			$details = null;
 			foreach ($rows2 as $value2) {
+				$product = new Product($value2['product_no']);
 				$details[] = array(
 				  'productNo' => $value2['product_no'],
+				  'productName' => $product->getProductName(),
+				  'image' => $product->getImage(),
 				  'price' => $value2['price'],
 				  'number' => $value2['number'],
 				);
@@ -123,6 +127,7 @@ class Order extends BaseModel {
 		$this->userNo = $row['user_no'];
 		$this->usePoint = $row['use_point'];
 		$this->aquiredPoint = $row['aquired_point'];
+		$this->orderDate = $row['order_date'];
 		$this->address = $row['shipping_addres'];
 		return $order;
 	}

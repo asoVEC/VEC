@@ -192,7 +192,7 @@ class userController {
 			exit();
 		}
 		$orders = Order::getHistory($this->userNo);
-		var_dump($orders);
+//		var_dump($orders);
 		$this->view->assign('orders', $orders);
 		$this->view->display('View/history.tpl');
 		

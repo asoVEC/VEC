@@ -73,10 +73,8 @@
 			<button type="submit" class="btn btn-default">検索</button>
 		</form>       
 		<div class="container main-content">
-			<div class="row">
 				{block main}
 				{/block}
-			</div>
 
 		</div>
 		<nav class="container-fluid navbar-fixed-bottom">
