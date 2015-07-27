@@ -264,107 +264,6 @@
                     elem2.style.display = "";
                 }
             });
-
-<<<<<<< HEAD
-			//メールアドレス変更
-			$("#loading-mail").click(function (event) {
-				if ($("#input-mail").val() != "") {
-					$.post(
-							"/VEC/user/settingspost",
-							{
-								type: "mail_address",
-								value: document.getElementById("input-mail").value,
-							},
-							function (data) {
-								$('#alert').html("メールアドレスを" + data + "に変更しました");
-								$('#nowmail').html(data);
-							}
-					);
-					$('#input-mail').val("");
-					elem1.style.display = "";
-					elem2.style.display = "none";
-				} else {
-					elem1.style.display = "none";
-					$('#alert4').html("入力されていません");
-					elem2.style.display = "";
-				}
-			});
-			//氏名変更
-			$("#loading-name").click(function (event) {
-				if ($("#input-name").val() != "") {
-					$.post(
-							"/VEC/user/settingspost",
-							{
-								type: "name",
-								value: document.getElementById("input-name").value,
-							},
-							function (data) {
-								$('#alert').html("氏名を" + data + "に変更しました");
-								$('#nowname').html(data);
-							}
-					);
-					$('#input-name').val("");
-					elem1.style.display = "";
-					elem2.style.display = "none";
-				} else {
-					elem1.style.display = "none";
-					$('#alert4').html("入力されていません");
-					elem2.style.display = "";
-				}
-			});
-			//新規クレジット
-			$("#loading-newcredit").click(function (event) {
-				if ($("#input-newcre").val() != "") {
-					$.post(
-							"/VEC/user/settingspost",
-							{
-								type: "credit_no",
-								value: document.getElementById("input-newcre").value,
-							},
-							function (data) {
-								$('#alert').html("クレジットを" + data + "で登録しました");
-							}
-					);
-					$('#input-newcredit').val("");
-					elem1.style.display = "";
-					elem2.style.display = "none";
-				} else {
-					elem1.style.display = "none";
-					$('#alert4').html("入力されていません");
-					elem2.style.display = "";
-				}
-			});
-			//クレジット変更
-			$("#loading-credit").click(function (event) {
-				if ($("#input-credit").val() != "") {
-					$.post(
-							"/VEC/user/settingspost",
-							{
-								type: "credit_no",
-								value: document.getElementById("input-credit").value,
-							},
-							function (data) {
-								$('#alert').html("クレジットを" + data + "変更しました");
-								$('#nowcredit').html(data);
-							}
-					);
-					$('#input-credit').val("");
-					elem1.style.display = "";
-					elem2.style.display = "none";
-				} else {
-					elem1.style.display = "none";
-					$('#alert4').html("入力されていません");
-					elem2.style.display = "";
-				}
-			});
-			//ローディングボタン
-			$("input:button").click(function () {
-				var btn = $(this);
-				btn.button('loading');
-				setTimeout(function () {
-					btn.button('reset');
-				}, 400)
-=======
             //メールアドレス変更
             $("#loading-mail").click(function (event) {
                 if ($("#input-mail").val() != "") {
@@ -463,7 +362,6 @@
                 setTimeout(function () {
                     btn.button('reset');
                 }, 400)
->>>>>>> origin/master
 
 
             });
