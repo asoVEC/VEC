@@ -39,12 +39,10 @@ class BaseModel {
 	//クエリー共通部分、 引:テーブル名、where条件(第2引数は無くてもいい) 戻:検索結果の行配列
 	//使用例: query('user')[0]['name'],query('user','name = \'ますやま\'')[0]['name']
 	function query($table, $where = NULL) {
-		echo 'kimiuya';
 		if ($where != NULL) {
 			$this->where = ' where ' . $where;
 		}
 		$result = mysql_query('SELECT * FROM ' . $table . $this->where);
-        echo '検索条件は'.'SELECT * FROM ' . $table . $this->where;
 		if (!$result) {
 			die('クエリーが失敗しました。' . mysql_error());
 		}
@@ -64,6 +62,7 @@ class BaseModel {
 	//DBのでーた更新引:テーブル名、属性名、セットする新しい値、where条件
 	static function update($table, $key, $value, $where) {
 		$sql = sprintf('update %s set %s = \'%s\' where %s ', $table, $key, $value, $where);
+                echo $sql;
 		return mysql_query($sql);
 	}
 
