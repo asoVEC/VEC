@@ -247,7 +247,7 @@
                     $.post(
                             "/VEC/user/settingspost",
                             {
-                                type: "address",
+                                type: "address2",
                                 value: document.getElementById("input-address").value
                             },
                     function (data) {

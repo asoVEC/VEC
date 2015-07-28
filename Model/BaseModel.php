@@ -64,8 +64,9 @@ class BaseModel {
 	//DBのでーた更新引:テーブル名、属性名、セットする新しい値、where条件
 	function update($table, $key, $value, $where) {
 		$sql = sprintf('update %s set %s = \'%s\' where %s ', $table, $key, $value, $where);
-                echo $sql;
-		return mysql_query($sql);
+                $result =mysql_query($sql) or die(mysql_error());
+//		return mysql_query($sql);
+                return $result;
 	}
 	function count($table){
 		$result = mysql_query('SELECT count(*) FROM ' . $table );

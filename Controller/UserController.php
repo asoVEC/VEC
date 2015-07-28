@@ -123,15 +123,15 @@ class userController {
             $type = $_REQUEST['type'];
             $value = $_REQUEST['value'];
             $userNo = $_SESSION['userNo'];
-            User::update('user', $type, $value, 'user_no=' . $userNo);
-            echo $value;
+            User::update('`vec`.`user`', $type, $value, 'user_no=' . $userNo);
+            return $value;
         }
     }
 
-    function infopost2() {
-        echo $_REQUEST["name1"];
-        echo $_REQUEST["name2"];
-    }
+//    function infopost2() {
+//        echo $_REQUEST["name1"];
+//        echo $_REQUEST["name2"];
+//    }
 
     function cart() {
         $cart = Cart::getCarts($this->userNo);
