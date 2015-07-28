@@ -42,9 +42,18 @@ class buyController {
 	}
 
 	function conf() {
+		$this->view->assign('name', $_POST['name']);
+		$this->view->assign('address', $_POST['address']);
+		$this->view->assign('usePoint', $_POST['usePoint']);
+		$this->view->assign('usePoint', $_POST['phone']);
+		$carts = Cart::getCarts(5);
+		foreach ($carts as $value) {
+			$total += $value->getProduct()->getPrice() * $value->getQuantity();
+		}
+		$this->view->assign('total', $total);
+		$this->view->assign('carts', $carts);
 		$this->view->display('View/buy-confirmation.tpl');
 	}
-
 	function process() {
 //ログインしてる
 		$carts = Cart::getCarts(5);
