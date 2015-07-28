@@ -14,41 +14,45 @@
                     <label for="name" class="col col-xs-12 col-sm-4 col-md-3 control-label">お名前：</label>
                     <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
                 </div>
-
+                
                 <div class="form-group">
-                    <label for="name" class="col col-xs-12 col-sm-4 col-md-3 control-label">住所：</label>
+                    <label for="zipcode" class="col col-xs-12 col-sm-4 col-md-3 control-label">郵便番号：</label>
+                    <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="town,building" class="col col-xs-12 col-sm-4 col-md-3 control-label">住所：</label>
                     <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
                 </div>
 
                 <div class="form-group">
-                    <label for="name" class="col col-xs-12 col-sm-4 col-md-3 control-label">電話番号：</label>
+                    <label for="tel" class="col col-xs-12 col-sm-4 col-md-3 control-label">電話番号：</label>
                     <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
                 </div>
 
             </form>
-            
-            
+
+
         </div>
 
         <div class="col-lg-6">
             <form class="form-horizontal">
-
-                <br>
-                <br>
-
-                <button type="button" class="btn btn-warning" > 注文を確定する </button>
-
-                <h3>注文内容</h3>
                 
+                <h3>注文内容</h3>
+
                 <div class="form-group">
-                    <label for="name" class="col col-xs-12 col-sm-4 col-md-3 control-label">商品：</label>
+                    <label for="prodact" class="col col-xs-12 col-sm-4 col-md-3 control-label">商品：</label>
                     <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
                 </div>
 
                 <div class="form-group">
-                    <label for="name" class="col col-xs-12 col-sm-4 col-md-3 control-label">配送料・手数料：</label>
+                    <label for="pay" class="col col-xs-12 col-sm-4 col-md-3 control-label">配送料等：</label>
                     <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
                 </div>
+                
+                <form action="/VEC/" class="form-horizontal" method="post">
+                    <button type="button" class="btn btn-warning" > 注文を確定する </button>
+                </form>
 
             </form>
 

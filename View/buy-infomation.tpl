@@ -140,7 +140,9 @@
 		<div class="col-lg-6">
 			<div class="form-group">
 				<div class="col col-xs-9 col-xs-offset-3 col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3">
-					<button type="submit" class="btn btn-success btn-lg">　次へ進む　</button>
+                                    <form action="/VEC/buy/conf" class="form-horizontal" method="post">
+                                    <button type="submit" class="btn btn-success btn-lg">　次へ進む　</button>
+                                    </form>
 				</div>
 			</div>
 		</div>
