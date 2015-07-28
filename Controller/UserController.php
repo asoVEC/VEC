@@ -123,8 +123,9 @@ class userController {
             $type = $_REQUEST['type'];
             $value = $_REQUEST['value'];
             $userNo = $_SESSION['userNo'];
-            User::update('`vec`.`user`', $type, $value, 'user_no=' . $userNo);
-            return $value;
+            $user = new User($userNo);
+			$user->update('`vec`.`user`', $type, $value, 'user_no=' . $userNo);
+            echo $value;
         }
     }
 
