@@ -40,6 +40,10 @@ class buyController {
 	function info() {
 		$this->view->display('View/buy-infomation.tpl');
 	}
+        
+        function conf() {
+		$this->view->display('View/buy-confirmation.tpl');
+	}
 	
 	
 	
