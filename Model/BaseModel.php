@@ -57,7 +57,6 @@ class BaseModel {
 	//DBにデータ挿入 引:テーブル名、挿入するデータ 戻:true = 成功、false = 失敗
 	function insert($table, $values) {
 		$sql = 'INSERT INTO ' . $table . ' VALUES (' . $values . ')';
-//                echo $sql;
 		return mysql_query($sql);
 	}
 
@@ -67,10 +66,10 @@ class BaseModel {
 //                echo $sql;
 		return mysql_query($sql);
 	}
-	function count($table){
-		$result = mysql_query('SELECT count(*) FROM ' . $table );
+
+	function count($table) {
+		$result = mysql_query('SELECT count(*) FROM ' . $table);
 		return ( mysql_fetch_assoc($result)['count(*)']);
-		
-	}	
+	}
 
 }

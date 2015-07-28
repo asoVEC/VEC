@@ -4,7 +4,7 @@ require_once ('Model/User.php');
 require_once ('Model/Cart.php');
 require_once ('Model/Product.php');
 require_once ('Model/Order.php');
-require_once ('Model/BaseModel.php');
+	require_once ('Model/BaseModel.php');
 require_once ('smarty/libs/Smarty.class.php');
 
 class homeController {
@@ -57,23 +57,46 @@ class homeController {
 		$order->setUserNo(5);
 		$order->setAddress('いさはや');
 		$order->setUsePoint(0);
-		$order->setAquiredPoint(0);
+		$order->setAcquiredPoint(0);
 		$order->setOrderDate('2015-07-23');
 		$details[] = array(
-		  'productNo' => 1,
+		  'productNo' => 4,
 		  'price' => 300,
 		  'number' => 3,
 		);
 		$details[] = array(
-		  'productNo' => 5,
+		  'productNo' => 18,
 		  'price' => 400,
-		  'number' => 67,
+		  'number' => 17,
 		);
 		$order->setDetails($details);
-		$order->add();
+		var_dump($order);
+//		$order->add();
 	}
-
-	function akihiro3() {
+function akihiro3() {
+	$carts = Cart::getCarts(5);
+	foreach ($carts as $value) {
+			$productNo = (int)$value->getProduct()->getProductNo();
+			$price = (int)$value->getProduct()->getPrice();
+			$number = (int)$value->getQuantity();
+			$details[] = array(
+			  'productNo' => $productNo,
+			  'price' => $price,
+			  'number' => $number,
+			);
+//			$acquiredPoint += (int)floor($value->getProduct()->getPrice()/100);
+		}
+	$order = new Order();
+		$order->setUserNo(5);
+		$order->setAddress('いさはや');
+		$order->setUsePoint(0);
+		$order->setAcquiredPoint(0);
+		$order->setOrderDate('2015-07-23');
+		$order->setDetails($details);
+		var_dump($order);
+		$order->add();
+}
+	function akihiro4() {
 		var_dump( Order::getHistory(5));
 	}
 
