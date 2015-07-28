@@ -69,8 +69,8 @@
                     <div class="modal-body">
                         <form class="form-horizontal">
                             <div class="alert alert-danger" id = "alert">
-                    <span id="alert2"></span>
-                </div>
+                                <span id="alert2"></span>
+                            </div>
                             <div class="form-group">
                                 <label for="name" class="col col-xs-12 col-sm-4 col-md-3 control-label">お名前</label>
                                 <div class="col col-xs-5 col-sm-3 col-md-3">
@@ -134,64 +134,121 @@
             </div><!-- /.modal-dialog -->
         </div>
 
-                <div id="demo" class="col-lg-6">
-
-        <div class="col-lg-6">
-
-            <h2>お支払い情報</h2>
-
-
-            <div class="form-group">
-                <label for="paymentMethod" class="col-sm-2 control-label">お支払い方法</label>
-                <div class="col-sm-6 required" id="paymentMethod">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="paymentMethod" value="option1">
-                            クレジットカード
-                        </label>
+        <div id="div-modalcredit" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">クレジット設定設定</h4>
                     </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="paymentMethod" value="option2">
-                            代金引換（別途手数料 ¥ 50000）
-                        </label>
+                    <div class="modal-body">
+                        <form class="form-horizontal">
+                            <div class="alert alert-danger" id = "alert3">
+                                <span id="alert4"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="col col-xs-12 col-sm-5 col-md-5 control-label">新規クレジット番号</label>
+                                <div class="col col-xs-7 col-sm-7 col-md-7">
+                                    <input type="text" name="credit" id="credit" class="form-control" placeholder="クレジット番号">
+                                </div>    
+                                <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+                        <button type="button" class="btn btn-primary" id="modal-add credit" data-dismiss="modal">変更</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+        
+        <div id="demo" class="col-lg-6">
+
+            <div class="col-lg-6">
+
+                <h2>お支払い情報</h2>
+
+
+                <div class="form-group">
+                    <label for="paymentMethod" class="col-sm-2 control-label">お支払い方法</label>
+                    <div class="col-sm-6 required" id="paymentMethod">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="paymentMethod" id="cre" value="0">
+                                クレジットカード
+                            </label>
+                            <div id="crej">
+                                現在のクレジットカード番号　：　111111111111
+                                <br />
+                                <input onclick="window.location.href = '#div-modal'" type="button" data-toggle="modal" data-target="#div-modalcredit" type="button" class="btn btn-default" id="loading-pas" value="変更したい場合はこちら">
+                            </div>
+{*                        </div>*}
+{*                        <div class="radio">*}
+                            <label>
+                                <input type="radio" name="paymentMethod" id="dai" value="1" checked="checked">
+                                代金引換（別途手数料 ¥ 50000）
+                            </label>
+                        </div>
+{*                        <div id="daij">代金引換について</div>*}
                     </div>
                 </div>
-            </div>
 
 
-        </div>
-    </div>
-    <div class="col-lg-6">
-        <div class="form-group">
-            <div class="col col-xs-9 col-xs-offset-3 col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3">
-                <button type="submit" class="btn btn-success btn-lg">　次へ進む　</button>
             </div>
         </div>
-    </div>
-    <script>
-        $('#alert2').val("");
-{*        $('#alert').val("none");*}
-        document.getElementById("alert").style.display="none";
-{*document.getElementById("alert2").style.display="none";*}
-                $(document).ready(function () {
-                    
-        $("#modal-add").click(function (event) {
+        <div class="col-lg-6">
+            <div class="form-group">
+                <div class="col col-xs-9 col-xs-offset-3 col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3">
+                    <button type="submit" class="btn btn-success btn-lg">　次へ進む　</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            $('#alert2').val("");
+            {*        $('#alert').val("none");*}
+            document.getElementById("alert").style.display = "none";
+            document.getElementById("alert3").style.display = "none";
+            {*document.getElementById("alert2").style.display="none";*}
+            $(document).ready(function () {
 
-        $('#sei').html(document.getElementById("name1").value);
-                $('#mei').html(document.getElementById("name2").value);
-                $('#zip').html(document.getElementById("zipcode").value);
-                $('#to').html(document.getElementById("town").value);
-                $('#bu').html(document.getElementById("building").value);
-                $('#te').html(document.getElementById("tel1").value);
-                $('#em').html(document.getElementById("email").value);
-        });
-        });
-    </script>
-</html>
+                $("#modal-add").click(function (event) {
+
+                    $('#sei').html(document.getElementById("name1").value);
+                    $('#mei').html(document.getElementById("name2").value);
+                    $('#zip').html(document.getElementById("zipcode").value);
+                    $('#to').html(document.getElementById("town").value);
+                    $('#bu').html(document.getElementById("building").value);
+                    $('#te').html(document.getElementById("tel1").value);
+                    $('#em').html(document.getElementById("email").value);
+                });
+                
+                $("#modal-addcredit").click(function (event) {
+                });
+                //ラジオボタンについて
+            });
+            var elem1 = document.getElementById("crej");
+{*            var elem2 = document.getElementById("daij");*}
+            elem1.style.display = "none";
+{*            elem2.style.display = "none";*}
+
+            $('input[id=cre]').change(function () {
+                // 表示・非表示切り替え
+                console.log("aaa");
+                elem1.style.display = "";
+{*                elem2.style.display = "none";*}
+            });
+            $('input[id=dai]').change(function () {
+                // 表示・非表示切り替え
+{*                console.log("222");*}
+{*                elem2.style.display = "";*}
+                elem1.style.display = "none";
+            });
+        </script>
+    </html>
 
 {/block}
-	
-	
+
+
 </script>
 

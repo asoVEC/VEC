@@ -160,10 +160,11 @@ class userController {
 		if ($productNo !== null || $quantity !== null) {
 			$flg = $this->addCartProcess($productNo, $quantity);
 		}
-		if ($flg == 1) {
+		if ($flg == 1) {                    
 			header('Location: /VEC/user/cart');
 			exit;
 		} else {//カートに同商品がある場合、他の原因についてはとりあえず考えない
+//                    die('testttttttt');
 			$cart = new Cart($this->userNo);
 			$cart->setProduct(new Product($productNo));
 			$totalQuantity = $cart->getQuantity() + $quantity;

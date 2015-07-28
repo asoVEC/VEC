@@ -57,6 +57,7 @@ class BaseModel {
 	//DBにデータ挿入 引:テーブル名、挿入するデータ 戻:true = 成功、false = 失敗
 	function insert($table, $values) {
 		$sql = 'INSERT INTO ' . $table . ' VALUES (' . $values . ')';
+//                echo $sql;
 		return mysql_query($sql);
 	}
 
