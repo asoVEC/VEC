@@ -146,14 +146,13 @@
 		</div>
 		{/block}
 		<script>
-			$('#alert2').val("");
+			$('#alert2').val("none");
 			{*        $('#alert').val("none");*}
 			document.getElementById("alert").style.display = "none";
 			{*document.getElementById("alert2").style.display="none";*}
 			$(document).ready(function () {
 
 				$("#modal-add").click(function (event) {
-
 					$('#sei').html(document.getElementById("name1").value);
 					$('#mei').html(document.getElementById("name2").value);
 					$('#zip').html(document.getElementById("zipcode").value);
