@@ -1,7 +1,7 @@
-{extends file='View/layout.tpl'}
-{block main} 
+{extends file='View/settings.tpl'}
+{block content} 
 	<div class="row">
-		<div class ="col-lg-offset-3 col-lg-3" ><h1>購入履歴</h1></div>
+		<div class ="col-lg-offset-1 col-lg-3" ><h1>購入履歴</h1></div>
 	</div>
 	<div class="row">
 		<div class="col-lg-3 col-lg-offset-3">
@@ -26,7 +26,7 @@
 	{foreach $orders as $item}
 		{foreach $item->getDetails() as $items}
 			<div class="row">
-				<div class="col-lg-2 col-lg-offset-1" >
+				<div class="col-lg-3 " >
 					<a href="/VEC/product/productdetails/{$items['productNo']}">
 						<div class="frame" style="height:100px; background: url(/VEC/img/{$items['image']}) center center no-repeat;"></div>
 					</a>
