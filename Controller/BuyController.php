@@ -38,6 +38,8 @@ class buyController {
 		
 	}
 	function info() {
+		$user = new User($_SESSION['userNo']);
+		$this->view->assign('user', $user);
 		$this->view->display('View/buy-infomation.tpl');
 	}
 	
