@@ -2,11 +2,11 @@
 {block header}
 {/block}
 {block main}
-{*割り当て済み('user', $user);	*}
     <div class="row">
         <div class="col-lg-6">
             <h2>お届け先住所の選択</h2>
             <form class="form-horizontal">
+<<<<<<< HEAD
 				<div class="row">
 					<div class="form-group">
 						<span for="name" class="col-lg-3 control-span">お名前</span>
@@ -168,4 +168,5 @@
 		</script>
 	</html>
 
+</script>
 

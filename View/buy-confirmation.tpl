@@ -50,10 +50,8 @@
                     <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
                 </div>
                 
-                <form action="/VEC/" class="form-horizontal" method="post">
-                    <button type="button" class="btn btn-warning" > 注文を確定する </button>
-                </form>
-
+                    <input type="button" onclick="location.href='/VEC'"value="注文を確定する">
+                
             </form>
 
 
