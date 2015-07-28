@@ -57,13 +57,14 @@ class BaseModel {
 	//DBにデータ挿入 引:テーブル名、挿入するデータ 戻:true = 成功、false = 失敗
 	function insert($table, $values) {
 		$sql = 'INSERT INTO ' . $table . ' VALUES (' . $values . ')';
+//                echo $sql;
 		return mysql_query($sql);
 	}
 
 	//DBのでーた更新引:テーブル名、属性名、セットする新しい値、where条件
 	function update($table, $key, $value, $where) {
 		$sql = sprintf('update %s set %s = \'%s\' where %s ', $table, $key, $value, $where);
-//                echo $sql;
+                echo $sql;
 		return mysql_query($sql);
 	}
 	function count($table){

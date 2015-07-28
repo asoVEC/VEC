@@ -144,6 +144,7 @@
 				</div>
 			</div>
 		</div>
+		{/block}
 		<script>
 			$('#alert2').val("");
 			{*        $('#alert').val("none");*}
@@ -165,8 +166,4 @@
 		</script>
 	</html>
 
-{/block}
-
-
-</script>
 

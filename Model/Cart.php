@@ -42,6 +42,7 @@ class Cart extends BaseModel {
 			//DBに追加
 			$values = sprintf('%s,%s,%s,null', $this->userNo, $this->product->getProductNo(), $this->quantity);
 			$flg = $this->insert('cart', $values);
+                        
 		} else {//ログインしてない
 			//SESSIONに追加
 //			$_SESSION = array( //一つの商品しか登録できない(上書きされる)みたいだからつかわない
@@ -54,6 +55,7 @@ class Cart extends BaseModel {
 			  );
 			$flg = 1;
 		}
+                
 		return $flg;
 	}
 
