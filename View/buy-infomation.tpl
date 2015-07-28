@@ -6,7 +6,6 @@
         <div class="col-lg-6">
             <h2>お届け先住所の選択</h2>
             <form class="form-horizontal">
-
                 <div class="form-group">
                     <label for="name" class="col col-xs-12 col-sm-4 col-md-3 control-label">お名前</label>
                     <div class="col col-xs-5 col-sm-3 col-md-3">
@@ -72,7 +71,9 @@
                                 <span id="alert2"></span>
                             </div>
                             <div class="form-group">
-                                <label for="name" class="col col-xs-12 col-sm-4 col-md-3 control-label">お名前</label>
+                                {*<label  class="col col-xs-12 col-sm-4 col-md-3 control-label tl" data-placement="bottom" data-html="true"  
+                                        data-toggle="tooltip" title="aa" id="toolname">お名前</label>*}
+                                        <label class="col col-xs-12 col-sm-4 col-md-3 control-label">お名前</label>
                                 <div class="col col-xs-5 col-sm-3 col-md-3">
                                     <input type="text" name="name1" id="name1" class="form-control" placeholder="姓">
                                 </div>
@@ -123,7 +124,6 @@
                                 </div>
                                 <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2"></div>
                             </div>
-
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -157,7 +157,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
-                        <button type="button" class="btn btn-primary" id="modal-add credit" data-dismiss="modal">変更</button>
+                        <button type="button" class="btn btn-primary" id="modal-addcredit" data-dismiss="modal">変更</button>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
@@ -179,7 +179,7 @@
                                 クレジットカード
                             </label>
                             <div id="crej">
-                                現在のクレジットカード番号　：　111111111111
+                                現在のクレジットカード番号　：<span id="crecre">111111111111</span>
                                 <br />
                                 <input onclick="window.location.href = '#div-modal'" type="button" data-toggle="modal" data-target="#div-modalcredit" type="button" class="btn btn-default" id="loading-pas" value="変更したい場合はこちら">
                             </div>
@@ -210,7 +210,18 @@
             document.getElementById("alert").style.display = "none";
             document.getElementById("alert3").style.display = "none";
             {*document.getElementById("alert2").style.display="none";*}
+{*                $('#name1').html("fdasfa");*}
             $(document).ready(function () {
+{*                $('#toolname').attr('title',document.getElementById("sei").value);*}
+{*                $('#name1').html("fdasfa");*}
+{*                $('#name1').html(document.getElementById("sei").value);*}
+{*                $('#name1').html("aaaaaaaaa");*}
+                {*$('#name2').html(document.getElementById("mei").value);
+                $('#zipcode').html(document.getElementById("zip").value);
+                $('#town').html(document.getElementById("to").value);
+                $('#building').html(document.getElementById("bu").value);
+                $('#tel1').html(document.getElementById("te").value);
+                $('#email').html(document.getElementById("em").value);*}
 
                 $("#modal-add").click(function (event) {
 
@@ -221,11 +232,11 @@
                     $('#bu').html(document.getElementById("building").value);
                     $('#te').html(document.getElementById("tel1").value);
                     $('#em').html(document.getElementById("email").value);
-                });
-                
+                });                
                 $("#modal-addcredit").click(function (event) {
+                    $('#crecre').html(document.getElementById("credit").value);
+                    console.log(document.getElementById("credit").value);
                 });
-                //ラジオボタンについて
             });
             var elem1 = document.getElementById("crej");
 {*            var elem2 = document.getElementById("daij");*}
@@ -234,7 +245,6 @@
 
             $('input[id=cre]').change(function () {
                 // 表示・非表示切り替え
-                console.log("aaa");
                 elem1.style.display = "";
 {*                elem2.style.display = "none";*}
             });
