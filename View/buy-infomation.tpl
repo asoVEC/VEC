@@ -160,7 +160,7 @@
                             {*                        </div>*}
                             {*                        <div class="radio">*}
                                 <input type="radio" name="paymentMethod" id="dai" value="1" checked="checked">
-                                代金引換
+                                代金引換（別途手数料 ¥ 無償）
                         </div>
                         使用ポイント(使わない場合は0のままで)
                         (現在のポイントは{$user->getpoint()})
