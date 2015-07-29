@@ -6,16 +6,16 @@
 
 
         <div class="row">
-            <div class="col-lg-3 col-lg-offset-3">
+            <div class="col-lg-2 col-lg-offset-4">
                 商品名
             </div>
             <div class="col-lg-2">
                 単価
             </div>
-            <div class="col-lg-2">
+            <div class="col-lg-1">
                 個数
             </div>
-            <div class="col-lg-2">
+            <div class="col-lg-1">
                 小計
             </div>
         </div>
@@ -31,18 +31,25 @@
                         <div class="frame" style="height:100px; background: url(/VEC/img/{$data['image']}) center center no-repeat;"></div>
                     </a>
                 </div>
-                <div class="col-lg-3" style="position:relative;top:50px;">
+                <div class="col-lg-2 col-lg-offset-1" style="position:relative;top:50px;">
                     <a href="/VEC/product/productdetails/{$data['product_no']}">{$data['productName']}</a>
                 </div>
                 <div class="col-lg-2" style="position:relative;top:50px;">
                     ¥{$data['price']}
                 </div>
-                <div class="col-lg-2" style="position:relative;top:50px;">
+                <div class="col-lg-1" style="position:relative;top:50px;">
                     {$data['number']}個
                 </div>
-                <div class="col-lg-2" style="position:relative;top:50px;">
+                <div class="col-lg-1" style="position:relative;top:50px;">
                     ¥{$data['price']*$data['number']}
                 </div>
+				<div class="col-lg-2" style="position:relative;top:50px;">
+                    <form action="/VEC/user/cart" method="post">
+						<input type="hidden" name="delete" value="{$data['product_no']}"></input>
+						<input type="submit" class=" btn-danger" value="削除"></input>
+					</form>
+                </div>
+
             </div>
         {/foreach}
     </div>
