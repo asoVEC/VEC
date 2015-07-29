@@ -31,7 +31,6 @@ class homeController {
 		$this->view->assign('products', $products);
 		$this->view->assign('purchased', $purchased);
 		$this->view->display('View/base.tpl');
-                var_dump($_POST['purchased']);
 	}
 
 	function logout() {
