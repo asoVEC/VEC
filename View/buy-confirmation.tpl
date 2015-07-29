@@ -44,7 +44,8 @@
                     <input type="submit" class="col-md-offset-8 btn btn-warning"  value="注文を確定する"> </input>
                 </div>
 
-                <input type="hidden" name="address" value="{$zip+$address}">
+
+                <input type="hidden" name="address" value="{$address}">
                 <input type="hidden" name="usePoint" value="{$usePoint}">
 
             </form>
