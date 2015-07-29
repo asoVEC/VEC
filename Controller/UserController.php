@@ -123,8 +123,9 @@ class userController {
             $type = $_REQUEST['type'];
             $value = $_REQUEST['value'];
             $userNo = $_SESSION['userNo'];
-            User::update('`vec`.`user`', $type, $value, 'user_no=' . $userNo);
-            return $value;
+            $user = new User($userNo);
+			$user->update('`vec`.`user`', $type, $value, 'user_no=' . $userNo);
+            echo $value;
         }
     }
 
@@ -166,7 +167,6 @@ class userController {
             header('Location: /VEC/user/cart');
             exit;
         } else {//カートに同商品がある場合、他の原因についてはとりあえず考えない
-//                    die('testttttttt');
             $cart = new Cart($this->userNo);
             $cart->setProduct(new Product($productNo));
             $totalQuantity = $cart->getQuantity() + $quantity;
