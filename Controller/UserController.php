@@ -209,21 +209,6 @@ class userController {
 		$amount_cart = count($carts);
 		$this->view->assign('amount_cart', $amount_cart);
 		$this->view->assign('carts', $carts);
-<<<<<<< HEAD
-	}
-
-	function point() {
-		$user = new User($this->userNo);
-		$this->view->assign('point', $user->getPoint());
-		$orders = Order::getHistory($this->userNo);
-		$this->view->assign('orders', $orders);
-		$this->view->display('View/point.tpl');
-	}
-
-	function info() {
-		$this->view->display('View/buy-infomation.tpl');
-	}
-=======
     }
 
     function point() {
@@ -233,6 +218,6 @@ class userController {
         $this->view->assign('orders', $orders);
         $this->view->display('View/point.tpl');
     }
->>>>>>> origin/master
+
 
 }
