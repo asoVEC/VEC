@@ -1,5 +1,4 @@
 <?php
-
 require_once ('Model/Cart.php');
 require_once ('Model/Product.php');
 require_once ('Model/User.php');
@@ -129,10 +128,6 @@ class userController {
         }
     }
 
-//    function infopost2() {
-//        echo $_REQUEST["name1"];
-//        echo $_REQUEST["name2"];
-//    }
 
     function cart() {
         $cart = Cart::getCarts($this->userNo);
@@ -160,6 +155,7 @@ class userController {
         $flg = 0;
         $productNo = filter_input(INPUT_POST, 'productNo');
         $quantity = filter_input(INPUT_POST, 'quantity');
+        
         if ($productNo !== null || $quantity !== null) {
             $flg = $this->addCartProcess($productNo, $quantity);
         }

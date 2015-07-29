@@ -1,6 +1,7 @@
 <?php
 
 require_once ('Model/Cart.php');
+require_once ('Controller/HomeController.php');
 require_once ('Model/Order.php');
 require_once ('Model/Product.php');
 require_once ('Model/User.php');
@@ -43,12 +44,13 @@ class buyController {
 	}
 
 	function conf() {
-            echo $_POST['name'];
+
 		$this->view->assign('name', $_POST['name']);
-		$this->view->assign('address', $_POST['address1'].$_POST['address2'].$_POST['address3']);
+		$this->view->assign('zip', $_POST['address1']);
+		$this->view->assign('address', $_POST['address2'] . $_POST['address3']);
 		$this->view->assign('usePoint', $_POST['usePoint']);
-		$this->view->assign('usePoint', $_POST['phone']);
-		$carts = Cart::getCarts(5);
+		$this->view->assign('phone', $_POST['phone']);
+		$carts = Cart::getCarts($_SESSION['userNo']);
 		foreach ($carts as $value) {
 			$total += $value->getProduct()->getPrice() * $value->getQuantity();
 		}
@@ -59,40 +61,39 @@ class buyController {
 
 	function process() {
 //ログインしてる
-		if ($_SESSION['userNo'] != null){
-		$carts = Cart::getCarts($_SESSION['userNo']);
-		foreach ($carts as $value) {
-			$productNo = (int) $value->getProduct()->getProductNo();
-			$price = (int) $value->getProduct()->getPrice();
-			$number = (int) $value->getQuantity();
-			$details[] = array(
-			  'productNo' => $productNo,
-			  'price' => $price,
-			  'number' => $number,
-			);
-			$acquiredPoint += (int) floor($value->getProduct()->getPrice() / 100);
-		}
-		$order = new Order();
-		$order->setUserNo($_SESSION['userNo']);
-		$order->setAddress($_POST['address1'].$_POST['address2'].$_POST['address3']);
-		$order->setUsePoint($_POST['usePoint']);
-		$order->setAcquiredPoint($acquiredPoint);
-		$order->setOrderDate(gmdate("Y-m-d ", time()));
-		$order->setDetails($details);
-		$order->add();
+		if ($_SESSION['userNo'] != null) {
+			$carts = Cart::getCarts($_SESSION['userNo']);
+			foreach ($carts as $value) {
+				$productNo = (int) $value->getProduct()->getProductNo();
+				$price = (int) $value->getProduct()->getPrice();
+				$number = (int) $value->getQuantity();
+				$details[] = array(
+				  'productNo' => $productNo,
+				  'price' => $price,
+				  'number' => $number,
+				);
+				$acquiredPoint += (int) floor($value->getProduct()->getPrice() / 100);
+			}
+			$order = new Order();
+			$order->setUserNo($_SESSION['userNo']);
+			$order->setAddress($_POST['address']);
+			$order->setUsePoint($_POST['usePoint']);
+			$order->setAcquiredPoint($acquiredPoint);
+			$order->setOrderDate(gmdate("Y-m-d ", time()));
+			$order->setDetails($details);
+			$order->add();
 		}
 		//カートをからに
 		$carts = Cart::getCarts($_SESSION['userNo']);
-		foreach ($carts as $item){
+		foreach ($carts as $item) {
 			$item->deleteCart();
 		}
-		
+
 		$_POST['purchased'] = '購入処理が完了しました';
-//                die($_POST['purchased']);
-                $home = new homeController();
-                $home->index();
-//		header('Location: /VEC/');
-		exit;
+
+		$controller = new homeController();
+		$controller->index();
+
 	}
-	
+
 }
