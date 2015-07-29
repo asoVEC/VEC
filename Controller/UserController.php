@@ -202,8 +202,10 @@ class userController {
         $product = new Product();
         $item = $product->getAll();
         $this->view->assign('item', $item);
-        $item2 = $product->getDetails(19);
-        $this->view->assign('item2', $item2);
+		$carts = Cart::getCarts($_SESSION['userNo']);
+		$amount_cart = count($carts);
+		$this->view->assign('amount_cart', $amount_cart);
+		$this->view->assign('carts', $carts);
     }
 
     function point() {

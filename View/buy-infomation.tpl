@@ -138,7 +138,7 @@
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div>
-        
+
         <div id="demo" class="col-lg-6">
 
             <div class="col-lg-6">
@@ -159,14 +159,14 @@
                                 <br />
                                 <input onclick="window.location.href = '#div-modal'" type="button" data-toggle="modal" data-target="#div-modalcredit" type="button" class="btn btn-default" id="loading-pas" value="変更したい場合はこちら">
                             </div>
-{*                        </div>*}
-{*                        <div class="radio">*}
+							{*                        </div>*}
+							{*                        <div class="radio">*}
                             <label>
                                 <input type="radio" name="paymentMethod" id="dai" value="1" checked="checked">
                                 代金引換（別途手数料 ¥ 50000）
                             </label>
                         </div>
-{*                        <div id="daij">代金引換について</div>*}
+						{*                        <div id="daij">代金引換について</div>*}
                     </div>
                 </div>
 
@@ -176,60 +176,63 @@
         <div class="col-lg-6">
             <div class="form-group">
                 <div class="col col-xs-9 col-xs-offset-3 col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3">
-                    <button type="submit" class="btn btn-success btn-lg">　次へ進む　</button>
+                    <form action="/VEC/buy/conf" method="post">
+						<input type="submit" class="btn btn-success btn-lg" value="次へ進む"></input>
+					</form>
+
                 </div>
             </div>
         </div>
         <script>
-            $('#alert2').val("");
+			$('#alert2').val("");
             {*        $('#alert').val("none");*}
-{*            document.getElementById("alert").style.display = "none";*}
-            document.getElementById("alert3").style.display = "none";
+			{*            document.getElementById("alert").style.display = "none";*}
+			document.getElementById("alert3").style.display = "none";
             {*document.getElementById("alert2").style.display="none";*}
-{*                $('#name1').html("fdasfa");*}
-            $(document).ready(function () {
-{*                $('#toolname').attr('title',document.getElementById("sei").value);*}
-{*                $('#name1').html("fdasfa");*}
-{*                $('#name1').html(document.getElementById("sei").value);*}
-{*                $('#name1').html("aaaaaaaaa");*}
-                {*$('#name2').html(document.getElementById("mei").value);
-                $('#zipcode').html(document.getElementById("zip").value);
-                $('#town').html(document.getElementById("to").value);
-                $('#building').html(document.getElementById("bu").value);
-                $('#tel1').html(document.getElementById("te").value);
-                $('#email').html(document.getElementById("em").value);*}
+			{*                $('#name1').html("fdasfa");*}
+			$(document).ready(function () {
+			{*                $('#toolname').attr('title',document.getElementById("sei").value);*}
+			{*                $('#name1').html("fdasfa");*}
+			{*                $('#name1').html(document.getElementById("sei").value);*}
+			{*                $('#name1').html("aaaaaaaaa");*}
+			{*$('#name2').html(document.getElementById("mei").value);
+			$('#zipcode').html(document.getElementById("zip").value);
+			$('#town').html(document.getElementById("to").value);
+			$('#building').html(document.getElementById("bu").value);
+			$('#tel1').html(document.getElementById("te").value);
+			$('#email').html(document.getElementById("em").value);*}
 
-                $("#modal-add").click(function (event) {
+				$("#modal-add").click(function (event) {
 
-                    $('#sei').html(document.getElementById("name1").value);
-                    $('#mei').html(document.getElementById("name2").value);
-                    $('#zip').html(document.getElementById("zipcode").value);
-                    $('#to').html(document.getElementById("town").value);
-                    $('#bu').html(document.getElementById("building").value);
-                    $('#te').html(document.getElementById("tel1").value);
-                    $('#em').html(document.getElementById("email").value);
-                });                
-                $("#modal-addcredit").click(function (event) {
-                    $('#crecre').html(document.getElementById("credit").value);
-                    console.log(document.getElementById("credit").value);
-                });
-            });
-            var elem1 = document.getElementById("crej");
-{*            var elem2 = document.getElementById("daij");*}
-            elem1.style.display = "none";
-{*            elem2.style.display = "none";*}
+					$('#sei').html(document.getElementById("name1").value);
+					$('#mei').html(document.getElementById("name2").value);
+					$('#zip').html(document.getElementById("zipcode").value);
+					$('#to').html(document.getElementById("town").value);
+					$('#bu').html(document.getElementById("building").value);
+					$('#te').html(document.getElementById("tel1").value);
+					$('#em').html(document.getElementById("email").value);
+				});
+				$("#modal-addcredit").click(function (event) {
+					$('#crecre').html(document.getElementById("credit").value);
+					console.log(document.getElementById("credit").value);
+				});
+			});
+			var elem1 = document.getElementById("crej");
+			{*            var elem2 = document.getElementById("daij");*}
+			elem1.style.display = "none";
+			{*            elem2.style.display = "none";*}
 
-            $('input[id=cre]').change(function () {
-                // 表示・非表示切り替え
-                elem1.style.display = "";
-{*                elem2.style.display = "none";*}
-            });
-            $('input[id=dai]').change(function () {
-                // 表示・非表示切り替え
-{*                console.log("222");*}
-{*                elem2.style.display = "";*}
-                elem1.style.display = "none";
-            });
+			$('input[id=cre]').change(function () {
+				// 表示・非表示切り替え
+				elem1.style.display = "";
+			{*                elem2.style.display = "none";*}
+			});
+			$('input[id=dai]').change(function () {
+				// 表示・非表示切り替え
+			{*                console.log("222");*}
+			{*                elem2.style.display = "";*}
+				elem1.style.display = "none";
+			});
         </script>
 {/block}
 
