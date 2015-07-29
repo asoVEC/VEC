@@ -42,15 +42,14 @@ class Cart extends BaseModel {
 			//DBに追加
 			$values = sprintf('%s,%s,%s,null', $this->userNo, $this->product->getProductNo(), $this->quantity);
 			$flg = $this->insert('cart', $values);
-                        
 		} else {//ログインしてない
 			//SESSIONに追加
-			if($_SESSION['cart'] == null){
+			if ($_SESSION['cart'] == null) {
 				$_SESSION['cart'] = array();
 			}
 			$_SESSION['cart'] += array(
-				$this->product->getProductNo() => $this->quantity
-			  );
+			  $this->product->getProductNo() => $this->quantity
+			);
 			$flg = 1;
 		}
 		return $flg;
@@ -70,8 +69,12 @@ class Cart extends BaseModel {
 		}
 	}
 
-	function delete() {
+	function deleteCart() {
 		if ($this->userNo !== NULL) {//ログイン済み
+			$where = sprintf('user_no = %s and product_no = %s', $this->userNo, $this->product->getProductNo());
+			$base = new BaseModel();
+			$base->delete('cart', $where);
+			$_SESSION['cart'] = array();
 		} else {//ログインしてない
 		}
 	}
@@ -114,12 +117,6 @@ class Cart extends BaseModel {
 	private function rowsToInstance($value) {
 		$this->product = new Product($value['product_no']);
 		$this->quantity = $value['number'];
-	}
-
-	function test() {
-		if (!$this->userNo) {
-			echo kimiya;
-		}
 	}
 
 }

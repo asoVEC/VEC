@@ -66,8 +66,12 @@ class BaseModel {
 
 		return mysql_query($sql);
 	}
-
-	function count($table) {
+	function delete($table,$where){
+		$sql = sprintf('DELETE FROM %s where %s ', $table,$where);
+//		die($sql);
+		return mysql_query($sql);
+	}
+			function count($table) {
 		$result = mysql_query('SELECT count(*) FROM '.$table);
 		return (mysql_fetch_assoc($result)['count(*)']);
 	}
