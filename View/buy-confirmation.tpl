@@ -12,22 +12,22 @@
                 <h3>お届け先情報</h3>
                 <div class="form-group">
                     <label for="name" class="col col-xs-12 col-sm-4 col-md-3 control-label">お名前：</label>
-                    <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+                    <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3">{$name}</div>
                 </div>
 
                 <div class="form-group">
                     <label for="zipcode" class="col col-xs-12 col-sm-4 col-md-3 control-label">郵便番号：</label>
-                    <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+                    <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3">{$zip}</div>
                 </div>
 
                 <div class="form-group">
                     <label for="town,building" class="col col-xs-12 col-sm-4 col-md-3 control-label">住所：</label>
-                    <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+                    <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3">{$address}</div>
                 </div>
 
                 <div class="form-group">
                     <label for="tel" class="col col-xs-12 col-sm-4 col-md-3 control-label">電話番号：</label>
-                    <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
+                    <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3">{$phone}</div>
                 </div>
 
             </form>

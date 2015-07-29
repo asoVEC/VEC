@@ -42,18 +42,20 @@ class buyController {
 	}
 
 	function conf() {
-            echo $_POST['name'];
+            
 		$this->view->assign('name', $_POST['name']);
-		$this->view->assign('address', $_POST['address1'].$_POST['address2'].$_POST['address3']);
+                $this->view->assign('zip', $_POST['address1']);
+		$this->view->assign('address',$_POST['address2'].$_POST['address3']);
 		$this->view->assign('usePoint', $_POST['usePoint']);
-		$this->view->assign('usePoint', $_POST['phone']);
-		$carts = Cart::getCarts(5);
+		$this->view->assign('phone', $_POST['phone']);
+		$carts = Cart::getCarts($_SESSION['userNo']);
 		foreach ($carts as $value) {
 			$total += $value->getProduct()->getPrice() * $value->getQuantity();
 		}
 		$this->view->assign('total', $total);
 		$this->view->assign('carts', $carts);
 		$this->view->display('View/buy-confirmation.tpl');
+                echo $_POST['name'];
 	}
 
 	function process() {
