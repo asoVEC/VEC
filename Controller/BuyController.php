@@ -14,7 +14,6 @@ class buyController {
 	public function __construct() {
 		$this->view = new Smarty();
 	}
-
 //購入処理
 	function buy() {
 //購入処理を3ステップに分ける 
