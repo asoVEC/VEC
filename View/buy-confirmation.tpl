@@ -40,7 +40,7 @@
             <form class="form-horizontal" action="/VEC/buy/process" method="post">
                 <div class="form-group" style="position:relative;top:160px;">
                     <div class="col-lg-6 control-label">合計：</div>
-                    <div class="col-lg-6" style="font-size:2em;">¥{$total}</div>
+                    <div class="col-lg-6" style="font-size:2em;">¥{$total}-¥{$usePoint}</div>
                     <input type="submit" class="col-md-offset-8 btn btn-warning"  value="注文を確定する"> </input>
                 </div>
 
