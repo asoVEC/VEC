@@ -43,7 +43,7 @@ class buyController {
 
 	function conf() {
 		$this->view->assign('name', $_POST['name']);
-		$this->view->assign('address', $_POST['address']);
+		$this->view->assign('address', $_POST['address1'].$_POST['address2'].$_POST['address3']);
 		$this->view->assign('usePoint', $_POST['usePoint']);
 		$this->view->assign('usePoint', $_POST['phone']);
 		$carts = Cart::getCarts(5);
@@ -72,7 +72,7 @@ class buyController {
 		}
 		$order = new Order();
 		$order->setUserNo($_SESSION['userNo']);
-		$order->setAddress($_POST['address']);
+		$order->setAddress($_POST['address1'].$_POST['address2'].$_POST['address3']);
 		$order->setUsePoint($_POST['usePoint']);
 		$order->setAcquiredPoint($acquiredPoint);
 		$order->setOrderDate(gmdate("Y-m-d ", time()));
@@ -84,6 +84,7 @@ class buyController {
 		foreach ($carts as $item){
 			$item->deleteCart();
 		}
+		
 		$_POST['purchased'] = '購入処理が完了しました';
 		header('Location: /VEC/');
 		exit;

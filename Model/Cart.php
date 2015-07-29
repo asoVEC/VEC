@@ -74,8 +74,10 @@ class Cart extends BaseModel {
 			$where = sprintf('user_no = %s and product_no = %s', $this->userNo, $this->product->getProductNo());
 			$base = new BaseModel();
 			$base->delete('cart', $where);
-			$_SESSION['cart'] = array();
+			
 		} else {//ログインしてない
+//			$_SESSION['cart'] = array();
+			unset($_SESSION['cart'][$this->product->getProductNo()]);
 		}
 	}
 
