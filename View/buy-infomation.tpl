@@ -56,7 +56,7 @@
                         <div class="form-group">
                             <label for="name" class="col col-xs-12 col-sm-4 col-md-3 control-label">お名前</label>
                             <div class="col col-xs-5 col-sm-3 col-md-3">
-                                <input type="text" name="name1" id="name1" class="form-control" placeholder="{$user->getUserName()}">
+                                <input type="text" name="name1" id="name1" class="form-control" placeholder="{$user->getUserName()}" {*value="{$user->getUserName()}"*}>
                             </div>
                         </div>
 
@@ -185,93 +185,99 @@
     </div>
     <script>
 
-        document.getElementById("alert").style.display = "none";
-
-        $(document).ready(function () {
-            console.log();
-            $("#modal-add").click(function (event) {
-
+				document.getElementById("alert").style.display = "none";
+				$(document).ready(function () {
+		console.log();
+				$("#modal-add").click(function (event) {
 
 
-                $('#sei').html(document.getElementById("name1").value);
-                $('#zip').html(document.getElementById("zipcode").value);
-                $('#to').html(document.getElementById("town").value);
-                $('#bu').html(document.getElementById("building").value);
-                $('#te').html(document.getElementById("tel1").value);
-                $('#em').html(document.getElementById("email").value);
-            });
-            $("#modal-addcredit").click(function (event) {
-                $('#crecre').html(document.getElementById("credit").value);
-                console.log(document.getElementById("credit").value);
-            });
-        });
-        function postDeta() {
-            if ($('#usePoint').val() <={$user->getpoint()}) {
-                console.log("bb");
-                var form = document.createElement('form');
-                document.body.appendChild(form);
-                var input = document.createElement('input');
-                input.setAttribute('type', 'hidden');
-                input.setAttribute('name', 'name');
-                input.setAttribute('value', $('#sei').text());
+		if ($('#name1').val() != '') {
+		$('#sei').html(document.getElementById("name1").value);
+		}
+		if ($('#zipcode').val() != '') {
+		$('#zip').html(document.getElementById("zipcode").value);
+		}
+		if ($('#town').val() != '') {
+		$('#to').html(document.getElementById("town").value);
+		}
+		if ($('#building').val() != '') {
+		$('#bu').html(document.getElementById("building").value);
+		}
+		if ($('#tel1').val() != '') {
+		$('#te').html(document.getElementById("tel1").value);
+		}
+		if ($('#email').val() != '') {
+		$('#em').html(document.getElementById("email").value);
+		}
+		});
+				$("#modal-addcredit").click(function (event) {
+		$('#crecre').html(document.getElementById("credit").value);
+				console.log(document.getElementById("credit").value);
+		});
+		});
+				function postDeta() {
+				if ($('#sei').text() == '' || $('#zip').text() == '' || $('#to').text() == '' || $('#bu').text() == '' {*|| $('#usePoint').val()() == ''*} || $('#te').text() == ''){
+				$('#alert').html("未入力の項目があります");
+						document.getElementById("alert").style.display = "";
+				} else if ($('#usePoint').val() <={$user->getpoint()}) {
+					console.log("bb");
+					var form = document.createElement('form');
+					document.body.appendChild(form);
+					var input = document.createElement('input');
+					input.setAttribute('type', 'hidden');
+					input.setAttribute('name', 'name');
+					input.setAttribute('value', $('#sei').text());
+					var inputad1 = document.createElement('input');
+					inputad1.setAttribute('type', 'hidden');
+					inputad1.setAttribute('name', 'address1');
+					inputad1.setAttribute('value', $('#zip').text());
+					var inputad2 = document.createElement('input');
+					inputad2.setAttribute('type', 'hidden');
+					inputad2.setAttribute('name', 'address2');
+					inputad2.setAttribute('value', $('#to').text());
+					var inputad3 = document.createElement('input');
+					inputad3.setAttribute('type', 'hidden');
+					inputad3.setAttribute('name', 'address3');
+					inputad3.setAttribute('value', $('#bu').text());
+					var inputpoi = document.createElement('input');
+					inputpoi.setAttribute('type', 'hidden');
+					inputpoi.setAttribute('name', 'usePoint');
+					inputpoi.setAttribute('value', $('#usePoint').val());
+					var inputtel = document.createElement('input');
+					inputtel.setAttribute('type', 'hidden');
+					inputtel.setAttribute('name', 'phone');
+					inputtel.setAttribute('value', $('#te').text());
+					form.appendChild(input);
+					form.appendChild(inputad1);
+					form.appendChild(inputad2);
+					form.appendChild(inputad3);
+					form.appendChild(inputpoi);
+					form.appendChild(inputtel);
+					form.setAttribute('action', '/VEC/buy/conf');
+					form.setAttribute('method', 'post');
+					form.submit();
+				} else {
+				$('#alert').html("保持ポイントオーバーです");
+						document.getElementById("alert").style.display = "";
+				}
+				}
 
-                var inputad1 = document.createElement('input');
-                inputad1.setAttribute('type', 'hidden');
-                inputad1.setAttribute('name', 'address1');
-                inputad1.setAttribute('value', $('#zip').text());
-
-                var inputad2 = document.createElement('input');
-                inputad2.setAttribute('type', 'hidden');
-                inputad2.setAttribute('name', 'address2');
-                inputad2.setAttribute('value', $('#to').text());
-
-                var inputad3 = document.createElement('input');
-                inputad3.setAttribute('type', 'hidden');
-                inputad3.setAttribute('name', 'address3');
-                inputad3.setAttribute('value', $('#bu').text());
-
-
-                var inputpoi = document.createElement('input');
-                inputpoi.setAttribute('type', 'hidden');
-                inputpoi.setAttribute('name', 'usePoint');
-                inputpoi.setAttribute('value', $('#usePoint').val());
-
-                var inputtel = document.createElement('input');
-                inputtel.setAttribute('type', 'hidden');
-                inputtel.setAttribute('name', 'phone');
-                inputtel.setAttribute('value', $('#te').text());
-
-                form.appendChild(input);
-                form.appendChild(inputad1);
-                form.appendChild(inputad2);
-                form.appendChild(inputad3);
-                form.appendChild(inputpoi);
-                form.appendChild(inputtel);
-                form.setAttribute('action', '/VEC/buy/conf');
-                form.setAttribute('method', 'post');
-                form.submit();
-            } else {
-                $('#alert').html("保持ポイントオーバーです");
-                document.getElementById("alert").style.display = "";
-            }
-        }
-
-        var elem1 = document.getElementById("crej");
+		var elem1 = document.getElementById("crej");
         {*            var elem2 = document.getElementById("daij");*}
-        elem1.style.display = "none";
+		elem1.style.display = "none";
         {*            elem2.style.display = "none";*}
 
-        $('input[id=cre]').change(function () {
-            // 表示・非表示切り替え
-            elem1.style.display = "";
+		$('input[id=cre]').change(function () {
+		// 表示・非表示切り替え
+		elem1.style.display = "";
         {*                elem2.style.display = "none";*}
-        });
-        $('input[id=dai]').change(function () {
-            // 表示・非表示切り替え
+		});
+				$('input[id=dai]').change(function () {
+		// 表示・非表示切り替え
         {*                console.log("222");*}
         {*                elem2.style.display = "";*}
-            elem1.style.display = "none";
-        });
+		elem1.style.display = "none";
+		});
     </script>
 {/block}
 

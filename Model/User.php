@@ -153,7 +153,7 @@ class User extends BaseModel {
 		if ($this->mail == NULL || $this->userName == NULL || $this->password == NULL || $this->phone == NULL) {
 			return 0;
 		}
-		$values = 'NULL, \'' . $this->mail . '\', \'' . $this->userName . '\', \'' . $this->password . '\', \'' . $this->age . '\', \'' . $this->gender . '\', \'' . $this->address1 . '\', 0, \'' . $this->credit . '\', 0, \'' . $this->phone . '\'';
+		$values = 'NULL, \'' . $this->mail . '\', \'' . $this->userName . '\', \'' . $this->password . '\', \'' . $this->age . '\', \'' . $this->gender . '\', \'' . $this->address1 . '\',\''.$this->address2.'\',\''.$this->address3.'\', 0, \'' . $this->credit . '\', 0, \'' . $this->phone . '\'';
 		$result = $this->insert('user', $values);
 		if ($result) {
 			return 1;
