@@ -14,12 +14,12 @@
                     <label for="name" class="col col-xs-12 col-sm-4 col-md-3 control-label">お名前：</label>
                     <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="zipcode" class="col col-xs-12 col-sm-4 col-md-3 control-label">郵便番号：</label>
                     <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="town,building" class="col col-xs-12 col-sm-4 col-md-3 control-label">住所：</label>
                     <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
@@ -36,34 +36,57 @@
         </div>
 
 
-		<div class="col-lg-6">
+        <div class="col-lg-6">
             <form class="form-horizontal" action="/VEC/buy/process" method="post">
                 <div class="form-group" style="position:relative;top:160px;">
                     <div class="col-lg-6 control-label">配送料・手数料：</div>
                     <div class="col-lg-6" style="font-size:2em;">¥{$total}</div>
-					<input type="submit" class="col-md-offset-8 btn btn-warning"  value="注文を確定する"> </input>
+                    <input type="submit" class="col-md-offset-8 btn btn-warning"  value="注文を確定する"> <div class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                    <h4 class="modal-title">購入が完了しました。</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>またのご利用お待ちしております！！</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+
+                    <!-- ここでscript -->
+                    <script>
+                        jQuery(document).ready(function () {
+                            jQuery('.modal').modal('show');
+                        });
+                    </script>
+</input>
                 </div>
 
-				<input type="hidden" name="address" value="{$address}">
-				<input type="hidden" name="usePoint" value="{$userPoint}">
+                <input type="hidden" name="address" value="{$address}">
+                <input type="hidden" name="usePoint" value="{$userPoint}">
 
             </form>
         </div>
     </div>
-	ご注文商品
-	{foreach $carts as $data}
-		<div class="row">
-			<div class="col-lg-10"><hr /></div>
-			<div class="col-lg-2 col-lg-offset-1" >
-				<div class="frame" style="height:100px; background: url(/VEC/img/{$data->getProduct()->getImage()}) center center no-repeat;"></div>
-			</div>
-			<div class="col-lg-3" style="position:relative;top:50px;">
-				{$data->getProduct()->getProductName()}
-			</div>
-			<div class="col-lg-2" style="position:relative;top:50px;">
-				{$data->getQuantity()}個
-			</div>
-		</div>
-	{/foreach}
+    ご注文商品
+    {foreach $carts as $data}
+        <div class="row">
+            <div class="col-lg-10"><hr /></div>
+            <div class="col-lg-2 col-lg-offset-1" >
+                <div class="frame" style="height:100px; background: url(/VEC/img/{$data->getProduct()->getImage()}) center center no-repeat;"></div>
+            </div>
+            <div class="col-lg-3" style="position:relative;top:50px;">
+                {$data->getProduct()->getProductName()}
+            </div>
+            <div class="col-lg-2" style="position:relative;top:50px;">
+                {$data->getQuantity()}個
+            </div>
+        </div>
+    {/foreach}
 
 {/block}
