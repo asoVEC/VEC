@@ -51,7 +51,7 @@
                         <span class="col-lg-4">
                             <nobr>
                                 <a href="/VEC/product/productdetails/{$products[$smarty.section.cnt.index]->getProductNo()}">
-                                    <div class="frame" style="background: url(/VEC/img/{$products[$smarty.section.cnt.index]->getImage()}) center center no-repeat;" ></div>
+                                    <div class="frame" style="background: url(/VEC/img/{$products[$smarty.section.cnt.index]->getImage()}) center no-repeat;" ></div>
                                     <div class="label">{$products[$smarty.section.cnt.index]->getProductName()}</div>
                                     {*									<div class="label-price">¥{$products[$smarty.section.cnt.index]->getPrice()}</div>*}
                                 </a>

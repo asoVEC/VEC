@@ -71,7 +71,7 @@ class userController {
 		if ($this->userNo != NULL) {//ログイン済み
 			header('Location: /VEC/');
 			exit();
-		} elseif ($this->userNo == null) {//初回アクセス
+		} elseif ($_POST['name'] == null) {//初回アクセス
 			$this->view->assign('message', 'アカウント作成に必要な情報を入力して下さい。');
 			$this->view->display('View/signup.tpl');
 		} elseif ($this->signupProcess() == 1) {//会員登録成功
