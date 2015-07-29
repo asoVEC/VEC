@@ -45,7 +45,7 @@
                 </div>
 
                 <input type="hidden" name="address" value="{$address}">
-                <input type="hidden" name="usePoint" value="{$userPoint}">
+                <input type="hidden" name="usePoint" value="{$usePoint}">
 
             </form>
         </div>

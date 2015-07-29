@@ -230,6 +230,11 @@
                 inputad3.setAttribute('type', 'hidden');
                 inputad3.setAttribute('name', 'address3');
                 inputad3.setAttribute('value', $('#bu').text());
+				
+				var inputad4 = document.createElement('input');
+                inputad3.setAttribute('type', 'hidden');
+                inputad3.setAttribute('name', 'usePoint');
+                inputad3.setAttribute('value', 0);
                 
                 var inputtel = document.createElement('input');
                 inputtel.setAttribute('type', 'hidden');
@@ -246,6 +251,7 @@
                 form.appendChild(inputad1);
                 form.appendChild(inputad2);
                 form.appendChild(inputad3);
+				form.appendChild(inputad4);
                 form.appendChild(inputtel);
                 form.setAttribute('action', '/VEC/buy/conf');
                 form.setAttribute('method', 'post');
