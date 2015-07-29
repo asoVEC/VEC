@@ -1,7 +1,8 @@
 ﻿{extends file='View/layout.tpl'}
 {block main}
     <body>
-        <div class="container main-content">
+        <div class=" main-content">
+			<a href="javascript:history.go(-1)"><img src="/vec/img/back.gif" width="70px" alt="back"></a>
             <div class="row">
                 <div class="col-lg-offset-4 col-lg-8" style="padding-bottom:30px;"><h2>{$item['product_name']}</h2></div>
             </div>

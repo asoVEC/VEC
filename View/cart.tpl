@@ -1,12 +1,15 @@
 {extends file='View/layout.tpl'}
 {block header}
-{/block}	
+{/block}
 {block main} 
+	<a style="position: absolute;top:70px;left:30px" href="javascript:history.go(-2)"><img src="/vec/img/back.gif" width="70px" alt="back"></a>
     <div class="row col-lg-10">
-
-
+		<h2><img style="position:relative;top:-20px;" src="/vec/img/cart.png" height="70px">カート</h2>
         <div class="row">
-            <div class="col-lg-2 col-lg-offset-4">
+			<div class="col-lg-1">
+				
+			</div>
+            <div class="col-lg-2 col-lg-offset-3">
                 商品名
             </div>
             <div class="col-lg-2">
