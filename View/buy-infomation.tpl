@@ -191,38 +191,66 @@
             {*document.getElementById("alert2").style.display="none";*}
 
             $(document).ready(function () {
-            $("#modal-add").click(function (event) {
+                console.log();
+                $("#modal-add").click(function (event) {
 
-            $('#sei').html(document.getElementById("name1").value);
+
+
+                    $('#sei').html(document.getElementById("name1").value);
                     $('#zip').html(document.getElementById("zipcode").value);
                     $('#to').html(document.getElementById("town").value);
                     $('#bu').html(document.getElementById("building").value);
                     $('#te').html(document.getElementById("tel1").value);
                     $('#em').html(document.getElementById("email").value);
-            });
-                    $("#modal-addcredit").click(function (event) {
-            $('#crecre').html(document.getElementById("credit").value);
+                });
+                $("#modal-addcredit").click(function (event) {
+                    $('#crecre').html(document.getElementById("credit").value);
                     console.log(document.getElementById("credit").value);
+                });
             });
-            });
-                    function postDeta(){
-                    var form = document.createElement(‘form’);
-                            document.body.appendChild(form);
-                            var input = document.createElement(‘input’);
-                            input.setAttribute(‘name’,document.getElementById("name1").value );
-                            input.setAttribute(‘zip’, document.getElementById("zipcode").value);
-                            input.setAttribute(‘town’, document.getElementById("town").value);
-                            input.setAttribute(‘build’, document.getElementById("building").value);
-                            input.setAttribute(‘tell’, document.getElementById("tel1").value);
-                            input.setAttribute(‘em’, document.getElementById("email").value);
-                            
-                            form.appendChild(input);
-                            form.setAttribute(‘action’, ‘/VEC/buy/conf’);
-                            form.setAttribute(‘method’, ‘post’);
-                            form.submit();
-                    }
-
-
+            function postDeta() {
+                var form = document.createElement('form');
+                document.body.appendChild(form);
+                var input = document.createElement('input');
+                input.setAttribute('type', 'hidden');
+                input.setAttribute('name', 'name');
+                input.setAttribute('value', $('#sei').text());
+                
+                var inputad1 = document.createElement('input');
+                inputad1.setAttribute('type', 'hidden');
+                inputad1.setAttribute('name', 'address1');
+                inputad1.setAttribute('value', $('#zip').text());
+                
+                var inputad2 = document.createElement('input');
+                inputad2.setAttribute('type', 'hidden');
+                inputad2.setAttribute('name', 'address2');
+                inputad2.setAttribute('value', $('#to').text());
+                
+                var inputad3 = document.createElement('input');
+                inputad3.setAttribute('type', 'hidden');
+                inputad3.setAttribute('name', 'address3');
+                inputad3.setAttribute('value', $('#bu').text());
+                
+                var inputtel = document.createElement('input');
+                inputtel.setAttribute('type', 'hidden');
+                inputtel.setAttribute('name', 'phone');
+                inputtel.setAttribute('value', $('#te').text());
+            {*    input.setAttribute( 'name' , 'name2' );*}
+            {*    input.setAttribute( 'value' , $('#sei').text() );*}
+            {*input.setAttribute('name',$('#sei').text());
+            input.setAttribute('fdasfa', $('#zip').text());
+            input.setAttribute('address2', $('#to').text());
+            input.setAttribute('address3', $('#bu').text());
+            input.setAttribute('phone', $('#te').text());*}
+                form.appendChild(input);
+                form.appendChild(inputad1);
+                form.appendChild(inputad2);
+                form.appendChild(inputad3);
+                form.appendChild(inputtel);
+                form.setAttribute('action', '/VEC/buy/conf');
+                form.setAttribute('method', 'post');
+                form.submit();
+            }
 
             var elem1 = document.getElementById("crej");
             {*            var elem2 = document.getElementById("daij");*}
@@ -230,15 +258,15 @@
             {*            elem2.style.display = "none";*}
 
             $('input[id=cre]').change(function () {
-            // 表示・非表示切り替え
-            elem1.style.display = "";
+                // 表示・非表示切り替え
+                elem1.style.display = "";
             {*                elem2.style.display = "none";*}
             });
-                    $('input[id=dai]').change(function () {
-            // 表示・非表示切り替え
+            $('input[id=dai]').change(function () {
+                // 表示・非表示切り替え
             {*                console.log("222");*}
             {*                elem2.style.display = "";*}
-            elem1.style.display = "none";
+                elem1.style.display = "none";
             });
         </script>
     {/block}

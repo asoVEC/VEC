@@ -42,6 +42,7 @@ class buyController {
 	}
 
 	function conf() {
+            echo $_POST['name'];
 		$this->view->assign('name', $_POST['name']);
 		$this->view->assign('address', $_POST['address1'].$_POST['address2'].$_POST['address3']);
 		$this->view->assign('usePoint', $_POST['usePoint']);
