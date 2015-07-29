@@ -120,9 +120,9 @@
                 </div>
                 <div class="modal-body">
                     <form class="form-horizontal">
-                        <div class="alert alert-danger" id = "alert3">
+                        {*<div class="alert alert-danger" id = "alert3">
                             <span id="alert4"></span>
-                        </div>
+                        </div>*}
                         <div class="form-group">
                             <label for="name" class="col col-xs-12 col-sm-5 col-md-5 control-label">新規クレジット番号</label>
                             <div class="col col-xs-7 col-sm-7 col-md-7">
