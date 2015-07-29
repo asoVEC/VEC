@@ -1,4 +1,4 @@
-$this->view->assign('address',$_POST['address2'].$_POST['address3']);<?php
+<?php
 
 require_once 'BaseModel.php';
 
