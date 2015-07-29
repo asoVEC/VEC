@@ -1,6 +1,7 @@
 <?php
 
 require_once ('Model/Cart.php');
+require_once ('Controller/HomeController.php');
 require_once ('Model/Order.php');
 require_once ('Model/Product.php');
 require_once ('Model/User.php');
@@ -42,7 +43,7 @@ class buyController {
 	}
 
 	function conf() {
-		
+
 		$this->view->assign('name', $_POST['name']);
 		$this->view->assign('zip', $_POST['address1']);
 		$this->view->assign('address', $_POST['address2'] . $_POST['address3']);
@@ -88,8 +89,8 @@ class buyController {
 		}
 
 		$_POST['purchased'] = '購入処理が完了しました';
-		header('Location: /VEC/');
-		exit;
+		$controller = new homeController();
+		$controller->index();
 	}
 
 }
