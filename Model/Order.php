@@ -74,13 +74,13 @@ class Order extends BaseModel {
 
 	function add() {
 //order表に追加
-		echo 'order表に追加するよ';
+//		echo 'order表に追加するよ';
 		$values = sprintf('null,%s,\'%s\',%s,%s,\'%s\'', $this->userNo, $this->orderDate, $this->usePoint, $this->acquiredPoint, $this->address);
 		$this->insert('`vec`.`order`', $values);
 		$this->orderNo = mysql_insert_id(); //order表にオートインクリメントで作成したidを取得
 //order_detail表に作成
 		foreach ($this->details as $value) {
-			echo order_detail表に追加するよ;
+//			echo order_detail表に追加するよ;
 			$values2 = sprintf('%s,%s,%s,%s', $this->orderNo, $value['productNo'], $value['price'], $value['number']);
 			$this->insert('`order_detail`', $values2);
 		}

@@ -47,6 +47,12 @@ class homeController {
 		$this->view->display('View/test.tpl');
 	}
 
+	function akihiro() {
+		$base = new BaseModel();
+		$where = sprintf('user_no = %s and product_no = %s',5,18);
+		$base->delete(cart, $where);
+	}
+
 	function required() {
 		$product = new Product();
 		$item = $product->getAll();

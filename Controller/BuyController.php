@@ -54,28 +54,39 @@ class buyController {
 		$this->view->assign('carts', $carts);
 		$this->view->display('View/buy-confirmation.tpl');
 	}
+
 	function process() {
 //ログインしてる
-		$carts = Cart::getCarts(5);
-	foreach ($carts as $value) {
-			$productNo = (int)$value->getProduct()->getProductNo();
-			$price = (int)$value->getProduct()->getPrice();
-			$number = (int)$value->getQuantity();
+		if ($_SESSION['userNo'] != null){
+		$carts = Cart::getCarts($_SESSION['userNo']);
+		foreach ($carts as $value) {
+			$productNo = (int) $value->getProduct()->getProductNo();
+			$price = (int) $value->getProduct()->getPrice();
+			$number = (int) $value->getQuantity();
 			$details[] = array(
 			  'productNo' => $productNo,
 			  'price' => $price,
 			  'number' => $number,
 			);
-			$acquiredPoint += (int)floor($value->getProduct()->getPrice()/100);
+			$acquiredPoint += (int) floor($value->getProduct()->getPrice() / 100);
 		}
-	$order = new Order();
-		$order->setUserNo(5);
+		$order = new Order();
+		$order->setUserNo($_SESSION['userNo']);
 		$order->setAddress($_POST['address']);
 		$order->setUsePoint($_POST['usePoint']);
 		$order->setAcquiredPoint($acquiredPoint);
 		$order->setOrderDate(gmdate("Y-m-d ", time()));
 		$order->setDetails($details);
 		$order->add();
+		}
+		//カートをからに
+		$carts = Cart::getCarts($_SESSION['userNo']);
+		foreach ($carts as $item){
+			$item->deleteCart();
+		}
+		$_POST['purchased'] = '購入処理が完了しました';
+		header('Location: /VEC/');
+		exit;
 	}
-
+	
 }
