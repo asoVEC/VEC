@@ -147,13 +147,11 @@
 
 
                 <div class="form-group">
-                    <label for="paymentMethod" class="col-sm-2 control-label">お支払い方法</label>
+                    <span for="paymentMethod" class="col-sm-2 control-label">お支払い方法</span>
                     <div class="col-sm-6 required" id="paymentMethod">
                         <div class="radio">
-                            <label>
                                 <input type="radio" name="paymentMethod" id="cre" value="0">
-                                クレジットカード
-                            </label>
+                                クレジットカード<br />
                             <div id="crej">
                                 現在のクレジットカード番号　：<span id="crecre">111111111111</span>
                                 <br />
@@ -161,18 +159,19 @@
                             </div>
                             {*                        </div>*}
                             {*                        <div class="radio">*}
-                            <label>
                                 <input type="radio" name="paymentMethod" id="dai" value="1" checked="checked">
-                                代金引換（別途手数料 ¥ 50000）
-                            </label>
+                                代金引換
                         </div>
-                        {*                        <div id="daij">代金引換について</div>*}
+                        使用ポイント(使わない場合は0のままで)
+                        (現在のポイントは{$user->getpoint()})
+                        <input type="text" value="0" id="usePoint">
                     </div>
                 </div>
 
 
             </div>
         </div>
+                        <div class="col-lg-6"> </div>
         <div class="col-lg-6">
             <div class="form-group">
                 <div class="col col-xs-9 col-xs-offset-3 col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3">
@@ -230,34 +229,23 @@
                 inputad3.setAttribute('type', 'hidden');
                 inputad3.setAttribute('name', 'address3');
                 inputad3.setAttribute('value', $('#bu').text());
-				
-				var inputad4 = document.createElement('input');
-                inputad3.setAttribute('type', 'hidden');
-                inputad3.setAttribute('name', 'usePoint');
-                inputad3.setAttribute('value', 0);
+			
                 
-                var inputad4 = document.createElement('input');
-                inputad3.setAttribute('type', 'hidden');
-                inputad3.setAttribute('name', 'usePoint');
-                inputad3.setAttribute('value', 0);
+                var inputpoi = document.createElement('input');
+                inputpoi.setAttribute('type', 'hidden');
+                inputpoi.setAttribute('name', 'usePoint');
+                inputpoi.setAttribute('value', $('#usePoint').val());
                 
                 var inputtel = document.createElement('input');
                 inputtel.setAttribute('type', 'hidden');
                 inputtel.setAttribute('name', 'phone');
                 inputtel.setAttribute('value', $('#te').text());
-            {*    input.setAttribute( 'name' , 'name2' );*}
-            {*    input.setAttribute( 'value' , $('#sei').text() );*}
-            {*input.setAttribute('name',$('#sei').text());
-            input.setAttribute('fdasfa', $('#zip').text());
-            input.setAttribute('address2', $('#to').text());
-            input.setAttribute('address3', $('#bu').text());
-            input.setAttribute('phone', $('#te').text());*}
+                
                 form.appendChild(input);
                 form.appendChild(inputad1);
                 form.appendChild(inputad2);
                 form.appendChild(inputad3);
-
-				form.appendChild(inputad4);
+                form.appendChild(inputpoi);
                 form.appendChild(inputtel);
                 form.setAttribute('action', '/VEC/buy/conf');
                 form.setAttribute('method', 'post');

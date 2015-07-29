@@ -212,8 +212,4 @@ class userController {
         $this->view->display('View/point.tpl');
     }
 
-    function info() {
-        $this->view->display('View/buy-infomation.tpl');
-    }
-
 }
