@@ -15,6 +15,9 @@
 
 レイアウト調整　魚介類
 会員情報変更　db変更されない UPDATE command denied to user ''@'localhost' for table 'user'とエラーはく
+GRANT ALL ON vec.user TO localhost;
+
+
 レイアウト調整 購入履歴　増山
 
 ・バグ？

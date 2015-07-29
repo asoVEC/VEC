@@ -198,7 +198,6 @@
                 $('#email').html(document.getElementById("em").value);*}
 
                 $("#modal-add").click(function (event) {
-
                     $('#sei').html(document.getElementById("name1").value);
                     $('#mei').html(document.getElementById("name2").value);
                     $('#zip').html(document.getElementById("zipcode").value);
