@@ -163,7 +163,7 @@
                             {*                        <div class="radio">*}
                             <label>
                                 <input type="radio" name="paymentMethod" id="dai" value="1" checked="checked">
-                                代金引換（別途手数料 ¥ 50000）
+                                代金引換（別途手数料 ¥ 無償）
                             </label>
                         </div>
                         {*                        <div id="daij">代金引換について</div>*}
