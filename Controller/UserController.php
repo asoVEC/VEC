@@ -1,4 +1,4 @@
-$this->view->assign('address',$_POST['address2'<?php
+<?php
 
 require_once ('Model/Cart.php');
 require_once ('Model/Product.php');
