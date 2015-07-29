@@ -4,6 +4,7 @@ require_once ('Model/Cart.php');
 require_once ('Model/Order.php');
 require_once ('Model/Product.php');
 require_once ('Model/User.php');
+require_once ('Controller/HomeController.php');
 
 class buyController {
 
@@ -87,7 +88,10 @@ class buyController {
 		}
 		
 		$_POST['purchased'] = '購入処理が完了しました';
-		header('Location: /VEC/');
+//                die($_POST['purchased']);
+                $home = new homeController();
+                $home->index();
+//		header('Location: /VEC/');
 		exit;
 	}
 	
