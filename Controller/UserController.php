@@ -209,6 +209,7 @@ class userController {
 		$amount_cart = count($carts);
 		$this->view->assign('amount_cart', $amount_cart);
 		$this->view->assign('carts', $carts);
+
     }
 
     function point() {
@@ -218,6 +219,7 @@ class userController {
         $this->view->assign('orders', $orders);
         $this->view->display('View/point.tpl');
     }
+
 
 
 }
