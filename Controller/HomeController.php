@@ -39,44 +39,6 @@ class homeController {
 		$this->view->display('View/test2.tpl');
 	}
 
-	function akihiro() {
-		//----------ログインにしていないユーザーがカートに商品を追加するテスト
-		$cart = new Cart($_SESSION['userNo']);
-		$cart->setProduct(new Product(99));
-		$cart->setQuantity(51);
-		$cart->add();
-		//--------------------------------------------------------
-		//		echo Cart::getCarts($_SESSION['userNo'])[0]->getProduct()->getProductName();
-		//		echo Cart::getCarts($_SESSION['userNo'])[0]->getNumber();
-		var_dump(Cart::getCarts($_SESSION['userNo']));
-	}
-
-	function akihiro2() {
-//		--------------購入処理テスト
-		$order = new Order();
-		$order->setUserNo(5);
-		$order->setAddress('いさはや');
-		$order->setUsePoint(0);
-		$order->setAquiredPoint(0);
-		$order->setOrderDate('2015-07-23');
-		$details[] = array(
-		  'productNo' => 1,
-		  'price' => 300,
-		  'number' => 3,
-		);
-		$details[] = array(
-		  'productNo' => 5,
-		  'price' => 400,
-		  'number' => 67,
-		);
-		$order->setDetails($details);
-		$order->add();
-	}
-
-	function akihiro3() {
-		var_dump( Order::getHistory(5));
-	}
-
 	function nagano() {
 		$this->view->display('View/details.tpl');
 	}
@@ -89,8 +51,10 @@ class homeController {
 		$product = new Product();
 		$item = $product->getAll();
 		$this->view->assign('item', $item);
-		$item2 = $product->getDetails(19);
-		$this->view->assign('item2', $item2);
+		$carts = Cart::getCarts($_SESSION['userNo']);
+		$amount_cart = count($carts);
+		$this->view->assign('amount_cart', $amount_cart);
+		$this->view->assign('carts', $carts);
 	}
 
 }

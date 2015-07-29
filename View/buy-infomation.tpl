@@ -6,6 +6,8 @@
         <div class="col-lg-6">
             <h2>お届け先住所の選択</h2>
             <form class="form-horizontal">
+
+
                 <div class="row">
                     <div class="form-group">
                         <span for="name" class="col-lg-3 control-span">お名前</span>
@@ -124,7 +126,7 @@
                                 <label for="name" class="col col-xs-12 col-sm-5 col-md-5 control-label">新規クレジット番号</label>
                                 <div class="col col-xs-7 col-sm-7 col-md-7">
                                     <input type="text" name="credit" id="credit" class="form-control" placeholder="クレジット番号">
-                                </div>    
+                                </div>
                                 <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-3"></div>
                             </div>
                         </form>
@@ -136,7 +138,7 @@
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div>
-        
+
         <div id="demo" class="col-lg-6">
 
             <div class="col-lg-6">
@@ -157,14 +159,14 @@
                                 <br />
                                 <input onclick="window.location.href = '#div-modal'" type="button" data-toggle="modal" data-target="#div-modalcredit" type="button" class="btn btn-default" id="loading-pas" value="変更したい場合はこちら">
                             </div>
-{*                        </div>*}
-{*                        <div class="radio">*}
+                            {*                        </div>*}
+                            {*                        <div class="radio">*}
                             <label>
                                 <input type="radio" name="paymentMethod" id="dai" value="1" checked="checked">
                                 代金引換（別途手数料 ¥ 50000）
                             </label>
                         </div>
-{*                        <div id="daij">代金引換について</div>*}
+                        {*                        <div id="daij">代金引換について</div>*}
                     </div>
                 </div>
 
@@ -174,64 +176,70 @@
         <div class="col-lg-6">
             <div class="form-group">
                 <div class="col col-xs-9 col-xs-offset-3 col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3">
-                    <button type="submit" class="btn btn-success btn-lg">　次へ進む　</button>
+                    {*                    <form action="/VEC/buy/conf" method="post">*}
+                    <input type="button" class="btn btn-success btn-lg" value="次へ進む" onclick="postDeta()"></input>
+                    {*                    </form>*}
+
                 </div>
             </div>
         </div>
         <script>
-            $('#alert2').val("");
+            {*			$('#alert2').val("");*}
             {*        $('#alert').val("none");*}
-{*            document.getElementById("alert").style.display = "none";*}
-            document.getElementById("alert3").style.display = "none";
+            {*            document.getElementById("alert").style.display = "none";*}
+            {*			document.getElementById("alert3").style.display = "none";*}
             {*document.getElementById("alert2").style.display="none";*}
-{*                $('#name1').html("fdasfa");*}
-            $(document).ready(function () {
-{*                $('#toolname').attr('title',document.getElementById("sei").value);*}
-{*                $('#name1').html("fdasfa");*}
-{*                $('#name1').html(document.getElementById("sei").value);*}
-{*                $('#name1').html("aaaaaaaaa");*}
-                {*$('#name2').html(document.getElementById("mei").value);
-                $('#zipcode').html(document.getElementById("zip").value);
-                $('#town').html(document.getElementById("to").value);
-                $('#building').html(document.getElementById("bu").value);
-                $('#tel1').html(document.getElementById("te").value);
-                $('#email').html(document.getElementById("em").value);*}
 
-                $("#modal-add").click(function (event) {
-                    $('#sei').html(document.getElementById("name1").value);
-                    $('#mei').html(document.getElementById("name2").value);
+            $(document).ready(function () {
+            $("#modal-add").click(function (event) {
+
+            $('#sei').html(document.getElementById("name1").value);
                     $('#zip').html(document.getElementById("zipcode").value);
                     $('#to').html(document.getElementById("town").value);
                     $('#bu').html(document.getElementById("building").value);
                     $('#te').html(document.getElementById("tel1").value);
                     $('#em').html(document.getElementById("email").value);
-                });                
-                $("#modal-addcredit").click(function (event) {
-                    $('#crecre').html(document.getElementById("credit").value);
-                    console.log(document.getElementById("credit").value);
-                });
             });
+                    $("#modal-addcredit").click(function (event) {
+            $('#crecre').html(document.getElementById("credit").value);
+                    console.log(document.getElementById("credit").value);
+            });
+            });
+                    function postDeta(){
+                    var form = document.createElement(‘form’);
+                            document.body.appendChild(form);
+                            var input = document.createElement(‘input’);
+                            input.setAttribute(‘name’,document.getElementById("name1").value );
+                            input.setAttribute(‘zip’, document.getElementById("zipcode").value);
+                            input.setAttribute(‘town’, document.getElementById("town").value);
+                            input.setAttribute(‘build’, document.getElementById("building").value);
+                            input.setAttribute(‘tell’, document.getElementById("tel1").value);
+                            input.setAttribute(‘em’, document.getElementById("email").value);
+                            
+                            form.appendChild(input);
+                            form.setAttribute(‘action’, ‘/VEC/buy/conf’);
+                            form.setAttribute(‘method’, ‘post’);
+                            form.submit();
+                    }
+
+
+
             var elem1 = document.getElementById("crej");
-{*            var elem2 = document.getElementById("daij");*}
+            {*            var elem2 = document.getElementById("daij");*}
             elem1.style.display = "none";
-{*            elem2.style.display = "none";*}
+            {*            elem2.style.display = "none";*}
 
             $('input[id=cre]').change(function () {
-                // 表示・非表示切り替え
-                elem1.style.display = "";
-{*                elem2.style.display = "none";*}
+            // 表示・非表示切り替え
+            elem1.style.display = "";
+            {*                elem2.style.display = "none";*}
             });
-            $('input[id=dai]').change(function () {
-                // 表示・非表示切り替え
-{*                console.log("222");*}
-{*                elem2.style.display = "";*}
-                elem1.style.display = "none";
+                    $('input[id=dai]').change(function () {
+            // 表示・非表示切り替え
+            {*                console.log("222");*}
+            {*                elem2.style.display = "";*}
+            elem1.style.display = "none";
             });
         </script>
-    </html>
-
-{/block}
-
-
-</script>
+    {/block}
 

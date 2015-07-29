@@ -45,17 +45,14 @@ class Cart extends BaseModel {
                         
 		} else {//ログインしてない
 			//SESSIONに追加
-//			$_SESSION = array( //一つの商品しか登録できない(上書きされる)みたいだからつかわない
-//			  "cart" => array(
-//				$this->product->getProductNo() => $this->quantity
-//			  )
-//			);
+			if($_SESSION['cart'] == null){
+				$_SESSION['cart'] = array();
+			}
 			$_SESSION['cart'] += array(
 				$this->product->getProductNo() => $this->quantity
 			  );
 			$flg = 1;
 		}
-                
 		return $flg;
 	}
 

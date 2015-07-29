@@ -44,95 +44,99 @@
                                     {else} 
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="/VEC/user/signup">会員登録</a></li>
                                     {/if}
-						</ul>
-					<!-- リストここまで -->
-					</li>
-                                        <li class="divider"><a class="tl" href="/VEC/user/cart" data-placement="bottom" data-html="true"  
-                                               data-toggle="tooltip" title="{$item2['product_name']}<br /><img src='/VEC/img/{$item2['image']}' width='80px' height='80px'>">
+							</ul>
+							<!-- リストここまで -->
+						</li>
+						<li class="divider"><a class="tl" href="/VEC/user/cart" data-placement="bottom" data-html="true"  
+                                               data-toggle="tooltip" title="
+											   {foreach $carts as $data}
+												   {$data->getProduct()->getProductName()}<br /><img src='/VEC/img/{$data->getProduct()->getImage()}' width='80px' height='80px'><br />
+											   {/foreach}
+											   ">
                                 買い物カゴ <span class="badge">{$amount_cart}</span></a></li>
-					</li>
-				</ul>
+						</li>
+					</ul>
 
                     <!--検索フォーム-->
-				<form class="navbar-form navbar-static-top" role="search" method="post" action="/VEC/product/searchlist/1">
-					<div class="form-group col-md-offset-1">
-						<input type="text" class="form-control typeahead focus" id ="search" placeholder="商品検索" size="60pix" name="search">
-					</div>
-					<button type="submit" id="search-bt" class="btn btn-default" required="required">検索</button>
-				</form>
-			</div>
-		</nav>
-		{block header}
-		<header class="jumbotron col-lg-10 col-lg-offset-1" ></header>
-		{/block}
+					<form class="navbar-form navbar-static-top" role="search" method="post" action="/VEC/product/searchlist/1">
+						<div class="form-group col-md-offset-1">
+							<input type="text" class="form-control typeahead focus" id ="search" placeholder="商品検索" size="60pix" name="search">
+						</div>
+						<button type="submit" id="search-bt" class="btn btn-default" required="required">検索</button>
+					</form>
+				</div>
+			</nav>
+			{block header}
+				<header class="jumbotron col-lg-10 col-lg-offset-1" ></header>
+				{/block}
                 {*すまほばー*}
-		<form class="navbar-form navbar-static-top hidden-lg hidden-md hidden-sm" role="search">
-			<div class="form-group">
-				<input type="text" class="form-control typeahead" placeholder="商品検索">
-			</div>
-			<button type="submit" class="btn btn-default">検索</button>
-		</form>       
-		<div class="container main-content">
+			<form class="navbar-form navbar-static-top hidden-lg hidden-md hidden-sm" role="search">
+				<div class="form-group">
+					<input type="text" class="form-control typeahead" placeholder="商品検索">
+				</div>
+				<button type="submit" class="btn btn-default">検索</button>
+			</form>       
+			<div class="container main-content">
 				{block main}
 				{/block}
 
-		</div>
-		<nav class="container-fluid navbar-fixed-bottom">
-			<small><a href="/vec">Copyright (C) 2015-2015 vec.aso All Rights Reserved.</a></small>
-		</nav>
-	</body>
+			</div>
+			<nav class="container-fluid navbar-fixed-bottom">
+				<small><a href="/vec">Copyright (C) 2015-2015 vec.aso All Rights Reserved.</a></small>
+			</nav>
+		</body>
 
-	<script>
-		var value = document.getElementById("search").value;
+		<script>
+			var value = document.getElementById("search").value;
 
-		$(document).ready(function () {
-			$("#search-bt").click(function () {
-			});
-		});
-
-
-		var substringMatcher = function (strs) {
-			return function findMatches(q, cb) {
-				var matches, substringRegex;
-
-				// an array that will be populated with substring matches
-				matches = [];
-
-				// regex used to determine if a string contains the substring `q`
-				substrRegex = new RegExp(q, 'i');
-
-				// iterate through the pool of strings and for any string that
-				// contains the substring `q`, add it to the `matches` array
-				$.each(strs, function (i, str) {
-					if (substrRegex.test(str)) {
-						matches.push(str);
-					}
+			$(document).ready(function () {
+				$("#search-bt").click(function () {
 				});
+			});
 
-				cb(matches);
+
+			var substringMatcher = function (strs) {
+				return function findMatches(q, cb) {
+					var matches, substringRegex;
+
+					// an array that will be populated with substring matches
+					matches = [];
+
+					// regex used to determine if a string contains the substring `q`
+					substrRegex = new RegExp(q, 'i');
+
+					// iterate through the pool of strings and for any string that
+					// contains the substring `q`, add it to the `matches` array
+					$.each(strs, function (i, str) {
+						if (substrRegex.test(str)) {
+							matches.push(str);
+						}
+					});
+
+					cb(matches);
+				};
 			};
-		};
 
-		var states = [
-		{foreach from=$item item=rec}
-			'{$rec}',
-		{/foreach}
+			var states = [
+			{foreach from=$item item=rec}
+				'{$rec}',
+			{/foreach}
 
-		];
+			];
 
 
-		$('.typeahead').typeahead({
-			hint: true,
-			highlight: true,
-			minLength: 1
-		},
-		{
-			name: 'states',
-			source: substringMatcher(states)
-		});
+			$('.typeahead').typeahead({
+				hint: true,
+				highlight: true,
+				minLength: 1
+			},
+			{
+				name: 'states',
+				source: substringMatcher(states)
+			});
 
-		$(function () {
-			$('.tl').tooltip();
-		});
-	</script>
-</html>
+			$(function () {
+				$('.tl').tooltip();
+			});
+		</script>
+	</html>

@@ -1,6 +1,5 @@
 ・システム
 購入　安長
-履歴　安長
 
 ・画面
 購入確認　長野
@@ -14,11 +13,13 @@
 ・後回し
 
 レイアウト調整　魚介類
+<<<<<<< HEAD
 会員情報変更　db変更されない UPDATE command denied to user ''@'localhost' for table 'user'とエラーはく
 GRANT ALL ON vec.user TO localhost;
 
 
 レイアウト調整 購入履歴　増山
+=======
+>>>>>>> origin/master
 
 ・バグ？
-非会員でカート追加する際に、うまく追加されていない。addCartで止まる。
