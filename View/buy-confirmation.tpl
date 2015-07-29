@@ -41,30 +41,7 @@
                 <div class="form-group" style="position:relative;top:160px;">
                     <div class="col-lg-6 control-label">配送料・手数料：</div>
                     <div class="col-lg-6" style="font-size:2em;">¥{$total}</div>
-                    <input type="submit" class="col-md-offset-8 btn btn-warning"  value="注文を確定する"> <div class="modal fade">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                    <h4 class="modal-title">購入が完了しました。</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <p>またのご利用お待ちしております！！</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
-                            </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                    </div><!-- /.modal -->
-
-                    <!-- ここでscript -->
-                    <script>
-                        jQuery(document).ready(function () {
-                            jQuery('.modal').modal('show');
-                        });
-                    </script>
-</input>
+                    <input type="submit" class="col-md-offset-8 btn btn-warning"  value="注文を確定する"> </input>
                 </div>
 
                 <input type="hidden" name="address" value="{$address}">
