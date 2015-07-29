@@ -55,7 +55,7 @@ class buyController {
 		$this->view->assign('total', $total);
 		$this->view->assign('carts', $carts);
 		$this->view->display('View/buy-confirmation.tpl');
-                echo $_POST['name'];
+                
 	}
 
 	function process() {
@@ -75,7 +75,7 @@ class buyController {
 		}
 		$order = new Order();
 		$order->setUserNo($_SESSION['userNo']);
-		$order->setAddress($_POST['address1'].$_POST['address2'].$_POST['address3']);
+		$order->setAddress($_POST['addressSs']);
 		$order->setUsePoint($_POST['usePoint']);
 		$order->setAcquiredPoint($acquiredPoint);
 		$order->setOrderDate(gmdate("Y-m-d ", time()));
