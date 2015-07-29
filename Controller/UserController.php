@@ -129,10 +129,6 @@ class userController {
         }
     }
 
-//    function infopost2() {
-//        echo $_REQUEST["name1"];
-//        echo $_REQUEST["name2"];
-//    }
 
     function cart() {
         $cart = Cart::getCarts($this->userNo);
