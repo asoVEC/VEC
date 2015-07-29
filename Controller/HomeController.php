@@ -24,12 +24,14 @@ class homeController {
 			$product = new Product(mt_rand(0, $max));
 			$products[] = $product;
 		}
+                
 		if($_POST['purchased'] != NULL){
 			$purchased = $_POST['purchased'];
 		}
 		$this->view->assign('products', $products);
 		$this->view->assign('purchased', $purchased);
 		$this->view->display('View/base.tpl');
+                var_dump($_POST['purchased']);
 	}
 
 	function logout() {
