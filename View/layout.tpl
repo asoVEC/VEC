@@ -30,7 +30,7 @@
                             {if $smarty.session.userName == null}
                                 <a href="/VEC/user/login">ログインする</a>
                             {else}
-                                ようこそ、{$smarty.session.userName}さん
+                                ようこそ、<span id="sessionName">{$smarty.session.userName}</span>さん
                             {/if}
                         </div>
                         <!-- ボタンここまで -->

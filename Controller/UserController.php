@@ -123,6 +123,12 @@ class userController {
 			$type = $_REQUEST['type'];
 			$value = $_REQUEST['value'];
 			$userNo = $_SESSION['userNo'];
+                        switch ($type){
+                            case "name":
+                                $_SESSION['userName']=$value;
+                                break;
+                        }
+                        $this->view = new Smarty;
 			$user = new User($userNo);
 			$user->update('`vec`.`user`', $type, $value, 'user_no=' . $userNo);
 			echo $value;

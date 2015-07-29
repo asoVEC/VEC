@@ -328,6 +328,7 @@
 							function (data) {
 								$('#alert').html("氏名を" + data + "に変更しました");
 								$('#nowname').html(data);
+                                                                $('#sessionName').html(data);
 							}
 					);
 					$('#input-name').val("");
