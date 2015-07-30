@@ -33,6 +33,7 @@
                                 ようこそ、<span id="sessionName">{$smarty.session.userName}</span>さん
                             {/if}
                         </div>
+                        
                         <!-- ボタンここまで -->
                         <!-- ここはボタンを押すと表示されるリスト -->
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
